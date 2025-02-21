@@ -37,5 +37,8 @@ def read_data(
 
 
 def write_data(file_path: Path, data):
-    with open(file_path, "wb") as f:
-        f.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
+    try:
+        with open(file_path, "wb") as f:
+            f.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
+    except Exception as e:
+        print(f"Error writing data: {e}")
