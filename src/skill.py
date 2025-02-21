@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Dict
 
 from .enums import SkillTarget
 
@@ -13,7 +13,7 @@ class Skill:
     name: str
     detail: str
     icon: str
-    cooldown: List[int] = field(default_factory=list)
+    cooldown: Dict[int, int] = field(default_factory=dict)
     target: List[SkillTarget] = field(default_factory=list)
     ascension: int | None = None
     targetAscension: int | None = None
@@ -26,7 +26,7 @@ class Skill:
         name: str,
         detail: str,
         icon: str,
-        cooldown: List[int],
+        cooldown: Dict[int, int],
         target: List[SkillTarget],
         ascension: int | None,
         targetAscension: int | None,
