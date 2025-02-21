@@ -2,6 +2,7 @@ from pathlib import Path
 
 from src.enums import CardType
 from src.servant import NoblePhantasm, Servant
+from src.mystic_code import MysticCode
 from src.skill import Skill
 from utils import download_data, read_data, write_data
 
@@ -95,12 +96,66 @@ def mystic_code_data():
     url = "https://api.atlasacademy.io/export/JP/nice_mystic_code_lang_en.json"
     file_path = CWD / "nice_mystic_code_lang_en.json"
     download_data(file_path, url)
-    read_data(file_path)
+    mystic_codes = read_data(file_path)
+
+    mystic_code_list: list[MysticCode] = []
+
+    for mystic_code in mystic_codes:
+        id = mystic_code.get("id", 0)
+        name = mystic_code.get("name", "")
+        extraAssets = mystic_code.get("extraAssets", {})
+        item = extraAssets.get("item", {})
+
+        male_assets = item.get("male", "")
+        female_assets = item.get("female", "")
+
+        skill_list: list[Skill] = []
+
+        mystic_code_skills: list[dict] = mystic_code.get("skills", [])
+        for skill in mystic_code_skills:
+            skill_id = skill.get("id", 0)
+            skill_num = skill.get("num", 0)
+            skill_name = skill.get("name", "")
+            skill_detail = skill.get("detail", "")
+            skill_icon = skill.get("icon", "")
+            skill_cooldown = skill.get("coolDown", [])
+            skill_target = skill.get("priority", 0)
+
+            skill_scripts = skill.get("script", {})
+            skill_functions = skill.get("functions", [])
+
+            skill = Skill.create(
+                id=skill_id,
+                num=skill_num,
+                name=skill_name,
+                detail=skill_detail,
+                icon=skill_icon,
+                cooldown=skill_cooldown,
+                priority=skill_target,
+                scripts=skill_scripts,
+                functions=skill_functions,
+            )
+
+            skill_list.append(skill)
+
+        mystic_code = MysticCode(
+            id=id,
+            name=name,
+            assets={
+                "male": male_assets,
+                "female": female_assets,
+            },
+            skills=skill_list,
+        )
+        mystic_code_list.append(mystic_code)
+
+    write_file_path = CWD / "mystic_code_data.json"
+    write_data(write_file_path, mystic_code_list)
 
 
 def main():
     servant_data()
-    # mystic_code_data()
+    mystic_code_data()
 
 
 if __name__ == "__main__":
