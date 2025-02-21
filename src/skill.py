@@ -13,7 +13,7 @@ class Skill:
     name: str
     detail: str
     icon: str
-    cooldown: Dict[int, int] = field(default_factory=dict)
+    cooldown: int | None = None
     target: List[SkillTarget] = field(default_factory=list)
     buttons: List[List[str]] = field(default_factory=list)
     ascension: int | None = None
@@ -93,7 +93,7 @@ class Skill:
         if len(targets) == 0:
             targets.append(SkillTarget.TargetAll)
 
-        parse_cooldown = cls._create_cooldown_dict(cooldown=cooldown)
+        parse_cooldown = max(cooldown)
 
         return cls(
             id=id,
@@ -107,25 +107,6 @@ class Skill:
             targetAscension=target_ascension,
             buttons=buttons,
         )
-
-    @staticmethod
-    def _create_cooldown_dict(
-        cooldown: List[int],
-    ) -> Dict[int, int]:
-        """
-        Create a dictionary of cooldown values for skill levels.
-
-        Args:
-            cooldown (List[int]):
-                List of cooldown values for skill level(1, 6, 10)
-
-        Returns:
-            Dict[int, int]: A dictionary containing cooldown values for skill levels.
-        """
-        cooldown_dict = {}
-        if len(cooldown) == 10:
-            cooldown_dict = {1: cooldown[0], 6: cooldown[5], 10: cooldown[9]}
-        return cooldown_dict
 
     @staticmethod
     def _check_for_buttons_from_scripts(
