@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import List, Dict
+from typing import Dict, List, Tuple
 
 from .enums import SkillTarget
 
@@ -15,6 +15,7 @@ class Skill:
     icon: str
     cooldown: Dict[int, int] = field(default_factory=dict)
     target: List[SkillTarget] = field(default_factory=list)
+    buttons: List[List[str]] = field(default_factory=list)
     ascension: int | None = None
     targetAscension: int | None = None
 
@@ -26,9 +27,9 @@ class Skill:
         name: str,
         detail: str,
         icon: str,
-        cooldown: Dict[int, int],
+        cooldown: List[int],
         scripts: Dict,
-        functions: Dict,
+        functions: List[Dict],
     ) -> Skill:
         """
         Create a new Skill instance.
@@ -60,15 +61,31 @@ class Skill:
         Returns:
             Skill: A new instance of the Skill class.
         """
+        buttons = []
+
         targets = []
         command_buttons = cls._check_for_buttons_from_scripts(scripts=scripts)
         match len(command_buttons):
             case 2:
+                buttons.append(command_buttons)
                 targets.append(SkillTarget.Choice2)
             case 3:
+                buttons.append(command_buttons)
                 targets.append(SkillTarget.Choice3)
             case _:
                 pass
+
+        parse_targets, np_type_buttons = cls._check_functions(functions=functions)
+        targets.extend(parse_targets)
+
+        if len(np_type_buttons) > 0:
+            buttons.append(np_type_buttons)
+
+        # If no target is found, default to [SkillTarget.TargetAll]
+        if len(targets) == 0:
+            targets.append(SkillTarget.TargetAll)
+
+        parse_cooldown = cls._create_cooldown_dict(cooldown=cooldown)
 
         return cls(
             id=id,
@@ -76,8 +93,29 @@ class Skill:
             name=name,
             detail=detail,
             icon=icon,
-            cooldown=cooldown,
+            cooldown=parse_cooldown,
+            target=targets,
+            buttons=buttons,
         )
+
+    @staticmethod
+    def _create_cooldown_dict(
+        cooldown: List[int],
+    ) -> Dict[int, int]:
+        """
+        Create a dictionary of cooldown values for skill levels.
+
+        Args:
+            cooldown (List[int]):
+                List of cooldown values for skill level(1, 6, 10)
+
+        Returns:
+            Dict[int, int]: A dictionary containing cooldown values for skill levels.
+        """
+        cooldown_dict = {}
+        if len(cooldown) == 10:
+            cooldown_dict = {1: cooldown[0], 6: cooldown[5], 10: cooldown[9]}
+        return cooldown_dict
 
     @staticmethod
     def _check_for_buttons_from_scripts(
@@ -121,3 +159,52 @@ class Skill:
             targets.append(button_name)
 
         return targets
+
+    @staticmethod
+    def _check_functions(functions: List[Dict]) -> Tuple[List[SkillTarget], List[str]]:
+        targets: list[SkillTarget] = []
+
+        command_np_found: bool | None = None
+        command_np_list: List[str] = []
+
+        for function in functions:
+            target_type = function.get("funcTargetType", "")
+            if len(target_type) == 0:
+                continue
+
+            match target_type:
+                case "ptOne":
+                    if command_np_found is not None:
+                        command_np_found = False
+                    targets.append(SkillTarget.TargetOne)
+                case "commandTypeSelfTreasureDevice":
+                    match command_np_found:
+                        case None:
+                            command_np_found = True
+                        case True:
+                            buffs: list[dict] = function.get("buffs", [])
+                            if not buffs:
+                                continue
+                            command_type_buff = buffs[0]
+                            command_name = command_type_buff.get("name", "")
+                            if command_name:
+                                command_np_list.append(command_name)
+                        case False:
+                            pass
+                case "transformServant":
+                    targets.append(SkillTarget.Transform)
+                case _:
+                    if command_np_found is not None:
+                        command_np_found = False
+
+            if command_np_found is False:
+                match len(command_np_list):
+                    case 2:
+                        targets.append(SkillTarget.CommandNPType2)
+                    case 3:
+                        targets.append(SkillTarget.CommandNPType3)
+                    case _:
+                        pass
+                command_np_found = None
+
+        return targets, command_np_list
