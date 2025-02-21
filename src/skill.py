@@ -205,6 +205,8 @@ class Skill:
                         continue
                     transform_info = svals[0]
                     target_ascension = transform_info.get("SetLimitCount", 0)
+                case "ptselectOneSub":
+                    targets.append(SkillTarget.OrderChange)
                 case _:
                     if command_np_found is not None:
                         command_np_found = False
