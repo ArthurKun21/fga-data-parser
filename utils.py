@@ -4,15 +4,10 @@ from pathlib import Path
 import httpx
 import orjson
 
-CWD = Path(__file__).parent
 
-
-def download_data():
-    file_path = CWD / "nice_mystic_code_lang_en.json"
+def download_data(file_path: Path, url: str):
     if file_path.exists() and file_path.stat().st_size > 10_000:
         return
-
-    url = "https://api.atlasacademy.io/export/JP/nice_mystic_code_lang_en.json"
 
     retry = 3
 
@@ -29,9 +24,11 @@ def download_data():
             continue
 
 
-def read_data() -> list[dict]:
+def read_data(
+    file_path: Path,
+) -> list[dict]:
     try:
-        with open(CWD / "nice_mystic_code_lang_en.json", "r", encoding="utf-8") as f:
+        with open(file_path, "r", encoding="utf-8") as f:
             data = orjson.loads(f.read())
         return data
     except FileNotFoundError:
@@ -39,7 +36,9 @@ def read_data() -> list[dict]:
         return []
 
 
-def run():
-    download_data()
-    data = read_data()
-    print(data)
+def write_data(file_path: Path, data):
+    try:
+        with open(file_path, "wb") as f:
+            f.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
+    except Exception as e:
+        print(f"Error writing data: {e}")
