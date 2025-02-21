@@ -169,6 +169,7 @@ class Skill:
         target_ascension: int | None = None
 
         for function in functions:
+            func_type = function.get("funcType", "")
             target_type = function.get("funcTargetType", "")
             if len(target_type) == 0:
                 continue
@@ -192,6 +193,13 @@ class Skill:
                                 command_np_list.append(command_name)
                         case False:
                             pass
+                case "ptselectOneSub":
+                    targets.append(SkillTarget.OrderChange)
+                case _:
+                    if command_np_found is not None:
+                        command_np_found = False
+
+            match func_type:
                 case "transformServant":
                     targets.append(SkillTarget.Transform)
                     svals: list[dict] = function.get("svals", [])
@@ -199,11 +207,8 @@ class Skill:
                         continue
                     transform_info = svals[0]
                     target_ascension = transform_info.get("SetLimitCount", 0)
-                case "ptselectOneSub":
-                    targets.append(SkillTarget.OrderChange)
                 case _:
-                    if command_np_found is not None:
-                        command_np_found = False
+                    pass
 
             if command_np_found is False:
                 match len(command_np_list):
