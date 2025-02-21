@@ -5,10 +5,6 @@ from src.servant import NoblePhantasm, Servant
 from src.skill import Skill
 from utils import download_data, read_data, write_data
 
-from rich.console import Console
-
-console = Console()
-
 CWD = Path(__file__).parent
 
 
@@ -91,7 +87,6 @@ def servant_data():
         )
         servant_list.append(servant)
 
-    console.print(servant_list)
     write_file_path = CWD / "servant_data.json"
     write_data(write_file_path, servant_list)
 
