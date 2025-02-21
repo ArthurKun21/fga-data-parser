@@ -8,6 +8,7 @@ from .skill import Skill
 @dataclass
 class NoblePhantasm:
     id: int
+    num: int
     name: str
     card_type: CardType
 
@@ -18,5 +19,5 @@ class Servant:
     name: str
     class_name: str
     rarity: int
-    np: NoblePhantasm
+    np: List[NoblePhantasm]
     skills: List[Skill]

@@ -34,3 +34,8 @@ def read_data(
     except FileNotFoundError:
         print("File not found.")
         return []
+
+
+def write_data(file_path: Path, data):
+    with open(file_path, "wb") as f:
+        f.write(orjson.dumps(data, option=orjson.OPT_INDENT_2))
