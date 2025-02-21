@@ -16,6 +16,7 @@ class NoblePhantasm:
 @dataclass
 class Servant:
     id: int
+    collection_no: int
     name: str
     class_name: str
     rarity: int

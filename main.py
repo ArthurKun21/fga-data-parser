@@ -25,6 +25,7 @@ def servant_data():
             continue
 
         servant_id = servant.get("id", 0)
+        servant_collection_no = servant.get("collectionNo", 0)
         servant_name = servant.get("name", "")
         servant_class = servant.get("className", "")
         servant_rarity = servant.get("rarity", 0)
@@ -80,6 +81,7 @@ def servant_data():
 
         servant = Servant(
             id=servant_id,
+            collection_no=servant_collection_no,
             name=servant_name,
             class_name=servant_class,
             rarity=servant_rarity,
