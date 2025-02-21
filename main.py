@@ -90,6 +90,8 @@ def servant_data():
         )
         servant_list.append(servant)
 
+    servant_list = sorted(servant_list, key=lambda x: x.collection_no)
+
     write_file_path = CWD / "servant_data.json"
     write_data(write_file_path, servant_list)
 
@@ -150,6 +152,8 @@ def mystic_code_data():
             skills=skill_list,
         )
         mystic_code_list.append(mystic_code)
+
+    mystic_code_list = sorted(mystic_code_list, key=lambda x: x.id)
 
     write_file_path = CWD / "mystic_code_data.json"
     write_data(write_file_path, mystic_code_list)
