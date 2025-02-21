@@ -9,4 +9,4 @@ wheels/
 # Virtual environments
 .venv
 
-/**/nice_mystic_code_lang_en.json
+/**/*.json
