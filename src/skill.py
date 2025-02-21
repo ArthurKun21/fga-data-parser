@@ -27,6 +27,7 @@ class Skill:
         name: str,
         detail: str,
         icon: str,
+        priority: int,
         cooldown: List[int],
         scripts: Dict,
         functions: List[Dict],
@@ -83,6 +84,11 @@ class Skill:
         if len(np_type_buttons) > 0:
             buttons.append(np_type_buttons)
 
+        if SkillTarget.Transform in targets:
+            ascension = priority
+        else:
+            ascension = None
+
         # If no target is found, default to [SkillTarget.TargetAll]
         if len(targets) == 0:
             targets.append(SkillTarget.TargetAll)
@@ -97,6 +103,7 @@ class Skill:
             icon=icon,
             cooldown=parse_cooldown,
             target=targets,
+            ascension=ascension,
             targetAscension=target_ascension,
             buttons=buttons,
         )
