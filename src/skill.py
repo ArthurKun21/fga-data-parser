@@ -81,9 +81,11 @@ class Skill:
         )
         targets.extend(parse_targets)
 
+        # Add the NP type buttons if they exist
         if len(np_type_buttons) > 0:
             buttons.append(np_type_buttons)
 
+        # Set the ascension level if there is a transform skill
         if SkillTarget.Transform in targets:
             ascension = priority
         else:
@@ -93,8 +95,10 @@ class Skill:
         if len(targets) == 0:
             targets.append(SkillTarget.TargetAll)
 
+        # Remove duplicates from the target list
         targets = [k for k, _ in groupby(targets)]
 
+        # Only take the highest cooldown value
         parse_cooldown = max(cooldown)
 
         return cls(
