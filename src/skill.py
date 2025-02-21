@@ -75,7 +75,9 @@ class Skill:
             case _:
                 pass
 
-        parse_targets, np_type_buttons = cls._check_functions(functions=functions)
+        parse_targets, np_type_buttons, target_ascension = cls._check_functions(
+            functions=functions
+        )
         targets.extend(parse_targets)
 
         if len(np_type_buttons) > 0:
@@ -95,6 +97,7 @@ class Skill:
             icon=icon,
             cooldown=parse_cooldown,
             target=targets,
+            targetAscension=target_ascension,
             buttons=buttons,
         )
 
@@ -161,11 +164,15 @@ class Skill:
         return targets
 
     @staticmethod
-    def _check_functions(functions: List[Dict]) -> Tuple[List[SkillTarget], List[str]]:
+    def _check_functions(
+        functions: List[Dict],
+    ) -> Tuple[List[SkillTarget], List[str], int | None]:
         targets: list[SkillTarget] = []
 
         command_np_found: bool | None = None
         command_np_list: List[str] = []
+
+        target_ascension: int | None = None
 
         for function in functions:
             target_type = function.get("funcTargetType", "")
@@ -193,6 +200,11 @@ class Skill:
                             pass
                 case "transformServant":
                     targets.append(SkillTarget.Transform)
+                    svals: list[dict] = function.get("svals", [])
+                    if not svals:
+                        continue
+                    transform_info = svals[0]
+                    target_ascension = transform_info.get("SetLimitCount", 0)
                 case _:
                     if command_np_found is not None:
                         command_np_found = False
@@ -207,4 +219,4 @@ class Skill:
                         pass
                 command_np_found = None
 
-        return targets, command_np_list
+        return targets, command_np_list, target_ascension
