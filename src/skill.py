@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Dict, List, Tuple
-
+from itertools import groupby
 from .enums import SkillTarget
 
 
@@ -92,6 +92,8 @@ class Skill:
         # If no target is found, default to [SkillTarget.TargetAll]
         if len(targets) == 0:
             targets.append(SkillTarget.TargetAll)
+
+        targets = [k for k, _ in groupby(targets)]
 
         parse_cooldown = max(cooldown)
 
