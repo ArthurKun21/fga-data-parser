@@ -8,12 +8,12 @@ class CardType(StrEnum):
 
 
 class SkillTarget(StrEnum):
-    Unknown = "unknown"
-    TargetOne = "target_one"
-    TargetAll = "target_all"
-    CommandNPType2 = "command_np_type_2"
-    CommandNPType3 = "command_np_type_3"
-    Choice2 = "choice_2"
-    Choice3 = "choice_3"
-    Transform = "transform"
-    OrderChange = "order_change"
+    Unknown = "Unknown"
+    TargetOne = "TargetOne"
+    TargetAll = "TargetAll"
+    CommandNPType2 = "CommandNPType2"
+    CommandNPType3 = "CommandNPType3"
+    Choice2 = "Choice2"
+    Choice3 = "Choice3"
+    Transform = "Transform"
+    OrderChange = "OrderChange"
