@@ -47,7 +47,7 @@ class Skill:
             icon (str):
                 The icon path or identifier for the skill.
             cooldown (List[int]):
-                List of cooldown values for skill level(1, 6, 10)
+                The cooldown values for the skill.
             target (List[SkillTarget]):
                 List of skill targets.
             ascension (int | None):
