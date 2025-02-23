@@ -131,26 +131,19 @@ class Skill:
         scripts: Dict,
     ) -> Tuple[str, List[str]]:
         """
-        Extract button names from script data.
-        Given a dictionary containing script data, this method extracts button names from the
-        SelectAddInfo field's button information.
+        Extracts button information from a script dictionary.
+        This static method processes script data to extract button names and their associated title.
+        It specifically looks for 'SelectAddInfo' and its contained button information.
         Args:
-            scripts (Dict): A dictionary containing script data with potential SelectAddInfo field
+            scripts (Dict): A dictionary containing script information with 'SelectAddInfo' data.
         Returns:
-            List[str]: A list of button names found in the scripts. Returns empty list if no valid
-                      buttons are found.
-        Example structure of scripts dict:
-            {
-                "SelectAddInfo": [
-                    {
-                        "btn": [
-                            {"name": "button1"},
-                            {"name": "button2"}
-                        ]
-                    }
-                ]
-            }
+            Tuple[str, List[str]]: A tuple containing:
+                - str: The title associated with the selection (empty string if not found)
+                - List[str]: List of button names found in the scripts (empty list if none found)
+        Example:
+            title, buttons = _check_for_buttons_from_scripts(script_data)
         """
+
         targets = []
         select_add_info: list[dict] = scripts.get("SelectAddInfo", [])
         if len(select_add_info) == 0:
