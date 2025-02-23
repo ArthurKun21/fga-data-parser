@@ -1,8 +1,8 @@
 from pathlib import Path
 
 from src.enums import CardType
-from src.servant import NoblePhantasm, Servant
 from src.mystic_code import MysticCode
+from src.servant import NoblePhantasm, Servant
 from src.skill import Skill
 from utils import download_data, read_data, write_data
 
@@ -66,7 +66,7 @@ def servant_data():
             skill_scripts = skill.get("script", {})
             skill_functions = skill.get("functions", [])
 
-            skill = Skill.create(
+            new_skill = Skill.create(
                 id=skill_id,
                 num=skill_num,
                 name=skill_name,
@@ -77,7 +77,7 @@ def servant_data():
                 scripts=skill_scripts,
                 functions=skill_functions,
             )
-            skill_list.append(skill)
+            skill_list.append(new_skill)
 
         servant = Servant(
             id=servant_id,
@@ -128,7 +128,7 @@ def mystic_code_data():
             skill_scripts = skill.get("script", {})
             skill_functions = skill.get("functions", [])
 
-            skill = Skill.create(
+            new_skill = Skill.create(
                 id=skill_id,
                 num=skill_num,
                 name=skill_name,
@@ -140,7 +140,9 @@ def mystic_code_data():
                 functions=skill_functions,
             )
 
-            skill_list.append(skill)
+            print(f"{new_skill.name}\t{new_skill.num}\t{skill_num}")
+
+            skill_list.append(new_skill)
 
         mystic_code = MysticCode(
             id=id,
