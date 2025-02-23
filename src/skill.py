@@ -15,6 +15,7 @@ class Skill:
     icon: str
     cooldown: int
     target: List[SkillTarget] = field(default_factory=list)
+    script_buttons: Dict = field(default_factory=dict)
     buttons: List[List[str]] = field(default_factory=list)
     ascension: int | None = None
     targetAscension: int | None = None
@@ -65,13 +66,23 @@ class Skill:
         buttons = []
 
         targets = []
-        command_buttons = cls._check_for_buttons_from_scripts(scripts=scripts)
+
+        script_buttons_dict = {}
+        title, command_buttons = cls._check_for_buttons_from_scripts(scripts=scripts)
         match len(command_buttons):
             case 2:
-                buttons.append(command_buttons)
+                script_buttons = {
+                    "title": title,
+                    "buttons": command_buttons,
+                }
+                script_buttons_dict.update(script_buttons)
                 targets.append(SkillTarget.Choice2)
             case 3:
-                buttons.append(command_buttons)
+                script_buttons = {
+                    "title": title,
+                    "buttons": command_buttons,
+                }
+                script_buttons_dict.update(script_buttons)
                 targets.append(SkillTarget.Choice3)
             case _:
                 pass
@@ -109,6 +120,7 @@ class Skill:
             icon=icon,
             cooldown=parse_cooldown,
             target=targets,
+            script_buttons=script_buttons_dict,
             ascension=ascension,
             targetAscension=target_ascension,
             buttons=buttons,
@@ -117,7 +129,7 @@ class Skill:
     @staticmethod
     def _check_for_buttons_from_scripts(
         scripts: Dict,
-    ) -> List[str]:
+    ) -> Tuple[str, List[str]]:
         """
         Extract button names from script data.
         Given a dictionary containing script data, this method extracts button names from the
@@ -142,12 +154,15 @@ class Skill:
         targets = []
         select_add_info: list[dict] = scripts.get("SelectAddInfo", [])
         if len(select_add_info) == 0:
-            return targets
+            return "", targets
 
         first_select_add_info = select_add_info[0]
+
+        title = first_select_add_info.get("title", "")
+
         button_info: list[dict] = first_select_add_info.get("btn", [])
         if len(button_info) == 0:
-            return targets
+            return "", targets
 
         for button in button_info:
             button_name = button.get("name", "")
@@ -155,7 +170,7 @@ class Skill:
                 continue
             targets.append(button_name)
 
-        return targets
+        return title, targets
 
     @staticmethod
     def _check_functions(
