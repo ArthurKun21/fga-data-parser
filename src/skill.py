@@ -13,7 +13,7 @@ class Skill:
     name: str
     detail: str
     icon: str
-    cooldown: int | None = None
+    cooldown: int
     target: List[SkillTarget] = field(default_factory=list)
     buttons: List[List[str]] = field(default_factory=list)
     ascension: int | None = None
