@@ -13,6 +13,12 @@ class ScriptButton:
 
 
 @dataclass
+class TransformDetail:
+    ascension: int | None = None
+    targetAscension: int | None = None
+
+
+@dataclass
 class Skill:
     id: int
     num: int
@@ -23,8 +29,7 @@ class Skill:
     target: List[SkillTarget] = field(default_factory=list)
     script_buttons: ScriptButton | None = None
     buttons: List[List[str]] = field(default_factory=list)
-    ascension: int | None = None
-    targetAscension: int | None = None
+    transform: TransformDetail | None = None
 
     @classmethod
     def create(
@@ -95,9 +100,12 @@ class Skill:
 
         # Set the ascension level if there is a transform skill
         if SkillTarget.Transform in targets:
-            ascension = priority
+            transformDetail = TransformDetail(
+                ascension=priority,
+                targetAscension=target_ascension,
+            )
         else:
-            ascension = None
+            transformDetail = None
 
         # If no target is found, default to [SkillTarget.TargetAll]
         if len(targets) == 0:
@@ -118,9 +126,8 @@ class Skill:
             cooldown=parse_cooldown,
             target=targets,
             script_buttons=script_buttons,
-            ascension=ascension,
-            targetAscension=target_ascension,
             buttons=buttons,
+            transform=transformDetail,
         )
 
     @staticmethod
