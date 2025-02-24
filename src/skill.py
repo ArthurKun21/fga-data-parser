@@ -7,6 +7,12 @@ from .enums import SkillTarget
 
 
 @dataclass
+class ScriptButton:
+    title: str
+    buttons: List[str]
+
+
+@dataclass
 class Skill:
     id: int
     num: int
@@ -15,7 +21,7 @@ class Skill:
     icon: str
     cooldown: int
     target: List[SkillTarget] = field(default_factory=list)
-    script_buttons: Dict = field(default_factory=dict)
+    script_buttons: ScriptButton | None = None
     buttons: List[List[str]] = field(default_factory=list)
     ascension: int | None = None
     targetAscension: int | None = None
@@ -67,25 +73,16 @@ class Skill:
 
         targets = []
 
-        script_buttons_dict = {}
         title, command_buttons = cls._check_for_buttons_from_scripts(scripts=scripts)
         match len(command_buttons):
             case 2:
-                script_buttons = {
-                    "title": title,
-                    "buttons": command_buttons,
-                }
-                script_buttons_dict.update(script_buttons)
+                script_buttons = ScriptButton(title=title, buttons=command_buttons)
                 targets.append(SkillTarget.Choice2)
             case 3:
-                script_buttons = {
-                    "title": title,
-                    "buttons": command_buttons,
-                }
-                script_buttons_dict.update(script_buttons)
+                script_buttons = ScriptButton(title=title, buttons=command_buttons)
                 targets.append(SkillTarget.Choice3)
             case _:
-                pass
+                script_buttons = None
 
         parse_targets, np_type_buttons, target_ascension = cls._check_functions(
             functions=functions
@@ -120,7 +117,7 @@ class Skill:
             icon=icon,
             cooldown=parse_cooldown,
             target=targets,
-            script_buttons=script_buttons_dict,
+            script_buttons=script_buttons,
             ascension=ascension,
             targetAscension=target_ascension,
             buttons=buttons,
