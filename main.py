@@ -10,8 +10,8 @@ CWD = Path(__file__).parent
 
 
 def servant_data():
-    url = "https://api.atlasacademy.io/export/JP/nice_servant_lang_en.json"
-    file_path = CWD / "nice_servant_lang_en.json"
+    url = "https://api.atlasacademy.io/export/JP/nice_servant.json"
+    file_path = CWD / "nice_servant.json"
     download_data(file_path, url)
     servants = read_data(file_path)
 
@@ -97,8 +97,8 @@ def servant_data():
 
 
 def mystic_code_data():
-    url = "https://api.atlasacademy.io/export/JP/nice_mystic_code_lang_en.json"
-    file_path = CWD / "nice_mystic_code_lang_en.json"
+    url = "https://api.atlasacademy.io/export/JP/nice_mystic_code.json"
+    file_path = CWD / "nice_mystic_code.json"
     download_data(file_path, url)
     mystic_codes = read_data(file_path)
 
@@ -116,9 +116,11 @@ def mystic_code_data():
         skill_list: list[Skill] = []
 
         mystic_code_skills: list[dict] = mystic_code.get("skills", [])
-        for skill in mystic_code_skills:
+        for index, skill in enumerate(mystic_code_skills):
             skill_id = skill.get("id", 0)
-            skill_num = skill.get("num", 0)
+            # Atlas Bug makes it all skill 0
+            # skill_num = skill.get("num", 0)
+            skill_num = index
             skill_name = skill.get("name", "")
             skill_detail = skill.get("unmodifiedDetail", "")
             skill_icon = skill.get("icon", "")
