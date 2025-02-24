@@ -116,9 +116,11 @@ def mystic_code_data():
         skill_list: list[Skill] = []
 
         mystic_code_skills: list[dict] = mystic_code.get("skills", [])
-        for skill in mystic_code_skills:
+        for index, skill in enumerate(mystic_code_skills):
             skill_id = skill.get("id", 0)
-            skill_num = skill.get("num", 0)
+            # Atlas Bug makes it all skill 0
+            # skill_num = skill.get("num", 0)
+            skill_num = index
             skill_name = skill.get("name", "")
             skill_detail = skill.get("unmodifiedDetail", "")
             skill_icon = skill.get("icon", "")
