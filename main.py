@@ -10,8 +10,8 @@ CWD = Path(__file__).parent
 
 
 def servant_data():
-    url = "https://api.atlasacademy.io/export/JP/nice_servant_lang_en.json"
-    file_path = CWD / "nice_servant_lang_en.json"
+    url = "https://api.atlasacademy.io/export/JP/nice_servant.json"
+    file_path = CWD / "nice_servant.json"
     download_data(file_path, url)
     servants = read_data(file_path)
 
@@ -97,8 +97,8 @@ def servant_data():
 
 
 def mystic_code_data():
-    url = "https://api.atlasacademy.io/export/JP/nice_mystic_code_lang_en.json"
-    file_path = CWD / "nice_mystic_code_lang_en.json"
+    url = "https://api.atlasacademy.io/export/JP/nice_mystic_code.json"
+    file_path = CWD / "nice_mystic_code.json"
     download_data(file_path, url)
     mystic_codes = read_data(file_path)
 
