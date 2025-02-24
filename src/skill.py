@@ -222,14 +222,12 @@ class Skill:
                 case _:
                     pass
 
-            if command_np_found is False:
-                match len(command_np_list):
-                    case 2:
-                        targets.append(SkillTarget.CommandNPType2)
-                    case 3:
-                        targets.append(SkillTarget.CommandNPType3)
-                    case _:
-                        pass
-                command_np_found = None
+        match len(command_np_list):
+            case 2:
+                targets.append(SkillTarget.CommandNPType2)
+            case 3:
+                targets.append(SkillTarget.CommandNPType3)
+            case _:
+                pass
 
         return targets, command_np_list, target_ascension
