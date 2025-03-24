@@ -17,18 +17,41 @@ def servant_data():
 
     servant_list: list[Servant] = []
 
+    # To prevent duplicate names
+    name_cache = []
+
     playable_type = ["heroine", "normal"]
+
+    servants = sorted(servants, key=lambda x: x["collectionNo"])
 
     for servant in servants:
         servant_type = servant.get("type", None)
         if servant_type not in playable_type:
             continue
 
-        servant_id = servant.get("id", 0)
-        servant_collection_no = servant.get("collectionNo", 0)
         servant_name = servant.get("name", "")
+        gender = servant.get("gender", "")
         servant_class = servant.get("className", "")
         servant_rarity = servant.get("rarity", 0)
+
+        if "Altria" in servant_name:
+            servant_name = servant_name.replace("Altria", "Artoria")
+
+        if servant_name == "BB" and servant_rarity == 5:
+            servant_name = "BB (Summer)"
+
+        if servant_name == "Kishinami Hakuno" and gender == "female":
+            servant_name = "Kishinami Hakunon"
+
+        if servant_name == "Ereshkigal" and servant_class == "beastEresh":
+            servant_name = "Ereshkigal (Summer)"
+
+        if servant_name in name_cache:
+            servant_name = f"{servant_name} ({servant_class})"
+        name_cache.append(servant_name)
+
+        servant_id = servant.get("id", 0)
+        servant_collection_no = servant.get("collectionNo", 0)
 
         servant_nps: list[dict] = servant.get("noblePhantasms", [])
 
@@ -89,8 +112,6 @@ def servant_data():
             skills=skill_list,
         )
         servant_list.append(servant)
-
-    servant_list = sorted(servant_list, key=lambda x: x.collection_no)
 
     write_file_path = CWD / "servant_data.json"
     write_data(write_file_path, servant_list)
