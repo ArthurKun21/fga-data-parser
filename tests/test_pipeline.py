@@ -141,6 +141,27 @@ def test_servant_missing_asset_groups_default_to_empty() -> None:
     )
 
 
+def test_servant_transform_group_assets_are_captured() -> None:
+    (servant,) = build_servants(
+        [
+            make_servant(
+                extraAssets={
+                    "faces": {
+                        "ascension": {"1": "face_1.png"},
+                        "transformGroup": {"505731": "face_transform.png"},
+                    }
+                }
+            )
+        ]
+    )
+
+    assert servant.assets.faces == ServantAssetGroup(
+        ascension={"1": "face_1.png"},
+        costume={},
+        transform_group={"505731": "face_transform.png"},
+    )
+
+
 def test_servant_unknown_flag_raises() -> None:
     with pytest.raises(ValueError, match="is not a valid ServantFlag"):
         build_servants([make_servant(flag="svtSomethingNew")])

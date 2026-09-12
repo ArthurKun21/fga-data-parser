@@ -173,6 +173,7 @@ def _build_servant_assets(extra_assets: dict[str, Any]) -> ServantAssets:
         return ServantAssetGroup(
             ascension=group_assets.get("ascension", {}),
             costume=group_assets.get("costume", {}),
+            transform_group=group_assets.get("transformGroup", {}),
         )
 
     return ServantAssets(

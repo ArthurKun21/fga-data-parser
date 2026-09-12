@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from .enums import CardType, ServantFlag
 from .skill import Skill
@@ -16,6 +16,7 @@ class NoblePhantasm:
 class ServantAssetGroup:
     ascension: dict[str, str]
     costume: dict[str, str]
+    transform_group: dict[str, str] = field(default_factory=dict)
 
 
 @dataclass
