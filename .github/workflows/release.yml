@@ -18,13 +18,16 @@ jobs:
       - run: uv sync --locked
       - name: Generate protobuf code
         run: uv run python -m grpc_tools.protoc -I protos --python_out=src --pyi_out=src protos/fga_data_parser/*.proto
-      - name: Parse data
-        run: uv run fga-data-parser
+
       - name: Generate release tag
         id: tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: echo "tag=$(uv run python scripts/release_tag.py)" >> "$GITHUB_OUTPUT"
+
+      - name: Parse data
+        run: uv run fga-data-parser
+
       - name: Create release
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
         with:
