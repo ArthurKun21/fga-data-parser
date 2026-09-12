@@ -62,3 +62,9 @@ def write_data(file_path: Path, data: Any) -> None:
     """Serialize data to JSON at file_path."""
     file_path.write_bytes(orjson.dumps(data, option=orjson.OPT_INDENT_2))
     logger.debug("Wrote %s", file_path)
+
+
+def write_bytes(file_path: Path, data: bytes) -> None:
+    """Write raw bytes to file_path."""
+    file_path.write_bytes(data)
+    logger.debug("Wrote %s", file_path)

@@ -6,9 +6,14 @@ dist/
 wheels/
 *.egg-info
 
+# Generated protobuf bindings (regenerate with the protoc command in README)
+*_pb2.py
+*_pb2.pyi
+
 # Virtual environments
 .venv
 
 /**/*.json
+/**/*.pb
 
 .zcode/**

@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+package fga_data_parser;
+
+// Wrapper for a list of strings, since protobuf has no repeated repeated.
+message StringList {
+  repeated string values = 1;
+}
+
+message ScriptButton {
+  string title = 1;
+  repeated string buttons = 2;
+}
+
+message TransformDetail {
+  int32 ascension = 1;
+  optional int32 target_ascension = 2;
+}
+
+message Skill {
+  // Skill targeting parsed from Atlas skill functions and scripts.
+  enum SkillTarget {
+    UNSPECIFIED = 0;
+    TargetOne = 1;
+    TargetAll = 2;
+    CommandNPType2 = 3;
+    CommandNPType3 = 4;
+    Choice2 = 5;
+    Choice3 = 6;
+    Transform = 7;
+    OrderChange = 8;
+  }
+
+  int32 id = 1;
+  int32 num = 2;
+  string name = 3;
+  string detail = 4;
+  string icon = 5;
+  int32 cooldown = 6;
+  repeated SkillTarget target = 7;
+  ScriptButton script_buttons = 8;
+  repeated StringList buttons = 9;
+  TransformDetail transform = 10;
+}
+
+message NoblePhantasm {
+  // Card type of the noble Phantasm (Atlas "card" field; "1" arts, "2"
+  // buster, "3" quick in current exports).
+  enum CardType {
+    UNSPECIFIED = 0;
+    Buster = 1;
+    Arts = 2;
+    Quick = 3;
+  }
+
+  int32 id = 1;
+  int32 num = 2;
+  string name = 3;
+  CardType card_type = 4;
+}
+
+// Image URLs for one aspect of a servant, keyed by ascension, costume id, etc.
+message ServantAssetGroup {
+  map<string, string> ascension = 1;
+  map<string, string> costume = 2;
+  map<string, string> transform_group = 3;
+}
+
+message ServantAssets {
+  ServantAssetGroup chara_graph = 1;
+  ServantAssetGroup faces = 2;
+  ServantAssetGroup commands = 3;
+  ServantAssetGroup status = 4;
+}
+
+message AppendPassiveSkill {
+  int32 id = 1;
+  int32 num = 2;
+  string name = 3;
+  string original_name = 4;
+  string detail = 5;
+  string icon = 6;
+}
+
+message AppendPassive {
+  int32 num = 1;
+  AppendPassiveSkill skill = 2;
+}
+
+message Servant {
+  // Availability/combination flags (Atlas "flag" field).
+  enum ServantFlag {
+    UNSPECIFIED = 0;
+    Normal = 1;
+    IgnoreCombineLimitSpecial = 2;
+    Goetia = 3;
+  }
+
+  int32 id = 1;
+  int32 collection_no = 2;
+  string name = 3;
+  string class_name = 4;
+  int32 rarity = 5;
+  ServantFlag flag = 6;
+  ServantAssets assets = 7;
+  string gender = 8;
+  repeated NoblePhantasm nps = 9;
+  repeated Skill skills = 10;
+  repeated AppendPassive append_passives = 11;
+}
+
+// Root message of servant_data.pb.
+message ServantList {
+  repeated Servant servants = 1;
+}

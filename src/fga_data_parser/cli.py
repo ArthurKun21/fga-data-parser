@@ -4,8 +4,9 @@ from pathlib import Path
 
 from rich.logging import RichHandler
 
+from .pb import craft_essences_to_bytes, mystic_codes_to_bytes, servants_to_bytes
 from .pipeline import build_craft_essences, build_mystic_codes, build_servants
-from .utils import download_data, read_data, write_data
+from .utils import download_data, read_data, write_bytes, write_data
 
 logger = logging.getLogger(__name__)
 
@@ -63,14 +64,23 @@ def main(argv: list[str] | None = None) -> int:
     servants = build_servants(read_data(servant_file))
     servant_output = args.output_dir / "servant_data.json"
     write_data(servant_output, servants)
-    logger.info("Wrote %d servants to %s", len(servants), servant_output)
+    servant_pb_output = servant_output.with_suffix(".pb")
+    write_bytes(servant_pb_output, servants_to_bytes(servants))
+    logger.info("Wrote %d servants to %s and %s", len(servants), servant_output, servant_pb_output)
 
     mystic_code_file = args.output_dir / "nice_mystic_code.json"
     download_data(mystic_code_file, MYSTIC_CODE_URL.format(region=args.region), force=args.force)
     mystic_codes = build_mystic_codes(read_data(mystic_code_file))
     mystic_code_output = args.output_dir / "mystic_code_data.json"
     write_data(mystic_code_output, mystic_codes)
-    logger.info("Wrote %d mystic codes to %s", len(mystic_codes), mystic_code_output)
+    mystic_code_pb_output = mystic_code_output.with_suffix(".pb")
+    write_bytes(mystic_code_pb_output, mystic_codes_to_bytes(mystic_codes))
+    logger.info(
+        "Wrote %d mystic codes to %s and %s",
+        len(mystic_codes),
+        mystic_code_output,
+        mystic_code_pb_output,
+    )
 
     craft_essence_file = args.output_dir / "nice_equip.json"
     download_data(
@@ -79,6 +89,13 @@ def main(argv: list[str] | None = None) -> int:
     craft_essences = build_craft_essences(read_data(craft_essence_file))
     craft_essence_output = args.output_dir / "craft_essence_data.json"
     write_data(craft_essence_output, craft_essences)
-    logger.info("Wrote %d craft essences to %s", len(craft_essences), craft_essence_output)
+    craft_essence_pb_output = craft_essence_output.with_suffix(".pb")
+    write_bytes(craft_essence_pb_output, craft_essences_to_bytes(craft_essences))
+    logger.info(
+        "Wrote %d craft essences to %s and %s",
+        len(craft_essences),
+        craft_essence_output,
+        craft_essence_pb_output,
+    )
 
     return 0

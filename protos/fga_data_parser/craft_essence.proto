@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package fga_data_parser;
+
+message CraftEssenceSkill {
+  int32 id = 1;
+  string name = 2;
+  string original_name = 3;
+  string detail = 4;
+}
+
+message CraftEssenceAssets {
+  map<string, string> chara_graph = 1;
+  map<string, string> faces = 2;
+  map<string, string> equip_face = 3;
+}
+
+message CraftEssence {
+  // Acquisition/source flags (Atlas "flag" field).
+  enum CraftEssenceFlag {
+    UNSPECIFIED = 0;
+    Normal = 1;
+    SvtEquipCampaign = 2;
+    SvtEquipChocolate = 3;
+    SvtEquipEvent = 4;
+    SvtEquipEventReward = 5;
+    SvtEquipExp = 6;
+    SvtEquipFriendShip = 7;
+    SvtEquipManaExchange = 8;
+    // A real Atlas value ("unknown"), distinct from the unset zero value.
+    Unknown = 9;
+  }
+
+  int32 id = 1;
+  int32 collection_no = 2;
+  string name = 3;
+  string original_name = 4;
+  string type = 5;
+  CraftEssenceFlag flag = 6;
+  int32 rarity = 7;
+  int32 cost = 8;
+  CraftEssenceAssets assets = 9;
+  int32 atk_max = 10;
+  int32 hp_max = 11;
+  repeated CraftEssenceSkill skills = 12;
+}
+
+// Root message of craft_essence_data.pb.
+message CraftEssenceList {
+  repeated CraftEssence craft_essences = 1;
+}

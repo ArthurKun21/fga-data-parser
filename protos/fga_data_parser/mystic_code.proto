@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package fga_data_parser;
+
+import "fga_data_parser/servant.proto";
+
+message Assets {
+  string male = 1;
+  string female = 2;
+}
+
+message MysticCode {
+  int32 id = 1;
+  string name = 2;
+  Assets assets = 3;
+  repeated fga_data_parser.Skill skills = 4;
+}
+
+// Root message of mystic_code_data.pb.
+message MysticCodeList {
+  repeated MysticCode mystic_codes = 1;
+}

@@ -14,11 +14,16 @@ uv run fga-data-parser
 ```
 
 This downloads the raw servant, mystic code, and craft essence data for the JP
-server, caches it next to the generated files, and writes:
+server, caches it next to the generated files, and writes (JSON for humans,
+protobuf for applications):
 
-- `servant_data.json`
-- `mystic_code_data.json`
-- `craft_essence_data.json`
+- `servant_data.json` / `servant_data.pb`
+- `mystic_code_data.json` / `mystic_code_data.pb`
+- `craft_essence_data.json` / `craft_essence_data.pb`
+
+The protobuf messages are defined in `protos/fga_data_parser/*.proto`; the
+`.pb` files contain a `ServantList` / `MysticCodeList` / `CraftEssenceList`
+message respectively.
 
 | Flag | Description |
 | --- | --- |
@@ -34,6 +39,14 @@ uv sync
 uv run pytest
 uv run ruff check .
 uv run ruff format --check .
+```
+
+The generated protobuf bindings (`src/fga_data_parser/*_pb2.py`) are not
+committed, so generate them after cloning or whenever a `.proto` file changes
+(the runtime only needs `protobuf`; codegen needs the dev group):
+
+```bash
+uv run python -m grpc_tools.protoc -I protos --python_out=src --pyi_out=src protos/fga_data_parser/*.proto
 ```
 
 Install the [pre-commit](https://pre-commit.com) hooks with:
