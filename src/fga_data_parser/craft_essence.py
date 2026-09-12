@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 
+from .enums import CraftEssenceFlag
+
 
 @dataclass
 class CraftEssenceSkill:
@@ -23,7 +25,7 @@ class CraftEssence:
     name: str
     original_name: str
     type: str
-    flag: str
+    flag: CraftEssenceFlag
     rarity: int
     cost: int
     assets: CraftEssenceAssets

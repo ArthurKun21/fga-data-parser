@@ -2,7 +2,7 @@ import logging
 from typing import Any
 
 from .craft_essence import CraftEssence, CraftEssenceAssets, CraftEssenceSkill
-from .enums import CardType
+from .enums import CardType, CraftEssenceFlag
 from .mystic_code import Assets, MysticCode
 from .servant import NoblePhantasm, Servant
 from .skill import Skill
@@ -82,7 +82,7 @@ def build_craft_essences(raw_equips: list[dict[str, Any]]) -> list[CraftEssence]
             name=raw.get("name", ""),
             original_name=raw.get("originalName", ""),
             type=raw.get("type", ""),
-            flag=raw.get("flag", ""),
+            flag=CraftEssenceFlag(raw.get("flag", "")),
             rarity=raw.get("rarity", 0),
             cost=raw.get("cost", 0),
             assets=_build_craft_essence_assets(raw.get("extraAssets", {})),

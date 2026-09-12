@@ -3,7 +3,7 @@ from typing import Any
 import pytest
 
 from fga_data_parser.craft_essence import CraftEssenceAssets, CraftEssenceSkill
-from fga_data_parser.enums import CardType, SkillTarget
+from fga_data_parser.enums import CardType, CraftEssenceFlag, SkillTarget
 from fga_data_parser.mystic_code import Assets
 from fga_data_parser.pipeline import build_craft_essences, build_mystic_codes, build_servants
 from fga_data_parser.skill import Skill
@@ -217,7 +217,7 @@ def test_builds_craft_essences() -> None:
     assert craft_essence.name == "星の王冠"
     assert craft_essence.original_name == "星の王冠"
     assert craft_essence.type == "servantEquip"
-    assert craft_essence.flag == "normal"
+    assert craft_essence.flag is CraftEssenceFlag.Normal
     assert craft_essence.rarity == 5
     assert craft_essence.cost == 12
     assert craft_essence.atk_max == 2500
@@ -258,3 +258,8 @@ def test_craft_essences_are_sorted_by_collection_number() -> None:
     )
 
     assert [craft_essence.collection_no for craft_essence in craft_essences] == [100, 300]
+
+
+def test_craft_essence_unknown_flag_raises() -> None:
+    with pytest.raises(ValueError, match="is not a valid CraftEssenceFlag"):
+        build_craft_essences([make_equip(flag="svtEquipSomethingNew")])

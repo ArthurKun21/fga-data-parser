@@ -35,3 +35,17 @@ class SkillTarget(StrEnum):
     Choice3 = "Choice3"
     Transform = "Transform"
     OrderChange = "OrderChange"
+
+
+class CraftEssenceFlag(StrEnum):
+    """Acquisition/source flags for craft essences (Atlas "flag" field)."""
+
+    Normal = "normal"
+    SvtEquipCampaign = "svtEquipCampaign"
+    SvtEquipChocolate = "svtEquipChocolate"
+    SvtEquipEvent = "svtEquipEvent"
+    SvtEquipEventReward = "svtEquipEventReward"
+    SvtEquipExp = "svtEquipExp"
+    SvtEquipFriendShip = "svtEquipFriendShip"
+    SvtEquipManaExchange = "svtEquipManaExchange"
+    Unknown = "unknown"
