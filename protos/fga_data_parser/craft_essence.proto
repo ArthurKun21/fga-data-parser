@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package fga_data_parser;
 
+option java_package = "io.github.fga.data.atlas.proto";
+
 message CraftEssenceSkill {
   int32 id = 1;
   string name = 2;
