@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import List
 
 from .enums import CardType
 from .skill import Skill
@@ -20,5 +19,5 @@ class Servant:
     name: str
     class_name: str
     rarity: int
-    np: List[NoblePhantasm]
-    skills: List[Skill]
+    nps: list[NoblePhantasm]
+    skills: list[Skill]
