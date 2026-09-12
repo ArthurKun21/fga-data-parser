@@ -47,7 +47,9 @@ def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
             class_name=class_name,
             rarity=raw.get("rarity", 0),
             flag=ServantFlag(raw.get("flag", "")),
-            assets=_build_servant_assets(raw.get("extraAssets", {})),
+            assets=_build_servant_assets(
+                raw.get("extraAssets", {}), collection_no=raw.get("collectionNo", 0)
+            ),
             gender=raw.get("gender", ""),
             nps=_build_nps(raw.get("noblePhantasms", [])),
             skills=_parse_skills(raw.get("skills", [])),
@@ -167,7 +169,7 @@ def _dedupe_name(name: str, *, class_name: str, seen: set[str]) -> str:
     return candidate
 
 
-def _build_servant_assets(extra_assets: dict[str, Any]) -> ServantAssets:
+def _build_servant_assets(extra_assets: dict[str, Any], *, collection_no: int) -> ServantAssets:
     def asset_group(group: str) -> ServantAssetGroup:
         group_assets = extra_assets.get(group, {})
         return ServantAssetGroup(
@@ -176,8 +178,14 @@ def _build_servant_assets(extra_assets: dict[str, Any]) -> ServantAssets:
             transform_group=group_assets.get("transformGroup", {}),
         )
 
+    chara_graph = asset_group("charaGraph")
+    # Special case: servants without a collection number are not obtainable
+    # yet (upcoming or NPC-only), so skip their card art.
+    if collection_no == 0:
+        chara_graph = ServantAssetGroup()
+
     return ServantAssets(
-        chara_graph=asset_group("charaGraph"),
+        chara_graph=chara_graph,
         faces=asset_group("faces"),
         commands=asset_group("commands"),
         status=asset_group("status"),

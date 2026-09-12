@@ -167,6 +167,17 @@ def test_servant_unknown_flag_raises() -> None:
         build_servants([make_servant(flag="svtSomethingNew")])
 
 
+def test_servant_without_collection_number_skips_chara_graph() -> None:
+    (servant,) = build_servants([make_servant(collectionNo=0)])
+
+    assert servant.assets.chara_graph == ServantAssetGroup()
+    assert servant.assets.faces == ServantAssetGroup(ascension={"1": "face_1.png"}, costume={})
+    assert servant.assets.commands == ServantAssetGroup(
+        ascension={"1": "command_1.png"}, costume={}
+    )
+    assert servant.assets.status == ServantAssetGroup(ascension={"1": "status_1.png"}, costume={})
+
+
 @pytest.mark.parametrize(
     ("overrides", "expected"),
     [

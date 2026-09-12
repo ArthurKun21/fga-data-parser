@@ -14,8 +14,8 @@ class NoblePhantasm:
 
 @dataclass
 class ServantAssetGroup:
-    ascension: dict[str, str]
-    costume: dict[str, str]
+    ascension: dict[str, str] = field(default_factory=dict)
+    costume: dict[str, str] = field(default_factory=dict)
     transform_group: dict[str, str] = field(default_factory=dict)
 
 
