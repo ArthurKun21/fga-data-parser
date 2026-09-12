@@ -2,9 +2,16 @@ import logging
 from typing import Any
 
 from .craft_essence import CraftEssence, CraftEssenceAssets, CraftEssenceSkill
-from .enums import CardType, CraftEssenceFlag
+from .enums import CardType, CraftEssenceFlag, ServantFlag
 from .mystic_code import Assets, MysticCode
-from .servant import NoblePhantasm, Servant
+from .servant import (
+    AppendPassive,
+    AppendPassiveSkill,
+    NoblePhantasm,
+    Servant,
+    ServantAssetGroup,
+    ServantAssets,
+)
 from .skill import Skill
 
 logger = logging.getLogger(__name__)
@@ -39,8 +46,12 @@ def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
             name=name,
             class_name=class_name,
             rarity=raw.get("rarity", 0),
+            flag=ServantFlag(raw.get("flag", "")),
+            assets=_build_servant_assets(raw.get("extraAssets", {})),
+            gender=raw.get("gender", ""),
             nps=_build_nps(raw.get("noblePhantasms", [])),
             skills=_parse_skills(raw.get("skills", [])),
+            append_passives=_build_append_passives(raw.get("appendPassive", [])),
         )
         servant_list.append(servant)
 
@@ -154,6 +165,41 @@ def _dedupe_name(name: str, *, class_name: str, seen: set[str]) -> str:
         counter += 1
     seen.add(candidate)
     return candidate
+
+
+def _build_servant_assets(extra_assets: dict[str, Any]) -> ServantAssets:
+    def asset_group(group: str) -> ServantAssetGroup:
+        group_assets = extra_assets.get(group, {})
+        return ServantAssetGroup(
+            ascension=group_assets.get("ascension", {}),
+            costume=group_assets.get("costume", {}),
+        )
+
+    return ServantAssets(
+        chara_graph=asset_group("charaGraph"),
+        faces=asset_group("faces"),
+        commands=asset_group("commands"),
+        status=asset_group("status"),
+    )
+
+
+def _build_append_passives(raw_append_passives: list[dict[str, Any]]) -> list[AppendPassive]:
+    append_passives: list[AppendPassive] = []
+    for raw in raw_append_passives:
+        skill = raw.get("skill", {})
+        append_passive = AppendPassive(
+            num=raw.get("num", 0),
+            skill=AppendPassiveSkill(
+                id=skill.get("id", 0),
+                num=skill.get("num", 0),
+                name=skill.get("name", ""),
+                original_name=skill.get("originalName", ""),
+                detail=skill.get("detail", ""),
+                icon=skill.get("icon", ""),
+            ),
+        )
+        append_passives.append(append_passive)
+    return append_passives
 
 
 def _build_nps(raw_nps: list[dict[str, Any]]) -> list[NoblePhantasm]:

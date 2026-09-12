@@ -3,9 +3,15 @@ from typing import Any
 import pytest
 
 from fga_data_parser.craft_essence import CraftEssenceAssets, CraftEssenceSkill
-from fga_data_parser.enums import CardType, CraftEssenceFlag, SkillTarget
+from fga_data_parser.enums import CardType, CraftEssenceFlag, ServantFlag, SkillTarget
 from fga_data_parser.mystic_code import Assets
 from fga_data_parser.pipeline import build_craft_essences, build_mystic_codes, build_servants
+from fga_data_parser.servant import (
+    AppendPassive,
+    AppendPassiveSkill,
+    ServantAssetGroup,
+    ServantAssets,
+)
 from fga_data_parser.skill import Skill
 
 
@@ -18,6 +24,29 @@ def make_servant(**overrides: Any) -> dict[str, Any]:
         "className": "saber",
         "gender": "female",
         "rarity": 5,
+        "flag": "normal",
+        "extraAssets": {
+            "charaGraph": {
+                "ascension": {"1": "chara_graph_1.png"},
+                "costume": {"100100": "chara_graph_costume.png"},
+            },
+            "faces": {"ascension": {"1": "face_1.png"}},
+            "commands": {"ascension": {"1": "command_1.png"}},
+            "status": {"ascension": {"1": "status_1.png"}},
+        },
+        "appendPassive": [
+            {
+                "num": 1,
+                "skill": {
+                    "id": 3001000,
+                    "num": 0,
+                    "name": "Append Skill",
+                    "originalName": "Append Skill",
+                    "detail": "Detail text.",
+                    "icon": "append_icon.png",
+                },
+            }
+        ],
         "noblePhantasms": [{"id": 100101, "num": 1, "name": "Excalibur", "card": "2"}],
         "skills": [],
     }
@@ -70,6 +99,51 @@ def test_maps_numeric_card_values() -> None:
 
     assert servant.nps[0].card_type is CardType.Buster
     assert servant.nps[0].card_type == "buster"
+
+
+def test_builds_servant_assets_and_append_passives() -> None:
+    (servant,) = build_servants([make_servant()])
+
+    assert servant.flag is ServantFlag.Normal
+    assert servant.gender == "female"
+    assert servant.assets == ServantAssets(
+        chara_graph=ServantAssetGroup(
+            ascension={"1": "chara_graph_1.png"},
+            costume={"100100": "chara_graph_costume.png"},
+        ),
+        faces=ServantAssetGroup(ascension={"1": "face_1.png"}, costume={}),
+        commands=ServantAssetGroup(ascension={"1": "command_1.png"}, costume={}),
+        status=ServantAssetGroup(ascension={"1": "status_1.png"}, costume={}),
+    )
+    assert servant.append_passives == [
+        AppendPassive(
+            num=1,
+            skill=AppendPassiveSkill(
+                id=3001000,
+                num=0,
+                name="Append Skill",
+                original_name="Append Skill",
+                detail="Detail text.",
+                icon="append_icon.png",
+            ),
+        )
+    ]
+
+
+def test_servant_missing_asset_groups_default_to_empty() -> None:
+    (servant,) = build_servants([make_servant(extraAssets={})])
+
+    assert servant.assets == ServantAssets(
+        chara_graph=ServantAssetGroup(ascension={}, costume={}),
+        faces=ServantAssetGroup(ascension={}, costume={}),
+        commands=ServantAssetGroup(ascension={}, costume={}),
+        status=ServantAssetGroup(ascension={}, costume={}),
+    )
+
+
+def test_servant_unknown_flag_raises() -> None:
+    with pytest.raises(ValueError, match="is not a valid ServantFlag"):
+        build_servants([make_servant(flag="svtSomethingNew")])
 
 
 @pytest.mark.parametrize(

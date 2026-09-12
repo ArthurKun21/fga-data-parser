@@ -37,6 +37,14 @@ class SkillTarget(StrEnum):
     OrderChange = "OrderChange"
 
 
+class ServantFlag(StrEnum):
+    """Availability/combination flags for servants (Atlas "flag" field)."""
+
+    Normal = "normal"
+    IgnoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
+    Goetia = "goetia"
+
+
 class CraftEssenceFlag(StrEnum):
     """Acquisition/source flags for craft essences (Atlas "flag" field)."""
 
