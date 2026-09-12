@@ -22,6 +22,8 @@ jobs:
         run: uv run fga-data-parser
       - name: Generate release tag
         id: tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: echo "tag=$(uv run python scripts/release_tag.py)" >> "$GITHUB_OUTPUT"
       - name: Create release
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64

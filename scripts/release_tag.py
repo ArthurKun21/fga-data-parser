@@ -26,9 +26,10 @@ def next_tag(tags: Iterable[str], now: datetime) -> str:
 
 def fetch_release_tags(repo: str) -> list[str]:
     """Fetch the most recent release tag names via the GitHub CLI."""
+    # Only capture stdout so gh's own error output reaches the CI log.
     result = subprocess.run(
         ["gh", "api", f"repos/{repo}/releases?per_page=100", "--jq", ".[].tag_name"],
-        capture_output=True,
+        stdout=subprocess.PIPE,
         text=True,
         check=True,
     )
