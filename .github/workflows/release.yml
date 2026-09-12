@@ -1,0 +1,34 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 18:00 JST (UTC+9)
+    - cron: "0 9 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4
+      - run: uv sync --locked
+      - name: Generate protobuf code
+        run: uv run python -m grpc_tools.protoc -I protos --python_out=src --pyi_out=src protos/fga_data_parser/*.proto
+      - name: Parse data
+        run: uv run fga-data-parser
+      - name: Generate release tag
+        id: tag
+        run: echo "tag=$(uv run python scripts/release_tag.py)" >> "$GITHUB_OUTPUT"
+      - name: Create release
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: ${{ steps.tag.outputs.tag }}
+          files: |
+            servant_data.pb
+            mystic_code_data.pb
+            craft_essence_data.pb
