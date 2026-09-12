@@ -2,9 +2,10 @@ from typing import Any
 
 import pytest
 
+from fga_data_parser.craft_essence import CraftEssenceAssets, CraftEssenceSkill
 from fga_data_parser.enums import CardType, SkillTarget
 from fga_data_parser.mystic_code import Assets
-from fga_data_parser.pipeline import build_mystic_codes, build_servants
+from fga_data_parser.pipeline import build_craft_essences, build_mystic_codes, build_servants
 from fga_data_parser.skill import Skill
 
 
@@ -176,3 +177,84 @@ def test_mystic_codes_are_sorted_by_id() -> None:
     )
 
     assert [mystic_code.id for mystic_code in mystic_codes] == [10, 20, 30]
+
+
+def make_equip(**overrides: Any) -> dict[str, Any]:
+    equip = {
+        "id": 9300010,
+        "collectionNo": 191,
+        "type": "servantEquip",
+        "flag": "normal",
+        "name": "星の王冠",
+        "originalName": "星の王冠",
+        "rarity": 5,
+        "cost": 12,
+        "atkMax": 2500,
+        "hpMax": 400,
+        "extraAssets": {
+            "charaGraph": {"equip": {"9300010": "chara_graph.png"}},
+            "faces": {"equip": {"9300010": "face.png"}},
+            "equipFace": {"equip": {"9300010": "equip_face.png"}},
+        },
+        "skills": [
+            {
+                "id": 990338,
+                "name": "星の王冠",
+                "originalName": "星の王冠",
+                "detail": "Detail text.",
+            }
+        ],
+    }
+    equip.update(overrides)
+    return equip
+
+
+def test_builds_craft_essences() -> None:
+    (craft_essence,) = build_craft_essences([make_equip()])
+
+    assert craft_essence.id == 9300010
+    assert craft_essence.collection_no == 191
+    assert craft_essence.name == "星の王冠"
+    assert craft_essence.original_name == "星の王冠"
+    assert craft_essence.type == "servantEquip"
+    assert craft_essence.flag == "normal"
+    assert craft_essence.rarity == 5
+    assert craft_essence.cost == 12
+    assert craft_essence.atk_max == 2500
+    assert craft_essence.hp_max == 400
+    assert craft_essence.assets == CraftEssenceAssets(
+        chara_graph={"9300010": "chara_graph.png"},
+        faces={"9300010": "face.png"},
+        equip_face={"9300010": "equip_face.png"},
+    )
+    assert craft_essence.skills == [
+        CraftEssenceSkill(
+            id=990338,
+            name="星の王冠",
+            original_name="星の王冠",
+            detail="Detail text.",
+        )
+    ]
+
+
+def test_craft_essence_missing_asset_groups_default_to_empty() -> None:
+    (craft_essence,) = build_craft_essences([make_equip(extraAssets={})])
+
+    assert craft_essence.assets == CraftEssenceAssets(chara_graph={}, faces={}, equip_face={})
+
+
+def test_craft_essence_skill_without_detail_defaults_to_empty() -> None:
+    raw = make_equip()
+    del raw["skills"][0]["detail"]
+
+    (craft_essence,) = build_craft_essences([raw])
+
+    assert craft_essence.skills[0].detail == ""
+
+
+def test_craft_essences_are_sorted_by_collection_number() -> None:
+    craft_essences = build_craft_essences(
+        [make_equip(id=2, collectionNo=300), make_equip(id=1, collectionNo=100)]
+    )
+
+    assert [craft_essence.collection_no for craft_essence in craft_essences] == [100, 300]

@@ -1,6 +1,7 @@
 import logging
 from typing import Any
 
+from .craft_essence import CraftEssence, CraftEssenceAssets, CraftEssenceSkill
 from .enums import CardType
 from .mystic_code import Assets, MysticCode
 from .servant import NoblePhantasm, Servant
@@ -65,6 +66,58 @@ def build_mystic_codes(raw_mystic_codes: list[dict[str, Any]]) -> list[MysticCod
 
     mystic_code_list.sort(key=lambda mystic_code: mystic_code.id)
     return mystic_code_list
+
+
+def build_craft_essences(raw_equips: list[dict[str, Any]]) -> list[CraftEssence]:
+    """Convert raw Atlas craft essence data into CraftEssence models.
+
+    Sorted by collection number.
+    """
+    craft_essence_list: list[CraftEssence] = []
+
+    for raw in raw_equips:
+        craft_essence = CraftEssence(
+            id=raw.get("id", 0),
+            collection_no=raw.get("collectionNo", 0),
+            name=raw.get("name", ""),
+            original_name=raw.get("originalName", ""),
+            type=raw.get("type", ""),
+            flag=raw.get("flag", ""),
+            rarity=raw.get("rarity", 0),
+            cost=raw.get("cost", 0),
+            assets=_build_craft_essence_assets(raw.get("extraAssets", {})),
+            atk_max=raw.get("atkMax", 0),
+            hp_max=raw.get("hpMax", 0),
+            skills=_build_craft_essence_skills(raw.get("skills", [])),
+        )
+        craft_essence_list.append(craft_essence)
+
+    craft_essence_list.sort(key=lambda craft_essence: craft_essence.collection_no)
+    return craft_essence_list
+
+
+def _build_craft_essence_assets(extra_assets: dict[str, Any]) -> CraftEssenceAssets:
+    def equip_images(group: str) -> dict[str, str]:
+        return extra_assets.get(group, {}).get("equip", {})
+
+    return CraftEssenceAssets(
+        chara_graph=equip_images("charaGraph"),
+        faces=equip_images("faces"),
+        equip_face=equip_images("equipFace"),
+    )
+
+
+def _build_craft_essence_skills(raw_skills: list[dict[str, Any]]) -> list[CraftEssenceSkill]:
+    skills: list[CraftEssenceSkill] = []
+    for raw in raw_skills:
+        skill = CraftEssenceSkill(
+            id=raw.get("id", 0),
+            name=raw.get("name", ""),
+            original_name=raw.get("originalName", ""),
+            detail=raw.get("detail", ""),
+        )
+        skills.append(skill)
+    return skills
 
 
 def _fix_name(name: str, *, gender: str, class_name: str, rarity: int) -> str:

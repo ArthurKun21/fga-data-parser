@@ -13,11 +13,12 @@ uv sync
 uv run fga-data-parser
 ```
 
-This downloads the raw servant and mystic code data for the JP server, caches it
-next to the generated files, and writes:
+This downloads the raw servant, mystic code, and craft essence data for the JP
+server, caches it next to the generated files, and writes:
 
 - `servant_data.json`
 - `mystic_code_data.json`
+- `craft_essence_data.json`
 
 | Flag | Description |
 | --- | --- |

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from rich.logging import RichHandler
 
-from .pipeline import build_mystic_codes, build_servants
+from .pipeline import build_craft_essences, build_mystic_codes, build_servants
 from .utils import download_data, read_data, write_data
 
 logger = logging.getLogger(__name__)
@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 REGIONS = ("JP", "NA")
 SERVANT_URL = "https://api.atlasacademy.io/export/{region}/nice_servant.json"
 MYSTIC_CODE_URL = "https://api.atlasacademy.io/export/{region}/nice_mystic_code.json"
+CRAFT_ESSENCE_URL = "https://api.atlasacademy.io/export/{region}/nice_equip.json"
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -70,5 +71,14 @@ def main(argv: list[str] | None = None) -> int:
     mystic_code_output = args.output_dir / "mystic_code_data.json"
     write_data(mystic_code_output, mystic_codes)
     logger.info("Wrote %d mystic codes to %s", len(mystic_codes), mystic_code_output)
+
+    craft_essence_file = args.output_dir / "nice_equip.json"
+    download_data(
+        craft_essence_file, CRAFT_ESSENCE_URL.format(region=args.region), force=args.force
+    )
+    craft_essences = build_craft_essences(read_data(craft_essence_file))
+    craft_essence_output = args.output_dir / "craft_essence_data.json"
+    write_data(craft_essence_output, craft_essences)
+    logger.info("Wrote %d craft essences to %s", len(craft_essences), craft_essence_output)
 
     return 0
