@@ -4,6 +4,8 @@ Converts raw [Fate/Grand Order](https://www.fate-go.jp) data from the
 [Atlas Academy API](https://api.atlasacademy.io) into a format that can be used by
 [FGA (Fate/Grand Automata)](https://github.com/Fate-Grand-Automata/FGA).
 
+[![GitHub downloads](https://img.shields.io/github/downloads/ArthurKun21/fga-data-parser/total?label=downloads&labelColor=27303D&color=0D1117&logo=github&logoColor=FFFFFF&style=flat)](https://github.com/ArthurKun21/fga-data-parser/releases)
+
 ## Usage
 
 Requires [uv](https://docs.astral.sh/uv/).
