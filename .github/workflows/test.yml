@@ -13,7 +13,7 @@ jobs:
       - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4
       - run: uv sync --locked
       - name: Generate protobuf code
-        run: uv run python -m grpc_tools.protoc -I protos --python_out=src --pyi_out=src protos/fga_data_parser/*.proto
+        run: uv run python scripts/generate_proto.py
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run pytest

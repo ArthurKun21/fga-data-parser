@@ -17,3 +17,5 @@ wheels/
 /**/*.pb
 
 .zcode/**
+
+chaldea-data/**

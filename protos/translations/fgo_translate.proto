@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package fgo_translate;
+
+option java_package = "io.github.fga.data.atlas.proto";
+
+// Translated text for one JP string across game regions (JP/CN/TW/NA/KR).
+// A region is unset when Chaldea has no translation for it; consumers should
+// fall back to the jp field, which is always set (the lookup key).
+message TranslationProto {
+  string jp = 1;
+  string cn = 2;
+  string tw = 3;
+  string na = 4;
+  string kr = 5;
+}
+
+// Root message of fgo_translate.pb: JP text -> translated text. Keys cover
+// servant/CE/mystic-code names, skill names and descriptions, noble Phantasm
+// names and descriptions, and buff texts.
+message FgoTranslate {
+  map<string, TranslationProto> translations = 1;
+}
