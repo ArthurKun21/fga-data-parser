@@ -37,7 +37,7 @@ ignore-vcs = true
 [tool.ruff]
 target-version = "py312"
 line-length = 100
-exclude = ["*_pb2.py", "*_pb2.pyi", "chaldea-data"]
+exclude = ["*_pb2.py", "*_pb2.pyi", "chaldea-data", "docs", "*.md"]
 
 [tool.ruff.lint]
 select = [
