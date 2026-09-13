@@ -6,6 +6,8 @@ dist/
 wheels/
 *.egg-info
 
+.DS_Store
+
 # Generated protobuf bindings (regenerate with the protoc command in README)
 *_pb2.py
 *_pb2.pyi
