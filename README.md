@@ -53,23 +53,5 @@ text, like the Chaldea app does.
 
 ## Development
 
-```bash
-uv sync
-uv run pytest
-uv run ruff check .
-uv run ruff format --check .
-```
-
-The generated protobuf bindings (`src/fga_data_parser/*_pb2.py`) are not
-committed, so generate them after cloning or whenever a `.proto` file changes
-(the runtime only needs `protobuf`; codegen needs the dev group):
-
-```bash
-uv run python -m grpc_tools.protoc -I protos --python_out=src --pyi_out=src protos/fga_data_parser/*.proto
-```
-
-Install the [pre-commit](https://pre-commit.com) hooks with:
-
-```bash
-uv run pre-commit install
-```
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, protobuf codegen, tests,
+and linting.
