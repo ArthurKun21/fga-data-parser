@@ -51,6 +51,11 @@ text, like the Chaldea app does.
 | `--output-dir DIR` | Directory for the cached raw data and generated files (default: current directory). |
 | `--verbose` | Enable debug logging. |
 
+## Docs
+
+- [docs/fga_data_parser.md](./docs/fga_data_parser.md) — Atlas data-format knowledge, schema decisions, future ideas
+- [docs/fgo_translate.md](./docs/fgo_translate.md) — how Chaldea's translation system works and how we reproduce it
+
 ## Development
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, protobuf codegen, tests,
