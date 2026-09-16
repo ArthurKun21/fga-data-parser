@@ -1,8 +1,8 @@
 # FGA Data Parser
 
 Converts raw [Fate/Grand Order](https://www.fate-go.jp) data from the
-[Atlas Academy API](https://api.atlasacademy.io) into a format that can be used by
-[FGA (Fate/Grand Automata)](https://github.com/Fate-Grand-Automata/FGA).
+Atlas Academy API into a format that can be used by
+[FGA (Fate/Grand Automata) Preview](https://github.com/ArthurKun21/fga-preview-build).
 
 [![GitHub downloads](https://img.shields.io/github/downloads/ArthurKun21/fga-data-parser/total?label=downloads&labelColor=27303D&color=0D1117&logo=github&logoColor=FFFFFF&style=flat)](https://github.com/ArthurKun21/fga-data-parser/releases)
 
