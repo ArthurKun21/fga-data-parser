@@ -44,6 +44,10 @@ jobs:
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: ${{ steps.tag.outputs.tag }}
+          body: |
+            # FGA Parsed data
+
+            New release Atlas parsed data for https://github.com/ArthurKun21/fga-preview-build/
           files: |
             servant_data.pb
             mystic_code_data.pb
