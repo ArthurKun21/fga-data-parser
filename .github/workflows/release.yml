@@ -43,6 +43,8 @@ jobs:
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
+          token: ${{ secrets.UPLOAD_TOKEN }}
+          repository: ArthurKun21/fga-data
           name: ${{ steps.tag.outputs.tag }}
           body: |
             # FGA Parsed data
