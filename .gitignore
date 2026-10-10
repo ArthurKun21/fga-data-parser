@@ -15,7 +15,7 @@ wheels/
 # Virtual environments
 .venv
 
-/**/*.json
+/*.json
 /**/*.pb
 
 .zcode/**

@@ -1,0 +1,13 @@
+{
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "file": ".github/git-commit-instructions.md"
+        }
+    ],
+    "markdownlint.configFile": ".vscode/.markdownlint.json",
+    "markdown.extension.list.indentationSize": "inherit",
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    }
+}
