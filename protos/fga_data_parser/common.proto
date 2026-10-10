@@ -23,24 +23,33 @@ message StringList {
 }
 
 message ScriptButton {
-  string title = 1;
+  string          title   = 1;
   repeated string buttons = 2;
 }
 
 message TransformDetail {
-  int32 ascension = 1;
+  int32          ascension        = 1;
   optional int32 target_ascension = 2;
 }
 
 message Skill {
-  int32 id = 1;
-  int32 num = 2;
-  string name = 3;
-  string detail = 4;
-  string icon = 5;
-  int32 cooldown = 6;
-  repeated SkillTarget target = 7;
-  ScriptButton script_buttons = 8;
-  repeated StringList buttons = 9;
-  TransformDetail transform = 10;
+  int32                id             = 1;
+  int32                num            = 2;
+  string               name           = 3;
+  string               detail         = 4;
+  string               icon           = 5;
+  int32                cooldown       = 6;
+  repeated SkillTarget target         = 7;
+  ScriptButton         script_buttons = 8;
+  repeated StringList  buttons        = 9;
+  TransformDetail      transform      = 10;
+}
+
+// Card type of the noble Phantasm (Atlas "card" field; "1" arts, "2"
+  // buster, "3" quick in current exports).
+enum CardType {
+  UNSPECIFIED = 0;
+  Buster      = 1;
+  Arts        = 2;
+  Quick       = 3;
 }
