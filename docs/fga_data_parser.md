@@ -77,7 +77,10 @@ two classes).
   `target_ascension`, ...). This was a deliberate breaking change from the
   original camelCase shape; anything downstream consumes the new schema.
 - **Protobuf enums are nested in their messages** (`Servant.ServantFlag`,
-  `Skill.SkillTarget`, `NoblePhantasm.CardType`): proto enum values share
+  `NoblePhantasm.CardType`). The exception is shared types: `Skill`,
+  `StringList`, `ScriptButton`, `TransformDetail`, and `SkillTarget` live
+  top-level in `common.proto` because `servant.proto` and `mystic_code.proto`
+  both use them. Proto enum values share
   package scope (C++ scoping rules), so two top-level enums both containing
   `Normal` collide. Nesting also lets value names mirror the Python StrEnum
   member names, making conversion a plain `Value(member.name)` lookup. Each

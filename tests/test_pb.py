@@ -1,4 +1,4 @@
-from fga_data_parser import craft_essence_pb2, mystic_code_pb2, servant_pb2
+from fga_data_parser import common_pb2, craft_essence_pb2, mystic_code_pb2, servant_pb2
 from fga_data_parser.craft_essence import CraftEssence, CraftEssenceAssets, CraftEssenceSkill
 from fga_data_parser.enums import CardType, CraftEssenceFlag, ServantFlag, SkillTarget
 from fga_data_parser.mystic_code import Assets, MysticCode
@@ -98,8 +98,8 @@ def test_servant_round_trip() -> None:
     assert skill.id == 1
     assert skill.cooldown == 7
     assert list(skill.target) == [
-        servant_pb2.Skill.TargetOne,
-        servant_pb2.Skill.Transform,
+        common_pb2.SkillTarget.TargetOne,
+        common_pb2.SkillTarget.Transform,
     ]
     assert skill.script_buttons.title == "Choose one"
     assert list(skill.script_buttons.buttons) == ["Buster", "Arts"]
@@ -188,8 +188,8 @@ def test_mystic_code_round_trip() -> None:
     assert parsed_mc.assets.female == "female.png"
     # Skills are shared with the servant proto.
     assert list(parsed_mc.skills[0].target) == [
-        servant_pb2.Skill.TargetOne,
-        servant_pb2.Skill.Transform,
+        common_pb2.SkillTarget.TargetOne,
+        common_pb2.SkillTarget.Transform,
     ]
 
 

@@ -2,7 +2,7 @@
 
 from google.protobuf.message import Message
 
-from . import craft_essence_pb2, mystic_code_pb2, servant_pb2
+from . import common_pb2, craft_essence_pb2, mystic_code_pb2, servant_pb2
 from .craft_essence import CraftEssence, CraftEssenceSkill
 from .mystic_code import MysticCode
 from .servant import (
@@ -109,15 +109,15 @@ def _append_passive_skill_message(
     )
 
 
-def _skill_message(skill: Skill) -> servant_pb2.Skill:
-    message = servant_pb2.Skill(
+def _skill_message(skill: Skill) -> common_pb2.Skill:
+    message = common_pb2.Skill(
         id=skill.id,
         num=skill.num,
         name=skill.name,
         detail=skill.detail,
         icon=skill.icon,
         cooldown=skill.cooldown,
-        target=[servant_pb2.Skill.SkillTarget.Value(target.name) for target in skill.target],
+        target=[common_pb2.SkillTarget.Value(target.name) for target in skill.target],
     )
     if skill.script_buttons is not None:
         message.script_buttons.title = skill.script_buttons.title
