@@ -115,6 +115,11 @@ message Skill {
   // "functions" (everything else); see ScriptFunction for the per-entry
   // sources and execution order.
   repeated ScriptFunction functions = 7;
+  // LimitCount stages (0-4 ascension, 11+ costume) this skill entry is gated
+  // to, from skillSvts releaseConditions of condType "equipWithTargetCostume"
+  // (condNum). Empty = available in every form; other release condition types
+  // (questClear etc.) are not captured.
+  repeated int32 limit_counts = 8;
 }
 
 // Card type of the noble Phantasm (Atlas "card" field; "1" arts, "2"

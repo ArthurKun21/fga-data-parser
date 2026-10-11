@@ -73,6 +73,7 @@ def _noble_phantasm_message(noble_phantasm: NoblePhantasm) -> servant_pb2.NobleP
         targets=[
             servant_pb2.NoblePhantasmTarget.Value(target.name) for target in noble_phantasm.targets
         ],
+        limit_counts=noble_phantasm.limit_counts,
     )
 
 
@@ -122,6 +123,7 @@ def _skill_message(skill: Skill) -> common_pb2.Skill:
         icon=skill.icon,
         cooldown=skill.cooldown,
         functions=[_script_function_message(function) for function in skill.functions],
+        limit_counts=skill.limit_counts,
     )
 
 

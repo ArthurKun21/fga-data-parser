@@ -19,6 +19,11 @@ logger = logging.getLogger(__name__)
 # Only these servant types are playable in FGO.
 PLAYABLE_TYPES = {"normal", "heroine"}
 
+# releaseConditions condType that pins a skill/NP entry to specific limitCount
+# stages (0-4 ascension, 11+ costume). Other cond types (questClear, svtLimit,
+# ...) are deliberately not captured.
+EQUIP_WITH_TARGET_COSTUME = "equipWithTargetCostume"
+
 
 def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
     """Convert raw Atlas servant data into Servant models, sorted by collection number."""
@@ -236,6 +241,12 @@ def _build_nps(raw_nps: list[dict[str, Any]]) -> list[NoblePhantasm]:
             name=raw.get("name", ""),
             card_type=CardType.from_atlas(raw.get("card", "")),
             targets=_noble_phantasm_targets(raw),
+            # The top-level releaseConditions alone drop conditions that the
+            # per-entry npSvts list still carries, so both are scanned.
+            limit_counts=_equip_costume_limit_counts(
+                [raw.get("releaseConditions")]
+                + [svt.get("releaseConditions") for svt in raw.get("npSvts", [])]
+            ),
         )
         nps.append(np)
     return nps
@@ -247,6 +258,23 @@ def _noble_phantasm_targets(raw_np: dict[str, Any]) -> list[NoblePhantasmTarget]
         if function.get("funcType", "") == "transformServant":
             return [NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM]
     return []
+
+
+def _equip_costume_limit_counts(
+    release_conditions: list[list[dict[str, Any]] | None],
+) -> list[int]:
+    """Collect the limitCount stages an entry is gated to, sorted; empty = ungated.
+
+    Conditions are OR'd across skillSvts/npSvts entries; within one entry's list
+    they can be AND'd with other cond types (observed: questClear), which are
+    ignored here.
+    """
+    counts: set[int] = set()
+    for conditions in release_conditions:
+        for condition in conditions or []:
+            if condition.get("condType") == EQUIP_WITH_TARGET_COSTUME:
+                counts.add(condition["condNum"])
+    return sorted(counts)
 
 
 def _transform_target_ids(raw_servant: dict[str, Any]) -> set[int]:
@@ -293,6 +321,9 @@ def _parse_skills(
             cooldown=raw.get("coolDown", []),
             scripts=raw.get("script", {}),
             functions=raw.get("functions", []),
+            limit_counts=_equip_costume_limit_counts(
+                [entry.get("releaseConditions") for entry in raw.get("skillSvts", [])]
+            ),
         )
         skill_list.append(skill)
     return skill_list

@@ -56,6 +56,7 @@ def make_skill() -> Skill:
                 transform=TransformDetail(target=100100, ascension=2),
             ),
         ],
+        limit_counts=[12, 13],
     )
 
 
@@ -80,7 +81,15 @@ def make_servant() -> Servant:
             ),
         ),
         gender="female",
-        nps=[NoblePhantasm(id=100101, num=1, name="Excalibur", card_type=CardType.BUSTER)],
+        nps=[
+            NoblePhantasm(
+                id=100101,
+                num=1,
+                name="Excalibur",
+                card_type=CardType.BUSTER,
+                limit_counts=[17, 19],
+            )
+        ],
         skills=[make_skill()],
         append_passives=[
             AppendPassive(
@@ -121,10 +130,12 @@ def test_servant_round_trip() -> None:
     np = servant.nps[0]
     assert (np.id, np.num, np.name) == (100101, 1, "Excalibur")
     assert np.card_type == common_pb2.CardType.BUSTER
+    assert list(np.limit_counts) == [17, 19]
 
     skill = servant.skills[0]
     assert skill.id == 1
     assert skill.cooldown == 7
+    assert list(skill.limit_counts) == [12, 13]
     assert [function.target for function in skill.functions] == [
         common_pb2.SkillTarget.CHOICE_2,
         common_pb2.SkillTarget.TARGET_ONE,
@@ -207,6 +218,7 @@ def test_noble_phantasm_targets_round_trip() -> None:
             name="逆行銀河・赤方偏移",
             card_type=CardType.ARTS,
             targets=[NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM],
+            limit_counts=[3, 13],
         ),
     ]
 
@@ -214,9 +226,11 @@ def test_noble_phantasm_targets_round_trip() -> None:
 
     plain, transforming = parsed.servants[0].nps
     assert list(plain.targets) == []
+    assert list(plain.limit_counts) == []
     assert list(transforming.targets) == [
         servant_pb2.NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM
     ]
+    assert list(transforming.limit_counts) == [3, 13]
 
 
 def test_craft_essence_round_trip() -> None:

@@ -69,6 +69,9 @@ class Skill:
     icon: str
     cooldown: int
     functions: list[ScriptFunction] = field(default_factory=list)
+    # LimitCount stages (0-4 ascension, 11+ costume) this entry is gated to;
+    # empty = available in every form (see pipeline._equip_costume_limit_counts).
+    limit_counts: list[int] = field(default_factory=list)
 
     @classmethod
     def create(
@@ -81,6 +84,7 @@ class Skill:
         cooldown: list[int],
         scripts: dict[str, Any],
         functions: list[dict[str, Any]],
+        limit_counts: list[int],
     ) -> Self:
         """
         Create a new Skill instance from raw Atlas data.
@@ -102,6 +106,9 @@ class Skill:
                 The skill's raw "script" dictionary.
             functions (list[dict[str, Any]]):
                 The skill's raw "functions" list.
+            limit_counts (list[int]):
+                The limitCount stages this skill is gated to; empty when it is
+                available in every form.
 
         Returns:
             Skill: A new instance of the Skill class.
@@ -129,6 +136,7 @@ class Skill:
             icon=icon,
             cooldown=max(cooldown, default=0),
             functions=script_functions,
+            limit_counts=limit_counts,
         )
 
     @staticmethod

@@ -17,6 +17,7 @@ def create_skill(
     cooldown: list[int] | None = None,
     scripts: dict[str, Any] | None = None,
     functions: list[dict[str, Any]] | None = None,
+    limit_counts: list[int] | None = None,
 ) -> Skill:
     return Skill.create(
         id=1,
@@ -27,6 +28,7 @@ def create_skill(
         cooldown=[7, 6, 5, 4, 3, 2, 1] if cooldown is None else cooldown,
         scripts={} if scripts is None else scripts,
         functions=[] if functions is None else functions,
+        limit_counts=[] if limit_counts is None else limit_counts,
     )
 
 
@@ -62,6 +64,12 @@ def test_defaults_to_target_all_and_max_cooldown() -> None:
 
     assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
     assert skill.cooldown == 7
+
+
+def test_limit_counts_are_carried_through() -> None:
+    skill = create_skill(limit_counts=[12, 13])
+
+    assert skill.limit_counts == [12, 13]
 
 
 def test_empty_cooldown_defaults_to_zero() -> None:
