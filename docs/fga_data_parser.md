@@ -112,8 +112,10 @@ and `condTargetId` is the servant's own id. Skills gate exclusively through
 `skills[].skillSvts[].releaseConditions` (nice_skill entries carry no top-level
 releaseConditions at all); NPs gate through `noblePhantasms[].releaseConditions` and
 `noblePhantasms[].npSvts[].releaseConditions`. The parser unions the `condNum` values
-of all such conditions into `limit_counts` (sorted, `[]` = ungated), so ungated base
-kits and gated variants that share a `num` stay distinguishable by id + gate list.
+of all such conditions into `locked` gate entries — `{"costume": limitCount}` for
+costume stages (11+) and `{"ascension": limitCount}` for ascension stages (0–4),
+sorted by limitCount, `[]` = ungated — so ungated base kits and gated variants that
+share a `num` stay distinguishable by id + gate list.
 
 Semantics: conditions are OR'd across `skillSvts`/`npSvts` entries; within one entry's
 list, same-`condGroup` conditions are AND'd — observed only as costume + `questClear`
@@ -193,10 +195,11 @@ two classes).
 - **`TransformDetail`** records the transform target's servant id (`target`,
   from raw svals `Value`) and its ascension (`ascension`, from raw svals
   `SetLimitCount`).
-- **`limit_counts` on skills and NPs is a raw `repeated int32`, not a
-  `costume_locked` bool**: the game reuses the `equipWithTargetCostume` condType
-  for plain ascension-form gates (Ptolemaîos, Elisabeth, U-Olga Marie), so a bool
-  cannot distinguish costumes from ascension stages; consumers pick what matters.
+- **`locked` on skills and NPs is a repeated `SkillLocked` message, not a flat
+  int list or bool**: the game reuses the `equipWithTargetCostume` condType for
+  plain ascension-form gates (Ptolemaîos, Elisabeth, U-Olga Marie), so each gate
+  records which side it belongs to (`costume` for stages 11+, `ascension` for
+  0–4; the other side is 0/unset — the user-authored proto shape).
 - Image dicts are `map<string, string>` — protobuf maps are unordered by
   spec, and serialization uses `SerializeToString(deterministic=True)` so
   output is byte-stable across runs (JSON keeps insertion order; pb does not).
