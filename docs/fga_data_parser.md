@@ -88,6 +88,21 @@ ascension its slot belongs to) is not part of the model anymore.
 (e.g. 宝具タイプチェンジ) the payload detail; buffs are not read for this.
 2 options → CommandNPType2, 3 → CommandNPType3, other counts are dropped.
 
+### ActSelectIndex (choice-gated actions)
+
+Functions whose svals carry `ActSelectIndex` only execute when the player picks
+the SelectAddInfo choice button with that 0-based index. The value is identical
+across all 10 per-level svals entries, only takes 0–2, is always smaller than
+the button count, and only appears on skills that have SelectAddInfo. It is
+stored per `ScriptFunction` entry (`act_select_index`; unset = unconditional)
+— the same transform mechanic can be gated on different buttons for different
+servants (the Prelati pair on button 1, 1002100 on button 0), and index 0 is
+real data, hence the proto field is `optional int32`. Most gated functions
+(44 of 50) are plain buff/NP effects outside this parser's targeting model, so
+they are not captured; the choice option names already label each branch.
+Button-level `conds` (e.g. Kukulkan's `{"cond": "STAR_HIGHER", "value": 10}`)
+gate button availability — a separate mechanism that stays uncaptured.
+
 ### Name fixes and dedupe
 
 `_fix_name` applies FGA-facing renames (Altria→Artoria, BB (Summer),
