@@ -3,7 +3,13 @@ from typing import Any
 import pytest
 
 from fga_data_parser.craft_essence import CraftEssenceAssets, CraftEssenceSkill
-from fga_data_parser.enums import CardType, CraftEssenceFlag, ServantFlag, SkillTarget
+from fga_data_parser.enums import (
+    CardType,
+    CraftEssenceFlag,
+    NoblePhantasmTarget,
+    ServantFlag,
+    SkillTarget,
+)
 from fga_data_parser.mystic_code import Assets
 from fga_data_parser.pipeline import build_craft_essences, build_mystic_codes, build_servants
 from fga_data_parser.servant import (
@@ -12,7 +18,7 @@ from fga_data_parser.servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from fga_data_parser.skill import Skill
+from fga_data_parser.skill import ScriptFunction, Skill
 
 
 def make_servant(**overrides: Any) -> dict[str, Any]:
@@ -77,6 +83,41 @@ def make_mystic_code(**overrides: Any) -> dict[str, Any]:
     return mystic_code
 
 
+def transform_skill(target_id: int) -> dict[str, Any]:
+    return {
+        "id": 1,
+        "num": 1,
+        "name": "Transform",
+        "unmodifiedDetail": "Detail.",
+        "icon": "icon.png",
+        "coolDown": [7],
+        "script": {},
+        "functions": [
+            {
+                "funcType": "transformServant",
+                "funcTargetType": "self",
+                "svals": [{"Value": target_id}],
+            }
+        ],
+    }
+
+
+def transform_np(target_id: int) -> dict[str, Any]:
+    return {
+        "id": 1,
+        "num": 1,
+        "name": "Transform NP",
+        "card": "1",
+        "functions": [
+            {
+                "funcType": "transformServant",
+                "funcTargetType": "self",
+                "svals": [{"Value": target_id}],
+            }
+        ],
+    }
+
+
 def test_filters_out_non_playable_servants() -> None:
     servants = build_servants([make_servant(type="enemy"), make_servant(id=2)])
 
@@ -97,14 +138,52 @@ def test_sorts_by_collection_number() -> None:
 def test_maps_numeric_card_values() -> None:
     (servant,) = build_servants([make_servant()])
 
-    assert servant.nps[0].card_type is CardType.Buster
+    assert servant.nps[0].card_type is CardType.BUSTER
     assert servant.nps[0].card_type == "buster"
+    assert servant.nps[0].targets == []
+
+
+def test_np_with_transform_function_is_marked() -> None:
+    (servant,) = build_servants([make_servant(noblePhantasms=[transform_np(2501500)])])
+
+    assert servant.nps[0].targets == [NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM]
+
+
+def test_alternate_forms_reference_each_other() -> None:
+    servants = build_servants(
+        [
+            make_servant(id=505700, collectionNo=0, skills=[transform_skill(505600)]),
+            make_servant(id=505600, collectionNo=467, skills=[transform_skill(505700)]),
+        ]
+    )
+
+    assert [servant.alternate_forms_id for servant in servants] == [[505600], [505700]]
+
+
+def test_one_way_np_transform_gets_reverse_reference() -> None:
+    servants = build_servants(
+        [
+            make_servant(id=2501400, collectionNo=413, noblePhantasms=[transform_np(2501500)]),
+            make_servant(id=2501500, collectionNo=0),
+        ]
+    )
+
+    by_id = {servant.id: servant for servant in servants}
+
+    assert by_id[2501400].alternate_forms_id == [2501500]
+    assert by_id[2501500].alternate_forms_id == [2501400]
+
+
+def test_self_transform_is_not_an_alternate_form() -> None:
+    (servant,) = build_servants([make_servant(id=205000, skills=[transform_skill(205000)])])
+
+    assert servant.alternate_forms_id == []
 
 
 def test_builds_servant_assets_and_append_passives() -> None:
     (servant,) = build_servants([make_servant()])
 
-    assert servant.flag is ServantFlag.Normal
+    assert servant.flag is ServantFlag.NORMAL
     assert servant.gender == "female"
     assert servant.assets == ServantAssets(
         chara_graph=ServantAssetGroup(
@@ -251,7 +330,7 @@ def test_parses_servant_skills() -> None:
     assert skill.name == "Charisma B"
     assert skill.detail == "Increases allies' attack."
     assert skill.cooldown == 7
-    assert skill.target == [SkillTarget.TargetAll]
+    assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
 
 
 def test_builds_mystic_codes() -> None:
@@ -323,7 +402,7 @@ def test_builds_craft_essences() -> None:
     assert craft_essence.name == "星の王冠"
     assert craft_essence.original_name == "星の王冠"
     assert craft_essence.type == "servantEquip"
-    assert craft_essence.flag is CraftEssenceFlag.Normal
+    assert craft_essence.flag is CraftEssenceFlag.NORMAL
     assert craft_essence.rarity == 5
     assert craft_essence.cost == 12
     assert craft_essence.atk_max == 2500

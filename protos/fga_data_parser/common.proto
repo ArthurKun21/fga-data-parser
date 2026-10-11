@@ -1,0 +1,127 @@
+syntax = "proto3";
+
+package fga_data_parser;
+
+option java_package = "io.github.fga.data.atlas.proto";
+
+// Skill targeting parsed from Atlas skill functions and scripts.
+// The zero value is prefixed with the enum name because proto enum values
+// share package scope (C++ scoping rules).
+enum SkillTarget {
+  SKILL_TARGET_UNSPECIFIED = 0;
+  // Atlas funcTargetType "ptOne".
+  TARGET_ONE               = 1;
+  // Default when a skill's script and functions yield no other target.
+  TARGET_ALL               = 2;
+  // funcTargetType "commandTypeSelfTreasureDevice" with 2 options.
+  COMMAND_NP_TYPE_2        = 3;
+  // funcTargetType "commandTypeSelfTreasureDevice" with 3 options.
+  COMMAND_NP_TYPE_3        = 4;
+  // script/SelectAddInfo with exactly 2 named buttons.
+  CHOICE_2                 = 5;
+  // script/SelectAddInfo with exactly 3 named buttons.
+  CHOICE_3                 = 6;
+  // funcType "transformServant".
+  TRANSFORM                = 7;
+  // Atlas funcTargetType "ptselectOneSub" (order change).
+  ORDER_CHANGE             = 8;
+}
+
+// Choice payload: detail is script/SelectAddInfo/<0>/title and optionA/B are
+// its btn names; only built when there are exactly 2 named buttons.
+message Choice2Detail {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
+}
+
+// 3-button variant of Choice2Detail (optionC is the third btn name).
+message Choice3Detail {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
+  string optionC = 4;
+}
+
+// NP-type-change payload: detail is the player-team
+// commandTypeSelfTreasureDevice function's funcPopupText and optionA/B are
+// the enemy-team functions' funcPopupText; only built for exactly 2 options.
+message noblePhantasm2Update {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
+}
+
+// 3-option variant of noblePhantasm2Update (optionC is the third popup).
+message noblePhantasm3Update {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
+  string optionC = 4;
+}
+
+message TransformDetail {
+  // This is the id for the servant being transformed. (svals/<N>/Value)
+  int32 target = 1;
+  // This is the ascension for the servant being transformed. (svals/<N>/SetLimitCount)
+  // This is going to be used when the target is equal to the current servant's id.
+  // meaning it would transform into different ascension of the same servant.
+  int32 ascension = 2;
+}
+
+// One targeting action, in execution order: the choice entry (built from the
+// skill's script) comes first, then one entry per relevant Atlas function in
+// raw order. Consecutive entries with the same target and condition are
+// collapsed into the first.
+message ScriptFunction {
+  SkillTarget target = 1;
+  // 0-based index of the SelectAddInfo choice button that gates this action.
+  // The choice entry executes first; this action only executes when the button
+  // with this index is selected, and is skipped otherwise. Unset = unconditional.
+  // (Atlas svals/<N>/ActSelectIndex)
+  optional int32 act_select_index = 7;
+  // Present when the skill's script has a 2-button SelectAddInfo.
+  optional Choice2Detail choice2 = 2;
+  // 3-button variant.
+  optional Choice3Detail choice3 = 3;
+  // Present on NP-type-change skills with 2 enemy-team
+  // commandTypeSelfTreasureDevice functions.
+  optional noblePhantasm2Update np2 = 4;
+  // 3-option variant.
+  optional noblePhantasm3Update np3 = 5;
+  // Present when a function has funcType "transformServant".
+  optional TransformDetail transform = 6;
+}
+
+// One skill built from an Atlas skill object (the "skills" entries embedded
+// in the nice_servant / nice_mystic_code exports carry the full nice_skill
+// shape, including "script" and "functions").
+message Skill {
+  // Atlas skill id.
+  int32 id = 1;
+  // Skill slot number (Atlas "num"). Mystic-code skills all report num 0 in
+  // the Atlas export (an Atlas bug), so their list position is used instead.
+  int32 num = 2;
+  // Atlas skill name.
+  string name = 3;
+  // Atlas "unmodifiedDetail": the description with level-dependent values
+  // kept as [{0}] placeholders (the plain "detail" field strips them).
+  string detail = 4;
+  // Atlas skill icon (a static.atlasacademy.io URL in current exports).
+  string icon = 5;
+  // Highest entry of the per-level "coolDown" list.
+  int32 cooldown = 6;
+  // Targeting behaviour derived from the skill's "script" (choices) and
+  // "functions" (everything else); see ScriptFunction for the per-entry
+  // sources and execution order.
+  repeated ScriptFunction functions = 7;
+}
+
+// Card type of the noble Phantasm (Atlas "card" field; "1" arts, "2"
+// buster, "3" quick in current exports).
+enum CardType {
+  CARD_TYPE_UNSPECIFIED = 0;
+  BUSTER                = 1;
+  ARTS                  = 2;
+  QUICK                 = 3;
+}

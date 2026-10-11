@@ -21,16 +21,16 @@ message CraftEssence {
   // Acquisition/source flags (Atlas "flag" field).
   enum CraftEssenceFlag {
     UNSPECIFIED = 0;
-    Normal = 1;
-    SvtEquipCampaign = 2;
-    SvtEquipChocolate = 3;
-    SvtEquipEvent = 4;
-    SvtEquipEventReward = 5;
-    SvtEquipExp = 6;
-    SvtEquipFriendShip = 7;
-    SvtEquipManaExchange = 8;
+    NORMAL = 1;
+    SVT_EQUIP_CAMPAIGN = 2;
+    SVT_EQUIP_CHOCOLATE = 3;
+    SVT_EQUIP_EVENT = 4;
+    SVT_EQUIP_EVENT_REWARD = 5;
+    SVT_EQUIP_EXP = 6;
+    SVT_EQUIP_FRIEND_SHIP = 7;
+    SVT_EQUIP_MANA_EXCHANGE = 8;
     // A real Atlas value ("unknown"), distinct from the unset zero value.
-    Unknown = 9;
+    UNKNOWN = 9;
   }
 
   int32 id = 1;

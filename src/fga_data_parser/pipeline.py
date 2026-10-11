@@ -2,7 +2,7 @@ import logging
 from typing import Any
 
 from .craft_essence import CraftEssence, CraftEssenceAssets, CraftEssenceSkill
-from .enums import CardType, CraftEssenceFlag, ServantFlag
+from .enums import CardType, CraftEssenceFlag, NoblePhantasmTarget, ServantFlag
 from .mystic_code import Assets, MysticCode
 from .servant import (
     AppendPassive,
@@ -30,6 +30,9 @@ def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
     # To prevent duplicate names
     name_cache: set[str] = set()
 
+    # Transform edges per servant id, used to link alternate forms.
+    transform_targets: dict[int, set[int]] = {}
+
     for raw in playable:
         class_name = raw.get("className", "")
         name = _fix_name(
@@ -56,6 +59,19 @@ def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
             append_passives=_build_append_passives(raw.get("appendPassive", [])),
         )
         servant_list.append(servant)
+
+        targets = _transform_target_ids(raw)
+        if targets:
+            transform_targets[servant.id] = targets
+
+    # Both forms reference each other even when the raw data only transforms
+    # one way (e.g. Aoko's NP swaps her into a form that never swaps back).
+    for servant in servant_list:
+        referenced = set(transform_targets.get(servant.id, set()))
+        for source_id, ids in transform_targets.items():
+            if servant.id in ids:
+                referenced.add(source_id)
+        servant.alternate_forms_id = sorted(referenced)
 
     return servant_list
 
@@ -219,9 +235,41 @@ def _build_nps(raw_nps: list[dict[str, Any]]) -> list[NoblePhantasm]:
             num=raw.get("num", 0),
             name=raw.get("name", ""),
             card_type=CardType.from_atlas(raw.get("card", "")),
+            targets=_noble_phantasm_targets(raw),
         )
         nps.append(np)
     return nps
+
+
+def _noble_phantasm_targets(raw_np: dict[str, Any]) -> list[NoblePhantasmTarget]:
+    """Mark NPs that swap the servant into an alternate form after firing."""
+    for function in raw_np.get("functions", []):
+        if function.get("funcType", "") == "transformServant":
+            return [NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM]
+    return []
+
+
+def _transform_target_ids(raw_servant: dict[str, Any]) -> set[int]:
+    """Collect the servant ids this servant's skills and NPs transform it into.
+
+    Self-transforms (the target is the servant's own id, e.g. ascension swaps)
+    are not alternate forms.
+    """
+    servant_id = raw_servant.get("id", 0)
+    targets: set[int] = set()
+    groups = [raw_servant.get("skills", []), raw_servant.get("noblePhantasms", [])]
+    for group in groups:
+        for entry in group:
+            for function in entry.get("functions", []):
+                if function.get("funcType", "") != "transformServant":
+                    continue
+                svals: list[dict[str, Any]] = function.get("svals", [])
+                if not svals:
+                    continue
+                target_id = svals[0].get("Value", 0)
+                if target_id and target_id != servant_id:
+                    targets.add(target_id)
+    return targets
 
 
 def _parse_skills(
@@ -243,7 +291,6 @@ def _parse_skills(
             detail=raw.get("unmodifiedDetail", ""),
             icon=raw.get("icon", ""),
             cooldown=raw.get("coolDown", []),
-            ascension=raw.get("priority", 0),
             scripts=raw.get("script", {}),
             functions=raw.get("functions", []),
         )

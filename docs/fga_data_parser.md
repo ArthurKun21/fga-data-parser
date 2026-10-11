@@ -62,6 +62,74 @@ The Atlas export reports `num: 0` for every mystic-code skill (an Atlas bug);
 the pipeline uses the skill's position as the number instead
 (`_parse_skills(..., num_from_index=True)`).
 
+### Skill script choices
+
+Skills with an interactive selection carry a `script.SelectAddInfo` list — one
+`{title, btn: [...]}` item per skill level (always 10 items). Button entries
+only ever have `{name, conds}` (plus `image`/`imageUrl` on exactly one skill,
+servant 2301100, whose buttons have no names at all and therefore produce no
+choice target). There is no `detail` key anywhere in the raw shape, so the
+`SelectAddInfo` title becomes the choice payload's `detail` and the btn `name`s
+become its options (2 → Choice2, 3 → Choice3; other counts are dropped).
+
+### transformServant svals
+
+The transform target's servant id lives in `svals[0]["Value"]` — capitalized,
+never lowercase — and its ascension in `svals[0]["SetLimitCount"]`. Most
+transform skills target the owning servant (Ptolemaios, Melusine); the Prelati
+pair (505600/505700) transform into each other. The skill's `priority` (the
+ascension its slot belongs to) is not part of the model anymore.
+
+### Command NP type changes
+
+`commandTypeSelfTreasureDevice` functions come as one player-team base plus
+2–3 enemy-team variants. The variants' `funcPopupText` values (e.g.
+宝具タイプチェンジ：Arts) are the options and the base's `funcPopupText`
+(e.g. 宝具タイプチェンジ) the payload detail; buffs are not read for this.
+2 options → CommandNPType2, 3 → CommandNPType3, other counts are dropped.
+
+### ActSelectIndex (choice-gated actions)
+
+Functions whose svals carry `ActSelectIndex` only execute when the player picks
+the SelectAddInfo choice button with that 0-based index. The value is identical
+across all 10 per-level svals entries, only takes 0–2, is always smaller than
+the button count, and only appears on skills that have SelectAddInfo. It is
+stored per `ScriptFunction` entry (`act_select_index`; unset = unconditional)
+— the same transform mechanic can be gated on different buttons for different
+servants (the Prelati pair on button 1, 1002100 on button 0), and index 0 is
+real data, hence the proto field is `optional int32`. Most gated functions
+(44 of 50) are plain buff/NP effects outside this parser's targeting model, so
+they are not captured; the choice option names already label each branch.
+Button-level `conds` (e.g. Kukulkan's `{"cond": "STAR_HIGHER", "value": 10}`)
+gate button availability — a separate mechanism that stays uncaptured.
+
+### Noble Phantasm transforms
+
+A handful of NPs swap the servant into an alternate form after firing (Aoko
+2501400's 逆行銀河・赤方偏移, Jekyll & Hyde's 密やかなる罪の遊戯 in both its
+base and strengthened copies). The mechanism is the same `transformServant`
+funcType used by skills, but inside the NP's `functions`; the target id lives
+in svals `Value` (NP functions carry five per-level entries plus `svals2`–
+`svals5` per-overcharge lists — the value is constant across all of them).
+Such NPs are marked in `NoblePhantasm.targets`; unlike `SkillTarget` the
+`NoblePhantasmTarget` enum is not UI-facing, so it only carries the transform
+value for now.
+
+### Alternate forms
+
+Servants that transform into a *different* servant id are alternate forms:
+the skill-based Prelati pair (505600↔505700) and Flora pair (1002000↔1002100),
+plus the NP-based Aoko (2501400→2501500) and Jekyll & Hyde (600700→600710)
+pairs. Self-transforms (Ptolemaios, Melusine — svals `Value` equals the
+servant's own id) are ascension swaps, not alternate forms. The references in
+`alternate_forms_id` are written bidirectionally even when the raw data only
+transforms one way: the hidden alternate entries all have `collectionNo: 0`
+but are `type: normal`, so they are parsed, and 2501500/600710 get synthesized
+back-references. Atlas's only dedicated field, `script.transformInfo`
+(`saveTransform`/`saveTransformDefault`), exists solely on the Prelati pair
+and is not used; `svtChange`/`overwrites` are quest-conditional variants, not
+forms.
+
 ### Name fixes and dedupe
 
 `_fix_name` applies FGA-facing renames (Altria→Artoria, BB (Summer),
@@ -74,18 +142,28 @@ two classes).
 ## Schema decisions
 
 - **Output keys are snake_case and id-stable** (`nps`, `collection_no`,
-  `target_ascension`, ...). This was a deliberate breaking change from the
+  `functions`, ...). This was a deliberate breaking change from the
   original camelCase shape; anything downstream consumes the new schema.
-- **Protobuf enums are nested in their messages** (`Servant.ServantFlag`,
-  `Skill.SkillTarget`, `NoblePhantasm.CardType`): proto enum values share
-  package scope (C++ scoping rules), so two top-level enums both containing
-  `Normal` collide. Nesting also lets value names mirror the Python StrEnum
-  member names, making conversion a plain `Value(member.name)` lookup. Each
-  nested enum has `UNSPECIFIED = 0` for proto3's zero value.
-- **`Skill.buttons`** (`list[list[str]]`) is wrapped in a `StringList` message
-  (protobuf has no repeated repeated).
-- **`TransformDetail.target_ascension`** is `optional int32` so "unknown"
-  round-trips as unset rather than a fake `0`.
+- **Skill targeting is a list of `ScriptFunction` entries**, replacing the old
+  flat `target` list plus `script_buttons`/`buttons`/`transform` fields. Each
+  entry carries one `SkillTarget` and at most one payload (`choice2`,
+  `choice3`, `np2`, `np3`, `transform`) as an explicit `optional` message, so
+  an entry without a payload round-trips as unset instead of an empty message.
+- **Shared types live top-level** (`Skill`, `ScriptFunction` with its payload
+  messages, `SkillTarget`, `CardType` in `common.proto`;
+  `NoblePhantasmTarget` in `servant.proto`), while single-message flags
+  (`Servant.ServantFlag`, `CraftEssence.CraftEssenceFlag`) stay nested in
+  their messages.
+- **Proto enum values are UPPER_SNAKE_CASE** and mirror the Python StrEnum
+  member names, making conversion a plain `Value(member.name)` lookup. StrEnum
+  values keep their existing casing so the JSON output is unchanged. Proto
+  enum values share package scope (C++ scoping rules), so top-level enums
+  prefix colliding value names with their enum name
+  (`SKILL_TARGET_UNSPECIFIED`, `CARD_TYPE_UNSPECIFIED`,
+  `NOBLE_PHANTASM_TARGET_TRANSFORM`).
+- **`TransformDetail`** records the transform target's servant id (`target`,
+  from raw svals `Value`) and its ascension (`ascension`, from raw svals
+  `SetLimitCount`).
 - Image dicts are `map<string, string>` — protobuf maps are unordered by
   spec, and serialization uses `SerializeToString(deterministic=True)` so
   output is byte-stable across runs (JSON keeps insertion order; pb does not).
