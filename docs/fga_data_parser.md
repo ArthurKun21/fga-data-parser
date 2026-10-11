@@ -103,6 +103,33 @@ they are not captured; the choice option names already label each branch.
 Button-level `conds` (e.g. Kukulkan's `{"cond": "STAR_HIGHER", "value": 10}`)
 gate button availability — a separate mechanism that stays uncaptured.
 
+### Noble Phantasm transforms
+
+A handful of NPs swap the servant into an alternate form after firing (Aoko
+2501400's 逆行銀河・赤方偏移, Jekyll & Hyde's 密やかなる罪の遊戯 in both its
+base and strengthened copies). The mechanism is the same `transformServant`
+funcType used by skills, but inside the NP's `functions`; the target id lives
+in svals `Value` (NP functions carry five per-level entries plus `svals2`–
+`svals5` per-overcharge lists — the value is constant across all of them).
+Such NPs are marked in `NoblePhantasm.targets`; unlike `SkillTarget` the
+`NoblePhantasmTarget` enum is not UI-facing, so it only carries the transform
+value for now.
+
+### Alternate forms
+
+Servants that transform into a *different* servant id are alternate forms:
+the skill-based Prelati pair (505600↔505700) and Flora pair (1002000↔1002100),
+plus the NP-based Aoko (2501400→2501500) and Jekyll & Hyde (600700→600710)
+pairs. Self-transforms (Ptolemaios, Melusine — svals `Value` equals the
+servant's own id) are ascension swaps, not alternate forms. The references in
+`alternate_forms_id` are written bidirectionally even when the raw data only
+transforms one way: the hidden alternate entries all have `collectionNo: 0`
+but are `type: normal`, so they are parsed, and 2501500/600710 get synthesized
+back-references. Atlas's only dedicated field, `script.transformInfo`
+(`saveTransform`/`saveTransformDefault`), exists solely on the Prelati pair
+and is not used; `svtChange`/`overwrites` are quest-conditional variants, not
+forms.
+
 ### Name fixes and dedupe
 
 `_fix_name` applies FGA-facing renames (Altria→Artoria, BB (Summer),
@@ -122,18 +149,18 @@ two classes).
   entry carries one `SkillTarget` and at most one payload (`choice2`,
   `choice3`, `np2`, `np3`, `transform`) as an explicit `optional` message, so
   an entry without a payload round-trips as unset instead of an empty message.
-- **Shared types live top-level in `common.proto`** (`Skill`, `ScriptFunction`
-  with its payload messages, `SkillTarget`, `CardType`) because
-  `servant.proto` and `mystic_code.proto` both use them;
-  `Servant.ServantFlag` and `CraftEssence.CraftEssenceFlag` stay nested in
+- **Shared types live top-level** (`Skill`, `ScriptFunction` with its payload
+  messages, `SkillTarget`, `CardType` in `common.proto`;
+  `NoblePhantasmTarget` in `servant.proto`), while single-message flags
+  (`Servant.ServantFlag`, `CraftEssence.CraftEssenceFlag`) stay nested in
   their messages.
 - **Proto enum values are UPPER_SNAKE_CASE** and mirror the Python StrEnum
   member names, making conversion a plain `Value(member.name)` lookup. StrEnum
   values keep their existing casing so the JSON output is unchanged. Proto
-  enum values share package scope (C++ scoping rules), so the two top-level
-  enums prefix their zero value (`SKILL_TARGET_UNSPECIFIED`,
-  `CARD_TYPE_UNSPECIFIED`) to avoid colliding; each enum still has a zero
-  value for proto3.
+  enum values share package scope (C++ scoping rules), so top-level enums
+  prefix colliding value names with their enum name
+  (`SKILL_TARGET_UNSPECIFIED`, `CARD_TYPE_UNSPECIFIED`,
+  `NOBLE_PHANTASM_TARGET_TRANSFORM`).
 - **`TransformDetail`** records the transform target's servant id (`target`,
   from raw svals `Value`) and its ascension (`ascension`, from raw svals
   `SetLimitCount`).
