@@ -92,6 +92,35 @@
    spot-check `servant_data.json` against the expected-union table above; every other
    skill/NP must carry `limit_counts: []`.
 
+## Revision: `SkillLocked` message (2026-10-11, user decision)
+
+Replace the flat `repeated int32 limit_counts` with `repeated SkillLocked locked` so
+costume locks and ascension locks are distinguishable instead of bare condNums.
+
+1. **Proto (user-authored, source of truth)** — while this revision was being drawn
+   up, common.proto was edited directly by the user and defines
+   `message SkillLocked { int32 costume = 1; int32 ascension = 2; }`: exactly one
+   side is set, the other reads 0 (unset). `Skill`'s field becomes
+   `repeated SkillLocked locked = 8;` (same number, type swap — a deliberate
+   breaking change to the unreleased schema). servant.proto `NoblePhantasm` mirrors
+   it as `repeated SkillLocked locked = 6;`: NPs need the same differentiation
+   (Melusine's NP is gated to ascension 3 OR costume 13; Ptolemaîos and Elisabeth
+   NPs are ascension-only). The message is shared between Skill and NoblePhantasm.
+2. **Classification** — derived at parse time: limitCount >= 11 fills `costume`,
+   0–4 fills `ascension` (verified in the JP export: every costume gate observed is
+   11+, every ascension gate is 3). Note: a hypothetical limitCount-0 gate would be
+   indistinguishable from unset in the proto; none exists in the data.
+3. **Python** — dataclass `SkillLocked(costume, ascension)` in skill.py with
+   `int | None` sides (None = not that kind of gate, so JSON shows
+   `{"costume": 12, "ascension": null}` instead of a misleading 0); `Skill.locked` /
+   `NoblePhantasm.locked: list[SkillLocked]` replace `limit_counts`; `Skill.create`'s
+   param renames to `locked`; the pipeline helper renames to `_equip_costume_locks`,
+   returning sorted, deduped `SkillLocked`s (dedupe keyed by limit_count); pb.py
+   sets only the non-None side (proto3 omits default 0 on the wire anyway).
+4. **Tests/docs** — pipeline/skill/pb assertions switch to the structured form
+   (Melusine → `[SkillLocked(ascension=3), SkillLocked(costume=13)]`); the docs
+   section and the schema-decisions bullet are rewritten to the new shape.
+
 ## Notes
 
 - Per AGENTS.md: never commit, never stage — the user reviews and commits.
