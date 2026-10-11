@@ -20,6 +20,10 @@ message NoblePhantasm {
   string   name      = 3;
   CardType card_type = 4;
   repeated NoblePhantasmTarget targets = 5;
+  // Stage gates from releaseConditions / npSvts releaseConditions of condType
+  // "equipWithTargetCostume"; empty = available in every form. Other release
+  // condition types (questClear etc.) are not captured.
+  repeated SkillLocked locked = 6;
 }
 
 // Image URLs for one aspect of a servant, keyed by ascension, costume id, etc.

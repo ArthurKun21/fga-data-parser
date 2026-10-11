@@ -13,7 +13,7 @@ from .servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from .skill import ScriptFunction, Skill
+from .skill import ScriptFunction, Skill, SkillLocked
 
 
 def servants_to_bytes(servants: list[Servant]) -> bytes:
@@ -73,7 +73,17 @@ def _noble_phantasm_message(noble_phantasm: NoblePhantasm) -> servant_pb2.NobleP
         targets=[
             servant_pb2.NoblePhantasmTarget.Value(target.name) for target in noble_phantasm.targets
         ],
+        locked=[_skill_locked_message(lock) for lock in noble_phantasm.locked],
     )
+
+
+def _skill_locked_message(lock: SkillLocked) -> common_pb2.SkillLocked:
+    message = common_pb2.SkillLocked()
+    if lock.costume is not None:
+        message.costume = lock.costume
+    if lock.ascension is not None:
+        message.ascension = lock.ascension
+    return message
 
 
 def _servant_assets_message(assets: ServantAssets) -> servant_pb2.ServantAssets:
@@ -122,6 +132,7 @@ def _skill_message(skill: Skill) -> common_pb2.Skill:
         icon=skill.icon,
         cooldown=skill.cooldown,
         functions=[_script_function_message(function) for function in skill.functions],
+        locked=[_skill_locked_message(lock) for lock in skill.locked],
     )
 
 

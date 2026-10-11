@@ -8,6 +8,7 @@ from fga_data_parser.skill import (
     NoblePhantasm3Update,
     ScriptFunction,
     Skill,
+    SkillLocked,
     TransformDetail,
 )
 
@@ -17,6 +18,7 @@ def create_skill(
     cooldown: list[int] | None = None,
     scripts: dict[str, Any] | None = None,
     functions: list[dict[str, Any]] | None = None,
+    locked: list[SkillLocked] | None = None,
 ) -> Skill:
     return Skill.create(
         id=1,
@@ -27,6 +29,7 @@ def create_skill(
         cooldown=[7, 6, 5, 4, 3, 2, 1] if cooldown is None else cooldown,
         scripts={} if scripts is None else scripts,
         functions=[] if functions is None else functions,
+        locked=[] if locked is None else locked,
     )
 
 
@@ -62,6 +65,12 @@ def test_defaults_to_target_all_and_max_cooldown() -> None:
 
     assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
     assert skill.cooldown == 7
+
+
+def test_locked_gates_are_carried_through() -> None:
+    skill = create_skill(locked=[SkillLocked(costume=12), SkillLocked(ascension=3)])
+
+    assert skill.locked == [SkillLocked(costume=12), SkillLocked(ascension=3)]
 
 
 def test_empty_cooldown_defaults_to_zero() -> None:

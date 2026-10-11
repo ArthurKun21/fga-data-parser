@@ -12,12 +12,17 @@ from .servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from .skill import Skill
+from .skill import Skill, SkillLocked
 
 logger = logging.getLogger(__name__)
 
 # Only these servant types are playable in FGO.
 PLAYABLE_TYPES = {"normal", "heroine"}
+
+# releaseConditions condType that pins a skill/NP entry to specific limitCount
+# stages (0-4 ascension, 11+ costume). Other cond types (questClear, svtLimit,
+# ...) are deliberately not captured.
+EQUIP_WITH_TARGET_COSTUME = "equipWithTargetCostume"
 
 
 def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
@@ -236,6 +241,12 @@ def _build_nps(raw_nps: list[dict[str, Any]]) -> list[NoblePhantasm]:
             name=raw.get("name", ""),
             card_type=CardType.from_atlas(raw.get("card", "")),
             targets=_noble_phantasm_targets(raw),
+            # The top-level releaseConditions alone drop conditions that the
+            # per-entry npSvts list still carries, so both are scanned.
+            locked=_equip_costume_locks(
+                [raw.get("releaseConditions")]
+                + [svt.get("releaseConditions") for svt in raw.get("npSvts", [])]
+            ),
         )
         nps.append(np)
     return nps
@@ -247,6 +258,27 @@ def _noble_phantasm_targets(raw_np: dict[str, Any]) -> list[NoblePhantasmTarget]
         if function.get("funcType", "") == "transformServant":
             return [NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM]
     return []
+
+
+def _equip_costume_locks(
+    release_conditions: list[list[dict[str, Any]] | None],
+) -> list[SkillLocked]:
+    """Collect the stage gates an entry is pinned to, sorted; empty = ungated.
+
+    Conditions are OR'd across skillSvts/npSvts entries; within one entry's list
+    they can be AND'd with other cond types (observed: questClear), which are
+    ignored here. Costumes occupy limitCounts 11+, ascensions 0-4.
+    """
+    locks: dict[int, SkillLocked] = {}
+    for conditions in release_conditions:
+        for condition in conditions or []:
+            if condition.get("condType") == EQUIP_WITH_TARGET_COSTUME:
+                limit_count = condition["condNum"]
+                locks[limit_count] = SkillLocked(
+                    costume=limit_count if limit_count >= 11 else None,
+                    ascension=None if limit_count >= 11 else limit_count,
+                )
+    return [locks[limit_count] for limit_count in sorted(locks)]
 
 
 def _transform_target_ids(raw_servant: dict[str, Any]) -> set[int]:
@@ -293,6 +325,9 @@ def _parse_skills(
             cooldown=raw.get("coolDown", []),
             scripts=raw.get("script", {}),
             functions=raw.get("functions", []),
+            locked=_equip_costume_locks(
+                [entry.get("releaseConditions") for entry in raw.get("skillSvts", [])]
+            ),
         )
         skill_list.append(skill)
     return skill_list

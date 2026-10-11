@@ -93,6 +93,16 @@ message ScriptFunction {
   optional TransformDetail transform = 6;
 }
 
+// One stage gate taken from skillSvts/npSvts releaseConditions of condType
+// "equipWithTargetCostume": the entry only exists while the servant is in
+// this limitCount stage. Exactly one side is set; 0 = unset.
+message SkillLocked {
+  // limitCount of the costume stage (11+) this entry is gated to.
+  int32 costume = 1;
+  // limitCount of the ascension stage (0-4) this entry is gated to.
+  int32 ascension = 2;
+}
+
 // One skill built from an Atlas skill object (the "skills" entries embedded
 // in the nice_servant / nice_mystic_code exports carry the full nice_skill
 // shape, including "script" and "functions").
@@ -115,6 +125,10 @@ message Skill {
   // "functions" (everything else); see ScriptFunction for the per-entry
   // sources and execution order.
   repeated ScriptFunction functions = 7;
+  // Stage gates from skillSvts releaseConditions of condType
+  // "equipWithTargetCostume"; empty = available in every form. Other release
+  // condition types (questClear etc.) are not captured.
+  repeated SkillLocked locked = 8;
 }
 
 // Card type of the noble Phantasm (Atlas "card" field; "1" arts, "2"
