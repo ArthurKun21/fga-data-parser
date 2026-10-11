@@ -103,6 +103,35 @@ they are not captured; the choice option names already label each branch.
 Button-level `conds` (e.g. Kukulkan's `{"cond": "STAR_HIGHER", "value": 10}`)
 gate button availability — a separate mechanism that stays uncaptured.
 
+### Form/costume-gated skills and NPs (releaseConditions)
+
+Skill and NP entries can be pinned to specific servant stages via `releaseConditions`
+with `condType: "equipWithTargetCostume"`: the entry only exists while the servant is
+in that stage — `condNum` is the required limitCount (0–4 ascensions, 11+ costumes)
+and `condTargetId` is the servant's own id. Skills gate exclusively through
+`skills[].skillSvts[].releaseConditions` (nice_skill entries carry no top-level
+releaseConditions at all); NPs gate through `noblePhantasms[].releaseConditions` and
+`noblePhantasms[].npSvts[].releaseConditions`. The parser unions the `condNum` values
+of all such conditions into `limit_counts` (sorted, `[]` = ungated), so ungated base
+kits and gated variants that share a `num` stay distinguishable by id + gate list.
+
+Semantics: conditions are OR'd across `skillSvts`/`npSvts` entries; within one entry's
+list, same-`condGroup` conditions are AND'd — observed only as costume + `questClear`
+pairs (Mash's Ordeal Call skills), whose quest-clear half is ignored.
+**NP gotcha:** the top-level NP `releaseConditions` drops conditions that `npSvts[]`
+still carries (Mash NP 800105 shows only costume 13 top-level; npSvts has {12, 13}),
+so both sources must be scanned.
+
+Affected servants in JP data (as of 2026-10): Mash 800100 (9 skills, 5 NPs — Ortenaus/
+Paladdin/swimsuit stages 12, 13, 17–20), Melusine 304800 (skill 888575, NP 304802 —
+dragon ascension 3 OR costume 13), Ptolemaîos 205000 (skill 2281675, NP 205002 —
+ascension 3), Elisabeth Báthory 306200 (NPs 306202/306204 — ascension 3), U-Olga Marie
+4000100 (all 3 skills — ascension 3). Deliberately uncaptured: every other
+release-condition mechanism — `questClear`/`svtLimit` inside these lists (like the
+button `conds` above) and the unrelated `releaseConditions` under `extraPassive`,
+`skillAdd`, `classPassive`, `overwrites` and `script.overwriteClassImageId`
+(shopFlagOn, dates, exchange types — no `equipWithTargetCostume` there).
+
 ### Noble Phantasm transforms
 
 A handful of NPs swap the servant into an alternate form after firing (Aoko
@@ -164,6 +193,10 @@ two classes).
 - **`TransformDetail`** records the transform target's servant id (`target`,
   from raw svals `Value`) and its ascension (`ascension`, from raw svals
   `SetLimitCount`).
+- **`limit_counts` on skills and NPs is a raw `repeated int32`, not a
+  `costume_locked` bool**: the game reuses the `equipWithTargetCostume` condType
+  for plain ascension-form gates (Ptolemaîos, Elisabeth, U-Olga Marie), so a bool
+  cannot distinguish costumes from ascension stages; consumers pick what matters.
 - Image dicts are `map<string, string>` — protobuf maps are unordered by
   spec, and serialization uses `SerializeToString(deterministic=True)` so
   output is byte-stable across runs (JSON keeps insertion order; pb does not).
