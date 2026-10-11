@@ -45,9 +45,9 @@ message Servant {
   // Availability/combination flags (Atlas "flag" field).
   enum ServantFlag {
     UNSPECIFIED = 0;
-    Normal = 1;
-    IgnoreCombineLimitSpecial = 2;
-    Goetia = 3;
+    NORMAL = 1;
+    IGNORE_COMBINE_LIMIT_SPECIAL = 2;
+    GOETIA = 3;
   }
 
   int32 id = 1;

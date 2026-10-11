@@ -6,12 +6,12 @@ from fga_data_parser.enums import CardType
 @pytest.mark.parametrize(
     ("value", "expected"),
     [
-        ("1", CardType.Arts),
-        ("2", CardType.Buster),
-        ("3", CardType.Quick),
-        ("arts", CardType.Arts),
-        ("buster", CardType.Buster),
-        ("quick", CardType.Quick),
+        ("1", CardType.ARTS),
+        ("2", CardType.BUSTER),
+        ("3", CardType.QUICK),
+        ("arts", CardType.ARTS),
+        ("buster", CardType.BUSTER),
+        ("quick", CardType.QUICK),
     ],
 )
 def test_from_atlas(value: str, expected: CardType) -> None:

@@ -3,9 +3,9 @@ from typing import Self
 
 
 class CardType(StrEnum):
-    Buster = "buster"
-    Arts = "arts"
-    Quick = "quick"
+    BUSTER = "buster"
+    ARTS = "arts"
+    QUICK = "quick"
 
     @classmethod
     def from_atlas(cls, value: str) -> Self:
@@ -16,44 +16,44 @@ class CardType(StrEnum):
         """
         match value:
             case "2" | "buster":
-                return cls.Buster
+                return cls.BUSTER
             case "1" | "arts":
-                return cls.Arts
+                return cls.ARTS
             case "3" | "quick":
-                return cls.Quick
+                return cls.QUICK
             case _:
                 msg = f"Unknown noble Phantasm card type: {value!r}"
                 raise ValueError(msg)
 
 
 class SkillTarget(StrEnum):
-    TargetOne = "TargetOne"
-    TargetAll = "TargetAll"
-    CommandNPType2 = "CommandNPType2"
-    CommandNPType3 = "CommandNPType3"
-    Choice2 = "Choice2"
-    Choice3 = "Choice3"
-    Transform = "Transform"
-    OrderChange = "OrderChange"
+    TARGET_ONE = "TargetOne"
+    TARGET_ALL = "TargetAll"
+    COMMAND_NP_TYPE_2 = "CommandNPType2"
+    COMMAND_NP_TYPE_3 = "CommandNPType3"
+    CHOICE_2 = "Choice2"
+    CHOICE_3 = "Choice3"
+    TRANSFORM = "Transform"
+    ORDER_CHANGE = "OrderChange"
 
 
 class ServantFlag(StrEnum):
     """Availability/combination flags for servants (Atlas "flag" field)."""
 
-    Normal = "normal"
-    IgnoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
-    Goetia = "goetia"
+    NORMAL = "normal"
+    IGNORE_COMBINE_LIMIT_SPECIAL = "ignoreCombineLimitSpecial"
+    GOETIA = "goetia"
 
 
 class CraftEssenceFlag(StrEnum):
     """Acquisition/source flags for craft essences (Atlas "flag" field)."""
 
-    Normal = "normal"
-    SvtEquipCampaign = "svtEquipCampaign"
-    SvtEquipChocolate = "svtEquipChocolate"
-    SvtEquipEvent = "svtEquipEvent"
-    SvtEquipEventReward = "svtEquipEventReward"
-    SvtEquipExp = "svtEquipExp"
-    SvtEquipFriendShip = "svtEquipFriendShip"
-    SvtEquipManaExchange = "svtEquipManaExchange"
-    Unknown = "unknown"
+    NORMAL = "normal"
+    SVT_EQUIP_CAMPAIGN = "svtEquipCampaign"
+    SVT_EQUIP_CHOCOLATE = "svtEquipChocolate"
+    SVT_EQUIP_EVENT = "svtEquipEvent"
+    SVT_EQUIP_EVENT_REWARD = "svtEquipEventReward"
+    SVT_EQUIP_EXP = "svtEquipExp"
+    SVT_EQUIP_FRIEND_SHIP = "svtEquipFriendShip"
+    SVT_EQUIP_MANA_EXCHANGE = "svtEquipManaExchange"
+    UNKNOWN = "unknown"

@@ -5,16 +5,18 @@ package fga_data_parser;
 option java_package = "io.github.fga.data.atlas.proto";
 
 // Skill targeting parsed from Atlas skill functions and scripts.
+// The zero value is prefixed with the enum name because proto enum values
+// share package scope (C++ scoping rules).
 enum SkillTarget {
-  UNSPECIFIED    = 0;
-  TargetOne      = 1;
-  TargetAll      = 2;
-  CommandNPType2 = 3;
-  CommandNPType3 = 4;
-  Choice2        = 5;
-  Choice3        = 6;
-  Transform      = 7;
-  OrderChange    = 8;
+  SKILL_TARGET_UNSPECIFIED = 0;
+  TARGET_ONE               = 1;
+  TARGET_ALL               = 2;
+  COMMAND_NP_TYPE_2        = 3;
+  COMMAND_NP_TYPE_3        = 4;
+  CHOICE_2                 = 5;
+  CHOICE_3                 = 6;
+  TRANSFORM                = 7;
+  ORDER_CHANGE             = 8;
 }
 
 message Choice2Detail {
@@ -44,7 +46,7 @@ message noblePhantasm3Update {
 }
 
 message TransformDetail {
-  // This is the id for the servant being transformed. (svals/<N>/value)
+  // This is the id for the servant being transformed. (svals/<N>/Value)
   int32 target = 1;
   // This is the ascension for the servant being transformed. (svals/<N>/SetLimitCount)
   // This is going to be used when the target is equal to the current servant's id.
@@ -72,10 +74,10 @@ message Skill {
 }
 
 // Card type of the noble Phantasm (Atlas "card" field; "1" arts, "2"
-  // buster, "3" quick in current exports).
+// buster, "3" quick in current exports).
 enum CardType {
-  UNSPECIFIED = 0;
-  Buster      = 1;
-  Arts        = 2;
-  Quick       = 3;
+  CARD_TYPE_UNSPECIFIED = 0;
+  BUSTER                = 1;
+  ARTS                  = 2;
+  QUICK                 = 3;
 }

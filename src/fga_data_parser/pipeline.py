@@ -243,7 +243,6 @@ def _parse_skills(
             detail=raw.get("unmodifiedDetail", ""),
             icon=raw.get("icon", ""),
             cooldown=raw.get("coolDown", []),
-            ascension=raw.get("priority", 0),
             scripts=raw.get("script", {}),
             functions=raw.get("functions", []),
         )

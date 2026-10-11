@@ -13,7 +13,7 @@ from .servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from .skill import Skill
+from .skill import ScriptFunction, Skill
 
 
 def servants_to_bytes(servants: list[Servant]) -> bytes:
@@ -68,7 +68,7 @@ def _noble_phantasm_message(noble_phantasm: NoblePhantasm) -> servant_pb2.NobleP
         id=noble_phantasm.id,
         num=noble_phantasm.num,
         name=noble_phantasm.name,
-        card_type=servant_pb2.NoblePhantasm.CardType.Value(noble_phantasm.card_type.name),
+        card_type=common_pb2.CardType.Value(noble_phantasm.card_type.name),
     )
 
 
@@ -110,25 +110,40 @@ def _append_passive_skill_message(
 
 
 def _skill_message(skill: Skill) -> common_pb2.Skill:
-    message = common_pb2.Skill(
+    return common_pb2.Skill(
         id=skill.id,
         num=skill.num,
         name=skill.name,
         detail=skill.detail,
         icon=skill.icon,
         cooldown=skill.cooldown,
-        target=[common_pb2.SkillTarget.Value(target.name) for target in skill.target],
+        functions=[_script_function_message(function) for function in skill.functions],
     )
-    if skill.script_buttons is not None:
-        message.script_buttons.title = skill.script_buttons.title
-        message.script_buttons.buttons.extend(skill.script_buttons.buttons)
-    for button_row in skill.buttons:
-        row = message.buttons.add()
-        row.values.extend(button_row)
-    if skill.transform is not None:
-        message.transform.ascension = skill.transform.ascension
-        if skill.transform.target_ascension is not None:
-            message.transform.target_ascension = skill.transform.target_ascension
+
+
+def _script_function_message(function: ScriptFunction) -> common_pb2.ScriptFunction:
+    message = common_pb2.ScriptFunction(target=common_pb2.SkillTarget.Value(function.target.name))
+    if function.choice2 is not None:
+        message.choice2.detail = function.choice2.detail
+        message.choice2.optionA = function.choice2.option_a
+        message.choice2.optionB = function.choice2.option_b
+    if function.choice3 is not None:
+        message.choice3.detail = function.choice3.detail
+        message.choice3.optionA = function.choice3.option_a
+        message.choice3.optionB = function.choice3.option_b
+        message.choice3.optionC = function.choice3.option_c
+    if function.np2 is not None:
+        message.np2.detail = function.np2.detail
+        message.np2.optionA = function.np2.option_a
+        message.np2.optionB = function.np2.option_b
+    if function.np3 is not None:
+        message.np3.detail = function.np3.detail
+        message.np3.optionA = function.np3.option_a
+        message.np3.optionB = function.np3.option_b
+        message.np3.optionC = function.np3.option_c
+    if function.transform is not None:
+        message.transform.target = function.transform.target
+        message.transform.ascension = function.transform.ascension
     return message
 
 

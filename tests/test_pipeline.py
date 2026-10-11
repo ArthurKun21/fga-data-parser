@@ -12,7 +12,7 @@ from fga_data_parser.servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from fga_data_parser.skill import Skill
+from fga_data_parser.skill import ScriptFunction, Skill
 
 
 def make_servant(**overrides: Any) -> dict[str, Any]:
@@ -97,14 +97,14 @@ def test_sorts_by_collection_number() -> None:
 def test_maps_numeric_card_values() -> None:
     (servant,) = build_servants([make_servant()])
 
-    assert servant.nps[0].card_type is CardType.Buster
+    assert servant.nps[0].card_type is CardType.BUSTER
     assert servant.nps[0].card_type == "buster"
 
 
 def test_builds_servant_assets_and_append_passives() -> None:
     (servant,) = build_servants([make_servant()])
 
-    assert servant.flag is ServantFlag.Normal
+    assert servant.flag is ServantFlag.NORMAL
     assert servant.gender == "female"
     assert servant.assets == ServantAssets(
         chara_graph=ServantAssetGroup(
@@ -251,7 +251,7 @@ def test_parses_servant_skills() -> None:
     assert skill.name == "Charisma B"
     assert skill.detail == "Increases allies' attack."
     assert skill.cooldown == 7
-    assert skill.target == [SkillTarget.TargetAll]
+    assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
 
 
 def test_builds_mystic_codes() -> None:
@@ -323,7 +323,7 @@ def test_builds_craft_essences() -> None:
     assert craft_essence.name == "星の王冠"
     assert craft_essence.original_name == "星の王冠"
     assert craft_essence.type == "servantEquip"
-    assert craft_essence.flag is CraftEssenceFlag.Normal
+    assert craft_essence.flag is CraftEssenceFlag.NORMAL
     assert craft_essence.rarity == 5
     assert craft_essence.cost == 12
     assert craft_essence.atk_max == 2500
