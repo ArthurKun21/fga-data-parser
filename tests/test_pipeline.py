@@ -53,7 +53,15 @@ def make_servant(**overrides: Any) -> dict[str, Any]:
                 },
             }
         ],
-        "noblePhantasms": [{"id": 100101, "num": 1, "name": "Excalibur", "card": "2"}],
+        "noblePhantasms": [
+            {
+                "id": 100101,
+                "num": 1,
+                "name": "Excalibur",
+                "card": "2",
+                "functions": live_functions(),
+            }
+        ],
         "skills": [],
     }
     servant.update(overrides)
@@ -75,7 +83,7 @@ def make_mystic_code(**overrides: Any) -> dict[str, Any]:
                 "coolDown": [8, 7, 6, 5, 4, 3, 2, 1],
                 "priority": 0,
                 "script": {},
-                "functions": [],
+                "functions": live_functions(),
             }
         ],
     }
@@ -116,6 +124,12 @@ def transform_np(target_id: int) -> dict[str, Any]:
             }
         ],
     }
+
+
+def live_functions() -> list[dict[str, Any]]:
+    # Every live skill/NP in the export carries at least one function; entries
+    # with none are not-yet-released placeholders and get dropped when parsing.
+    return [{"funcType": "damage", "funcTargetType": "enemy"}]
 
 
 def costume_condition(cond_num: int, *, cond_group: int = 0) -> dict[str, Any]:
@@ -177,6 +191,7 @@ def test_np_collects_stage_locks_from_top_level_and_np_svts() -> None:
         "num": 1,
         "name": "Mold Camelot",
         "card": "2",
+        "functions": live_functions(),
         "releaseConditions": [costume_condition(13)],
         "npSvts": [
             {
@@ -198,6 +213,7 @@ def test_np_collects_stage_locks_without_np_svts() -> None:
         "num": 1,
         "name": "Hollow Heart Albion",
         "card": "1",
+        "functions": live_functions(),
         "releaseConditions": [costume_condition(3), costume_condition(13, cond_group=1)],
     }
 
@@ -210,6 +226,68 @@ def test_np_without_release_conditions_has_no_locks() -> None:
     (servant,) = build_servants([make_servant()])
 
     assert servant.nps[0].locked == []
+
+
+def test_excludes_nps_without_functions() -> None:
+    # 600710-shaped: the first NP ships as a placeholder while the second is live.
+    placeholder_np = {
+        "id": 600711,
+        "num": 0,
+        "name": "Placeholder NP",
+        "card": "1",
+        "functions": [],
+    }
+    live_np = {
+        "id": 600712,
+        "num": 1,
+        "name": "Live NP",
+        "card": "2",
+        "functions": live_functions(),
+    }
+
+    (servant,) = build_servants([make_servant(noblePhantasms=[placeholder_np, live_np])])
+
+    assert [np.id for np in servant.nps] == [600712]
+
+
+def test_np_missing_functions_key_is_dropped() -> None:
+    # The export carries the key on every entry today; absence counts as empty.
+    raw_np = {"id": 600711, "num": 0, "name": "Placeholder NP", "card": "1"}
+
+    (servant,) = build_servants([make_servant(noblePhantasms=[raw_np])])
+
+    assert servant.nps == []
+
+
+def test_excludes_skills_without_functions() -> None:
+    # A placeholder skill stays excluded even when release conditions are
+    # pinned to it; only the live skill survives.
+    placeholder_skill = {
+        "id": 999999,
+        "num": 2,
+        "name": "Placeholder",
+        "unmodifiedDetail": "Detail.",
+        "icon": "icon.png",
+        "coolDown": [8],
+        "script": {},
+        "functions": [],
+        "skillSvts": [skill_svts_entry(100100, [costume_condition(13)])],
+    }
+
+    (servant,) = build_servants([make_servant(skills=[transform_skill(505600), placeholder_skill])])
+
+    assert [skill.id for skill in servant.skills] == [1]
+
+
+def test_fully_locked_servant_parses_with_no_skills_and_nps() -> None:
+    # 600710-style new release: every skill and NP is still a placeholder.
+    raw_skill = {**transform_skill(505600), "functions": []}
+    raw_np = {**transform_np(505600), "functions": []}
+
+    (servant,) = build_servants([make_servant(skills=[raw_skill], noblePhantasms=[raw_np])])
+
+    assert servant.skills == []
+    assert servant.nps == []
 
 
 def test_alternate_forms_reference_each_other() -> None:
@@ -408,7 +486,7 @@ def test_skill_collects_costume_locks() -> None:
         "icon": "icon.png",
         "coolDown": [8],
         "script": {},
-        "functions": [],
+        "functions": live_functions(),
         "skillSvts": [
             skill_svts_entry(
                 800100,
@@ -444,7 +522,7 @@ def test_skill_collects_locks_across_cond_groups() -> None:
         "icon": "icon.png",
         "coolDown": [8],
         "script": {},
-        "functions": [],
+        "functions": live_functions(),
         "skillSvts": [
             skill_svts_entry(304800, [costume_condition(3), costume_condition(13, cond_group=1)]),
         ],
@@ -471,6 +549,20 @@ def test_mystic_code_skill_num_falls_back_to_index() -> None:
 
     (mystic_code,) = build_mystic_codes([make_mystic_code(skills=raw_skills)])
 
+    assert [skill.num for skill in mystic_code.skills] == [0, 1]
+
+
+def test_mystic_code_excludes_skills_without_functions() -> None:
+    raw_skills = [
+        make_mystic_code()["skills"][0],
+        {**make_mystic_code()["skills"][0], "id": 10, "functions": []},
+        {**make_mystic_code()["skills"][0], "id": 11},
+    ]
+
+    (mystic_code,) = build_mystic_codes([make_mystic_code(skills=raw_skills)])
+
+    assert [skill.id for skill in mystic_code.skills] == [9, 11]
+    # Numbers stay contiguous over the kept skills.
     assert [skill.num for skill in mystic_code.skills] == [0, 1]
 
 

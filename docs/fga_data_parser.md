@@ -134,6 +134,19 @@ button `conds` above) and the unrelated `releaseConditions` under `extraPassive`
 `skillAdd`, `classPassive`, `overwrites` and `script.overwriteClassImageId`
 (shopFlagOn, dates, exchange types — no `equipWithTargetCostume` there).
 
+### Not-yet-live entries (empty `functions`)
+
+Skills and NPs whose `functions` list is empty are placeholders for entries that are
+not live yet — newly released servants ship full kits this way while still locked.
+The parser drops them (`_parse_skills`, `_build_nps`) instead of emitting dead
+entries. Verified in the JP export: servant 600710's NP 600711 and Mash's base NP
+800100 (Lord Chaldeas) are `"functions": []` while their sibling entries carry
+functions; 7 such entries existed as of 2026-10. A missing `functions` key counts as
+empty too, though the export always includes the key. Mystic-code skills have no
+empty entries today, but the filter applies to them through the shared
+`_parse_skills` regardless, and their index-based `num` stays contiguous over the
+kept skills.
+
 ### Noble Phantasm transforms
 
 A handful of NPs swap the servant into an alternate form after firing (Aoko
@@ -200,6 +213,10 @@ two classes).
   plain ascension-form gates (Ptolemaîos, Elisabeth, U-Olga Marie), so each gate
   records which side it belongs to (`costume` for stages 11+, `ascension` for
   0–4; the other side is 0/unset — the user-authored proto shape).
+- **Entries with an empty `functions` list are dropped at parse time** — they are
+  placeholders for not-yet-released servants, not real kits (see "Not-yet-live
+  entries" above). Exclusion happens before model construction, so the models and
+  proto schema are unaffected.
 - Image dicts are `map<string, string>` — protobuf maps are unordered by
   spec, and serialization uses `SerializeToString(deterministic=True)` so
   output is byte-stable across runs (JSON keeps insertion order; pb does not).

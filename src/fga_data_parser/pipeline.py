@@ -233,8 +233,15 @@ def _build_append_passives(raw_append_passives: list[dict[str, Any]]) -> list[Ap
 
 
 def _build_nps(raw_nps: list[dict[str, Any]]) -> list[NoblePhantasm]:
+    """Convert raw Atlas NP dicts into NoblePhantasm models.
+
+    NPs with an empty functions list are placeholders for not-yet-live entries
+    (newly released servants ship them while still locked) and are dropped.
+    """
     nps: list[NoblePhantasm] = []
     for raw in raw_nps:
+        if not raw.get("functions"):
+            continue
         np = NoblePhantasm(
             id=raw.get("id", 0),
             num=raw.get("num", 0),
@@ -313,9 +320,13 @@ def _parse_skills(
 
     num_from_index: mystic code skills all report num 0 in the Atlas export
     (an Atlas bug), so their position is used as the skill number instead.
+
+    Skills with an empty functions list are placeholders for not-yet-live
+    entries (newly released servants ship them while still locked) and are
+    dropped; numbering stays contiguous over the kept skills.
     """
     skill_list: list[Skill] = []
-    for index, raw in enumerate(raw_skills):
+    for index, raw in enumerate(raw for raw in raw_skills if raw.get("functions")):
         skill = Skill.create(
             id=raw.get("id", 0),
             num=index if num_from_index else raw.get("num", 0),
