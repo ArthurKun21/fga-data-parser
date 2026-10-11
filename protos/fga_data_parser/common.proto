@@ -17,19 +17,48 @@ enum SkillTarget {
   OrderChange    = 8;
 }
 
-// Wrapper for a list of strings, since protobuf has no repeated repeated.
-message StringList {
-  repeated string values = 1;
+message Choice2Detail {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
 }
 
-message ScriptButton {
-  string          title   = 1;
-  repeated string buttons = 2;
+message Choice3Detail {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
+  string optionC = 4;
+}
+
+message noblePhantasm2Update {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
+}
+
+message noblePhantasm3Update {
+  string detail = 1;
+  string optionA = 2;
+  string optionB = 3;
+  string optionC = 4;
 }
 
 message TransformDetail {
-  int32          ascension        = 1;
-  optional int32 target_ascension = 2;
+  // This is the id for the servant being transformed. (svals/<N>/value)
+  int32 target = 1;
+  // This is the ascension for the servant being transformed. (svals/<N>/SetLimitCount)
+  // This is going to be used when the target is equal to the current servant's id.
+  // meaning it would transform into different ascension of the same servant.
+  int32 ascension = 2;
+}
+
+message ScriptFunction {
+  SkillTarget target = 1;
+  optional Choice2Detail choice2 = 2;
+  optional Choice3Detail choice3 = 3;
+  optional noblePhantasm2Update np2 = 4;
+  optional noblePhantasm3Update np3 = 5;
+  optional TransformDetail transform = 6;
 }
 
 message Skill {
@@ -39,10 +68,7 @@ message Skill {
   string               detail         = 4;
   string               icon           = 5;
   int32                cooldown       = 6;
-  repeated SkillTarget target         = 7;
-  ScriptButton         script_buttons = 8;
-  repeated StringList  buttons        = 9;
-  TransformDetail      transform      = 10;
+  repeated ScriptFunction functions = 7;
 }
 
 // Card type of the noble Phantasm (Atlas "card" field; "1" arts, "2"
