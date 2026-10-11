@@ -49,6 +49,10 @@ class TransformDetail:
 @dataclass
 class ScriptFunction:
     target: SkillTarget
+    # 0-based index of the SelectAddInfo choice button that gates this action;
+    # None = unconditional. The choice entry runs first, then only the actions
+    # whose index matches the picked button run.
+    act_select_index: int | None = None
     choice2: Choice2Detail | None = None
     choice3: Choice3Detail | None = None
     np2: NoblePhantasm2Update | None = None
@@ -212,9 +216,19 @@ class Skill:
 
             match target_type:
                 case "ptOne":
-                    script_functions.append(ScriptFunction(target=SkillTarget.TARGET_ONE))
+                    script_functions.append(
+                        ScriptFunction(
+                            target=SkillTarget.TARGET_ONE,
+                            act_select_index=Skill._act_select_index(function),
+                        )
+                    )
                 case "ptselectOneSub":
-                    script_functions.append(ScriptFunction(target=SkillTarget.ORDER_CHANGE))
+                    script_functions.append(
+                        ScriptFunction(
+                            target=SkillTarget.ORDER_CHANGE,
+                            act_select_index=Skill._act_select_index(function),
+                        )
+                    )
                 case "commandTypeSelfTreasureDevice":
                     popup_text = function.get("funcPopupText", "")
                     if function.get("funcTargetTeam", "") == "enemy":
@@ -264,6 +278,25 @@ class Skill:
         return script_functions
 
     @staticmethod
+    def _act_select_index(function: dict[str, Any]) -> int | None:
+        """
+        Read the ActSelectIndex condition from a raw function.
+
+        svals are per skill level but the value is identical across all of
+        them, so the first entry is enough; None = unconditional.
+
+        Args:
+            function (dict[str, Any]): The raw function.
+
+        Returns:
+            int | None: The 0-based choice button index, or None.
+        """
+        svals: list[dict[str, Any]] = function.get("svals", [])
+        if not svals:
+            return None
+        return svals[0].get("ActSelectIndex")
+
+    @staticmethod
     def _transform_function(function: dict[str, Any]) -> ScriptFunction:
         """
         Build the Transform entry from a transformServant function.
@@ -285,6 +318,7 @@ class Skill:
         transform_info = svals[0]
         return ScriptFunction(
             target=SkillTarget.TRANSFORM,
+            act_select_index=Skill._act_select_index(function),
             transform=TransformDetail(
                 target=transform_info.get("Value", 0),
                 ascension=transform_info.get("SetLimitCount", 0),
@@ -293,10 +327,14 @@ class Skill:
 
     @staticmethod
     def _dedupe_functions(functions: list[ScriptFunction]) -> list[ScriptFunction]:
-        """Collapse consecutive same-target entries into the first, keeping any payload."""
+        """Collapse consecutive entries with the same target and condition into the first."""
         deduped: list[ScriptFunction] = []
         for function in functions:
-            if deduped and deduped[-1].target == function.target:
+            if (
+                deduped
+                and deduped[-1].target == function.target
+                and deduped[-1].act_select_index == function.act_select_index
+            ):
                 previous = deduped[-1]
                 previous.choice2 = previous.choice2 or function.choice2
                 previous.choice3 = previous.choice3 or function.choice3

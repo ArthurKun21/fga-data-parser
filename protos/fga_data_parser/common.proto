@@ -56,6 +56,11 @@ message TransformDetail {
 
 message ScriptFunction {
   SkillTarget target = 1;
+  // 0-based index of the SelectAddInfo choice button that gates this action.
+  // The choice entry executes first; this action only executes when the button
+  // with this index is selected, and is skipped otherwise. Unset = unconditional.
+  // (Atlas svals/<N>/ActSelectIndex)
+  optional int32 act_select_index = 7;
   optional Choice2Detail choice2 = 2;
   optional Choice3Detail choice3 = 3;
   optional noblePhantasm2Update np2 = 4;

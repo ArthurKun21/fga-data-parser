@@ -123,6 +123,8 @@ def _skill_message(skill: Skill) -> common_pb2.Skill:
 
 def _script_function_message(function: ScriptFunction) -> common_pb2.ScriptFunction:
     message = common_pb2.ScriptFunction(target=common_pb2.SkillTarget.Value(function.target.name))
+    if function.act_select_index is not None:
+        message.act_select_index = function.act_select_index
     if function.choice2 is not None:
         message.choice2.detail = function.choice2.detail
         message.choice2.optionA = function.choice2.option_a

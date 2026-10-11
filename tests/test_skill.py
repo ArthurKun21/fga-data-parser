@@ -188,6 +188,65 @@ def test_transform_without_svals_has_no_payload() -> None:
     assert skill.functions == [ScriptFunction(target=SkillTarget.TRANSFORM)]
 
 
+def test_transform_with_act_select_index() -> None:
+    skill = create_skill(
+        functions=[
+            {
+                "funcType": "transformServant",
+                "funcTargetType": "self",
+                "svals": [{"Value": 505700, "SetLimitCount": 0, "ActSelectIndex": 1}],
+            }
+        ]
+    )
+
+    assert skill.functions == [
+        ScriptFunction(
+            target=SkillTarget.TRANSFORM,
+            act_select_index=1,
+            transform=TransformDetail(target=505700, ascension=0),
+        )
+    ]
+
+
+def test_target_one_with_act_select_index() -> None:
+    skill = create_skill(
+        functions=[
+            {
+                "funcType": "addState",
+                "funcTargetType": "ptOne",
+                "svals": [{"ActSelectIndex": 1}],
+            }
+        ]
+    )
+
+    assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ONE, act_select_index=1)]
+
+
+def test_same_target_with_different_act_select_index_stays_distinct() -> None:
+    functions = [
+        {"funcType": "addState", "funcTargetType": "ptOne"},
+        {"funcType": "addState", "funcTargetType": "ptOne", "svals": [{"ActSelectIndex": 1}]},
+    ]
+
+    skill = create_skill(functions=functions)
+
+    assert skill.functions == [
+        ScriptFunction(target=SkillTarget.TARGET_ONE),
+        ScriptFunction(target=SkillTarget.TARGET_ONE, act_select_index=1),
+    ]
+
+
+def test_same_target_and_act_select_index_are_removed() -> None:
+    functions = [
+        {"funcType": "addState", "funcTargetType": "ptOne", "svals": [{"ActSelectIndex": 1}]},
+        {"funcType": "addState", "funcTargetType": "ptOne", "svals": [{"ActSelectIndex": 1}]},
+    ]
+
+    skill = create_skill(functions=functions)
+
+    assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ONE, act_select_index=1)]
+
+
 def test_two_buttons_create_choice2() -> None:
     skill = create_skill(scripts=select_add_info_scripts(["Buster", "Arts"]))
 

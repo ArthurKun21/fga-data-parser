@@ -46,6 +46,7 @@ def make_skill() -> Skill:
             ),
             ScriptFunction(
                 target=SkillTarget.TRANSFORM,
+                act_select_index=1,
                 transform=TransformDetail(target=100100, ascension=2),
             ),
         ],
@@ -125,7 +126,8 @@ def test_servant_round_trip() -> None:
     choice2 = skill.functions[0].choice2
     assert choice2.detail == "Choose one"
     assert (choice2.optionA, choice2.optionB) == ("Buster", "Arts")
-    # Bare entries carry no payload messages.
+    # Bare entries carry no condition or payload messages.
+    assert not skill.functions[1].HasField("act_select_index")
     assert not skill.functions[1].HasField("choice2")
     np3 = skill.functions[2].np3
     assert (np3.detail, np3.optionA, np3.optionB, np3.optionC) == (
@@ -136,6 +138,8 @@ def test_servant_round_trip() -> None:
     )
     transform = skill.functions[3].transform
     assert (transform.target, transform.ascension) == (100100, 2)
+    assert skill.functions[3].HasField("act_select_index")
+    assert skill.functions[3].act_select_index == 1
 
     append_passive = servant.append_passives[0]
     assert append_passive.num == 1
@@ -162,6 +166,27 @@ def test_transform_without_payload_is_unset() -> None:
     function = parsed.servants[0].skills[0].functions[0]
     assert function.target == common_pb2.SkillTarget.TRANSFORM
     assert not function.HasField("transform")
+
+
+def test_act_select_index_zero_round_trips() -> None:
+    servant = make_servant()
+    servant.skills = [
+        Skill(
+            id=1,
+            num=1,
+            name="Test Skill",
+            detail="A test skill.",
+            icon="icon.png",
+            cooldown=7,
+            functions=[ScriptFunction(target=SkillTarget.TRANSFORM, act_select_index=0)],
+        )
+    ]
+
+    parsed = servant_pb2.ServantList.FromString(servants_to_bytes([servant]))
+
+    function = parsed.servants[0].skills[0].functions[0]
+    assert function.HasField("act_select_index")
+    assert function.act_select_index == 0
 
 
 def test_craft_essence_round_trip() -> None:
