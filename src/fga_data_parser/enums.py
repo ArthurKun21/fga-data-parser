@@ -26,6 +26,12 @@ class CardType(StrEnum):
                 raise ValueError(msg)
 
 
+class NoblePhantasmTarget(StrEnum):
+    """Targeting behavior of a noble Phantasm; unlike SkillTarget it is not UI-facing."""
+
+    NOBLE_PHANTASM_TARGET_TRANSFORM = "Transform"
+
+
 class SkillTarget(StrEnum):
     TARGET_ONE = "TargetOne"
     TARGET_ALL = "TargetAll"

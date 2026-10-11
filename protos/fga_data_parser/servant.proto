@@ -6,61 +6,74 @@ option java_package = "io.github.fga.data.atlas.proto";
 
 import "fga_data_parser/common.proto";
 
+// Targeting behavior of the noble Phantasm itself; unlike SkillTarget it is
+// not UI-facing. The value is prefixed because proto enum values share
+// package scope with SkillTarget (C++ scoping rules), and proto3 requires
+// the first value to be zero.
+enum NoblePhantasmTarget {
+  NOBLE_PHANTASM_TARGET_TRANSFORM = 0;
+}
+
 message NoblePhantasm {
-  int32 id = 1;
-  int32 num = 2;
-  string name = 3;
+  int32    id        = 1;
+  int32    num       = 2;
+  string   name      = 3;
   CardType card_type = 4;
+  repeated NoblePhantasmTarget targets = 5;
 }
 
 // Image URLs for one aspect of a servant, keyed by ascension, costume id, etc.
 message ServantAssetGroup {
-  map<string, string> ascension = 1;
-  map<string, string> costume = 2;
+  map<string, string> ascension       = 1;
+  map<string, string> costume         = 2;
   map<string, string> transform_group = 3;
 }
 
 message ServantAssets {
   ServantAssetGroup chara_graph = 1;
-  ServantAssetGroup faces = 2;
-  ServantAssetGroup commands = 3;
-  ServantAssetGroup status = 4;
+  ServantAssetGroup faces       = 2;
+  ServantAssetGroup commands    = 3;
+  ServantAssetGroup status      = 4;
 }
 
 message AppendPassiveSkill {
-  int32 id = 1;
-  int32 num = 2;
-  string name = 3;
+  int32  id            = 1;
+  int32  num           = 2;
+  string name          = 3;
   string original_name = 4;
-  string detail = 5;
-  string icon = 6;
+  string detail        = 5;
+  string icon          = 6;
 }
 
 message AppendPassive {
-  int32 num = 1;
+  int32              num   = 1;
   AppendPassiveSkill skill = 2;
 }
 
 message Servant {
   // Availability/combination flags (Atlas "flag" field).
   enum ServantFlag {
-    UNSPECIFIED = 0;
-    NORMAL = 1;
+    UNSPECIFIED                  = 0;
+    NORMAL                       = 1;
     IGNORE_COMBINE_LIMIT_SPECIAL = 2;
-    GOETIA = 3;
+    GOETIA                       = 3;
   }
 
   int32 id = 1;
-  int32 collection_no = 2;
-  string name = 3;
-  string class_name = 4;
-  int32 rarity = 5;
-  ServantFlag flag = 6;
-  ServantAssets assets = 7;
-  string gender = 8;
-  repeated NoblePhantasm nps = 9;
-  repeated Skill skills = 10;
-  repeated AppendPassive append_passives = 11;
+  // This is the ID of the servant's alternate forms. It is usually only 1 alternate form
+  // but for future-proofing, it is defined as a repeated field to
+  // accommodate multiple alternate forms if needed.
+  repeated int32         alternate_forms_id = 100;
+  int32                  collection_no      = 2;
+  string                 name               = 3;
+  string                 class_name         = 4;
+  int32                  rarity             = 5;
+  ServantFlag            flag               = 6;
+  ServantAssets          assets             = 7;
+  string                 gender             = 8;
+  repeated NoblePhantasm nps                = 9;
+  repeated Skill         skills             = 10;
+  repeated AppendPassive append_passives    = 11;
 }
 
 // Root message of servant_data.pb.

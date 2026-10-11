@@ -1,6 +1,12 @@
 from fga_data_parser import common_pb2, craft_essence_pb2, mystic_code_pb2, servant_pb2
 from fga_data_parser.craft_essence import CraftEssence, CraftEssenceAssets, CraftEssenceSkill
-from fga_data_parser.enums import CardType, CraftEssenceFlag, ServantFlag, SkillTarget
+from fga_data_parser.enums import (
+    CardType,
+    CraftEssenceFlag,
+    NoblePhantasmTarget,
+    ServantFlag,
+    SkillTarget,
+)
 from fga_data_parser.mystic_code import Assets, MysticCode
 from fga_data_parser.pb import (
     craft_essences_to_bytes,
@@ -89,6 +95,7 @@ def make_servant() -> Servant:
                 ),
             )
         ],
+        alternate_forms_id=[600710],
     )
 
 
@@ -104,6 +111,7 @@ def test_servant_round_trip() -> None:
     assert servant.rarity == 5
     assert servant.flag == servant_pb2.Servant.NORMAL
     assert servant.gender == "female"
+    assert servant.alternate_forms_id == [600710]
     assert servant.assets.chara_graph.ascension == {"1": "chara_graph_1.png"}
     assert servant.assets.chara_graph.costume == {"100100": "chara_graph_costume.png"}
     assert servant.assets.faces.ascension == {"1": "face_1.png"}
@@ -187,6 +195,28 @@ def test_act_select_index_zero_round_trips() -> None:
     function = parsed.servants[0].skills[0].functions[0]
     assert function.HasField("act_select_index")
     assert function.act_select_index == 0
+
+
+def test_noble_phantasm_targets_round_trip() -> None:
+    servant = make_servant()
+    servant.nps = [
+        NoblePhantasm(id=100101, num=1, name="Excalibur", card_type=CardType.BUSTER),
+        NoblePhantasm(
+            id=2501401,
+            num=1,
+            name="逆行銀河・赤方偏移",
+            card_type=CardType.ARTS,
+            targets=[NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM],
+        ),
+    ]
+
+    parsed = servant_pb2.ServantList.FromString(servants_to_bytes([servant]))
+
+    plain, transforming = parsed.servants[0].nps
+    assert list(plain.targets) == []
+    assert list(transforming.targets) == [
+        servant_pb2.NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM
+    ]
 
 
 def test_craft_essence_round_trip() -> None:

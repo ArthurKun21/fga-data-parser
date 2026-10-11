@@ -60,6 +60,7 @@ def _servant_message(servant: Servant) -> servant_pb2.Servant:
         append_passives=[
             _append_passive_message(append_passive) for append_passive in servant.append_passives
         ],
+        alternate_forms_id=servant.alternate_forms_id,
     )
 
 
@@ -69,6 +70,9 @@ def _noble_phantasm_message(noble_phantasm: NoblePhantasm) -> servant_pb2.NobleP
         num=noble_phantasm.num,
         name=noble_phantasm.name,
         card_type=common_pb2.CardType.Value(noble_phantasm.card_type.name),
+        targets=[
+            servant_pb2.NoblePhantasmTarget.Value(target.name) for target in noble_phantasm.targets
+        ],
     )
 
 

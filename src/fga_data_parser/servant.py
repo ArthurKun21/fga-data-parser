@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from .enums import CardType, ServantFlag
+from .enums import CardType, NoblePhantasmTarget, ServantFlag
 from .skill import Skill
 
 
@@ -10,6 +10,7 @@ class NoblePhantasm:
     num: int
     name: str
     card_type: CardType
+    targets: list[NoblePhantasmTarget] = field(default_factory=list)
 
 
 @dataclass
@@ -56,3 +57,6 @@ class Servant:
     nps: list[NoblePhantasm]
     skills: list[Skill]
     append_passives: list[AppendPassive]
+    # Servant ids this form swaps with (via transform skills or NPs); always
+    # references both ways even when the raw data only transforms one way.
+    alternate_forms_id: list[int] = field(default_factory=list)
