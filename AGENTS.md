@@ -89,8 +89,9 @@ outputs are gitignored.
   `workflow_dispatch`: checks out chaldea-data, parses, translates, and
   publishes the four `.pb` files to a GitHub release tagged
   `YYYYMMDD.<version>` (UTC date, version increments per day via
-  `scripts/release_tag.py`, which needs `GITHUB_TOKEN` in its step env for
-  `gh`). Action SHAs are pinned deliberately — keep them pinned.
+  `scripts/release_tag.py`, which reads `RELEASE_REPOSITORY` and needs
+  `GH_TOKEN` in its step env for `gh`). Action SHAs are pinned deliberately —
+  keep them pinned.
 
 ## Gotchas
 

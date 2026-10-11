@@ -37,7 +37,9 @@ def fetch_release_tags(repo: str) -> list[str]:
 
 
 def main() -> int:
-    tags = fetch_release_tags(os.environ["GITHUB_REPOSITORY"])
+    # Releases are published to a different repository than the one running CI,
+    # so the tag must be checked against the release repository.
+    tags = fetch_release_tags(os.environ["RELEASE_REPOSITORY"])
     print(next_tag(tags, datetime.now(UTC)))
     return 0
 
