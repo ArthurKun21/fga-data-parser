@@ -19,5 +19,6 @@ wheels/
 /**/*.pb
 
 .zcode/**
+.zcodeignore
 
 chaldea-data/**
