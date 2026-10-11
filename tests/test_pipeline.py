@@ -18,7 +18,7 @@ from fga_data_parser.servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from fga_data_parser.skill import ScriptFunction, Skill
+from fga_data_parser.skill import ScriptFunction, Skill, SkillLocked
 
 
 def make_servant(**overrides: Any) -> dict[str, Any]:
@@ -169,7 +169,7 @@ def test_np_with_transform_function_is_marked() -> None:
     assert servant.nps[0].targets == [NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM]
 
 
-def test_np_collects_limit_counts_from_top_level_and_np_svts() -> None:
+def test_np_collects_stage_locks_from_top_level_and_np_svts() -> None:
     # Mash-shaped: the top-level releaseConditions drop condNum 12, which the
     # per-entry npSvts list still carries.
     raw_np = {
@@ -188,10 +188,10 @@ def test_np_collects_limit_counts_from_top_level_and_np_svts() -> None:
 
     (servant,) = build_servants([make_servant(noblePhantasms=[raw_np])])
 
-    assert servant.nps[0].limit_counts == [12, 13]
+    assert servant.nps[0].locked == [SkillLocked(costume=12), SkillLocked(costume=13)]
 
 
-def test_np_collects_limit_counts_without_np_svts() -> None:
+def test_np_collects_stage_locks_without_np_svts() -> None:
     # Melusine-shaped: dragon ascension (3) OR costume stage (13).
     raw_np = {
         "id": 304802,
@@ -203,13 +203,13 @@ def test_np_collects_limit_counts_without_np_svts() -> None:
 
     (servant,) = build_servants([make_servant(noblePhantasms=[raw_np])])
 
-    assert servant.nps[0].limit_counts == [3, 13]
+    assert servant.nps[0].locked == [SkillLocked(ascension=3), SkillLocked(costume=13)]
 
 
-def test_np_without_release_conditions_has_no_limit_counts() -> None:
+def test_np_without_release_conditions_has_no_locks() -> None:
     (servant,) = build_servants([make_servant()])
 
-    assert servant.nps[0].limit_counts == []
+    assert servant.nps[0].locked == []
 
 
 def test_alternate_forms_reference_each_other() -> None:
@@ -394,10 +394,10 @@ def test_parses_servant_skills() -> None:
     assert skill.detail == "Increases allies' attack."
     assert skill.cooldown == 7
     assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
-    assert skill.limit_counts == []
+    assert skill.locked == []
 
 
-def test_skill_collects_costume_limit_counts() -> None:
+def test_skill_collects_costume_locks() -> None:
     # Mash-shaped: the gated skill's skillSvts entries pin it to the Ortenaus
     # costumes; the AND'd questClear condition is deliberately ignored.
     raw_skill = {
@@ -430,10 +430,10 @@ def test_skill_collects_costume_limit_counts() -> None:
 
     (servant,) = build_servants([make_servant(skills=[raw_skill])])
 
-    assert servant.skills[0].limit_counts == [12, 13]
+    assert servant.skills[0].locked == [SkillLocked(costume=12), SkillLocked(costume=13)]
 
 
-def test_skill_collects_limit_counts_across_cond_groups() -> None:
+def test_skill_collects_locks_across_cond_groups() -> None:
     # Melusine-shaped: one entry gated to the dragon ascension (3) OR the
     # costume stage (13).
     raw_skill = {
@@ -452,7 +452,7 @@ def test_skill_collects_limit_counts_across_cond_groups() -> None:
 
     (servant,) = build_servants([make_servant(skills=[raw_skill])])
 
-    assert servant.skills[0].limit_counts == [3, 13]
+    assert servant.skills[0].locked == [SkillLocked(ascension=3), SkillLocked(costume=13)]
 
 
 def test_builds_mystic_codes() -> None:
@@ -462,7 +462,7 @@ def test_builds_mystic_codes() -> None:
     assert mystic_code.name == "Chaldea Uniform"
     assert mystic_code.assets == Assets(male="male.png", female="female.png")
     # Mystic-code skills have no skillSvts, so they are never form-gated.
-    assert mystic_code.skills[0].limit_counts == []
+    assert mystic_code.skills[0].locked == []
 
 
 def test_mystic_code_skill_num_falls_back_to_index() -> None:

@@ -12,7 +12,7 @@ from .servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from .skill import Skill
+from .skill import Skill, SkillLocked
 
 logger = logging.getLogger(__name__)
 
@@ -243,7 +243,7 @@ def _build_nps(raw_nps: list[dict[str, Any]]) -> list[NoblePhantasm]:
             targets=_noble_phantasm_targets(raw),
             # The top-level releaseConditions alone drop conditions that the
             # per-entry npSvts list still carries, so both are scanned.
-            limit_counts=_equip_costume_limit_counts(
+            locked=_equip_costume_locks(
                 [raw.get("releaseConditions")]
                 + [svt.get("releaseConditions") for svt in raw.get("npSvts", [])]
             ),
@@ -260,21 +260,25 @@ def _noble_phantasm_targets(raw_np: dict[str, Any]) -> list[NoblePhantasmTarget]
     return []
 
 
-def _equip_costume_limit_counts(
+def _equip_costume_locks(
     release_conditions: list[list[dict[str, Any]] | None],
-) -> list[int]:
-    """Collect the limitCount stages an entry is gated to, sorted; empty = ungated.
+) -> list[SkillLocked]:
+    """Collect the stage gates an entry is pinned to, sorted; empty = ungated.
 
     Conditions are OR'd across skillSvts/npSvts entries; within one entry's list
     they can be AND'd with other cond types (observed: questClear), which are
-    ignored here.
+    ignored here. Costumes occupy limitCounts 11+, ascensions 0-4.
     """
-    counts: set[int] = set()
+    locks: dict[int, SkillLocked] = {}
     for conditions in release_conditions:
         for condition in conditions or []:
             if condition.get("condType") == EQUIP_WITH_TARGET_COSTUME:
-                counts.add(condition["condNum"])
-    return sorted(counts)
+                limit_count = condition["condNum"]
+                locks[limit_count] = SkillLocked(
+                    costume=limit_count if limit_count >= 11 else None,
+                    ascension=None if limit_count >= 11 else limit_count,
+                )
+    return [locks[limit_count] for limit_count in sorted(locks)]
 
 
 def _transform_target_ids(raw_servant: dict[str, Any]) -> set[int]:
@@ -321,7 +325,7 @@ def _parse_skills(
             cooldown=raw.get("coolDown", []),
             scripts=raw.get("script", {}),
             functions=raw.get("functions", []),
-            limit_counts=_equip_costume_limit_counts(
+            locked=_equip_costume_locks(
                 [entry.get("releaseConditions") for entry in raw.get("skillSvts", [])]
             ),
         )

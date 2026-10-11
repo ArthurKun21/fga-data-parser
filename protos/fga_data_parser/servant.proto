@@ -20,11 +20,10 @@ message NoblePhantasm {
   string   name      = 3;
   CardType card_type = 4;
   repeated NoblePhantasmTarget targets = 5;
-  // LimitCount stages (0-4 ascension, 11+ costume) this entry is gated to,
-  // from releaseConditions / npSvts releaseConditions of condType
-  // "equipWithTargetCostume" (condNum). Empty = available in every form;
-  // other release condition types (questClear etc.) are not captured.
-  repeated int32 limit_counts = 6;
+  // Stage gates from releaseConditions / npSvts releaseConditions of condType
+  // "equipWithTargetCostume"; empty = available in every form. Other release
+  // condition types (questClear etc.) are not captured.
+  repeated SkillLocked locked = 6;
 }
 
 // Image URLs for one aspect of a servant, keyed by ascension, costume id, etc.

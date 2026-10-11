@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
 from .enums import CardType, NoblePhantasmTarget, ServantFlag
-from .skill import Skill
+from .skill import Skill, SkillLocked
 
 
 @dataclass
@@ -11,9 +11,8 @@ class NoblePhantasm:
     name: str
     card_type: CardType
     targets: list[NoblePhantasmTarget] = field(default_factory=list)
-    # LimitCount stages (0-4 ascension, 11+ costume) this entry is gated to;
-    # empty = available in every form (see pipeline._equip_costume_limit_counts).
-    limit_counts: list[int] = field(default_factory=list)
+    # Stage gates (see SkillLocked); empty = available in every form.
+    locked: list[SkillLocked] = field(default_factory=list)
 
 
 @dataclass

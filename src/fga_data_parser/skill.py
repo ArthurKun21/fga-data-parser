@@ -61,6 +61,15 @@ class ScriptFunction:
 
 
 @dataclass
+class SkillLocked:
+    # One stage gate: exactly one side is meaningful. costume carries the
+    # limitCount of a costume stage (11+), ascension that of an ascension
+    # stage (0-4); None = not that kind of gate.
+    costume: int | None = None
+    ascension: int | None = None
+
+
+@dataclass
 class Skill:
     id: int
     num: int
@@ -69,9 +78,9 @@ class Skill:
     icon: str
     cooldown: int
     functions: list[ScriptFunction] = field(default_factory=list)
-    # LimitCount stages (0-4 ascension, 11+ costume) this entry is gated to;
-    # empty = available in every form (see pipeline._equip_costume_limit_counts).
-    limit_counts: list[int] = field(default_factory=list)
+    # Stage gates (see SkillLocked); empty = available in every form
+    # (see pipeline._equip_costume_locks).
+    locked: list[SkillLocked] = field(default_factory=list)
 
     @classmethod
     def create(
@@ -84,7 +93,7 @@ class Skill:
         cooldown: list[int],
         scripts: dict[str, Any],
         functions: list[dict[str, Any]],
-        limit_counts: list[int],
+        locked: list[SkillLocked],
     ) -> Self:
         """
         Create a new Skill instance from raw Atlas data.
@@ -106,9 +115,9 @@ class Skill:
                 The skill's raw "script" dictionary.
             functions (list[dict[str, Any]]):
                 The skill's raw "functions" list.
-            limit_counts (list[int]):
-                The limitCount stages this skill is gated to; empty when it is
-                available in every form.
+            locked (list[SkillLocked]):
+                The stages this skill is gated to; empty when it is available
+                in every form.
 
         Returns:
             Skill: A new instance of the Skill class.
@@ -136,7 +145,7 @@ class Skill:
             icon=icon,
             cooldown=max(cooldown, default=0),
             functions=script_functions,
-            limit_counts=limit_counts,
+            locked=locked,
         )
 
     @staticmethod
