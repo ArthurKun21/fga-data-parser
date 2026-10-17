@@ -3,7 +3,7 @@ import json
 import orjson
 
 from fgo_translate import fgo_translate_pb2
-from fgo_translate.atlas import build_atlas_entries
+from fgo_translate.atlas import build_atlas_entries, collect_used_texts
 from fgo_translate.cli import main
 from fgo_translate.pb import translations_to_bytes
 from fgo_translate.pipeline import (
@@ -58,7 +58,10 @@ def write_chaldea_data(tmp_path, *, patch=None) -> None:
             {"自身の攻撃力をアップ[{0}](3ターン)": {"JP": None, "NA": "Increase ATK [{0}]"}}
         )
     )
-    for empty_table in ("td_names", "td_detail", "buff_names", "buff_detail"):
+    (mappings / "buff_names.json").write_bytes(
+        orjson.dumps({"無敵状態": {"JP": None, "NA": "Invincibility"}})
+    )
+    for empty_table in ("td_names", "td_detail", "buff_detail"):
         (mappings / f"{empty_table}.json").write_bytes(orjson.dumps({}))
     if patch is not None:
         dist = tmp_path / "chaldea-data" / "dist"
@@ -250,6 +253,16 @@ def write_atlas_data(tmp_path) -> None:
                 "id": 2,
                 "collection_no": 3,
                 "name": "魔\ue000セイバー",
+                "skills": [],
+                "nps": [],
+                "append_passives": [],
+            },
+            # A JP-only servant: no region has it, so only Chaldea can
+            # translate it — pruning must keep that row.
+            {
+                "id": 3,
+                "collection_no": 4,
+                "name": "マシュ・キリエライト",
                 "skills": [],
                 "nps": [],
                 "append_passives": [],
@@ -462,3 +475,63 @@ def test_middle_dot_keys_alias_both_spellings(tmp_path) -> None:
     assert halfwidth.kr == "칼데아 유니폼"
     assert fullwidth.na == halfwidth.na
     assert fullwidth.kr == halfwidth.kr
+
+
+def test_collect_used_texts(tmp_path) -> None:
+    write_atlas_data(tmp_path)
+
+    used = collect_used_texts(tmp_path / "atlas-data")
+
+    assert "Artoria Pendragon (Saber)" in used
+    assert "カリスマ B" in used
+    assert "味方全体の攻撃力をアップ[{0}](3ターン)" in used
+    assert "魔術礼装･カルデア" in used
+    # Values normalize like the table keys.
+    assert "魔{jin}セイバー" in used
+    assert collect_used_texts(tmp_path / "missing") is None
+
+
+def test_unused_keys_are_pruned(tmp_path) -> None:
+    write_atlas_data(tmp_path)
+    write_chaldea_data(tmp_path)
+
+    translations = build_translations(
+        tmp_path / "chaldea-data",
+        atlas_entries=build_atlas_entries(tmp_path / "atlas-data"),
+        used_texts=collect_used_texts(tmp_path / "atlas-data"),
+    )
+
+    # Used texts survive — including Chaldea-only rows for them (the JP-only
+    # servant) — while rows the data files never show are dropped, along with
+    # the alias spelling of the used key.
+    assert "カリスマ B" in translations
+    assert translations["マシュ・キリエライト"].na == "Mash Kyrielight"
+    assert translations["マシュ・キリエライト"].kr == "매슈"
+    assert translations["魔{jin}セイバー"].na == "Fou Saber"
+    assert "無敵状態" not in translations  # buff_names row
+    assert "スキル名" not in translations  # skill_names row
+    assert "2030年の欠片" not in translations  # ce_names row
+    assert "自身の攻撃力をアップ[{0}](3ターン)" not in translations  # skill_detail row
+    assert "魔術礼装・カルデア" not in translations  # alias spelling
+
+
+def test_cli_prunes_to_used_texts(tmp_path) -> None:
+    write_atlas_data(tmp_path)
+    write_chaldea_data(tmp_path)
+
+    exit_code = main(
+        [
+            "--atlas-data",
+            str(tmp_path / "atlas-data"),
+            "--chaldea-data",
+            str(tmp_path / "chaldea-data"),
+            "--output-dir",
+            str(tmp_path),
+        ]
+    )
+
+    assert exit_code == 0
+    json_data = json.loads((tmp_path / "fgo_translate.json").read_text())
+    assert "カリスマ B" in json_data["translations"]
+    assert "スキル名" not in json_data["translations"]
+    assert "魔術礼装・カルデア" not in json_data["translations"]
