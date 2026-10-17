@@ -66,11 +66,19 @@ the pipeline uses the skill's position as the number instead
 
 Skills with an interactive selection carry a `script.SelectAddInfo` list — one
 `{title, btn: [...]}` item per skill level (always 10 items). Button entries
-only ever have `{name, conds}` (plus `image`/`imageUrl` on exactly one skill,
-servant 2301100, whose buttons have no names at all and therefore produce no
-choice target). There is no `detail` key anywhere in the raw shape, so the
-`SelectAddInfo` title becomes the choice payload's `detail` and the btn `name`s
-become its options (2 → Choice2, 3 → Choice3; other counts are dropped).
+usually have `{name, conds}`. There is no `detail` key anywhere in the raw
+shape, so the `SelectAddInfo` title becomes the choice payload's `detail` and
+the btn `name`s become its options (2 → Choice2, 3 → Choice3; other counts are
+dropped).
+
+Art-only buttons (servant 2301100 skill 2535550) carry only
+`{conds, image, imageUrl}` with no `name` at all. Such a button falls back to
+the first buff `detail` of the first function whose `svals[0].ActSelectIndex`
+equals its 0-based btn index — the btn position and the ActSelectIndex value
+label the same branch (see ActSelectIndex below), so the buff detail describes
+what that choice does (e.g. 2301100: 宝具を全体攻撃宝具に変更する /
+宝具を単体攻撃宝具に変更する). Buttons that resolve to neither a name nor a
+buff detail are dropped.
 
 ### transformServant svals
 
