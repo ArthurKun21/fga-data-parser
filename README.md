@@ -34,11 +34,10 @@ message respectively.
 ## Translated text
 
 `fgo-translate` builds a flat JP-text -> translated-text table (JP/CN/TW/NA/KR)
-from the parser's per-region outputs (official game text, cross-referenced
-entity by entity) plus the public name mappings of
-[Chaldea](https://github.com/chaldea-center/chaldea), covering servant/CE/
-mystic-code names, skill names and descriptions, noble Phantasm names and
-descriptions, and buff texts. It needs a checkout of
+covering exactly the texts in the parser's data files. It cross-references the
+parser's per-region outputs for the official game text of every region and
+fills the gaps from the public name mappings of
+[Chaldea](https://github.com/chaldea-center/chaldea). It needs a checkout of
 [chaldea-data](https://github.com/chaldea-center/chaldea-data) and the parser's
 outputs (both default to the current directory):
 
