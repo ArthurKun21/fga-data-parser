@@ -68,13 +68,16 @@ class Translation:
 def build_translations(
     chaldea_dir: Path,
     atlas_entries: dict[str, dict[str, str]] | None = None,
+    used_texts: set[str] | None = None,
 ) -> dict[str, Translation]:
     """Build the flat JP-text -> Translation map.
 
     atlas_entries are the cross-referenced Atlas entries from the parser's
     per-region outputs (see atlas.build_atlas_entries); official regional text
     wins where present, the Chaldea tables only fill gaps, and the mapping
-    patch still wins last like the app's deep merge.
+    patch still wins last like the app's deep merge. used_texts prunes the
+    final table to the JP texts the parser outputs contain (see
+    atlas.collect_used_texts); None keeps every key.
     """
     flat: dict[str, dict[str, str]] = {}
     if atlas_entries:
@@ -103,6 +106,11 @@ def build_translations(
         logger.debug("No mapping patch at %s", patch_path)
 
     _register_middle_dot_aliases(flat)
+
+    if used_texts is not None:
+        pruned = {key: regions for key, regions in flat.items() if key in used_texts}
+        logger.info("Pruned %d keys unused by the parser outputs", len(flat) - len(pruned))
+        flat = pruned
 
     translations = {key: _translation(key, regions) for key, regions in flat.items()}
     _log_coverage(translations)

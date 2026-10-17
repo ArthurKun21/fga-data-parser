@@ -18,6 +18,9 @@ from .pipeline import REGIONS, normalize_text
 
 logger = logging.getLogger(__name__)
 
+# Parser output stems that anchor the translation keys and the pruning.
+_PARSED_STEMS = ("servant_data", "mystic_code_data", "craft_essence_data")
+
 # Text fields of the parsed script-function payloads (choice popups and NP
 # type updates); functions align by position across regions because they hold
 # one skill's targeting actions in execution order.
@@ -40,6 +43,34 @@ def build_atlas_entries(data_dir: Path) -> dict[str, dict[str, str]]:
     _collect_craft_essences(flat, _load_per_region(data_dir, "craft_essence_data"))
     _collect_mystic_codes(flat, _load_per_region(data_dir, "mystic_code_data"))
     return flat
+
+
+def collect_used_texts(data_dir: Path) -> set[str] | None:
+    """Normalized JP texts appearing in the parser's JP outputs.
+
+    The translation table is pruned to these keys, so every string value
+    counts: keys are game text while the remaining leaves (icon URLs,
+    class_name, flag, ...) never collide with table keys, which keeps the
+    scan correct when the parser grows new text fields. Returns None when no
+    parsed outputs exist so the caller can skip pruning.
+    """
+    used: set[str] = set()
+    for stem in _PARSED_STEMS:
+        path = data_dir / f"{stem}.json"
+        if path.exists():
+            _collect_strings(read_data(path), used)
+    return used or None
+
+
+def _collect_strings(node: Any, used: set[str]) -> None:
+    if isinstance(node, str):
+        used.add(normalize_text(node))
+    elif isinstance(node, list):
+        for item in node:
+            _collect_strings(item, used)
+    elif isinstance(node, dict):
+        for value in node.values():
+            _collect_strings(value, used)
 
 
 def _load_per_region(data_dir: Path, stem: str) -> dict[str, list[dict[str, Any]]]:
