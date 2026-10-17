@@ -1,15 +1,16 @@
 # fgo_translate — how it works and why
 
-`src/fgo_translate` builds a flat JP-text -> translated-text table from two
-sources, covering servant/CE/mystic-code names, skill names and descriptions,
-noble Phantasm names and descriptions, and buff texts:
+`src/fgo_translate` builds a flat JP-text -> translated-text table covering
+exactly the JP texts that appear in the parser's data files
+(`servant_data.json`, `mystic_code_data.json`, `craft_essence_data.json`).
+Two sources merge into it:
 
 - **Cross-referenced Atlas text** (`atlas.py`): the parser's own per-region
   outputs paired up entity-by-entity, giving the *official* game text of every
   region (CN/TW/KR/NA) for each JP string.
 - **The public name mappings of the [Chaldea](https://github.com/chaldea-center/chaldea)
-  app**, which fill the gaps Atlas cannot cover (buff texts, community
-  translations for content a region has not received yet).
+  app**, which fill the gaps Atlas cannot cover (community translations for
+  content a region has not received yet, JP-only entities).
 
 Output is `fgo_translate.json` (human-readable) then `fgo_translate.pb` (a
 `FgoTranslate` message), same pattern as fga_data_parser.
@@ -88,6 +89,13 @@ pairs those outputs up:
   dot (`魔術礼装･カルデア`) while Chaldea keys use the fullwidth `・`; every
   entry is registered under both spellings (fill-only) so one lookup key
   covers consumers written against either source.
+- **Pruned to the parser's texts**: the final table keeps only keys that
+  appear in the three data files (any string value counts; the remaining
+  leaves — icon URLs, class ids, flags — never collide with table keys).
+  Chaldea rows for used texts survive (JP-only servants have no regional data
+  and rely on Chaldea's community translations), while buff texts and noble
+  Phantasm details the parser does not emit are dropped. Without parsed
+  outputs nothing is pruned (Chaldea-only fallback keeps its full table).
 - **Faithful output**: regions without any translation are omitted from the
   JSON and left unset (empty string) in the pb. Consumers implement the
   fallback themselves: first non-null region in their priority order, else
@@ -119,6 +127,7 @@ belt-and-suspenders for tables built before aliasing existed.
   produces a wrong translation, consider emitting per-table maps instead.
 - **Resolved output variant**: an option that pre-fills every region with the
   priority-resolved name (no fallback logic for consumers) if wanted.
-- **Buff and NP-detail cross-referencing**: buffs and noble Phantasm details
-  are not emitted by the parser, so their region columns still come from
-  Chaldea only; walking the raw `nice_*` exports could pair those too.
+- **Buff and NP-detail translations**: the parser does not emit buff texts or
+  noble Phantasm details, so pruning drops them from the sidecar; emitting
+  those fields from the parser would bring them back through the same
+  cross-referencing.
