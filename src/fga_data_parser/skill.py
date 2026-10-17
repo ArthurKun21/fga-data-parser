@@ -125,7 +125,7 @@ class Skill:
         script_functions: list[ScriptFunction] = []
 
         # Choices come from the script, every other target from the functions.
-        choice = cls._check_for_choice_from_scripts(scripts)
+        choice = cls._check_for_choice_from_scripts(scripts, functions)
         if choice is not None:
             script_functions.append(choice)
         script_functions.extend(cls._check_functions(functions))
@@ -149,7 +149,9 @@ class Skill:
         )
 
     @staticmethod
-    def _check_for_choice_from_scripts(scripts: dict[str, Any]) -> ScriptFunction | None:
+    def _check_for_choice_from_scripts(
+        scripts: dict[str, Any], functions: list[dict[str, Any]]
+    ) -> ScriptFunction | None:
         """
         Build the choice ScriptFunction from a skill's "script" dictionary.
 
@@ -158,9 +160,17 @@ class Skill:
         raw button entries carry no description text. Button counts other than
         2 or 3 are ignored.
 
+        Some skills (e.g. 2301100 skill 2535550) use art-only buttons with no
+        "name". Those buttons fall back to the detail of the first buff of the
+        first function whose svals ActSelectIndex equals the button index —
+        btn array position and ActSelectIndex value are the same 0-based
+        branch. Buttons that resolve to neither are dropped.
+
         Args:
             scripts (dict[str, Any]): A dictionary containing script information
                 with 'SelectAddInfo' data.
+            functions (list[dict[str, Any]]): The skill's raw "functions" list,
+                used to name unnamed buttons.
 
         Returns:
             ScriptFunction | None: The choice entry, or None when the script
@@ -175,8 +185,10 @@ class Skill:
 
         button_info: list[dict[str, Any]] = first_select_add_info.get("btn", [])
         options: list[str] = []
-        for button in button_info:
+        for index, button in enumerate(button_info):
             name = button.get("name", "")
+            if not name:
+                name = Skill._buff_detail_for_index(functions, index)
             if name:
                 options.append(name)
 
@@ -204,6 +216,33 @@ class Skill:
                         options,
                     )
                 return None
+
+    @staticmethod
+    def _buff_detail_for_index(functions: list[dict[str, Any]], index: int) -> str:
+        """
+        Label an unnamed choice button through the functions gated to it.
+
+        The first function whose svals ActSelectIndex equals the button index
+        carries the branch's buff; its detail is the label. A function without
+        a usable detail is skipped so a later function on the same branch can
+        still supply one.
+
+        Args:
+            functions (list[dict[str, Any]]): The skill's raw "functions" list.
+            index (int): The 0-based choice button index.
+
+        Returns:
+            str: The buff detail, or "" when no gated function has one.
+        """
+        for function in functions:
+            if Skill._act_select_index(function) != index:
+                continue
+            buffs: list[dict[str, Any]] = function.get("buffs", [])
+            if buffs:
+                detail = buffs[0].get("detail", "")
+                if detail:
+                    return detail
+        return ""
 
     @staticmethod
     def _check_functions(functions: list[dict[str, Any]]) -> list[ScriptFunction]:

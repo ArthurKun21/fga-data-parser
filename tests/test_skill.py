@@ -60,6 +60,19 @@ def select_add_info_scripts(button_names: list[str]) -> dict[str, Any]:
     }
 
 
+def select_add_info_script_buttons(buttons: list[dict[str, Any]]) -> dict[str, Any]:
+    return {"SelectAddInfo": [{"title": "Choose one", "btn": buttons}]}
+
+
+def gated_buff_function(index: int, detail: str) -> dict[str, Any]:
+    return {
+        "funcType": "addStateShort",
+        "funcTargetType": "self",
+        "svals": [{"ActSelectIndex": index}],
+        "buffs": [{"id": 5911, "name": "Gated buff", "detail": detail}],
+    }
+
+
 def test_defaults_to_target_all_and_max_cooldown() -> None:
     skill = create_skill()
 
@@ -290,6 +303,106 @@ def test_empty_button_names_are_skipped() -> None:
     scripts = {"SelectAddInfo": [{"title": "Choose", "btn": [{"name": ""}, {"name": "Arts"}]}]}
 
     skill = create_skill(scripts=scripts)
+
+    assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
+
+
+def test_unnamed_buttons_fall_back_to_buff_details() -> None:
+    # Jade Rabbit 2301100 skill 2535550: art-only buttons, labels from the
+    # buffs of the functions gated to each button index.
+    scripts = select_add_info_script_buttons(
+        [{"image": "btn_select_003"}, {"image": "btn_select_004"}]
+    )
+    functions = [
+        gated_buff_function(0, "宝具を全体攻撃宝具に変更する"),
+        gated_buff_function(1, "宝具を単体攻撃宝具に変更する"),
+    ]
+
+    skill = create_skill(scripts=scripts, functions=functions)
+
+    assert skill.functions == [
+        ScriptFunction(
+            target=SkillTarget.CHOICE_2,
+            choice2=Choice2Detail(
+                detail="Choose one",
+                option_a="宝具を全体攻撃宝具に変更する",
+                option_b="宝具を単体攻撃宝具に変更する",
+            ),
+        )
+    ]
+
+
+def test_three_unnamed_buttons_fall_back_to_buff_details() -> None:
+    scripts = select_add_info_script_buttons(
+        [{"image": "btn_0"}, {"image": "btn_1"}, {"image": "btn_2"}]
+    )
+    functions = [
+        gated_buff_function(0, "Detail zero"),
+        gated_buff_function(1, "Detail one"),
+        gated_buff_function(2, "Detail two"),
+    ]
+
+    skill = create_skill(scripts=scripts, functions=functions)
+
+    assert skill.functions == [
+        ScriptFunction(
+            target=SkillTarget.CHOICE_3,
+            choice3=Choice3Detail(
+                detail="Choose one",
+                option_a="Detail zero",
+                option_b="Detail one",
+                option_c="Detail two",
+            ),
+        )
+    ]
+
+
+def test_named_button_keeps_script_name_over_buff_fallback() -> None:
+    scripts = select_add_info_script_buttons([{"name": "Buster"}, {"image": "btn_select_004"}])
+    functions = [
+        gated_buff_function(0, "Ignored detail"),
+        gated_buff_function(1, "Arts detail"),
+    ]
+
+    skill = create_skill(scripts=scripts, functions=functions)
+
+    assert skill.functions == [
+        ScriptFunction(
+            target=SkillTarget.CHOICE_2,
+            choice2=Choice2Detail(detail="Choose one", option_a="Buster", option_b="Arts detail"),
+        )
+    ]
+
+
+def test_buffless_gated_function_is_skipped_for_later_one() -> None:
+    scripts = select_add_info_script_buttons(
+        [{"image": "btn_select_003"}, {"image": "btn_select_004"}]
+    )
+    functions = [
+        gated_buff_function(0, ""),
+        gated_buff_function(1, "Late detail one"),
+        gated_buff_function(0, "Late detail zero"),
+    ]
+
+    skill = create_skill(scripts=scripts, functions=functions)
+
+    assert skill.functions == [
+        ScriptFunction(
+            target=SkillTarget.CHOICE_2,
+            choice2=Choice2Detail(
+                detail="Choose one", option_a="Late detail zero", option_b="Late detail one"
+            ),
+        )
+    ]
+
+
+def test_unnamed_buttons_without_gated_buff_details_are_skipped() -> None:
+    scripts = select_add_info_script_buttons(
+        [{"image": "btn_select_003"}, {"image": "btn_select_004"}]
+    )
+    functions = [{"funcType": "addState", "funcTargetType": "ptAll"}]
+
+    skill = create_skill(scripts=scripts, functions=functions)
 
     assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
 

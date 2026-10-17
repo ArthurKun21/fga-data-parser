@@ -18,7 +18,7 @@ from fga_data_parser.servant import (
     ServantAssetGroup,
     ServantAssets,
 )
-from fga_data_parser.skill import ScriptFunction, Skill, SkillLocked
+from fga_data_parser.skill import Choice2Detail, ScriptFunction, Skill, SkillLocked
 
 
 def make_servant(**overrides: Any) -> dict[str, Any]:
@@ -473,6 +473,76 @@ def test_parses_servant_skills() -> None:
     assert skill.cooldown == 7
     assert skill.functions == [ScriptFunction(target=SkillTarget.TARGET_ALL)]
     assert skill.locked == []
+
+
+def test_skill_unnamed_choice_buttons_fall_back_to_buff_details() -> None:
+    # Jade Rabbit 2301100-shaped: art-only buttons without "name", labels
+    # resolved from the buffs of the functions gated to each button index.
+    raw_skill = {
+        "id": 2535550,
+        "num": 2,
+        "name": "望月に踊る A",
+        "unmodifiedDetail": "Detail.",
+        "icon": "icon.png",
+        "coolDown": [8, 7, 6, 5, 4, 3, 2, 1, 0, 0],
+        "priority": 0,
+        "script": {
+            "SelectAddInfo": [
+                {
+                    "title": "宝具タイプを選択してください",
+                    "btn": [
+                        {"conds": [{"cond": "NONE"}], "image": "btn_select_003"},
+                        {"conds": [{"cond": "NONE"}], "image": "btn_select_004"},
+                    ],
+                }
+            ]
+        },
+        "functions": [
+            {
+                "funcId": 22872,
+                "funcType": "addStateShort",
+                "funcTargetType": "self",
+                "svals": [{"Rate": 1000, "ActSelectIndex": 0}],
+                "buffs": [
+                    {
+                        "id": 5911,
+                        "name": "月下",
+                        "type": "tdTypeChangeBuster",
+                        "detail": "宝具を全体攻撃宝具に変更する",
+                    }
+                ],
+            },
+            {
+                "funcId": 22871,
+                "funcType": "addStateShort",
+                "funcTargetType": "self",
+                "svals": [{"Rate": 1000, "ActSelectIndex": 1}],
+                "buffs": [
+                    {
+                        "id": 5910,
+                        "name": "日輪",
+                        "type": "tdTypeChangeArts",
+                        "detail": "宝具を単体攻撃宝具に変更する",
+                    }
+                ],
+            },
+        ],
+    }
+
+    (servant,) = build_servants([make_servant(skills=[raw_skill])])
+
+    skill = servant.skills[0]
+    assert isinstance(skill, Skill)
+    assert skill.functions == [
+        ScriptFunction(
+            target=SkillTarget.CHOICE_2,
+            choice2=Choice2Detail(
+                detail="宝具タイプを選択してください",
+                option_a="宝具を全体攻撃宝具に変更する",
+                option_b="宝具を単体攻撃宝具に変更する",
+            ),
+        )
+    ]
 
 
 def test_skill_collects_costume_locks() -> None:
