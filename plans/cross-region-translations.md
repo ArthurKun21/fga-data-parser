@@ -50,3 +50,59 @@ Fix: fetch the same three Atlas URL templates for all five regions (`export/{JP,
 
 - `uv run pytest`, `uv run ruff check`, `uv run ruff format --check .`
 - Run `uv run fga-data-parser` then `uv run fgo-translate` locally; spot-check: `アルトリア・ペンドラゴン` resolves with an NA value; a `[{0}]`-placeholder skill detail key resolves for CN/TW/KR/NA; mystic code 1 name; coverage counts per region vs the Chaldea-only baseline.
+
+---
+
+# Follow-up: prune keys unused by the parser outputs
+
+The merged table still carries Chaldea rows the parser data never shows:
+buff names/details, noble Phantasm details, enemy/NPC names, rows for skills
+the parser dropped, and so on. Those keys only bloat `fgo_translate.json`/`.pb`
+— the sidecar exists to translate the three data files. `fgo_translate` now
+prunes the final table to the JP texts that actually appear in
+`servant_data.json`, `mystic_code_data.json` and `craft_essence_data.json`.
+
+## Design decisions
+
+- **"Used" = any string value in the three JP outputs.** Table keys are JP
+  game text; the remaining string leaves (icon URLs, `class_name`, `flag`,
+  `card_type`, ...) never collide with table keys, so scanning every string
+  value is a safe superset that needs no field list and stays correct when the
+  parser grows new text fields. Values are PUA-normalized like the keys.
+- **Prune after the middle-dot aliasing.** Aliases exist to unify the merge
+  across the two dot spellings; they are glue, not output, so the non-parser
+  spelling is pruned away and only the spelling the data files use survives.
+- **Chaldea rows for used texts survive.** A JP-only servant is in
+  `servant_data.json` but has no regional parsed data; its community
+  translation from Chaldea is exactly what the table must keep.
+- **No parsed outputs -> no pruning.** The Chaldea-only fallback keeps its
+  full table (`atlas.collect_used_texts` returns `None` and
+  `build_translations` skips the filter).
+- **Consequence, accepted:** text the parser does not emit (buff texts, noble
+  Phantasm details) leaves the sidecar unless a data file references it (e.g.
+  a buff detail used as a choice-button fallback). Bringing those back means
+  emitting them from the parser, not loosening the prune.
+
+## Implementation
+
+1. `fgo_translate/atlas.py`: `collect_used_texts(data_dir) -> set[str] | None`
+   — recursive string scan of the three JP outputs (shared `_PARSED_STEMS`
+   constant with `build_atlas_entries`), normalized; `None` when no parsed
+   outputs exist.
+2. `fgo_translate/pipeline.py`: `build_translations(..., used_texts=None)` —
+   filters the merged map after alias registration, logs the dropped count
+   before the coverage report.
+3. `fgo_translate/cli.py`: pass `collect_used_texts(args.atlas_data)` through.
+4. Tests: collection (used texts, `None` when missing), pruning keeps used
+   Chaldea-only rows and drops unused ones plus alias spellings, CLI prunes
+   end-to-end; unpruned behavior unchanged when `used_texts` is `None`.
+5. Docs/README: the table covers exactly the texts in the parser's data
+   files; buff/NP-detail note moves to future ideas.
+
+## Verification (follow-up)
+
+- `uv run pytest`, `uv run ruff check`, `uv run ruff format --check .`
+- Re-run `uv run fgo-translate` against the existing parsed outputs: every
+  remaining key must be present in the three data files, Chaldea-only rows for
+  used texts (JP-only servants) must survive, buff/td-detail rows must be
+  gone, and the pb must shrink accordingly.
