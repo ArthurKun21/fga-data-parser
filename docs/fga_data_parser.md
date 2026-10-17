@@ -15,9 +15,13 @@ Atlas Academy API (export/{region}/nice_servant|nice_mystic_code|nice_equip.json
   -> write_data (JSON, orjson OPT_INDENT_2) + write_bytes (protobuf, deterministic)
 ```
 
-The CLI caches the raw Atlas exports next to the outputs (`--output-dir`,
-default cwd) and reuses them unless `--force` is passed. Both entry points are
-console scripts: `fga-data-parser` and `fgo-translate`.
+The CLI fetches every region by default (`--regions`, default
+JP/CN/TW/KR/NA) and caches the raw Atlas exports next to the outputs
+(`--output-dir`, default cwd), reusing them unless `--force` is passed. JP
+keeps the primary unsuffixed file names and the `.pb` outputs; other regions
+write `.{region}`-suffixed JSON only, which feed the translation join in
+fgo-translate (see docs/fgo_translate.md). Both entry points are console
+scripts: `fga-data-parser` and `fgo-translate`.
 
 ## Atlas data-format knowledge (hard-won, do not re-derive)
 
@@ -186,10 +190,13 @@ forms.
 
 `_fix_name` applies FGA-facing renames (Altria→Artoria, BB (Summer),
 Kishinami Hakunon, Ereshkigal (Summer)). These match the JP export's name
-strings; if NA-region parsing is ever added, revisit them (NA names are
-already localized). Duplicate names get ` (<class>)` suffixes with a counter
-loop so output names are guaranteed unique — exercised by real data (Flora in
-two classes).
+strings and are applied **only when `build_servants` runs with the default
+`region="JP"`** — the other regions' outputs feed the translation table as
+values (see docs/fgo_translate.md), so their official text must survive
+untouched (NA really does ship "Altria"). Duplicate names get ` (<class>)`
+suffixes with a counter loop so JP output names are guaranteed unique —
+exercised by real data (Flora in two classes); non-JP outputs skip the dedupe
+for the same reason.
 
 ## Schema decisions
 
@@ -243,8 +250,6 @@ two classes).
 
 ## Future ideas
 
-- **NA region output**: `--region NA` already builds the URLs; name fixes and
-  translations need revisiting for English names (see above).
 - **Ascension overwrite names**: `ascensionAdd.overWriteServantName` and
   battle names are not captured; FGA battle scripts may want them.
 - **Skill cooldown edge**: `max(cooldown, default=0)` currently guards empty
