@@ -25,8 +25,13 @@ PLAYABLE_TYPES = {"normal", "heroine"}
 EQUIP_WITH_TARGET_COSTUME = "equipWithTargetCostume"
 
 
-def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
-    """Convert raw Atlas servant data into Servant models, sorted by collection number."""
+def build_servants(raw_servants: list[dict[str, Any]], *, region: str = "JP") -> list[Servant]:
+    """Convert raw Atlas servant data into Servant models, sorted by collection number.
+
+    The FGA-facing name fixes and dedupe suffixes only apply to JP names;
+    other regions must keep their official text because it feeds the
+    translation table as values.
+    """
     playable = [raw for raw in raw_servants if raw.get("type") in PLAYABLE_TYPES]
     playable.sort(key=lambda raw: raw.get("collectionNo", 0))
 
@@ -40,13 +45,15 @@ def build_servants(raw_servants: list[dict[str, Any]]) -> list[Servant]:
 
     for raw in playable:
         class_name = raw.get("className", "")
-        name = _fix_name(
-            raw.get("name", ""),
-            gender=raw.get("gender", ""),
-            class_name=class_name,
-            rarity=raw.get("rarity", 0),
-        )
-        name = _dedupe_name(name, class_name=class_name, seen=name_cache)
+        name = raw.get("name", "")
+        if region == "JP":
+            name = _fix_name(
+                name,
+                gender=raw.get("gender", ""),
+                class_name=class_name,
+                rarity=raw.get("rarity", 0),
+            )
+            name = _dedupe_name(name, class_name=class_name, seen=name_cache)
 
         servant = Servant(
             id=raw.get("id", 0),
