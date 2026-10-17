@@ -7,6 +7,7 @@ from pathlib import Path
 from fga_data_parser.cli import setup_logging
 from fga_data_parser.utils import write_bytes, write_data
 
+from .atlas import build_atlas_entries, collect_used_texts
 from .pb import translations_to_bytes
 from .pipeline import build_translations, translations_to_json
 
@@ -16,7 +17,19 @@ logger = logging.getLogger(__name__)
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="fgo-translate",
-        description="Build translated-text data files from the Chaldea mappings.",
+        description=(
+            "Build translated-text data files from the parser's per-region "
+            "outputs and the Chaldea mappings."
+        ),
+    )
+    parser.add_argument(
+        "--atlas-data",
+        type=Path,
+        default=Path.cwd(),
+        help=(
+            "directory with the parser's per-region outputs like servant_data.na.json "
+            "(default: current directory)"
+        ),
     )
     parser.add_argument(
         "--chaldea-data",
@@ -42,7 +55,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     setup_logging(verbose=args.verbose)
 
-    translations = build_translations(args.chaldea_data)
+    atlas_entries = build_atlas_entries(args.atlas_data)
+    translations = build_translations(
+        args.chaldea_data,
+        atlas_entries=atlas_entries,
+        used_texts=collect_used_texts(args.atlas_data),
+    )
 
     json_output = args.output_dir / "fgo_translate.json"
     write_data(json_output, translations_to_json(translations))

@@ -1,12 +1,15 @@
-"""Build a JP-text -> translated-text table from the Chaldea mappings.
+"""Build a JP-text -> translated-text table.
 
-Mirrors how the Chaldea app resolves translations: mapping tables are keyed by
-the Atlas JP text and hold per-region translations (JP/CN/TW/NA/KR),
-private-use characters are normalized, and a patch file is deep-merged on top
-with patch values winning. All tables are folded into one flat map keyed by
-the JP text so consumers can translate any game text (names, skills, noble
-Phantasms, buffs, ...) with a single lookup; missing regions fall back to the
-jp text on the consumer side.
+Two sources merge into one flat map keyed by the Atlas JP text so consumers
+can translate any game text (names, skills, noble Phantasms, buffs, ...) with
+a single lookup; missing regions fall back to the jp text on the consumer side:
+
+- Cross-referenced Atlas text (see the atlas module): official per-region game
+  text from the parser's outputs, keyed by the exact JP strings consumers look
+  up. It wins where present.
+- The Chaldea app's mappings: mapping tables keyed by the Atlas JP text and
+  holding per-region translations (JP/CN/TW/NA/KR) fill the gaps, and a patch
+  file is deep-merged on top with patch values winning, like the app does.
 """
 
 import logging
@@ -62,13 +65,33 @@ class Translation:
         return {region: name for region, name in fields.items() if name is not None}
 
 
-def build_translations(chaldea_dir: Path) -> dict[str, Translation]:
-    """Build the flat JP-text -> Translation map from a chaldea-data checkout."""
+def build_translations(
+    chaldea_dir: Path,
+    atlas_entries: dict[str, dict[str, str]] | None = None,
+    used_texts: set[str] | None = None,
+) -> dict[str, Translation]:
+    """Build the flat JP-text -> Translation map.
+
+    atlas_entries are the cross-referenced Atlas entries from the parser's
+    per-region outputs (see atlas.build_atlas_entries); official regional text
+    wins where present, the Chaldea tables only fill gaps, and the mapping
+    patch still wins last like the app's deep merge. used_texts prunes the
+    final table to the JP texts the parser outputs contain (see
+    atlas.collect_used_texts); None keeps every key.
+    """
     flat: dict[str, dict[str, str]] = {}
+    if atlas_entries:
+        flat.update(atlas_entries)
+        # Propagate the Atlas keys to both spellings before the Chaldea
+        # tables merge, so official text claims both spellings.
+        _register_middle_dot_aliases(flat)
+    else:
+        logger.info("No Atlas-derived entries; building from the Chaldea mappings only")
+
     for table_name in TABLE_NAMES:
         raw = read_data(chaldea_dir / "mappings" / f"{table_name}.json")
         for jp_text, regions in raw.items():
-            _merge_regions(flat.setdefault(_normalize_text(jp_text), {}), regions, fill_only=True)
+            _merge_regions(flat.setdefault(normalize_text(jp_text), {}), regions, fill_only=True)
 
     patch_path = chaldea_dir / "dist" / "mappingPatch.json"
     if patch_path.exists():
@@ -78,11 +101,20 @@ def build_translations(chaldea_dir: Path) -> dict[str, Translation]:
                 continue
             for jp_text, regions in entries.items():
                 # Patch values win, like the app's deep merge.
-                _merge_regions(flat.setdefault(_normalize_text(jp_text), {}), regions)
+                _merge_regions(flat.setdefault(normalize_text(jp_text), {}), regions)
     else:
         logger.debug("No mapping patch at %s", patch_path)
 
-    return {key: _translation(key, regions) for key, regions in flat.items()}
+    _register_middle_dot_aliases(flat)
+
+    if used_texts is not None:
+        pruned = {key: regions for key, regions in flat.items() if key in used_texts}
+        logger.info("Pruned %d keys unused by the parser outputs", len(flat) - len(pruned))
+        flat = pruned
+
+    translations = {key: _translation(key, regions) for key, regions in flat.items()}
+    _log_coverage(translations)
+    return translations
 
 
 def translations_to_json(
@@ -121,5 +153,34 @@ def _merge_regions(entry: dict[str, str], regions: dict[str, Any], *, fill_only:
         entry[normalized] = name
 
 
-def _normalize_text(text: str) -> str:
+# The parser keeps Atlas' halfwidth katakana middle dot (魔術礼装･カルデア)
+# while the Chaldea tables use the fullwidth ・; without aliasing, keys from
+# one source would never merge with or be found via the other.
+_HALF_WIDTH_DOT = "･"
+_FULL_WIDTH_DOT = "・"
+
+
+def _register_middle_dot_aliases(flat: dict[str, dict[str, str]]) -> None:
+    """Register every entry under both middle-dot spellings (fill-only)."""
+    for key, regions in list(flat.items()):
+        if _HALF_WIDTH_DOT in key:
+            alias = key.replace(_HALF_WIDTH_DOT, _FULL_WIDTH_DOT)
+        elif _FULL_WIDTH_DOT in key:
+            alias = key.replace(_FULL_WIDTH_DOT, _HALF_WIDTH_DOT)
+        else:
+            continue
+        for region, value in regions.items():
+            flat.setdefault(alias, {}).setdefault(region, value)
+
+
+def _log_coverage(translations: dict[str, Translation]) -> None:
+    counts = {
+        region: sum(1 for translation in translations.values() if getattr(translation, region))
+        for region in REGIONS
+    }
+    summary = ", ".join(f"{region}: {count}" for region, count in counts.items())
+    logger.info("Translation coverage: %d keys (%s)", len(translations), summary)
+
+
+def normalize_text(text: str) -> str:
     return text.translate(_PUA_REPLACEMENTS)

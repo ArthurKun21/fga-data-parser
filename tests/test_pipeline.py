@@ -433,6 +433,26 @@ def test_duplicate_names_get_class_suffix() -> None:
     assert [servant.name for servant in servants] == ["Same Name", "Same Name (saber)"]
 
 
+def test_name_fixes_apply_only_to_jp() -> None:
+    # Non-JP outputs feed the translation table as values; NA really does
+    # ship "Altria" and the official text must survive untouched.
+    (servant,) = build_servants([make_servant()], region="NA")
+
+    assert servant.name == "Altria Pendragon"
+
+
+def test_name_dedupe_applies_only_to_jp() -> None:
+    servants = build_servants(
+        [
+            make_servant(id=1, name="Same Name"),
+            make_servant(id=2, name="Same Name"),
+        ],
+        region="NA",
+    )
+
+    assert [servant.name for servant in servants] == ["Same Name", "Same Name"]
+
+
 def test_repeated_duplicates_stay_unique() -> None:
     servants = build_servants(
         [

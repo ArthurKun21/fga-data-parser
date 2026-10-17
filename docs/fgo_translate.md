@@ -1,10 +1,18 @@
 # fgo_translate — how it works and why
 
-`src/fgo_translate` builds a flat JP-text -> translated-text table from the
-public name mappings of the [Chaldea](https://github.com/chaldea-center/chaldea)
-app, covering servant/CE/mystic-code names, skill names and descriptions,
-noble Phantasm names and descriptions, and buff texts. Output is
-`fgo_translate.json` (human-readable) then `fgo_translate.pb` (a
+`src/fgo_translate` builds a flat JP-text -> translated-text table covering
+exactly the JP texts that appear in the parser's data files
+(`servant_data.json`, `mystic_code_data.json`, `craft_essence_data.json`).
+Two sources merge into it:
+
+- **Cross-referenced Atlas text** (`atlas.py`): the parser's own per-region
+  outputs paired up entity-by-entity, giving the *official* game text of every
+  region (CN/TW/KR/NA) for each JP string.
+- **The public name mappings of the [Chaldea](https://github.com/chaldea-center/chaldea)
+  app**, which fill the gaps Atlas cannot cover (community translations for
+  content a region has not received yet, JP-only entities).
+
+Output is `fgo_translate.json` (human-readable) then `fgo_translate.pb` (a
 `FgoTranslate` message), same pattern as fga_data_parser.
 
 ## How Chaldea's translation system actually works
@@ -40,32 +48,74 @@ Researched from `chaldea-center/chaldea-data` (the published data artifact) and
   `override_mappings.json` is already merged upstream into `mappings/`, so we
   ignore it; `dist/mappingPatch.json` we merge ourselves because the app does.
 
+## Cross-referenced Atlas text
+
+`fga-data-parser` fetches all five regions (`--regions`, default JP/CN/TW/KR/NA)
+and writes parsed JSON per region: JP keeps the unsuffixed names
+(`servant_data.json`), other regions get a lowercase suffix
+(`servant_data.na.json`, JSON only, no `.pb`). `atlas.build_atlas_entries`
+pairs those outputs up:
+
+- Servants and craft essences align by `collection_no`, mystic codes by `id`.
+  Skills/append passives/CE skills match by id first (Atlas ids are shared
+  across regions), falling back to `num` + list order for id spaces that are
+  not (mystic code skills). Script-function payloads (choice popups, NP type
+  updates) align by function position.
+- The **keys are the exact JP texts in the parser's JP output** — FGA-facing
+  renames (Altria -> Artoria), "BB (Summer)", and dedupe suffixes like
+  "Same Name (saber)" included — so a consumer that looks up the text it read
+  from the parser data always hits the table. The parser only applies those
+  fixes for JP (`build_servants(region=...)`); regional outputs keep their
+  official text because it becomes the table's values.
+- Descriptions keep the `[{0}]` placeholders (parsed `unmodifiedDetail`),
+  matching the `skill_detail` key/value convention.
+- A region that has not received an entity or skill yet simply contributes no
+  value for it — the Chaldea mappings may still fill it (community
+  translations for JP-only content).
+
 ## Our design decisions
 
 - **One flat `map<string, TranslationProto>`** keyed by JP text, exactly as
   specified: it covers names, skills, NPs, buffs, and any future text kind
   with a single lookup, and Chaldea's per-table fallback chains collapse into
   it naturally (all tables share one namespace).
-- **Merge policy**: tables are processed in `TABLE_NAMES` order; the first
-  table to claim a JP key sets its regions and later tables only *fill
-  missing regions* (never overwrite). The patch is merged last and *wins*.
-  Patch sections outside `TABLE_NAMES` are ignored.
-- **Faithful output**: regions without a Chaldea translation are omitted from
-  the JSON and left unset (empty string) in the pb — matching Chaldea's own
-  dist files. Consumers implement the fallback themselves: first non-null
-  region in their priority order, else `jp`. (JP is always present; it equals
-  the key.)
-- The tool needs **only a chaldea-data checkout** (`--chaldea-data`), not the
-  Atlas caches — the table is self-contained. The release workflow checks the
-  repo out with `fetch-depth: 1` into `chaldea-data/`, which is gitignored and
-  must never be committed.
+- **Merge policy — Atlas first**: official regional text from the parser's
+  outputs wins where present; the Chaldea tables only *fill missing regions*
+  (and add keys Atlas cannot cover); the patch is merged last and *wins*, like
+  the app's deep merge. Within one source, the first writer of a key claims a
+  region and later writers only fill gaps. Patch sections outside
+  `TABLE_NAMES` are ignored.
+- **Middle-dot aliases**: the parser keeps Atlas' halfwidth katakana middle
+  dot (`魔術礼装･カルデア`) while Chaldea keys use the fullwidth `・`; every
+  entry is registered under both spellings (fill-only) so one lookup key
+  covers consumers written against either source.
+- **Pruned to the parser's texts**: the final table keeps only keys that
+  appear in the three data files (any string value counts; the remaining
+  leaves — icon URLs, class ids, flags — never collide with table keys).
+  Chaldea rows for used texts survive (JP-only servants have no regional data
+  and rely on Chaldea's community translations), while buff texts and noble
+  Phantasm details the parser does not emit are dropped. Without parsed
+  outputs nothing is pruned (Chaldea-only fallback keeps its full table).
+- **Faithful output**: regions without any translation are omitted from the
+  JSON and left unset (empty string) in the pb. Consumers implement the
+  fallback themselves: first non-null region in their priority order, else
+  `jp`. (JP is always present; it equals the key.) Build-time coverage counts
+  per region are logged for spotting regressions.
+- The tool needs a **chaldea-data checkout** (`--chaldea-data`) and, for the
+  Atlas-derived source, the **parser's per-region outputs** (`--atlas-data`,
+  default: current directory). Missing parsed outputs degrade gracefully to a
+  Chaldea-only table. `chaldea-data/` is gitignored and must never be
+  committed.
 
-## Consumer recipe (app-identical lookup)
+## Consumer recipe
 
 ```python
 entry = translations.get(jp) or translations.get(jp.replace("･", "・"))
 name = entry.na if entry and entry.na else jp   # per your region priority
 ```
+
+Both middle-dot spellings resolve to the same translation; the retry is only
+belt-and-suspenders for tables built before aliasing existed.
 
 ## Future ideas
 
@@ -73,12 +123,11 @@ name = entry.na if entry and entry.na else jp   # per your region priority
   `costume_names`, `cc_names`, `summon_names`, `func_popuptext`, ... are all
   the same shape — add one line to `TABLE_NAMES`.
 - **Collision policy**: if a JP key ever appears in two tables with conflicting
-  region values, the first table wins and others only fill gaps. If that ever
+  region values, the first writer wins and others only fill gaps. If that ever
   produces a wrong translation, consider emitting per-table maps instead.
 - **Resolved output variant**: an option that pre-fills every region with the
   priority-resolved name (no fallback logic for consumers) if wanted.
-- **Coverage report**: the release workflow could log how many entries carry
-  each region (at build time: CN ~15.4k, TW ~14.7k, NA ~14.1k, KR ~13.4k of
-  16.1k entries) to spot regressions in upstream data.
-- **Validation against Atlas**: NA/KR columns could be cross-checked against
-  Atlas `nice/NA` exports since those names are officially localized.
+- **Buff and NP-detail translations**: the parser does not emit buff texts or
+  noble Phantasm details, so pruning drops them from the sidecar; emitting
+  those fields from the parser would bring them back through the same
+  cross-referencing.

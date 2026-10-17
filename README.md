@@ -15,13 +15,17 @@ uv sync
 uv run fga-data-parser
 ```
 
-This downloads the raw servant, mystic code, and craft essence data for the JP
-server, caches it next to the generated files, and writes (JSON for humans,
-protobuf for applications):
+This downloads the raw servant, mystic code, and craft essence data for all
+game regions (JP, CN, TW, KR, NA), caches it next to the generated files, and
+writes (JSON for humans, protobuf for applications):
 
 - `servant_data.json` / `servant_data.pb`
 - `mystic_code_data.json` / `mystic_code_data.pb`
 - `craft_essence_data.json` / `craft_essence_data.pb`
+
+JP keeps the primary file names and the `.pb` outputs. The other regions write
+suffixed JSON only (e.g. `servant_data.na.json`), which the translation step
+cross-references for official per-region text.
 
 The protobuf messages are defined in `protos/fga_data_parser/*.proto`; the
 `.pb` files contain a `ServantList` / `MysticCodeList` / `CraftEssenceList`
@@ -30,25 +34,27 @@ message respectively.
 ## Translated text
 
 `fgo-translate` builds a flat JP-text -> translated-text table (JP/CN/TW/NA/KR)
-from the public name mappings of
-[Chaldea](https://github.com/chaldea-center/chaldea), covering servant/CE/
-mystic-code names, skill names and descriptions, noble Phantasm names and
-descriptions, and buff texts. It needs a checkout of
-[chaldea-data](https://github.com/chaldea-center/chaldea-data):
+covering exactly the texts in the parser's data files. It cross-references the
+parser's per-region outputs for the official game text of every region and
+fills the gaps from the public name mappings of
+[Chaldea](https://github.com/chaldea-center/chaldea). It needs a checkout of
+[chaldea-data](https://github.com/chaldea-center/chaldea-data) and the parser's
+outputs (both default to the current directory):
 
 ```bash
 git clone --depth 1 https://github.com/chaldea-center/chaldea-data
+uv run fga-data-parser
 uv run fgo-translate
 ```
 
 This writes `fgo_translate.json` / `fgo_translate.pb` (a `FgoTranslate`
 message: JP text -> `TranslationProto`) next to the other outputs. A region is
-absent when Chaldea has no translation for it; consumers fall back to the `jp`
+absent when no translation exists for it; consumers fall back to the `jp`
 text, like the Chaldea app does.
 
 | Flag | Description |
 | --- | --- |
-| `--region {JP,NA}` | Game server to fetch data from (default: `JP`). |
+| `--regions {JP,CN,TW,KR,NA} [...]` | Game servers to fetch data from (default: all regions). |
 | `--force` | Re-download the raw data even if it is already cached. |
 | `--output-dir DIR` | Directory for the cached raw data and generated files (default: current directory). |
 | `--verbose` | Enable debug logging. |
