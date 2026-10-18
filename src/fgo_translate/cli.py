@@ -9,7 +9,13 @@ from fga_data_parser.utils import write_bytes, write_data
 
 from .atlas import build_atlas_entries, collect_used_texts
 from .pb import translations_to_bytes
-from .pipeline import build_translations, translations_to_json
+from .pipeline import (
+    apply_overwrite_translations,
+    build_translations,
+    load_overwrite_translations,
+    overwrite_translations_to_json,
+    translations_to_json,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -44,6 +50,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="directory for the generated files (default: current directory)",
     )
     parser.add_argument(
+        "--overwrite-translations",
+        type=Path,
+        default=Path.cwd() / "overwrite_translations.json",
+        help=(
+            "path to the manual overwrite translations, read and updated in place "
+            "(default: ./overwrite_translations.json)"
+        ),
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="enable debug logging",
@@ -61,6 +76,12 @@ def main(argv: list[str] | None = None) -> int:
         atlas_entries=atlas_entries,
         used_texts=collect_used_texts(args.atlas_data),
     )
+
+    overwrite = load_overwrite_translations(args.overwrite_translations)
+    updated_overwrite = apply_overwrite_translations(translations, overwrite)
+    # Rewrite an existing file even when empty, so pruned entries are persisted.
+    if updated_overwrite or args.overwrite_translations.exists():
+        write_data(args.overwrite_translations, overwrite_translations_to_json(updated_overwrite))
 
     json_output = args.output_dir / "fgo_translate.json"
     write_data(json_output, translations_to_json(translations))
