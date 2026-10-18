@@ -41,6 +41,16 @@ def test_write_data_is_indented(tmp_path: Path) -> None:
     assert b"\n" in file_path.read_bytes()
 
 
+def test_write_data_ends_with_newline(tmp_path: Path) -> None:
+    # CI commits the JSON outputs without pre-commit hooks, so the writer
+    # itself must satisfy end-of-file-fixer.
+    file_path = tmp_path / "out.json"
+
+    write_data(file_path, {"a": 1})
+
+    assert file_path.read_bytes().endswith(b"\n")
+
+
 def test_read_data_missing_file_raises(tmp_path: Path) -> None:
     with pytest.raises(FileNotFoundError):
         read_data(tmp_path / "missing.json")

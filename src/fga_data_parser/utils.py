@@ -59,8 +59,13 @@ def read_data(file_path: Path) -> list[dict[str, Any]]:
 
 
 def write_data(file_path: Path, data: Any) -> None:
-    """Serialize data to JSON at file_path."""
-    file_path.write_bytes(orjson.dumps(data, option=orjson.OPT_INDENT_2))
+    """Serialize data to JSON at file_path, newline-terminated."""
+    # orjson never appends a newline; without this, CI commits of the JSON
+    # outputs land without one because the pre-commit end-of-file-fixer
+    # only runs on developer checkouts.
+    file_path.write_bytes(
+        orjson.dumps(data, option=orjson.OPT_INDENT_2 | orjson.OPT_APPEND_NEWLINE)
+    )
     logger.debug("Wrote %s", file_path)
 
 
