@@ -5,7 +5,11 @@ import orjson
 import pytest
 
 from fgo_translate import fgo_translate_pb2
-from fgo_translate.atlas import build_atlas_entries, collect_used_texts
+from fgo_translate.atlas import (
+    build_atlas_entries,
+    collect_translatable_texts,
+    collect_used_texts,
+)
 from fgo_translate.cli import main
 from fgo_translate.pb import translations_to_bytes
 from fgo_translate.pipeline import (
@@ -73,6 +77,29 @@ def write_chaldea_data(tmp_path, *, patch=None) -> None:
     (mappings / "buff_names.json").write_bytes(
         orjson.dumps({"無敵状態": {"JP": None, "NA": "Invincibility"}})
     )
+    # funcPopupText strings the parser copies into script-function payloads.
+    (mappings / "func_popuptext.json").write_bytes(
+        orjson.dumps({"宝具タイプチェンジ": {"JP": None, "NA": "NP Type Change"}})
+    )
+    # misc.json is sectioned; only the JP-text-keyed skill popup sections are
+    # folded in, identifier-keyed ones like Function stay out.
+    (mappings / "misc.json").write_bytes(
+        orjson.dumps(
+            {
+                "SelectAddInfo": {
+                    "入れ替えるか選択してください": {"JP": None, "CN": "请选择是否替换灵基"},
+                    "入れ替えない": {"JP": None, "CN": "不替换"},
+                },
+                "selectTreasureDeviceInfo": {"攻撃タイプ": {"JP": None, "NA": "Attack Type"}},
+                "Function": {
+                    "ifPrevFuncSucceed": {
+                        "JP": "前の効果が成功時",
+                        "NA": "If previous func succeeds",
+                    }
+                },
+            }
+        )
+    )
     for empty_table in ("td_names", "td_detail", "buff_detail"):
         (mappings / f"{empty_table}.json").write_bytes(orjson.dumps({}))
     if patch is not None:
@@ -114,6 +141,33 @@ def test_missing_patch_file_is_tolerated(tmp_path) -> None:
     translations = build_translations(tmp_path / "chaldea-data")
 
     assert translations["マシュ・キリエライト"].na == "Mash Kyrielight"
+
+
+def test_popup_text_tables_merge(tmp_path) -> None:
+    write_chaldea_data(tmp_path)
+
+    translations = build_translations(tmp_path / "chaldea-data")
+
+    assert translations["宝具タイプチェンジ"].na == "NP Type Change"
+    assert translations["入れ替えるか選択してください"].cn == "请选择是否替换灵基"
+    assert translations["攻撃タイプ"].na == "Attack Type"
+    # Identifier-keyed sections are not game text and stay out.
+    assert "ifPrevFuncSucceed" not in translations
+
+
+def test_patch_updates_popup_tables(tmp_path) -> None:
+    write_chaldea_data(
+        tmp_path,
+        patch={
+            "func_popuptext": {"宝具タイプチェンジ": {"NA": "Patched Type Change"}},
+            "misc": {"SelectAddInfo": {"入れ替えない": {"CN": "补丁替换"}}},
+        },
+    )
+
+    translations = build_translations(tmp_path / "chaldea-data")
+
+    assert translations["宝具タイプチェンジ"].na == "Patched Type Change"
+    assert translations["入れ替えない"].cn == "补丁替换"
 
 
 def test_tables_only_fill_gaps_but_patch_wins(tmp_path) -> None:
@@ -204,6 +258,7 @@ def write_atlas_data(tmp_path) -> None:
             "num": 1,
             "name": "カリスマ B",
             "detail": "味方全体の攻撃力をアップ[{0}](3ターン)",
+            "icon": "https://example.test/SkillIcons/skill_1.png",
             "functions": [
                 {
                     "target": "Choice2",
@@ -602,6 +657,50 @@ def test_collect_used_texts(tmp_path) -> None:
     assert collect_used_texts(tmp_path / "missing") is None
 
 
+def test_collect_translatable_texts(tmp_path) -> None:
+    write_atlas_data(tmp_path)
+
+    texts = collect_translatable_texts(tmp_path / "atlas-data")
+
+    assert texts is not None
+    # Skill names/details, script payload texts, NP names, append passives,
+    # mystic code and craft essence fields.
+    assert {
+        "Artoria Pendragon (Saber)",
+        "カリスマ B",
+        "味方全体の攻撃力をアップ[{0}](3ターン)",
+        "入れ替えるか選択してください",
+        "入れ替えない",
+        "入れ替える",
+        "強化カリスマ A",
+        "強化版[{0}]",
+        "約束された勝利の剣",
+        "対魔力 C",
+        "対魔力",
+        "自身の弱体耐性をアップ[{0}]",
+        "魔{jin}セイバー",
+        "マシュ・キリエライト",
+        "フランチェスカ・プレラーティ",
+        "蒼崎青子",
+        "魔術礼装･カルデア",
+        "応急手当",
+        "味方単体のHPを大回復[{0}]",
+        "星の王冠",
+        "旧星の王冠",
+        "王冠の輝き",
+        "自身のクリティカル威力をアップする",
+    } <= texts
+    # Non-translatable leaves stay out, unlike collect_used_texts.
+    assert "https://example.test/SkillIcons/skill_1.png" not in texts
+    assert "https://example.test/SkillIcons/skill_1.png" in collect_used_texts(
+        tmp_path / "atlas-data"
+    )
+
+
+def test_collect_translatable_texts_without_jp_data(tmp_path) -> None:
+    assert collect_translatable_texts(tmp_path / "missing") is None
+
+
 def test_unused_keys_are_pruned(tmp_path) -> None:
     write_atlas_data(tmp_path)
     write_chaldea_data(tmp_path)
@@ -648,6 +747,61 @@ def test_cli_prunes_to_used_texts(tmp_path) -> None:
     assert "カリスマ B" in json_data["translations"]
     assert "スキル名" not in json_data["translations"]
     assert "魔術礼装・カルデア" not in json_data["translations"]
+
+
+def test_required_texts_add_sourceless_keys(tmp_path) -> None:
+    write_chaldea_data(tmp_path)
+
+    translations = build_translations(
+        tmp_path / "chaldea-data",
+        required_texts={"マシュ・キリエライト", "JPだけのスキル詳細"},
+    )
+
+    # A used text no source covers is present but translation-less, and the
+    # JSON output keeps it as a jp-only entry for the consumer's fallback.
+    sourceless = translations["JPだけのスキル詳細"]
+    assert sourceless.jp == "JPだけのスキル詳細"
+    assert sourceless.cn is None
+    assert sourceless.tw is None
+    assert sourceless.na is None
+    assert sourceless.kr is None
+    json_data = translations_to_json(translations)
+    assert json_data["translations"]["JPだけのスキル詳細"] == {"jp": "JPだけのスキル詳細"}
+    # A key a source covers is untouched.
+    assert translations["マシュ・キリエライト"].na == "Mash Kyrielight"
+
+
+def test_required_texts_none_adds_nothing(tmp_path) -> None:
+    write_chaldea_data(tmp_path)
+
+    translations = build_translations(tmp_path / "chaldea-data")
+
+    assert "JPだけのスキル詳細" not in translations
+
+
+def test_sourceless_key_queues_into_overwrite_and_fills(tmp_path) -> None:
+    write_chaldea_data(tmp_path)
+    overwrite_path = tmp_path / "overwrite_translations.json"
+    overwrite_path.write_bytes(
+        orjson.dumps({"translations": {"JPだけのスキル詳細": {"cn": "仅JP的技能详情"}}})
+    )
+
+    translations = build_translations(
+        tmp_path / "chaldea-data", required_texts={"JPだけのスキル詳細"}
+    )
+    updated = apply_overwrite_translations(
+        translations, load_overwrite_translations(overwrite_path)
+    )
+
+    # The fill reaches the translation-less entry; the queue keeps the key
+    # for the regions still missing, so the next rebuild reapplies it.
+    assert translations["JPだけのスキル詳細"].cn == "仅JP的技能详情"
+    assert updated["JPだけのスキル詳細"] == {
+        "cn": "仅JP的技能详情",
+        "tw": None,
+        "na": None,
+        "kr": None,
+    }
 
 
 def test_apply_overwrite_fills_only_missing_regions() -> None:
