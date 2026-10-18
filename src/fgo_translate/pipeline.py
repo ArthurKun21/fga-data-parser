@@ -128,28 +128,36 @@ def translations_to_json(
     }
 
 
-def load_overwrite_translations(path: Path) -> dict[str, dict[str, str]]:
+def load_overwrite_translations(path: Path) -> dict[str, dict[str, str | None]]:
     """Load the manual overwrite table; a missing file is an empty table.
 
-    The file is hand-edited, so structural mistakes fail loudly instead of
-    silently dropping manual translations.
+    Entries hold only the regions the build is missing: null while unfilled,
+    the provided translation once filled. The file is hand-edited, so
+    structural mistakes fail loudly instead of silently dropping manual
+    translations. Entries from before the null format that echo the jp text
+    are tolerated and ignored — the key is the jp text itself.
     """
     if not path.exists():
         return {}
     raw = read_data(path)
     if not isinstance(raw, dict) or not isinstance(raw.get("translations"), dict):
         raise ValueError(f"{path}: expected a {{'translations': {{...}}}} object")
-    table: dict[str, dict[str, str]] = {}
+    table: dict[str, dict[str, str | None]] = {}
     for jp_text, entry in raw["translations"].items():
         if not isinstance(entry, dict):
             raise ValueError(f"{path}: entry {jp_text!r} must be an object")
-        regions: dict[str, str] = {}
+        regions: dict[str, str | None] = {}
         for region, value in entry.items():
-            if region != "jp" and region not in REGIONS:
+            if region == "jp":
+                if not isinstance(value, str) or not value:
+                    raise ValueError(f"{path}: entry {jp_text!r} jp must be a non-empty string")
+                continue
+            if region not in REGIONS:
                 raise ValueError(f"{path}: entry {jp_text!r} has unknown region {region!r}")
-            if not isinstance(value, str) or not value:
+            if value is not None and (not isinstance(value, str) or not value):
                 raise ValueError(
-                    f"{path}: entry {jp_text!r} region {region!r} must be a non-empty string"
+                    f"{path}: entry {jp_text!r} region {region!r} must be null "
+                    "or a non-empty string"
                 )
             regions[region] = value
         table[jp_text] = regions
@@ -158,36 +166,35 @@ def load_overwrite_translations(path: Path) -> dict[str, dict[str, str]]:
 
 def apply_overwrite_translations(
     translations: dict[str, Translation],
-    overwrite: dict[str, dict[str, str]],
-) -> dict[str, dict[str, str]]:
+    overwrite: dict[str, dict[str, str | None]],
+) -> dict[str, dict[str, str | None]]:
     """Fill missing regions from the overwrite table; return the table to persist.
 
-    Existing values are never replaced. A key is kept for the next run while it
-    still misses a region or had a value applied — the table is rebuilt from
-    the Chaldea data every run, so applied values must survive in the file.
-    Keys fully translated without a fill, and keys unknown to the table, are
-    dropped as clutter.
+    Existing values are never replaced. A persisted entry holds only the
+    regions missing from the freshly built table — null while unfilled, the
+    applied value once filled, because the next run rebuilds the table from
+    the Chaldea data and would lose the value otherwise. Keys the build fully
+    translated itself, and keys unknown to it, are dropped as clutter.
     """
-    updated: dict[str, dict[str, str]] = {}
+    updated: dict[str, dict[str, str | None]] = {}
     fills = 0
     for jp_text, translation in translations.items():
         entry = overwrite.get(jp_text, {})
-        filled = False
-        for region in REGIONS:
+        missing = [region for region in REGIONS if getattr(translation, region) is None]
+        for region in missing:
             value = entry.get(region)
-            if value is not None and getattr(translation, region) is None:
+            if value is not None:
                 setattr(translation, region, value)
                 fills += 1
-                filled = True
-        if filled or any(getattr(translation, region) is None for region in REGIONS):
-            updated[jp_text] = translation.to_json()
+        if missing:
+            updated[jp_text] = {region: getattr(translation, region) for region in missing}
     logger.info("Overwrite translations: applied %d fills, %d entries pending", fills, len(updated))
     return updated
 
 
 def overwrite_translations_to_json(
-    overwrite: dict[str, dict[str, str]],
-) -> dict[str, dict[str, dict[str, str]]]:
+    overwrite: dict[str, dict[str, str | None]],
+) -> dict[str, dict[str, dict[str, str | None]]]:
     """Convert the overwrite table to the JSON output shape (keys sorted)."""
     return {"translations": dict(sorted(overwrite.items()))}
 

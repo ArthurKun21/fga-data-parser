@@ -656,43 +656,45 @@ def test_apply_overwrite_fills_only_missing_regions() -> None:
         "完全": Translation(jp="完全", cn="完全", tw="完全", na="Complete", kr="완전"),
     }
     overwrite = {
-        "欠片": {"jp": "欠片", "na": "WRONG", "tw": "碎片TW", "kr": "조각"},
-        "完全": {"jp": "完全", "na": "WRONG", "kr": "WRONG"},
+        "欠片": {"tw": "碎片TW", "kr": "조각"},
+        # A value for a region the build already covers is never applied.
+        "完全": {"kr": "WRONG"},
     }
 
-    apply_overwrite_translations(translations, overwrite)
+    updated = apply_overwrite_translations(translations, overwrite)
 
     # Existing values win; only the missing regions are filled.
-    assert translations["欠片"].na == "Fragment"
     assert translations["欠片"].tw == "碎片TW"
     assert translations["欠片"].kr == "조각"
     assert translations["完全"].kr == "완전"
+    # The persisted entry holds the natively missing regions only.
+    assert updated == {"欠片": {"tw": "碎片TW", "kr": "조각"}}
 
 
 def test_apply_overwrite_persists_pending_and_filled_entries() -> None:
     translations = {
-        # Still missing kr (and tw) after the fill attempt: recorded with its
-        # known values, the redundant na value from the file dropped.
+        # tw and kr are missing from the build; the file's na value targets a
+        # region the build already covers, so it is ignored and dropped.
         "未完": Translation(jp="未完", cn="未完", na="Unfinished"),
-        # Completed entirely by the fill: kept, or the next run — which
-        # rebuilds the table from Chaldea — would lose the value again.
+        # Completed by the fill: the applied value persists, or the next run
+        # — which rebuilds the table from Chaldea — would lose it again.
         "補完": Translation(jp="補完", cn="補完"),
-        # Fully translated without any fill: dropped as clutter.
+        # Fully translated by the build itself: dropped as clutter.
         "完全": Translation(jp="完全", cn="完全", tw="完全", na="Complete", kr="완전"),
     }
     overwrite = {
-        "未完": {"jp": "未完", "na": "Unfinished"},
-        "補完": {"jp": "補完", "tw": "補完TW"},
-        "完全": {"jp": "完全", "kr": "완전"},
+        "未完": {"na": "Unfinished"},
+        "補完": {"tw": "補完TW"},
+        "完全": {"kr": "완전"},
         # Unknown to the table (e.g. pruned as unused): dropped as clutter.
-        "消滅": {"jp": "消滅", "na": "Gone"},
+        "消滅": {"na": "Gone"},
     }
 
     updated = apply_overwrite_translations(translations, overwrite)
 
     assert updated == {
-        "未完": {"jp": "未完", "cn": "未完", "na": "Unfinished"},
-        "補完": {"jp": "補完", "cn": "補完", "tw": "補完TW"},
+        "未完": {"tw": None, "kr": None},
+        "補完": {"tw": "補完TW", "na": None, "kr": None},
     }
 
 
@@ -701,27 +703,34 @@ def test_apply_overwrite_records_new_missing_entries() -> None:
 
     updated = apply_overwrite_translations(translations, {})
 
-    assert updated == {"新規": {"jp": "新規", "na": "New"}}
+    assert updated == {"新規": {"cn": None, "tw": None, "kr": None}}
     assert translations["新規"].kr is None  # nothing was filled
 
 
 def test_overwrite_translations_to_json_sorts_keys() -> None:
-    json_data = overwrite_translations_to_json(
-        {"b": {"jp": "b", "na": "B"}, "a": {"jp": "a", "kr": "에이"}}
-    )
+    json_data = overwrite_translations_to_json({"b": {"na": "B"}, "a": {"kr": None}})
 
     assert list(json_data) == ["translations"]
     assert list(json_data["translations"]) == ["a", "b"]
-    assert json_data["translations"]["a"] == {"jp": "a", "kr": "에이"}
+    assert json_data["translations"]["a"] == {"kr": None}
 
 
 def test_load_overwrite_translations(tmp_path) -> None:
     path = tmp_path / "overwrite_translations.json"
     assert load_overwrite_translations(path) == {}
 
-    path.write_bytes(orjson.dumps({"translations": {"欠片": {"jp": "欠片", "tw": "碎片TW"}}}))
+    path.write_bytes(orjson.dumps({"translations": {"欠片": {"tw": None, "kr": "조각"}}}))
 
-    assert load_overwrite_translations(path) == {"欠片": {"jp": "欠片", "tw": "碎片TW"}}
+    assert load_overwrite_translations(path) == {"欠片": {"tw": None, "kr": "조각"}}
+
+
+def test_load_overwrite_translations_tolerates_legacy_entries(tmp_path) -> None:
+    """The pre-null format echoed jp plus the known values; the first run
+    rewrites such a file in place, so it must still load."""
+    path = tmp_path / "overwrite_translations.json"
+    path.write_bytes(orjson.dumps({"translations": {"欠片": {"jp": "欠片", "na": "Fragment"}}}))
+
+    assert load_overwrite_translations(path) == {"欠片": {"na": "Fragment"}}
 
 
 @pytest.mark.parametrize(
@@ -730,8 +739,9 @@ def test_load_overwrite_translations(tmp_path) -> None:
         ({"entries": {}}, "expected a {'translations': {...}} object"),
         ({"translations": {"欠片": "碎片"}}, "must be an object"),
         ({"translations": {"欠片": {"en": "Fragment"}}}, "unknown region 'en'"),
-        ({"translations": {"欠片": {"na": ""}}}, "must be a non-empty string"),
-        ({"translations": {"欠片": {"na": 3}}}, "must be a non-empty string"),
+        ({"translations": {"欠片": {"na": ""}}}, "must be null or a non-empty string"),
+        ({"translations": {"欠片": {"na": 3}}}, "must be null or a non-empty string"),
+        ({"translations": {"欠片": {"jp": ""}}}, "jp must be a non-empty string"),
     ],
 )
 def test_load_overwrite_translations_rejects_malformed(tmp_path, content, error) -> None:
@@ -751,9 +761,9 @@ def test_cli_applies_and_persists_overwrite_translations(tmp_path) -> None:
             {
                 "translations": {
                     # Fills the one missing region of an otherwise complete key.
-                    "カリスマ B": {"jp": "カリスマ B", "kr": "카리스마"},
+                    "カリスマ B": {"kr": "카리스마"},
                     # Unknown to the table: dropped as clutter.
-                    "消滅": {"jp": "消滅", "na": "Gone"},
+                    "消滅": {"na": "Gone"},
                 }
             }
         )
@@ -776,14 +786,9 @@ def test_cli_applies_and_persists_overwrite_translations(tmp_path) -> None:
 
     overwrite = json.loads(overwrite_path.read_text())["translations"]
     # The fill-completed key is kept so the next run reapplies it.
-    assert overwrite["カリスマ B"]["kr"] == "카리스마"
-    # Incomplete keys are recorded with their known values.
-    assert overwrite["マシュ・キリエライト"] == {
-        "jp": "マシュ・キリエライト",
-        "cn": "玛修·基列莱特",
-        "na": "Mash Kyrielight",
-        "kr": "매슈",
-    }
+    assert overwrite["カリスマ B"] == {"kr": "카리스마"}
+    # Missing regions are recorded as nulls, without the known values.
+    assert overwrite["マシュ・キリエライト"] == {"tw": None}
     # Stale entries are pruned.
     assert "消滅" not in overwrite
 
