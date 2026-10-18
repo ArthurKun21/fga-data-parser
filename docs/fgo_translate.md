@@ -26,8 +26,17 @@ Researched from `chaldea-center/chaldea-data` (the published data artifact) and
   restores it at load). There is no `en` key: the English game region is `NA`.
 - The tables this tool folds in: `svt_names`, `entity_names` (enemies/NPCs),
   `ce_names`, `mc_names`, `skill_names`, `skill_detail`, `td_names` (noble
-  Phantasm names), `td_detail`, `buff_names`, `buff_detail`. All live in
-  `mappings/` of chaldea-data and use the same value schema.
+  Phantasm names), `td_detail`, `buff_names`, `buff_detail`, `func_popuptext`
+  (the `funcPopupText` strings the parser copies into script-function
+  payloads). All live in `mappings/` of chaldea-data and use the same value
+  schema.
+- `mappings/misc.json` is sectioned, and only its JP-text-keyed skill popup
+  sections are folded in: `SelectAddInfo` (choice dialog titles and button
+  names) and `selectTreasureDeviceInfo` (NP type select). The rest is
+  identifier-keyed (`$default`, `Function`, `SkillScript`,
+  `condBranchSkillInfo`) or unrelated UI text and is skipped — flattening it
+  would seed the table with keys that are not game text. The mapping patch's
+  `misc` section is flattened the same way and wins last.
 - `skill_detail` / `td_detail` keys are the raw templated JP texts (with
   `[{0}]` placeholders), matching Atlas skill/NP description templates — so
   consumers can look descriptions up directly from Atlas data.
@@ -103,6 +112,17 @@ pairs those outputs up:
   templated `[{0}]` texts while parser descriptions are the resolved `detail`
   field, so the two only coincide without placeholders. Without parsed
   outputs nothing is pruned (Chaldea-only fallback keeps its full table).
+- **Every translatable parser text is present as a key.** Pruning removes
+  unused keys; `atlas.collect_translatable_texts` walks the translatable
+  fields the cross-reference records (names, details, script payload texts —
+  never icon URLs, enums or ids) and `build_translations` adds back the used
+  ones no source reached as translation-less entries (`{"jp": ...}` in the
+  JSON, unset regions in the pb). Consumers fall back to jp for them, and the
+  overwrite queue records the missing regions for manual / machine
+  translation — this is how JP-only skill details (whose templated Chaldea
+  keys can never match) eventually get filled. The pruning scan stays keyed
+  on every string leaf, so a text field the walker does not know yet still
+  keeps its Chaldea rows.
 - **Faithful output**: regions without any translation are omitted from the
   JSON and left unset (empty string) in the pb. Consumers implement the
   fallback themselves: first non-null region in their priority order, else
@@ -125,7 +145,9 @@ closes that loop:
 
 - **Record**: after the build, every key missing at least one region is
   written into the file holding only its missing regions, as `null` — the
-  work queue for manual / machine translation. Regions the build already
+  work queue for manual / machine translation. A key no source covered at all
+  (a translation-less entry added from the parser's translatable texts) is
+  recorded with all four regions null. Regions the build already
   covers are left out (the jp text stays the dict key, so the source text is
   still at hand). A region completed by a fill keeps its applied value
   instead of collapsing away — the next run rebuilds the table from Chaldea
@@ -161,8 +183,8 @@ belt-and-suspenders for tables built before aliasing existed.
 ## Future ideas
 
 - **More tables**: `quest_names`, `event_names`, `item_names`,
-  `costume_names`, `cc_names`, `summon_names`, `func_popuptext`, ... are all
-  the same shape — add one line to `TABLE_NAMES`.
+  `costume_names`, `cc_names`, `summon_names`, ... are all the same shape —
+  add one line to `TABLE_NAMES`.
 - **Collision policy**: if a JP key ever appears in two tables with conflicting
   region values, the first writer wins and others only fill gaps. If that ever
   produces a wrong translation, consider emitting per-table maps instead.
