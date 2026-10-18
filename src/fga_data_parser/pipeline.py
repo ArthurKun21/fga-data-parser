@@ -338,7 +338,7 @@ def _parse_skills(
             id=raw.get("id", 0),
             num=index if num_from_index else raw.get("num", 0),
             name=raw.get("name", ""),
-            detail=raw.get("unmodifiedDetail", ""),
+            detail=raw.get("detail", ""),
             icon=raw.get("icon", ""),
             cooldown=raw.get("coolDown", []),
             scripts=raw.get("script", {}),

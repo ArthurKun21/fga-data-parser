@@ -114,8 +114,8 @@ message Skill {
   int32 num = 2;
   // Atlas skill name.
   string name = 3;
-  // Atlas "unmodifiedDetail": the description with level-dependent values
-  // kept as [{0}] placeholders (the plain "detail" field strips them).
+  // Atlas "detail": the description with level-dependent values already
+  // resolved (the "unmodifiedDetail" field keeps [{0}] placeholders).
   string detail = 4;
   // Atlas skill icon (a static.atlasacademy.io URL in current exports).
   string icon = 5;

@@ -11,7 +11,7 @@ Fix: fetch the same three Atlas URL templates for all five regions (`export/{JP,
 - **Sidecar schema unchanged** — `fgo_translate.proto` untouched; keys stay JP text, `cn/tw/na/kr` values get filled from official regional text.
 - **Keys come from the parsed JP outputs** so they match exactly what consumers look up (mutated names included); region values are official regional text aligned per entity/field.
 - **Merge policy: Atlas first** — official Atlas regional text wins where that region has the content; Chaldea tables fill gaps; `mappingPatch.json` still wins last (app behavior).
-- Skill/CE-skill description values use templated `unmodifiedDetail` (keeps `[{0}]` placeholders, matching Chaldea `skill_detail` conventions).
+- Skill/CE-skill description values use Atlas' resolved `detail` (level-dependent values filled in, no `[{0}]` placeholders).
 - Non-JP regions output **JSON only** (no extra `.pb`); JP keeps current unsuffixed names so the release workflow's four artifacts are unchanged.
 
 ## Implementation

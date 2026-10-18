@@ -67,8 +67,8 @@ pairs those outputs up:
   from the parser data always hits the table. The parser only applies those
   fixes for JP (`build_servants(region=...)`); regional outputs keep their
   official text because it becomes the table's values.
-- Descriptions keep the `[{0}]` placeholders (parsed `unmodifiedDetail`),
-  matching the `skill_detail` key/value convention.
+- Descriptions are Atlas' resolved `detail` (level-dependent values filled
+  in), not the templated `unmodifiedDetail`.
 - A region that has not received an entity or skill yet simply contributes no
   value for it — the Chaldea mappings may still fill it (community
   translations for JP-only content).
@@ -94,7 +94,10 @@ pairs those outputs up:
   leaves — icon URLs, class ids, flags — never collide with table keys).
   Chaldea rows for used texts survive (JP-only servants have no regional data
   and rely on Chaldea's community translations), while buff texts and noble
-  Phantasm details the parser does not emit are dropped. Without parsed
+  Phantasm details the parser does not emit are dropped. Chaldea `skill_detail`
+  rows drop too unless a description has no level scaling: their keys are the
+  templated `[{0}]` texts while parser descriptions are the resolved `detail`
+  field, so the two only coincide without placeholders. Without parsed
   outputs nothing is pruned (Chaldea-only fallback keeps its full table).
 - **Faithful output**: regions without any translation are omitted from the
   JSON and left unset (empty string) in the pb. Consumers implement the
