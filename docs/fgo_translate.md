@@ -56,11 +56,15 @@ and writes parsed JSON per region: JP keeps the unsuffixed names
 (`servant_data.na.json`, JSON only, no `.pb`). `atlas.build_atlas_entries`
 pairs those outputs up:
 
-- Servants and craft essences align by `collection_no`, mystic codes by `id`.
-  Skills/append passives/CE skills match by id first (Atlas ids are shared
-  across regions), falling back to `num` + list order for id spaces that are
-  not (mystic code skills). Script-function payloads (choice popups, NP type
-  updates) align by function position.
+- Servants, craft essences and mystic codes align by `id` first (Atlas ids
+  are shared across regions and unique within one), falling back to the
+  collection number for entities the other region still hosts under a
+  different id — but `collection_no` 0 never pairs: "unnumbered" is shared by
+  many distinct servants (Francesca Prelati, Aozaki Aoko, ...), and pairing on
+  it once translated every unnumbered JP servant as Aozaki Aoko. Skills /
+  append passives / CE skills match by id first too, falling back to `num` +
+  list order for id spaces that are not (mystic code skills). Script-function
+  payloads (choice popups, NP type updates) align by function position.
 - The **keys are the exact JP texts in the parser's JP output** — FGA-facing
   renames (Altria -> Artoria), "BB (Summer)", and dedupe suffixes like
   "Same Name (saber)" included — so a consumer that looks up the text it read
