@@ -80,8 +80,8 @@ pairs those outputs up:
   from the parser data always hits the table. The parser only applies those
   fixes for JP (`build_servants(region=...)`); regional outputs keep their
   official text because it becomes the table's values.
-- Descriptions are Atlas' resolved `detail` (level-dependent values filled
-  in), not the templated `unmodifiedDetail`.
+- Skill and NP descriptions are Atlas' resolved `detail` (level-dependent
+  values filled in), not the templated `unmodifiedDetail`.
 - A region that has not received an entity or skill yet simply contributes no
   value for it — the Chaldea mappings may still fill it (community
   translations for JP-only content).
@@ -106,12 +106,12 @@ pairs those outputs up:
   appear in the three data files (any string value counts; the remaining
   leaves — icon URLs, class ids, flags — never collide with table keys).
   Chaldea rows for used texts survive (JP-only servants have no regional data
-  and rely on Chaldea's community translations), while buff texts and noble
-  Phantasm details the parser does not emit are dropped. Chaldea `skill_detail`
-  rows drop too unless a description has no level scaling: their keys are the
-  templated `[{0}]` texts while parser descriptions are the resolved `detail`
-  field, so the two only coincide without placeholders. Without parsed
-  outputs nothing is pruned (Chaldea-only fallback keeps its full table).
+  and rely on Chaldea's community translations), while buff texts the parser
+  does not emit are dropped. Chaldea `skill_detail`/`td_detail` rows drop too
+  unless a description has no level scaling: their keys are the templated
+  `[{0}]` texts while parser descriptions are the resolved `detail` field, so
+  the two only coincide without placeholders. Without parsed outputs nothing
+  is pruned (Chaldea-only fallback keeps its full table).
 - **Every translatable parser text is present as a key.** Pruning removes
   unused keys; `atlas.collect_translatable_texts` walks the translatable
   fields the cross-reference records (names, details, script payload texts —
@@ -190,7 +190,6 @@ belt-and-suspenders for tables built before aliasing existed.
   produces a wrong translation, consider emitting per-table maps instead.
 - **Resolved output variant**: an option that pre-fills every region with the
   priority-resolved name (no fallback logic for consumers) if wanted.
-- **Buff and NP-detail translations**: the parser does not emit buff texts or
-  noble Phantasm details, so pruning drops them from the sidecar; emitting
-  those fields from the parser would bring them back through the same
-  cross-referencing.
+- **Buff translations**: the parser does not emit buff texts, so pruning drops
+  them from the sidecar; emitting those fields from the parser would bring
+  them back through the same cross-referencing.

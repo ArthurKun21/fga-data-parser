@@ -228,6 +228,9 @@ for the same reason.
   plain ascension-form gates (Ptolemaîos, Elisabeth, U-Olga Marie), so each gate
   records which side it belongs to (`costume` for stages 11+, `ascension` for
   0–4; the other side is 0/unset — the user-authored proto shape).
+- **NPs carry Atlas' resolved `detail`** (level-dependent values already
+  filled in; the raw `unmodifiedDetail` keeps the `[{0}]` placeholders and is
+  not emitted), mirroring the skill field.
 - **Entries with an empty `functions` list are dropped at parse time** — they are
   placeholders for not-yet-released servants, not real kits (see "Not-yet-live
   entries" above). Exclusion happens before model construction, so the models and

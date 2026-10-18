@@ -253,6 +253,7 @@ def _build_nps(raw_nps: list[dict[str, Any]]) -> list[NoblePhantasm]:
             id=raw.get("id", 0),
             num=raw.get("num", 0),
             name=raw.get("name", ""),
+            detail=raw.get("detail", ""),
             card_type=CardType.from_atlas(raw.get("card", "")),
             targets=_noble_phantasm_targets(raw),
             # The top-level releaseConditions alone drop conditions that the

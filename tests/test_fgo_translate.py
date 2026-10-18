@@ -273,6 +273,16 @@ def write_atlas_data(tmp_path) -> None:
         # A fresh JP upgrade the other regions have not received yet.
         {"id": 2, "num": 1, "name": "強化カリスマ A", "detail": "強化版[{0}]", "functions": []},
     ]
+    jp_nps = [
+        {
+            "id": 11,
+            "num": 1,
+            "name": "約束された勝利の剣",
+            "detail": "敵全体に非常に強力な攻撃[{0}]",
+        },
+        # A fresh JP NP the other regions have not received yet.
+        {"id": 12, "num": 2, "name": "約束された勝利の剣・改", "detail": "強化版宝具詳細[{0}]"},
+    ]
     na_skills = [
         {
             "id": 1,
@@ -303,7 +313,7 @@ def write_atlas_data(tmp_path) -> None:
             servant(
                 name="Artoria Pendragon (Saber)",
                 skills=jp_skills,
-                nps=[{"id": 11, "num": 1, "name": "約束された勝利の剣"}],
+                nps=jp_nps,
                 append_passives=[
                     {
                         "num": 1,
@@ -360,7 +370,14 @@ def write_atlas_data(tmp_path) -> None:
                 # The official NA text keeps "Altria"; values are never renamed.
                 name="Altria Pendragon",
                 skills=na_skills,
-                nps=[{"id": 11, "num": 1, "name": "Excalibur"}],
+                nps=[
+                    {
+                        "id": 11,
+                        "num": 1,
+                        "name": "Excalibur",
+                        "detail": "Deal significant damage to all enemies.",
+                    }
+                ],
                 append_passives=[
                     {
                         "num": 1,
@@ -398,7 +415,7 @@ def write_atlas_data(tmp_path) -> None:
                 # The fullwidth stop is the official TW text, not a typo.
                 name="阿爾托莉亞．潘德拉剛",  # noqa: RUF001
                 skills=tw_skills,
-                nps=[{"id": 888, "num": 1, "name": "勝利の剣TW"}],
+                nps=[{"id": 888, "num": 1, "name": "勝利の剣TW", "detail": "TW版宝具詳細"}],
                 append_passives=[],
             )
         ],
@@ -510,6 +527,12 @@ def test_build_atlas_entries(tmp_path) -> None:
     assert entries["入れ替えるか選択してください"] == {"na": "Choose"}
     assert entries["入れ替えない"] == {"na": "Keep"}
     assert entries["約束された勝利の剣"] == {"na": "Excalibur", "tw": "勝利の剣TW"}
+    assert entries["敵全体に非常に強力な攻撃[{0}]"] == {
+        "na": "Deal significant damage to all enemies.",
+        "tw": "TW版宝具詳細",
+    }
+    # The JP-only NP pairs with nothing, like the JP-only skill.
+    assert "強化版宝具詳細[{0}]" not in entries
     assert entries["対魔力 C"] == {"na": "Magic Resistance C"}
     assert entries["対魔力"] == {"na": "Magic Resistance"}
     assert entries["自身の弱体耐性をアップ[{0}]"] == {"na": "Increase debuff resistance [{0}]"}
@@ -663,8 +686,8 @@ def test_collect_translatable_texts(tmp_path) -> None:
     texts = collect_translatable_texts(tmp_path / "atlas-data")
 
     assert texts is not None
-    # Skill names/details, script payload texts, NP names, append passives,
-    # mystic code and craft essence fields.
+    # Skill names/details, script payload texts, NP names and details, append
+    # passives, mystic code and craft essence fields.
     assert {
         "Artoria Pendragon (Saber)",
         "カリスマ B",
@@ -675,6 +698,9 @@ def test_collect_translatable_texts(tmp_path) -> None:
         "強化カリスマ A",
         "強化版[{0}]",
         "約束された勝利の剣",
+        "敵全体に非常に強力な攻撃[{0}]",
+        "約束された勝利の剣・改",
+        "強化版宝具詳細[{0}]",
         "対魔力 C",
         "対魔力",
         "自身の弱体耐性をアップ[{0}]",

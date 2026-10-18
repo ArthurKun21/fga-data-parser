@@ -87,6 +87,7 @@ def make_servant() -> Servant:
                 id=100101,
                 num=1,
                 name="Excalibur",
+                detail="Deal heavy damage to all enemies.",
                 card_type=CardType.BUSTER,
                 locked=[SkillLocked(costume=17), SkillLocked(costume=19)],
             )
@@ -130,6 +131,7 @@ def test_servant_round_trip() -> None:
 
     np = servant.nps[0]
     assert (np.id, np.num, np.name) == (100101, 1, "Excalibur")
+    assert np.detail == "Deal heavy damage to all enemies."
     assert np.card_type == common_pb2.CardType.BUSTER
     # The unset side of a gate round-trips as the proto default 0.
     assert [(lock.costume, lock.ascension) for lock in np.locked] == [(17, 0), (19, 0)]
@@ -213,11 +215,14 @@ def test_act_select_index_zero_round_trips() -> None:
 def test_noble_phantasm_targets_round_trip() -> None:
     servant = make_servant()
     servant.nps = [
-        NoblePhantasm(id=100101, num=1, name="Excalibur", card_type=CardType.BUSTER),
+        NoblePhantasm(
+            id=100101, num=1, name="Excalibur", detail="Detail.", card_type=CardType.BUSTER
+        ),
         NoblePhantasm(
             id=2501401,
             num=1,
             name="逆行銀河・赤方偏移",
+            detail="詳細。",
             card_type=CardType.ARTS,
             targets=[NoblePhantasmTarget.NOBLE_PHANTASM_TARGET_TRANSFORM],
             locked=[SkillLocked(ascension=3), SkillLocked(costume=13)],

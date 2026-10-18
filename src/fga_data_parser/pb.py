@@ -69,6 +69,7 @@ def _noble_phantasm_message(noble_phantasm: NoblePhantasm) -> servant_pb2.NobleP
         id=noble_phantasm.id,
         num=noble_phantasm.num,
         name=noble_phantasm.name,
+        detail=noble_phantasm.detail,
         card_type=common_pb2.CardType.Value(noble_phantasm.card_type.name),
         targets=[
             servant_pb2.NoblePhantasmTarget.Value(target.name) for target in noble_phantasm.targets
