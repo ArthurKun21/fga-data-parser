@@ -16,6 +16,7 @@ wheels/
 .venv
 
 /*.json
+!overwrite_translations.json
 /**/*.pb
 
 .zcode/**
