@@ -19,6 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       tag: ${{ steps.tag.outputs.tag }}
+    env:
+      DATA_FILES: |
+        nice_mystic_code*.json
+        nice_equip*.json
+        nice_servant*.json
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
@@ -43,6 +48,17 @@ jobs:
           tag="$(uv run python scripts/release_tag.py)"
           test -n "$tag"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Compute 8h bucket
+        id: bucket
+        run: echo "b=$(( $(date +%s) / 28800 ))" >> "$GITHUB_OUTPUT"
+
+      - name: Cache raw data
+        id: cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ env.DATA_FILES }}
+          key: data-nice-v1-${{ steps.bucket.outputs.b }}
 
       - name: Parse data
         run: uv run fga-data-parser
