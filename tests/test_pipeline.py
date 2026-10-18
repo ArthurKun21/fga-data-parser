@@ -58,6 +58,7 @@ def make_servant(**overrides: Any) -> dict[str, Any]:
                 "id": 100101,
                 "num": 1,
                 "name": "Excalibur",
+                "detail": "Deal heavy damage to all enemies.",
                 "card": "2",
                 "functions": live_functions(),
             }
@@ -175,6 +176,20 @@ def test_maps_numeric_card_values() -> None:
     assert servant.nps[0].card_type is CardType.BUSTER
     assert servant.nps[0].card_type == "buster"
     assert servant.nps[0].targets == []
+
+
+def test_np_parses_detail() -> None:
+    (servant,) = build_servants([make_servant()])
+
+    assert servant.nps[0].detail == "Deal heavy damage to all enemies."
+
+
+def test_np_missing_detail_defaults_to_empty() -> None:
+    raw_np = {"id": 600712, "num": 1, "name": "Live NP", "card": "2", "functions": live_functions()}
+
+    (servant,) = build_servants([make_servant(noblePhantasms=[raw_np])])
+
+    assert servant.nps[0].detail == ""
 
 
 def test_np_with_transform_function_is_marked() -> None:

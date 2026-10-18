@@ -24,6 +24,9 @@ message NoblePhantasm {
   // "equipWithTargetCostume"; empty = available in every form. Other release
   // condition types (questClear etc.) are not captured.
   repeated SkillLocked locked = 6;
+  // Atlas "detail": the description with level-dependent values already
+  // resolved (the "unmodifiedDetail" field keeps [{0}] placeholders).
+  string   detail    = 7;
 }
 
 // Image URLs for one aspect of a servant, keyed by ascension, costume id, etc.

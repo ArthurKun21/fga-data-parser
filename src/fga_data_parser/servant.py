@@ -9,6 +9,7 @@ class NoblePhantasm:
     id: int
     num: int
     name: str
+    detail: str
     card_type: CardType
     targets: list[NoblePhantasmTarget] = field(default_factory=list)
     # Stage gates (see SkillLocked); empty = available in every form.

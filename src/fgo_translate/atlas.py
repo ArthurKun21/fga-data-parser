@@ -94,6 +94,7 @@ def collect_translatable_texts(data_dir: Path) -> set[str] | None:
                 _collect_skill_texts(skill, texts)
             for np in servant.get("nps", []):
                 _add_text(np.get("name"), texts)
+                _add_text(np.get("detail"), texts)
             for entry in servant.get("append_passives", []):
                 skill = entry.get("skill", {})
                 for field in ("name", "original_name", "detail"):
@@ -270,6 +271,7 @@ def _collect_servants(
                 _collect_script_payloads(flat, jp_skill, other_skill, region)
             for jp_np, other_np in _align(jp_servant["nps"], other["nps"]):
                 _record(flat, jp_np["name"], region, other_np["name"])
+                _record(flat, jp_np["detail"], region, other_np["detail"])
             for jp_skill, other_skill in _align(
                 [entry["skill"] for entry in jp_servant["append_passives"]],
                 [entry["skill"] for entry in other["append_passives"]],
