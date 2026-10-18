@@ -235,9 +235,9 @@
       "kr": "‘FGO 후지마루 리츠카는 잘 모르겠다’ Season4"
     },
     "「宝具発動後に、自身に即死効果を与える状態」を付与するか選択してください": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "請選擇是否賦予「寶具發動後，對自身賦予即死效果的狀態」",
+      "na": "Choose whether to apply \"a state that grants Instant Death to yourself after NP activation\"",
+      "kr": "「보구 발동 후, 자신에게 즉사 효과를 부여하는 상태」을(를) 부여할지 선택하십시오"
     },
     "『Fate/strange Fakeコラボイベント』において、自身の攻撃の威力を100%アップ【『Fate/strange Fakeコラボイベント』イベント期間限定】": {
       "tw": "在『Fate/strange Fake聯動活動』中，自身的攻擊威力提升100%【『Fate/strange Fake聯動活動』活動限定】",
@@ -361,22 +361,22 @@
       "kr": "【NP가 100% 이상인 경우 사용 가능】\n【제1・제2재림일 때】\n자신의 NP를 전부 소비&〔칠기사 클래스〕 특공 상태 부여(1턴)&버스터 카드 성능 UP(3턴) + 아군 전체의 버스터 카드 성능 UP(3턴)&엑스트라 공격 카드 성능 UP(3턴)&크리티컬 위력 UP(3턴)&NP 획득량 UP(3턴)&무적 관통 상태 부여(3턴)\n【제3재림일 때】\n자신의 NP를 전부 소비&〔엑스트라 클래스〕 특공 상태 부여(1턴) + 아군 전체의 버스터 카드 성능 UP(3턴)&엑스트라 공격 카드 성능 UP(3턴)&크리티컬 위력 UP(3턴)&NP 획득량 UP(3턴)&무적 상태 부여(1회・3턴)&약화 무효 상태 부여(3턴)"
     },
     "【ジキル時】\n自身の攻撃力をアップ(3ターン) ＋ 味方全体のクリティカル威力をアップ(3ターン)▲＆スター発生率を大アップ(3ターン)▲＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)▲\n\n【ハイド時】\n自身の攻撃力をアップ(3ターン)＆さらに攻撃力をアップ(3ターン)＆〔人の力を持つ敵〕特攻状態を付与(3ターン)▲＆ガッツ状態を付与(1回・3ターン)▲＆強化解除耐性をアップ(3回・3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "【杰基尔时】\n自身攻击力提升(3回合) ＋ 己方全体暴击威力提升(3回合)▲＆暴击星掉落率大幅提升(3回合)▲＆付与使用宝具时充能阶段上升1级的状态(1次·3回合)▲\n\n【海德时】\n自身攻击力提升(3回合)＆攻击力进一步提升(3回合)＆付与对〔拥有人之力的敌人〕的特攻状态(3回合)▲＆付与毅力状态(1次·3回合)▲＆强化解除耐性提升(3次·3回合)▲",
+      "tw": "【傑基爾時】\n自身攻擊力提升(3回合) ＋ 我方全體爆擊威力提升(3回合)▲＆爆擊星掉落率大幅提升(3回合)▲＆賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)▲\n\n【海德時】\n自身攻擊力提升(3回合)＆攻擊力進一步提升(3回合)＆賦予對〔擁有人之力的敵人〕的特攻狀態(3回合)▲＆賦予毅力狀態(1次．3回合)▲＆強化解除耐性提升(3次．3回合)▲",
+      "na": "[When Jekyll]\nIncrease ATK for yourself (3 turns) + Increase Critical Strength for all allies (3 turns)▲ & Greatly increase C. Star Drop Rate (3 turns)▲ & Apply a state that increases NP Charge by 1 level when using NP (1 time, 3 turns)▲\n\n[When Hyde]\nIncrease ATK for yourself (3 turns) & Further increase ATK for yourself (3 turns) & Apply Special Attack [Enemies with the Power of Man] (3 turns)▲ & Apply Guts (1 time, 3 turns)▲ & Increase Buff Removal Resist (3 times, 3 turns)▲",
+      "kr": "【지킬 시】\n자신의 공격력 UP(3턴) ＋ 아군 전체의 크리티컬 위력 UP(3턴)▲＆스타 발생률 대폭 UP(3턴)▲＆보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)▲\n\n【하이드 시】\n자신의 공격력 UP(3턴)＆공격력 추가 UP(3턴)＆〔인간의 힘을 가진 적〕 특공 상태 부여(3턴)▲＆근성 상태 부여(1회・3턴)▲＆강화 해제 내성 UP(3회・3턴)▲"
     },
     "【フランソワ時】\n味方全体に〔秩序〕特攻状態を付与(3ターン)＆Artsカード性能をアップ(3ターン)\n【フランチェスカ時】\n味方全体に〔混沌〕特攻状態を付与(3ターン)＆宝具威力をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "【弗朗索瓦时】\n向己方全体付与对〔秩序〕的特攻状态(3回合)＆技指令卡性能提升(3回合)\n【弗朗切斯卡时】\n向己方全体付与对〔混沌〕的特攻状态(3回合)＆宝具威力提升(3回合)",
+      "tw": "【法蘭索瓦時】\n向我方全體賦予對〔秩序〕的特攻狀態(3回合)＆Arts指令卡性能提升(3回合)\n【法蘭西斯卡時】\n向我方全體賦予對〔混沌〕的特攻狀態(3回合)＆寶具威力提升(3回合)",
+      "na": "[When François]\nApply Special Attack [Order] to all allies (3 turns) & Increase Arts Card effectiveness (3 turns)\n[When Francesca]\nApply Special Attack [Chaos] to all allies (3 turns) & Increase NP Strength (3 turns)",
+      "kr": "【프랑수아 시】\n아군 전체에 〔질서〕 특공 상태 부여(3턴)＆아츠 카드 성능 UP(3턴)\n【프란체스카 시】\n아군 전체에 〔혼돈〕 특공 상태 부여(3턴)＆보구 위력 UP(3턴)"
     },
     "【フランソワ時】\n味方全体のNPを増やす ＋ 自身のArtsカード性能をアップ(3ターン)\n【フランチェスカ時】\n自身のNPをすごく増やす＆Artsカード性能をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "【弗朗索瓦时】\n己方全体宝具值增加 ＋ 自身技指令卡性能提升(3回合)\n【弗朗切斯卡时】\n自身宝具值大幅增加＆技指令卡性能提升(3回合)",
+      "tw": "【法蘭索瓦時】\n我方全體NP增加 ＋ 自身Arts指令卡性能提升(3回合)\n【法蘭西斯卡時】\n自身NP大幅增加＆Arts指令卡性能提升(3回合)",
+      "na": "[When François]\nIncrease NP Gauge for all allies + Increase Arts Card effectiveness for yourself (3 turns)\n[When Francesca]\nsignificantly increase NP Gauge for yourself & Increase Arts Card effectiveness (3 turns)",
+      "kr": "【프랑수아 시】\n아군 전체의 NP 증가 ＋ 자신의 아츠 카드 성능 UP(3턴)\n【프란체스카 시】\n자신의 NP를 많이 증가＆아츠 카드 성능 UP(3턴)"
     },
     "【効果を選択可能】\n\n【月下(全体タイプ)化】\n自身に〔月下〕状態(全体攻撃宝具タイプ)を付与＆〔日輪〕状態を解除＆NPを増やす＆弱体無効状態を付与(3ターン)\n\n【日輪(単体タイプ)化】\n自身に〔日輪〕状態(単体攻撃宝具タイプ)を付与＆〔月下〕状態を解除＆NPを増やす＆強化解除耐性をアップ(3ターン)": {
       "tw": "【效果可選擇】\n\n【月下(全體類型)化】\n賦予自身〔月下〕狀態(全體攻擊寶具類型)＆解除〔日輪〕狀態＆NP增加＆賦予弱體無效狀態(3回合)\n\n【日輪(單體類型)化】\n賦予自身〔日輪〕狀態(單體攻擊寶具類型)＆解除〔月下〕狀態＆NP增加＆強化解除耐性提升(3回合)",
@@ -384,10 +384,10 @@
       "kr": "【효과 선택 가능】\n\n【월하(전체 타입)화】\n자신에게 〔월하〕 상태(전체 공격 보구 타입) 부여&〔일륜〕 상태 해제&NP 증가&약화 무효 상태 부여(3턴)\n\n【일륜(단일 타입)화】\n자신에게 〔일륜〕 상태(단일 공격 보구 타입) 부여&〔월하〕 상태 해제&NP 증가&강화 해제 내성 UP(3턴)"
     },
     "【無敵を付与するかガッツを付与するか選択可能】自身に無敵状態を付与(1ターン)またはガッツ状態を付与(1回・3ターン)▲＆NPを増やす＆〔やけど〕特攻状態を付与(3ターン)▲＆「攻撃時のダメージ前に対象にやけど状態(3ターン)を付与する状態」を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "【可选择付与无敌或付与毅力】向自身付与无敌状态(1回合)或付与毅力状态(1次·3回合)▲＆宝具值增加＆付与对〔烧伤〕的特攻状态(3回合)▲＆付与「攻击造成伤害前对目标付与烧伤状态(3回合)的状态」(3回合)▲",
+      "tw": "【可選擇賦予無敵或賦予毅力】向自身賦予無敵狀態(1回合)或賦予毅力狀態(1次．3回合)▲＆NP增加＆賦予對〔燒傷〕的特攻狀態(3回合)▲＆賦予「攻擊造成傷害前對目標賦予燒傷狀態(3回合)的狀態」(3回合)▲",
+      "na": "[Can select to apply Invincible or Guts] Apply Invincible to yourself (1 turn) or Apply Guts (1 time, 3 turns)▲ & Increase NP Gauge & Apply Special Attack [Burn] (3 turns)▲ & Apply a state that inflicts Burn (3 turns) on the target before damage when attacking (3 turns)▲",
+      "kr": "【무적 부여 또는 근성 부여 중 선택 가능】자신에게 무적 상태 부여(1턴) 또는 근성 상태 부여(1회・3턴)▲＆NP 증가＆〔화상〕 특공 상태 부여(3턴)▲＆「공격 시 대미지 전에 대상에게 화상 상태(3턴)를 부여하는 상태」 부여(3턴)▲"
     },
     "【状態によって効果が変化】\n\n【〔日輪〕状態時】\n自身の攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆HPを回復＆スキルチャージを1進める\n\n【〔月下〕状態時】\n自身の攻撃力をアップ(3ターン)＆宝具威力をアップ(3ターン)＆無敵状態を付与(2回・3ターン)＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)": {
       "tw": "【根據狀態效果會有所不同】\n\n【〔日輪〕狀態時】\n自身的攻擊力提升(3回合)＆爆擊威力提升(3回合)＆HP恢復＆技能冷卻減少1回合\n\n【〔月下〕狀態時】\n自身的攻擊力提升(3回合)＆寶具威力提升(3回合)＆賦予無敵狀態(2次．3回合)＆賦予使用寶具時Charge階段上升2級的狀態(1次．3回合)",
@@ -870,10 +870,10 @@
       "kr": "엘리자베트 에볼루치오 EX"
     },
     "エリザベート・バートリー (lancer)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "伊丽莎白·巴托里 (枪兵)",
+      "tw": "伊莉莎白·巴托里 (Lancer)",
+      "na": "Elizabeth Bathory (Lancer)",
+      "kr": "엘리자베스 바토리 (랜서)"
     },
     "エリザ粒子 A": {
       "tw": "伊莉莎粒子 A",
@@ -971,10 +971,10 @@
       "kr": "킹덤 오브 유어즈"
     },
     "キングプロテア (moonCancer)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "金普罗提亚 (月癌)",
+      "tw": "金普羅提亞 (MoonCancer)",
+      "na": "Kingprotea (Moon Cancer)",
+      "kr": "킹프로테아 (문캔서)"
     },
     "キングプロテア・オルタ": {
       "tw": "Kingprotea．Alter",
@@ -1121,10 +1121,10 @@
       "kr": "그레이 릴리"
     },
     "グレイ・リリィ (lancer)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "格蕾·莉莉 (枪兵)",
+      "tw": "葛雷·莉莉 (Lancer)",
+      "na": "Grey · Lily (Lancer)",
+      "kr": "그레이・릴리 (랜서)"
     },
     "グロウアップ・メニュー！ B": {
       "tw": "成長菜單！ B",
@@ -1191,10 +1191,10 @@
       "kr": "쉽 이즈 더 고트"
     },
     "ジャック・ド・モレー (saber)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "雅克·德·莫莱 (剑士)",
+      "tw": "賈克·德·莫雷 (Saber)",
+      "na": "Jacques de Molay (Saber)",
+      "kr": "자크 드 몰레 (세이버)"
     },
     "ジュネス・クレーン": {
       "kr": "주네스・크레인"
@@ -1451,10 +1451,10 @@
       "kr": "하산 사바흐"
     },
     "ハベトロット (pretender)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "哈贝特洛特 (伪装者)",
+      "tw": "哈貝特洛特 (Pretender)",
+      "na": "Habertrot (Pretender)",
+      "kr": "하베트롯 (프리텐더)"
     },
     "ハンティング": {
       "tw": "狩獵",
@@ -1538,10 +1538,10 @@
       "kr": "히폴리테"
     },
     "ビショーネ (caster)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "比修内 (魔术师)",
+      "tw": "比修內 (Caster)",
+      "na": "Bishone (Caster)",
+      "kr": "비쇼네 (캐스터)"
     },
     "ビヨンド・ザ・フラッド": {
       "kr": "비욘드 더 플러드"
@@ -1611,10 +1611,10 @@
       "kr": "플로라"
     },
     "フローラ (alterEgo)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "芙萝拉 (他人格)",
+      "tw": "芙蘿拉 (Alterego)",
+      "na": "Flora (Alter Ego)",
+      "kr": "플로라 (얼터에고)"
     },
     "ブレスト・ポーチ A": {
       "kr": "브레스트 파우치 A"
@@ -1722,10 +1722,10 @@
       "kr": "릴리스"
     },
     "リリス (rider)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "莉莉丝 (骑兵)",
+      "tw": "莉莉絲 (Rider)",
+      "na": "Lilith (Rider)",
+      "kr": "릴리스 (라이더)"
     },
     "リリン＆リリスｓグッズセット": {
       "tw": "莉莉姆＆莉莉絲ｓ周邊套裝",
@@ -1869,12 +1869,12 @@
       "kr": "인혼 유리잔의 획득 개수 UP"
     },
     "付与しない": {
-      "tw": null,
-      "kr": null
+      "tw": "不賦予",
+      "kr": "부여하지 않음"
     },
     "付与する": {
-      "tw": null,
-      "kr": null
+      "tw": "賦予",
+      "kr": "부여"
     },
     "令嬢応酬 B": {
       "kr": "영양의 응수 B"
@@ -1883,10 +1883,10 @@
       "kr": "고귀한 소녀의 긍지 EX"
     },
     "使用するごとにスター大量獲得に加えて異なる配膳効果が得られ、まんぷくゲージが2増える。\nただしまんぷくゲージが「満腹」の場合は配膳効果を得られない。\n1回目：全体攻撃力アップ、2回目：全体最大HPアップ、3回目：全体NP増加、4回目：全体宝具威力アップ、5回目：全体クリティカル威力アップ、6回目：全体HP大回復、7回目以降：1回目に戻る\n極稀に1回目に1～6回目すべての効果を得られるが、まんぷくゲージが最大になる。\n使用回数はバトル全体で共有される。\n\n■1回目\nスターを大量獲得 ＋ 「焼きそば」を配膳し、味方全体の攻撃力をアップ(3ターン)\n\n■2回目\nスターを大量獲得 ＋ 「カレー」を配膳し、味方全体に最大HPがアップする状態を付与(3ターン)\n\n■3回目\nスターを大量獲得 ＋ 「ラーメン」を配膳し、味方全体のNPを増やす\n\n■4回目\nスターを大量獲得 ＋ 「フランクフルト」を配膳し、味方全体の宝具威力をアップ(3ターン)\n\n■5回目\nスターを大量獲得 ＋ 「串焼き」を配膳し、味方全体のクリティカル威力をアップ(3ターン)\n\n■6回目\nスターを大量獲得 ＋ 「パフェ」を配膳し、味方全体のHPを大回復\n\n■1回目(極稀)\nスターを大量獲得 ＋ 「伝説のおにぎり」を配膳し、味方全体の攻撃力をアップ(3ターン)＆最大HPがアップする状態を付与(3ターン)＆NPを増やす＆宝具威力をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆HPを大回復": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "每次使用时，在获得大量暴击星之外，还可获得不同的上菜效果，饱腹槽增加2点。\n但当饱腹槽处于「饱腹」状态时，无法获得上菜效果。\n第1次：全体攻击力提升、第2次：全体最大生命值提升、第3次：全体宝具值增加、第4次：全体宝具威力提升、第5次：全体暴击威力提升、第6次：全体生命值大幅回复，第7次起回到第1次\n极低概率在第1次时同时获得第1～6次的全部效果，但饱腹槽会达到最大。\n使用次数在整场战斗中共享。\n\n■第1次\n获得大量暴击星 ＋ 上菜「炒面」，己方全体攻击力提升(3回合)\n\n■第2次\n获得大量暴击星 ＋ 上菜「咖喱」，向己方全体付与最大生命值提升状态(3回合)\n\n■第3次\n获得大量暴击星 ＋ 上菜「拉面」，己方全体宝具值增加\n\n■第4次\n获得大量暴击星 ＋ 上菜「法兰克福香肠」，己方全体宝具威力提升(3回合)\n\n■第5次\n获得大量暴击星 ＋ 上菜「烤串」，己方全体暴击威力提升(3回合)\n\n■第6次\n获得大量暴击星 ＋ 上菜「芭菲」，己方全体生命值大幅回复\n\n■第1次(极低概率)\n获得大量暴击星 ＋ 上菜「传说饭团」，己方全体攻击力提升(3回合)＆付与最大生命值提升状态(3回合)＆宝具值增加＆宝具威力提升(3回合)＆暴击威力提升(3回合)＆生命值大幅回复",
+      "tw": "每次使用時，在獲得大量爆擊星之外，還可獲得不同的上菜效果，飽腹槽增加2點。\n但當飽腹槽處於「滿腹」狀態時，無法獲得上菜效果。\n第1次：全體攻擊力提升、第2次：全體最大HP提升、第3次：全體NP增加、第4次：全體寶具威力提升、第5次：全體爆擊威力提升、第6次：全體HP大幅恢復，第7次起回到第1次\n極低機率在第1次時同時獲得第1～6次的全部效果，但飽腹槽會達到最大。\n使用次數在整場戰鬥中共用。\n\n■第1次\n獲得大量爆擊星 ＋ 上菜「炒麵」，我方全體攻擊力提升(3回合)\n\n■第2次\n獲得大量爆擊星 ＋ 上菜「咖哩」，向我方全體賦予最大HP上升狀態(3回合)\n\n■第3次\n獲得大量爆擊星 ＋ 上菜「拉麵」，我方全體NP增加\n\n■第4次\n獲得大量爆擊星 ＋ 上菜「法蘭克福香腸」，我方全體寶具威力提升(3回合)\n\n■第5次\n獲得大量爆擊星 ＋ 上菜「烤串」，我方全體爆擊威力提升(3回合)\n\n■第6次\n獲得大量爆擊星 ＋ 上菜「芭菲」，我方全體HP大幅恢復\n\n■第1次(極低機率)\n獲得大量爆擊星 ＋ 上菜「傳說飯糰」，我方全體攻擊力提升(3回合)＆賦予最大HP上升狀態(3回合)＆NP增加＆寶具威力提升(3回合)＆爆擊威力提升(3回合)＆HP大幅恢復",
+      "na": "Each time it is used, gain a large amount of C. Stars and gain a different serving effect, and the Fullness Gauge increases by 2.\nHowever, no serving effect is gained while the Fullness Gauge is \"Full\".\n1st time: Increase ATK for all, 2nd time: Increase Max HP for all, 3rd time: Increase NP Gauge for all, 4th time: Increase NP Strength for all, 5th time: Increase Critical Strength for all, 6th time: Greatly recover HP for all; from the 7th time onward, returns to the 1st\nOn very rare occasions, gain all effects from the 1st to 6th times at the 1st time, but the Fullness Gauge becomes maxed.\nThe number of uses is shared across the entire battle.\n\n■1st Time\nGain a large amount of C. Stars + Serve \"Yakisoba\" and Increase ATK for all allies (3 turns)\n\n■2nd Time\nGain a large amount of C. Stars + Serve \"Curry\" and increase Max HP for all allies (3 turns)\n\n■3rd Time\nGain a large amount of C. Stars + Serve \"Ramen\" and Increase NP Gauge for all allies\n\n■4th Time\nGain a large amount of C. Stars + Serve \"Frankfurters\" and Increase NP Strength for all allies (3 turns)\n\n■5th Time\nGain a large amount of C. Stars + Serve \"Kushiyaki\" and Increase Critical Strength for all allies (3 turns)\n\n■6th Time\nGain a large amount of C. Stars + Serve \"Parfait\" and Greatly recover HP for all allies\n\n■1st Time (Very Rare)\nGain a large amount of C. Stars + Serve \"Legendary Onigiri\" and Increase ATK for all allies (3 turns) & increase Max HP (3 turns) & Increase NP Gauge & Increase NP Strength (3 turns) & Increase Critical Strength (3 turns) & Greatly recover HP",
+      "kr": "사용할 때마다 스타 대량 획득과 함께 다른 서빙 효과를 얻고, 만복 게이지가 2 증가한다.\n단, 만복 게이지가 「만복」 상태인 경우에는 서빙 효과를 얻을 수 없다.\n1회째: 전체 공격력 UP, 2회째: 전체 최대 HP UP, 3회째: 전체 NP 증가, 4회째: 전체 보구 위력 UP, 5회째: 전체 크리티컬 위력 UP, 6회째: 전체 HP 대폭 회복, 7회째 이후: 1회째로 돌아간다\n극히 드물게 1회째에 1~6회째의 모든 효과를 얻지만, 만복 게이지가 최대가 된다.\n사용 횟수는 배틀 전체에서 공유된다.\n\n■1회째\n스타 대량 획득 ＋ 「야키소바」를 서빙하고, 아군 전체의 공격력 UP(3턴)\n\n■2회째\n스타 대량 획득 ＋ 「카레」를 서빙하고, 아군 전체에 최대 HP UP 상태 부여(3턴)\n\n■3회째\n스타 대량 획득 ＋ 「라멘」을 서빙하고, 아군 전체의 NP 증가\n\n■4회째\n스타 대량 획득 ＋ 「프랑크푸르트」를 서빙하고, 아군 전체의 보구 위력 UP(3턴)\n\n■5회째\n스타 대량 획득 ＋ 「꼬치구이」를 서빙하고, 아군 전체의 크리티컬 위력 UP(3턴)\n\n■6회째\n스타 대량 획득 ＋ 「파르페」를 서빙하고, 아군 전체의 HP 대폭 회복\n\n■1회째(극히 드물게)\n스타 대량 획득 ＋ 「전설의 주먹밥」을 서빙하고, 아군 전체의 공격력 UP(3턴)＆최대 HP UP 상태 부여(3턴)＆NP 증가＆보구 위력 UP(3턴)＆크리티컬 위력 UP(3턴)＆HP 대폭 회복"
     },
     "信仰の加護 EX": {
       "kr": "신앙의 가호 EX"
@@ -1943,14 +1943,14 @@
       "kr": "빛의 축제"
     },
     "入れ替えない": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "不替換",
+      "na": "Do not swap",
+      "kr": "교체하지 않음"
     },
     "入れ替える": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "替換",
+      "na": "Swap",
+      "kr": "교체"
     },
     "全て咲き誇る精彩の花園": {
       "tw": "萬花盛放的輝彩花園",
@@ -2036,28 +2036,28 @@
       "na": "Increase NP Gauge for all allies ▲ & Increase C. Star Drop Rate (3 turns) & Increase NP Charge by 2 levels when using NP (1 time, 3 turns) ▲"
     },
     "味方全体に「通常攻撃時に自身に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)する状態」を付与(3ターン)＆攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ 敵全体に「攻撃時に自身に呪い状態(3ターン)を付与する状態」を付与(3ターン)＆クリティカル発生率をダウン(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "向己方全体付与「普通攻击时向自身付与使用宝具时充能阶段上升1级的状态(1次·3回合)的状态」(3回合)＆攻击力提升(3回合)＆暴击威力提升(3回合) ＋ 向敌方全体付与「攻击时向自身付与诅咒状态(3回合)的状态」(3回合)＆暴击率降低(3回合)",
+      "tw": "向我方全體賦予「一般攻擊時向自身賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)的狀態」(3回合)＆攻擊力提升(3回合)＆爆擊威力提升(3回合) ＋ 向敵方全體賦予「攻擊時向自身賦予詛咒狀態(3回合)的狀態」(3回合)＆爆擊率下降(3回合)",
+      "na": "Apply a state that grants a state that increases NP Charge by 1 level when using NP (1 time, 3 turns) on normal attacks to all allies (3 turns) & Increase ATK (3 turns) & Increase Critical Strength (3 turns) + Apply a state that inflicts Curse (3 turns) on yourself when attacking to all enemies (3 turns) & Decrease Critical Rate (3 turns)",
+      "kr": "아군 전체에 「일반 공격 시 자신에게 보구 사용 시 차지 단계가 1단계 증가하는 상태(1회・3턴)를 부여하는 상태」 부여(3턴)＆공격력 UP(3턴)＆크리티컬 위력 UP(3턴) ＋ 적 전체에 「공격 시 자신에게 저주 상태(3턴)를 부여하는 상태」 부여(3턴)＆크리티컬 발생률 DOWN(3턴)"
     },
     "味方全体に〔魔性〕特攻状態を付与(3ターン)＆〔死霊〕特攻状態を付与(3ターン)＆〔毒・呪い・やけど〕無効状態を付与(3ターン)＆最大HPがアップする状態を付与(3ターン) ＋ スターを獲得 ＋ 敵全体の弱体耐性をダウン(3ターン)＆スキル封印状態を付与(1ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "向己方全体付与对〔魔性〕的特攻状态(3回合)＆付与对〔死灵〕的特攻状态(3回合)＆付与对〔毒·诅咒·烧伤〕的无效状态(3回合)＆付与最大生命值提升状态(3回合) ＋ 获得暴击星 ＋ 敌方全体弱化耐性降低(3回合)＆付与技能封印状态(1回合)",
+      "tw": "向我方全體賦予對〔魔性〕的特攻狀態(3回合)＆賦予對〔死靈〕的特攻狀態(3回合)＆賦予對〔毒・詛咒・燒傷〕的無效狀態(3回合)＆賦予最大HP上升狀態(3回合) ＋ 獲得爆擊星 ＋ 敵方全體弱化耐性下降(3回合)＆賦予技能封印狀態(1回合)",
+      "na": "Apply Special Attack [Demonic] to all allies (3 turns) & Apply Special Attack [Undead] to all allies (3 turns) & Apply Immunity [Poison/Curse/Burn] (3 turns) & increase Max HP (3 turns) + Gain C. Stars + Decrease Debuff Resist for all enemies (3 turns) & Apply Skill Seal (1 turn)",
+      "kr": "아군 전체에 〔마성〕 특공 상태 부여(3턴)＆〔사령〕 특공 상태 부여(3턴)＆〔독・저주・화상〕 무효 상태 부여(3턴)＆최대 HP UP 상태 부여(3턴) ＋ 스타 획득 ＋ 적 전체의 약화 내성 DOWN(3턴)＆스킬 봉인 상태 부여(1턴)"
     },
     "味方全体に回避状態を付与(2回・3ターン) ＋ スターを獲得 ＋ 敵全体に恐怖状態を付与(3ターン)＆即死耐性をダウン(3ターン)＆クリティカル発生率をダウン(3ターン) ＋ 自身のNPを増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "向己方全体付与回避状态(2次·3回合) ＋ 获得暴击星 ＋ 向敌方全体付与恐惧状态(3回合)＆即死耐性降低(3回合)＆暴击率降低(3回合) ＋ 自身宝具值增加",
+      "tw": "向我方全體賦予迴避狀態(2次．3回合) ＋ 獲得爆擊星 ＋ 向敵方全體賦予恐懼狀態(3回合)＆即死耐性下降(3回合)＆爆擊率下降(3回合) ＋ 自身NP增加",
+      "na": "Apply Evade to all allies (2 times, 3 turns) + Gain C. Stars + Apply Terror to all enemies (3 turns) & Decrease Instant Death Resist (3 turns) & Decrease Critical Rate (3 turns) + Increase NP Gauge for yourself",
+      "kr": "아군 전체에 회피 상태 부여(2회・3턴) ＋ 스타 획득 ＋ 적 전체에 공포 상태 부여(3턴)＆즉사 내성 DOWN(3턴)＆크리티컬 발생률 DOWN(3턴) ＋ 자신의 NP 증가"
     },
     "味方全体に回避状態を付与(2回・3ターン) ＋ 自身のNPを増やす ＋ 敵全体に〔混乱〕状態「毎ターン低確率でスキル封印を付与する状態」を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "向己方全体付与回避状态(2次·3回合) ＋ 自身宝具值增加 ＋ 向敌方全体付与〔混乱〕状态「每回合以低概率付与技能封印的状态」(3回合)",
+      "tw": "向我方全體賦予迴避狀態(2次．3回合) ＋ 自身NP增加 ＋ 向敵方全體賦予〔混亂〕狀態「每回合以低機率賦予技能封印的狀態」(3回合)",
+      "na": "Apply Evade to all allies (2 times, 3 turns) + Increase NP Gauge for yourself + Apply [Confusion] State \"a state that applies Skill Seal with a low chance each turn\" to all enemies (3 turns)",
+      "kr": "아군 전체에 회피 상태 부여(2회・3턴) ＋ 자신의 NP 증가 ＋ 적 전체에 〔혼란〕 상태 「매 턴 낮은 확률로 스킬 봉인을 부여하는 상태」 부여(3턴)"
     },
     "味方全体に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)＆NPを増やす ＋ 自身に「毎ターン味方全体に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)する状態」を付与(3ターン)": {
       "tw": "賦予我方全體使用寶具時Charge階段上升1級的狀態(1次．3回合)＆NP增加＋賦予自身「每回合賦予我方全體使用寶具時Charge階段上升1級的狀態(1次．3回合)的狀態」(3回合)",
@@ -2070,16 +2070,16 @@
       "kr": "아군 전체에게 보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)&NP 증가 + 자신에게 ‘매 턴 아군 전체에게 보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)하는 상태’ 부여(3턴)&〔명계의 화원〕상태로 변신시킨다<보구 변화・해제 불가>(5턴)【통상 상태로 둘지 〔명계의 화원〕상태로 변신시킬지 선택 가능, 〔명계의 화원〕상태일 때는 통상 상태 선택으로 변신 해제】"
     },
     "味方全体に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)＆宝具威力をアップ(3ターン) ＋ 自身に無敵状態を付与(2回・3ターン)＆「Quick攻撃時に味方全体に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・5ターン)する状態」を付与(5回・5ターン)＆「Arts攻撃時に味方全体の攻撃力をアップ(3ターン)する状態」を付与(5回・5ターン)＆「Buster攻撃時に味方全体のクリティカル威力をアップ(3ターン)する状態」を付与(5回・5ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "向己方全体付与使用宝具时充能阶段上升1级的状态(1次·3回合)＆宝具威力提升(3回合) ＋ 向自身付与无敌状态(2次·3回合)＆付与「Quick攻击时向己方全体付与使用宝具时充能阶段上升1级的状态(1次·5回合)的状态」(5次·5回合)＆付与「Arts攻击时己方全体攻击力提升(3回合)的状态」(5次·5回合)＆付与「Buster攻击时向己方全体付与暴击威力提升(3回合)的状态」(5次·5回合)",
+      "tw": "向我方全體賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)＆寶具威力提升(3回合) ＋ 向自身賦予無敵狀態(2次．3回合)＆賦予「Quick攻擊時向我方全體賦予使用寶具時Charge階段上升1級的狀態(1次．5回合)的狀態」(5次．5回合)＆賦予「Arts攻擊時我方全體攻擊力提升(3回合)的狀態」(5次．5回合)＆賦予「Buster攻擊時向我方全體賦予爆擊威力提升(3回合)的狀態」(5次．5回合)",
+      "na": "Apply a state that increases NP Charge by 1 level when using NP to all allies (1 time, 3 turns) & Increase NP Strength (3 turns) + Apply Invincible to yourself (2 times, 3 turns) & Apply a state that grants a state that increases NP Charge by 1 level when using NP (1 time, 5 turns) to all allies on Quick attacks (5 times, 5 turns) & Apply a state that increases ATK for all allies (3 turns) on Arts attacks (5 times, 5 turns) & Apply a state that increases Critical Strength for all allies (3 turns) on Buster attacks (5 times, 5 turns)",
+      "kr": "아군 전체에 보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)＆보구 위력 UP(3턴) ＋ 자신에게 무적 상태 부여(2회・3턴)＆「퀵 공격 시 아군 전체에 보구 사용 시 차지 단계가 1단계 증가하는 상태(1회・5턴)를 부여하는 상태」 부여(5회・5턴)＆「아츠 공격 시 아군 전체의 공격력 UP(3턴)하는 상태」 부여(5회・5턴)＆「버스터 공격 시 아군 전체의 크리티컬 위력 UP(3턴)하는 상태」 부여(5회・5턴)"
     },
     "味方全体に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)＆宝具威力をアップ(3ターン)＆弱体耐性をアップ(3ターン) ＋ 自身に「自身を除く〔キャスター〕クラスの味方が宝具を使用した時、NP消費量に応じて自身のNPを増やす状態」<重複不可>を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "向己方全体付与使用宝具时充能阶段上升1级的状态(1次·3回合)＆宝具威力提升(3回合)＆弱化耐性提升(3回合) ＋ 向自身付与「除自身以外的〔Caster〕职阶己方从者使用宝具时，根据NP消耗量增加自身宝具值的状态」<不可重复>(3回合)",
+      "tw": "向我方全體賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)＆寶具威力提升(3回合)＆弱化耐性提升(3回合) ＋ 向自身賦予「除自身以外的〔Caster〕職階我方從者使用寶具時，依NP消耗量增加自身NP的狀態」<不可重複>(3回合)",
+      "na": "Apply a state that increases NP Charge by 1 level when using NP to all allies (1 time, 3 turns) & Increase NP Strength (3 turns) & Increase Debuff Resist (3 turns) + Apply a state that increases your NP Gauge based on NP consumed when allied [Caster] Class Servants other than yourself use their NP <Cannot Overlap> to yourself (3 turns)",
+      "kr": "아군 전체에 보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)＆보구 위력 UP(3턴)＆약화 내성 UP(3턴) ＋ 자신에게 「자신을 제외한 〔캐스터〕 클래스 아군이 보구를 사용했을 때, NP 소모량에 따라 자신의 NP를 증가시키는 상태」<중복 불가> 부여(3턴)"
     },
     "味方全体に毎ターンスター獲得状態を付与(3ターン)＆クリティカル威力をアップ(3ターン)＆毎ターンNP獲得状態を付与(3ターン)": {
       "tw": "賦予我方全體每回合獲得爆擊星的狀態(3回合)＆爆擊威力提升(3回合)＆每回合獲得NP的狀態(3回合)",
@@ -2087,16 +2087,16 @@
       "kr": "아군 전체에게 매 턴 스타 획득 상태 부여(3턴)&크리티컬 위력 UP(3턴)&매 턴 NP 획득 상태 부여(3턴)"
     },
     "味方全体に無敵状態を付与(1ターン) ＋ 敵全体のクリティカル発生率をダウン(3ターン)＆恐怖状態を付与(3ターン) ＋ 自身の霊基を入れ替える【入れ替えるか選択可能】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "向己方全体付与无敌状态(1回合) ＋ 敌方全体暴击率降低(3回合)＆付与恐惧状态(3回合) ＋ 替换自身灵基【可选择是否替换】",
+      "tw": "向我方全體賦予無敵狀態(1回合) ＋ 敵方全體爆擊率下降(3回合)＆賦予恐懼狀態(3回合) ＋ 替換自身靈基【可選擇是否替換】",
+      "na": "Apply Invincible to all allies (1 turn) + Decrease Critical Rate for all enemies (3 turns) & Apply Terror (3 turns) + Swap your Spirit Origin [Can select whether to swap]",
+      "kr": "아군 전체에 무적 상태 부여(1턴) ＋ 적 전체의 크리티컬 발생률 DOWN(3턴)＆공포 상태 부여(3턴) ＋ 자신의 영기 교체【교체할지 선택 가능】"
     },
     "味方全体のArtsカード性能をアップ(1ターン)＆宝具威力をアップ(1ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体技指令卡性能提升(1回合)＆宝具威力提升(1回合)",
+      "tw": "我方全體Arts指令卡性能提升(1回合)＆寶具威力提升(1回合)",
+      "na": "Increase Arts Card effectiveness for all allies (1 turn) & Increase NP Strength (1 turn)",
+      "kr": "아군 전체의 아츠 카드 성능 UP(1턴)＆보구 위력 UP(1턴)"
     },
     "味方全体のArtsカード性能をアップ(3ターン)▲ ＋ 〔暗闇〕のフィールドにおいてのみ、味方全体の宝具威力をアップ(3ターン)▲ ＋ 自身の弱体付与成功率をアップ(3ターン)▲＆弱体耐性をアップ(3ターン)▲": {
       "na": "Increase Arts Card effectiveness (3 turns) ▲ for all allies + Increase NP Strength (3 turns) ▲ for all allies only when on a [Darkness] field + Increase Debuff Success Rate (3 turns) ▲ & Debuff Resist (3 turns) ▲ for yourself"
@@ -2112,16 +2112,16 @@
       "kr": "아군 전체의 아츠 카드 성능 UP(3턴)&버스터 카드 성능 UP(3턴)&보구 위력 UP(3턴)"
     },
     "味方全体のArtsカード性能をアップ(3ターン)＆NPを増やす ＋ 敵全体のチャージを減らす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体技指令卡性能提升(3回合)＆宝具值增加 ＋ 敌方全体减少充能",
+      "tw": "我方全體Arts指令卡性能提升(3回合)＆NP增加 ＋ 減少敵方全體Charge",
+      "na": "Increase Arts Card effectiveness for all allies (3 turns) & Increase NP Gauge + reduce charge for all enemies",
+      "kr": "아군 전체의 아츠 카드 성능 UP(3턴)＆NP 증가 ＋ 적 전체의 차지 감소"
     },
     "味方全体のArtsカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆〔毒〕特攻状態を付与(3ターン) ＋ 〔水辺〕のあるフィールドにおいてのみ、味方全体のArtsカード性能をアップ(3ターン) ＋ 自身に毎ターンスター獲得状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体技指令卡性能提升(3回合)＆暴击威力提升(3回合)＆付与对〔毒〕的特攻状态(3回合) ＋ 仅在有〔水边〕的战场中，己方全体技指令卡性能提升(3回合) ＋ 向自身付与每回合获得暴击星的状态(3回合)",
+      "tw": "我方全體Arts指令卡性能提升(3回合)＆爆擊威力提升(3回合)＆賦予對〔毒〕的特攻狀態(3回合) ＋ 僅在有〔水邊〕的戰場中，我方全體Arts指令卡性能提升(3回合) ＋ 向自身賦予每回合獲得爆擊星的狀態(3回合)",
+      "na": "Increase Arts Card effectiveness for all allies (3 turns) & Increase Critical Strength (3 turns) & Apply Special Attack [Poison] (3 turns) + Only on Waterside fields, Increase Arts Card effectiveness for all allies (3 turns) + Apply C. Stars each turn to yourself (3 turns)",
+      "kr": "아군 전체의 아츠 카드 성능 UP(3턴)＆크리티컬 위력 UP(3턴)＆〔독〕 특공 상태 부여(3턴) ＋ 〔물가〕가 있는 필드에서만, 아군 전체의 아츠 카드 성능 UP(3턴) ＋ 자신에게 매 턴 스타 획득 상태 부여(3턴)"
     },
     "味方全体のArtsカード性能をアップ(3ターン)＆弱体無効状態を付与(1回・3ターン)＆回避状態を付与(1回・3ターン)＆被クリティカル発生耐性をアップ(3ターン)": {
       "tw": "我方全體的Arts指令卡性能提升(3回合)＆賦予弱化無效狀態(1次．3回合)＆賦予迴避狀態(1次．3回合)＆被爆擊發生耐性提升(3回合)",
@@ -2129,16 +2129,16 @@
       "kr": "아군 전체의 아츠 카드 성능 UP(3턴)&약화 무효 상태 부여(1회・3턴)&회피 상태 부여(1회・3턴)&받는 크리티컬 발생 내성 UP(3턴)"
     },
     "味方全体のArtsカード性能をアップ(3ターン)＆攻撃力をアップ(3ターン)＆弱体状態を解除 ＋ 自身に「通常攻撃時に敵単体の強化状態を1つ解除＆〔過去改竄〕状態(3ターン)を付与する状態」を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体技指令卡性能提升(3回合)＆攻击力提升(3回合)＆解除弱化状态 ＋ 向自身付与「普通攻击时解除敌方单体1个强化状态＆付与〔过去窜改〕状态(3回合)的状态」(3回合)",
+      "tw": "我方全體Arts指令卡性能提升(3回合)＆攻擊力提升(3回合)＆解除弱化狀態 ＋ 向自身賦予「一般攻擊時解除敵方單體1個強化狀態＆賦予〔過去竄改〕狀態(3回合)的狀態」(3回合)",
+      "na": "Increase Arts Card effectiveness for all allies (3 turns) & Increase ATK (3 turns) & remove Debuffs + Apply a state that removes 1 buff from a single enemy and applies [Past Alteration] state (3 turns) on normal attacks to yourself (3 turns)",
+      "kr": "아군 전체의 아츠 카드 성능 UP(3턴)＆공격력 UP(3턴)＆약화 상태 해제 ＋ 자신에게 「일반 공격 시 적 하나의 강화 상태를 1개 해제＆〔과거 개찬〕 상태(3턴)를 부여하는 상태」 부여(3턴)"
     },
     "味方全体のArtsカード性能をアップ(3回・3ターン▲)＆NPを増やす▲＆弱体付与成功率をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体技指令卡性能提升(3次·3回合▲)＆宝具值增加▲＆弱化赋予成功率提升(3回合)▲",
+      "tw": "我方全體Arts指令卡性能提升(3次．3回合▲)＆NP增加▲＆弱化賦予成功率提升(3回合)▲",
+      "na": "Increase Arts Card effectiveness for all allies (3 times, 3 turns)▲ & Increase NP Gauge▲ & Increase Debuff Application Success Rate (3 turns)▲",
+      "kr": "아군 전체의 아츠 카드 성능 UP(3회・3턴▲)＆NP 증가▲＆약화 부여 성공률 UP(3턴)▲"
     },
     "味方全体のHPを回復 ＋ スターを獲得": {
       "tw": "我方全體的HP恢復＋獲得爆擊星",
@@ -2152,10 +2152,10 @@
       "na": "Increase NP Gauge & increase NP Charge by 1 level when using NP (1 time, 3 turns) for all allies + Apply a state that increases Max HP (3 turns) for all [Child Servants] + Gain C. Stars"
     },
     "味方全体のNPを増やす＆宝具威力をアップ(3ターン) ＋ 敵全体に宝具封印状態を付与(1ターン)＆毒状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体宝具值增加＆宝具威力提升(3回合) ＋ 向敌方全体付与宝具封印状态(1回合)＆付与毒状态(3回合)",
+      "tw": "我方全體NP增加＆寶具威力提升(3回合) ＋ 向敵方全體賦予寶具封印狀態(1回合)＆賦予毒狀態(3回合)",
+      "na": "Increase NP Gauge for all allies & Increase NP Strength (3 turns) + Apply NP Seal to all enemies (1 turn) & Apply Poison (3 turns)",
+      "kr": "아군 전체의 NP 증가＆보구 위력 UP(3턴) ＋ 적 전체에 보구 봉인 상태 부여(1턴)＆독 상태 부여(3턴)"
     },
     "味方全体のNPを増やす＆宝具威力をアップ(3ターン) ＋ 自身に「ガッツ発動時にスターを大量獲得する状態」を付与(3ターン)＆「自身の死亡時にスターを大量獲得する状態」を付与(3ターン)": {
       "na": "Increase NP Gauge & NP Strength (3 turns) for all allies + Apply a state that \"gains a large amount of C. Stars when Guts activates\" (3 turns) & a state that \"gains a large amount of C. Stars when you are defeated\" (3 turns) for yourself"
@@ -2172,10 +2172,10 @@
       "na": "Increase Quick Card effectiveness (1 turn) & Arts Card effectiveness (1 turn) for all allies"
     },
     "味方全体のQuickカード性能をアップ(1ターン)＆Artsカード性能をアップ(1ターン)＆Busterカード性能をアップ(1ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体迅指令卡性能提升(1回合)＆技指令卡性能提升(1回合)＆力指令卡性能提升(1回合)",
+      "tw": "我方全體Quick指令卡性能提升(1回合)＆Arts指令卡性能提升(1回合)＆Buster指令卡性能提升(1回合)",
+      "na": "Increase Quick Card effectiveness for all allies (1 turn) & Increase Arts Card effectiveness (1 turn) & Increase Buster Card effectiveness (1 turn)",
+      "kr": "아군 전체의 퀵 카드 성능 UP(1턴)＆아츠 카드 성능 UP(1턴)＆버스터 카드 성능 UP(1턴)"
     },
     "味方全体のQuickカード性能をアップ(1ターン)＆Busterカード性能をアップ(1ターン)": {
       "tw": "我方全體的Quick指令卡性能提升(1回合)＆Buster指令卡性能提升(1回合)",
@@ -2183,22 +2183,22 @@
       "kr": "아군 전체의 퀵 카드 성능 UP(1턴)&버스터 카드 성능 UP(1턴)"
     },
     "味方全体のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)＆NPを増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体迅指令卡性能提升(3回合)＆技指令卡性能提升(3回合)＆宝具值增加",
+      "tw": "我方全體Quick指令卡性能提升(3回合)＆Arts指令卡性能提升(3回合)＆NP增加",
+      "na": "Increase Quick Card effectiveness for all allies (3 turns) & Increase Arts Card effectiveness (3 turns) & Increase NP Gauge",
+      "kr": "아군 전체의 퀵 카드 성능 UP(3턴)＆아츠 카드 성능 UP(3턴)＆NP 증가"
     },
     "味方全体のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ 〔暗闇〕のフィールドにおいてのみ、味方全体の攻撃力をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体迅指令卡性能提升(3回合)＆技指令卡性能提升(3回合)＆暴击威力提升(3回合) ＋ 仅在〔黑暗〕的战场中，己方全体攻击力提升(3回合)",
+      "tw": "我方全體Quick指令卡性能提升(3回合)＆Arts指令卡性能提升(3回合)＆爆擊威力提升(3回合) ＋ 僅在〔黑暗〕的戰場中，我方全體攻擊力提升(3回合)",
+      "na": "Increase Quick Card effectiveness for all allies (3 turns) & Increase Arts Card effectiveness (3 turns) & Increase Critical Strength (3 turns) + Only on Darkness fields, Increase ATK for all allies (3 turns)",
+      "kr": "아군 전체의 퀵 카드 성능 UP(3턴)＆아츠 카드 성능 UP(3턴)＆크리티컬 위력 UP(3턴) ＋ 〔어둠〕 필드에서만, 아군 전체의 공격력 UP(3턴)"
     },
     "味方全体のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)＆弱体状態を解除＆弱体無効状態を付与(1回・3ターン)＆最大HPをアップ(5ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体迅指令卡性能提升(3回合)＆技指令卡性能提升(3回合)＆解除弱化状态＆付与弱化无效状态(1次·3回合)＆最大生命值提升(5回合)",
+      "tw": "我方全體Quick指令卡性能提升(3回合)＆Arts指令卡性能提升(3回合)＆解除弱化狀態＆賦予弱化無效狀態(1次．3回合)＆最大HP提升(5回合)",
+      "na": "Increase Quick Card effectiveness for all allies (3 turns) & Increase Arts Card effectiveness (3 turns) & remove Debuffs & Debuff Immune (1 time, 3 turns) & Increase Max HP (5 turns)",
+      "kr": "아군 전체의 퀵 카드 성능 UP(3턴)＆아츠 카드 성능 UP(3턴)＆약화 상태 해제＆약화 무효 상태 부여(1회・3턴)＆최대 HP UP(5턴)"
     },
     "味方全体のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)＆強化解除耐性をアップ(1回・3ターン)＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)": {
       "tw": "我方全體的Quick指令卡性能提升(3回合)＆Arts指令卡性能提升(3回合)＆強化解除耐性提升(1次．3回合)＆賦予使用寶具時Charge階段上升2級的狀態(1次．3回合)",
@@ -2224,10 +2224,10 @@
       "kr": "아군 전체의 스킬 쿨타임 1 감소 + 자신에게 매 턴 스타 획득 상태 부여(3턴) + 스타 획득"
     },
     "味方全体の宝具威力をアップ(3ターン)▲＆攻撃力をアップ(3ターン)▲＆NP獲得量をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体宝具威力提升(3回合)▲＆攻击力提升(3回合)▲＆宝具值获得量提升(3回合)▲",
+      "tw": "我方全體寶具威力提升(3回合)▲＆攻擊力提升(3回合)▲＆NP獲得量提升(3回合)▲",
+      "na": "Increase NP Strength for all allies (3 turns)▲ & Increase ATK (3 turns)▲ & Increase NP Gain (3 turns)▲",
+      "kr": "아군 전체의 보구 위력 UP(3턴)▲＆공격력 UP(3턴)▲＆NP 획득량 UP(3턴)▲"
     },
     "味方全体の宝具威力をアップ(3ターン)▲＆攻撃力をアップ(3ターン)▲＆〔水辺〕または〔虚数空間〕のフィールドにおいてのみ、攻撃力をアップ(3ターン)＆強化解除耐性をアップ(1回・3ターン)▲": {
       "tw": "我方全體的寶具威力提升(3回合)▲＆攻擊力提升(3回合)▲＆僅在〔水邊〕或〔虛數空間〕場地上時，攻擊力提升(3回合)＆強化解除耐性提升(1次．3回合)▲",
@@ -2240,16 +2240,16 @@
       "kr": "아군 전체의 보구 위력 UP(3턴)&공격력 UP(3턴)&보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴) + 자신을 제외한 아군 전체의 동물<맹수・마수형 서번트・케이모노과 서번트>(일부 제외)의 공격력 UP(3턴)&약화 상태 해제&매 턴 HP 회복 상태 부여(3턴)"
     },
     "味方全体の宝具威力をアップ(3ターン)＆毎ターンNP獲得状態を付与(3ターン)＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体宝具威力提升(3回合)＆付与每回合获得宝具值的状态(3回合)＆付与使用宝具时充能阶段上升1级的状态(1次·3回合)",
+      "tw": "我方全體寶具威力提升(3回合)＆賦予每回合獲得NP的狀態(3回合)＆賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)",
+      "na": "Increase NP Strength for all allies (3 turns) & Apply NP Gauge per turn (3 turns) & Apply a state that increases NP Charge by 1 level when using NP (1 time, 3 turns)",
+      "kr": "아군 전체의 보구 위력 UP(3턴)＆매 턴 NP 획득 상태 부여(3턴)＆보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)"
     },
     "味方全体の宝具威力をアップ(3ターン▲)＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)▲＆スター発生率をアップ(3ターン▲)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体宝具威力提升(3回合▲)＆付与使用宝具时充能阶段上升2级的状态(1次·3回合)▲＆暴击星掉落率提升(3回合▲)",
+      "tw": "我方全體寶具威力提升(3回合▲)＆賦予使用寶具時Charge階段上升2級的狀態(1次．3回合)▲＆爆擊星掉落率提升(3回合▲)",
+      "na": "Increase NP Strength for all allies (3 turns▲) & Apply a state that increases NP Charge by 2 levels when using NP (1 time, 3 turns)▲ & Increase C. Star Drop Rate (3 turns▲)",
+      "kr": "아군 전체의 보구 위력 UP(3턴▲)＆보구 사용 시 차지 단계가 2단계 증가하는 상태 부여(1회・3턴)▲＆스타 발생률 UP(3턴▲)"
     },
     "味方全体の攻撃力をアップ(3ターン) ＋ 〔混沌〕特性の味方全体のクリティカル威力をアップ(3ターン) ＋ 自身に毎ターンスター獲得状態を付与(3ターン) ＋ スターを獲得": {
       "tw": "我方全體的攻擊力提升(3回合)＋〔混沌〕特性的我方全體爆擊威力提升(3回合)＋賦予自身每回合獲得爆擊星的狀態(3回合)＋獲得爆擊星",
@@ -2257,10 +2257,10 @@
       "kr": "아군 전체의 공격력 UP(3턴) + 〔혼돈〕 특성 아군 전체의 크리티컬 위력 UP(3턴) + 자신에게 매 턴 스타 획득 상태 부여(3턴) + 스타 획득"
     },
     "味方全体の攻撃力をアップ(3ターン) ＋ 味方全体の〔女性〕のクリティカル威力をアップ(3ターン) ＋ 自身に回避状態を付与(2回・3ターン) ＋ 自身を除く味方全体の〔子供のサーヴァント〕に回避状態を付与(2回・3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升(3回合) ＋ 己方全体〔女性〕暴击威力提升(3回合) ＋ 向自身付与回避状态(2次·3回合) ＋ 向除自身以外的己方全体〔儿童从者〕付与回避状态(2次·3回合)",
+      "tw": "我方全體攻擊力提升(3回合) ＋ 我方全體〔女性〕爆擊威力提升(3回合) ＋ 向自身賦予迴避狀態(2次．3回合) ＋ 向除自身以外的我方全體〔孩童從者〕賦予迴避狀態(2次．3回合)",
+      "na": "Increase ATK for all allies (3 turns) + Increase Critical Strength for all [Female] allies (3 turns) + Apply Evade to yourself (2 times, 3 turns) + Apply Evade to all allies excluding yourself who are [Child Servants] (2 times, 3 turns)",
+      "kr": "아군 전체의 공격력 UP(3턴) ＋ 아군 전체의 〔여성〕 크리티컬 위력 UP(3턴) ＋ 자신에게 회피 상태 부여(2회・3턴) ＋ 자신을 제외한 아군 전체의 〔어린이 서번트〕에게 회피 상태 부여(2회・3턴)"
     },
     "味方全体の攻撃力をアップ(3ターン) ＋ 味方全体の〔新選組〕のNPを増やす ＋ 味方全体の〔新選組〕以外のNPを少し増やす＆〔新選組〕特性を付与(5ターン)": {
       "tw": "我方全體的攻擊力提升(3回合)＋我方全體〔新選組〕的NP增加＋我方全體〔新選組〕以外的NP少量增加＆賦予〔新選組〕特性(5回合)",
@@ -2268,52 +2268,52 @@
       "kr": "아군 전체의 공격력 UP(3턴) + 아군 전체의 [신선조]의 NP 증가 + 아군 전체의 [신선조] 이외의 NP 조금 증가&[신선조] 특성 부여(5턴)"
     },
     "味方全体の攻撃力をアップ(3ターン) ＋ 自身のBusterカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆「攻撃時に敵単体にやけど状態(3ターン)を付与する状態」を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升(3回合) ＋ 自身力指令卡性能提升(3回合)＆暴击威力提升(3回合)＆付与「攻击时对敌方单体付与烧伤状态(3回合)的状态」(3回合)",
+      "tw": "我方全體攻擊力提升(3回合) ＋ 自身Buster指令卡性能提升(3回合)＆爆擊威力提升(3回合)＆賦予「攻擊時對敵方單體賦予燒傷狀態(3回合)的狀態」(3回合)",
+      "na": "Increase ATK for all allies (3 turns) + Increase Buster Card effectiveness for yourself (3 turns) & Increase Critical Strength (3 turns) & Apply a state that inflicts Burn (3 turns) on a single enemy when attacking (3 turns)",
+      "kr": "아군 전체의 공격력 UP(3턴) ＋ 자신의 버스터 카드 성능 UP(3턴)＆크리티컬 위력 UP(3턴)＆「공격 시 적 하나에게 화상 상태(3턴)를 부여하는 상태」 부여(3턴)"
     },
     "味方全体の攻撃力をアップ(3ターン)＆〔地の力を持つ敵〕特攻状態を付与(3ターン) ＋ 自身のNPを増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升(3回合)＆付与对〔拥有大地之力的敌人〕的特攻状态(3回合) ＋ 自身宝具值增加",
+      "tw": "我方全體攻擊力提升(3回合)＆賦予對〔擁有大地之力的敵人〕的特攻狀態(3回合) ＋ 自身NP增加",
+      "na": "Increase ATK for all allies (3 turns) & Apply Special Attack [Enemies with the Power of Earth] (3 turns) + Increase NP Gauge for yourself",
+      "kr": "아군 전체의 공격력 UP(3턴)＆〔대지의 힘을 가진 적〕 특공 상태 부여(3턴) ＋ 자신의 NP 증가"
     },
     "味方全体の攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ 〔ハロウィン〕のフィールドにおいてのみ、味方全体のクリティカル威力をアップ(3ターン) ＋ スターを大量獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升(3回合)＆暴击威力提升(3回合) ＋ 仅在〔万圣节〕的战场中，己方全体暴击威力提升(3回合) ＋ 获得大量暴击星",
+      "tw": "我方全體攻擊力提升(3回合)＆爆擊威力提升(3回合) ＋ 僅在〔萬聖節〕的戰場中，我方全體爆擊威力提升(3回合) ＋ 獲得大量爆擊星",
+      "na": "Increase ATK for all allies (3 turns) & Increase Critical Strength (3 turns) + Only on Halloween fields, Increase Critical Strength for all allies (3 turns) + Gain a large amount of C. Stars",
+      "kr": "아군 전체의 공격력 UP(3턴)＆크리티컬 위력 UP(3턴) ＋ 〔할로윈〕 필드에서만, 아군 전체의 크리티컬 위력 UP(3턴) ＋ 스타 대량 획득"
     },
     "味方全体の攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ 敵全体の強化状態を解除 ＋ 味方全体に呪い状態を付与(3ターン)【デメリット】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升(3回合)＆暴击威力提升(3回合) ＋ 解除敌方全体强化状态 ＋ 向己方全体付与诅咒状态(3回合)【负面效果】",
+      "tw": "我方全體攻擊力提升(3回合)＆爆擊威力提升(3回合) ＋ 解除敵方全體強化狀態 ＋ 向我方全體賦予詛咒狀態(3回合)【負面效果】",
+      "na": "Increase ATK for all allies (3 turns) & Increase Critical Strength (3 turns) + Remove Buffs from all enemies + Apply Curse to all allies (3 turns) [Demerit]",
+      "kr": "아군 전체의 공격력 UP(3턴)＆크리티컬 위력 UP(3턴) ＋ 적 전체의 강화 상태 해제 ＋ 아군 전체에 저주 상태 부여(3턴)【단점】"
     },
     "味方全体の攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆被クリティカル発生耐性をアップ(3ターン) ＋ スターを大量獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升(3回合)＆暴击威力提升(3回合)＆被暴击发生耐性提升(3回合) ＋ 获得大量暴击星",
+      "tw": "我方全體攻擊力提升(3回合)＆爆擊威力提升(3回合)＆被爆擊發生耐性提升(3回合) ＋ 獲得大量爆擊星",
+      "na": "Increase ATK for all allies (3 turns) & Increase Critical Strength (3 turns) & Increase Crit Chance Resist (3 turns) + Gain a large amount of C. Stars",
+      "kr": "아군 전체의 공격력 UP(3턴)＆크리티컬 위력 UP(3턴)＆피 크리티컬 발생 내성 UP(3턴) ＋ 스타 대량 획득"
     },
     "味方全体の攻撃力をアップ(3ターン)＆防御力をアップ(3ターン)＆毎ターンHP回復状態を付与(3ターン)＆弱体無効状態を付与(1回・3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升(3回合)＆防御力提升(3回合)＆付与每回合回复生命值的状态(3回合)＆付与弱化无效状态(1次·3回合)",
+      "tw": "我方全體攻擊力提升(3回合)＆防禦力提升(3回合)＆賦予每回合恢復HP的狀態(3回合)＆賦予弱化無效狀態(1次．3回合)",
+      "na": "Increase ATK for all allies (3 turns)＆increase DEF (3 turns)＆apply HP per turn (3 turns)＆apply Debuff Immune (1 time, 3 turns)",
+      "kr": "아군 전체 공격력 UP(3턴)＆방어력 UP(3턴)＆매 턴 HP 회복 상태 부여(3턴)＆약화 무효 상태 부여(1회・3턴)"
     },
     "味方全体の攻撃力をアップ▲(3ターン) ＋ 味方全体の〔円卓の騎士〕の攻撃力をアップ(3ターン)▲ ＋ 自身のExtra Attackカード性能を大アップ(3ターン)▲＆「Buster攻撃時に自身のNPを増やす状態」を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升▲(3回合) ＋ 己方全体〔圆桌骑士〕的攻击力提升(3回合)▲ ＋ 自身Extra Attack指令卡性能大幅提升(3回合)▲＆付与「Buster攻击时自身宝具值增加的状态」(3回合)▲",
+      "tw": "我方全體攻擊力提升▲(3回合) ＋ 我方全體〔圓桌騎士〕的攻擊力提升(3回合)▲ ＋ 自身Extra Attack指令卡性能大幅提升(3回合)▲＆賦予「Buster攻擊時自身NP增加的狀態」(3回合)▲",
+      "na": "Increase ATK for all allies▲ (3 turns) ＋ Increase ATK for all 〔Knights of the Round Table〕 allies (3 turns)▲ ＋ Greatly increase Extra Attack Card effectiveness for yourself (3 turns)▲＆apply a status that increases own NP Gauge on Buster attacks (3 turns)▲",
+      "kr": "아군 전체 공격력 UP▲(3턴) ＋ 아군 전체〔원탁의 기사〕 공격력 UP(3턴)▲ ＋ 자신 Extra Attack 카드 성능 대폭 UP(3턴)▲＆버스터 공격 시 자신 NP 증가 상태 부여(3턴)▲"
     },
     "味方全体の攻撃力をアップ▲(3ターン) ＋ 自身のNPを増やす▲＆防御無視状態を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体攻击力提升▲(3回合) ＋ 自身宝具值增加▲＆付与无视防御状态(3回合)▲",
+      "tw": "我方全體攻擊力提升▲(3回合) ＋ 自身NP增加▲＆賦予無視防御狀態(3回合)▲",
+      "na": "Increase ATK for all allies▲ (3 turns) ＋ Increase own NP Gauge▲＆apply Ignore DEF (3 turns)▲",
+      "kr": "아군 전체 공격력 UP▲(3턴) ＋ 자신 NP 증가▲＆방어 무시 상태 부여(3턴)▲"
     },
     "味方全体の攻撃力をアップ▲(3ターン)＆クリティカル威力をアップ(3ターン)▲ ＋ 自身のNPを増やす▲": {
       "tw": "我方全體的攻擊力提升▲(3回合)＆爆擊威力提升(3回合)▲＋自身的NP增加▲",
@@ -2335,16 +2335,16 @@
       "kr": "아군 한 명에게 근성 상태 부여(1회・1턴) + 스타 획득"
     },
     "味方単体にガッツ状態を付与(1回・3ターン)▲＆Busterカード性能をアップ(3ターン▲) ＋ 味方全体の攻撃力をアップ(3ターン)▲＆強化成功率をアップ(3ターン)▲＆HP回復量をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为己方单体付与毅力状态(1次·3回合)▲＆力指令卡性能提升(3回合▲) ＋ 己方全体攻击力提升(3回合)▲＆强化成功率提升(3回合)▲＆HP回复量提升(3回合)▲",
+      "tw": "為我方單體賦予毅力狀態(1次．3回合)▲＆Buster指令卡性能提升(3回合▲) ＋ 我方全體攻擊力提升(3回合)▲＆強化成功率提升(3回合)▲＆HP恢復量提升(3回合)▲",
+      "na": "Apply Guts to a single ally (1 time, 3 turns)▲＆increase Buster Card effectiveness (3 turns▲) ＋ Increase ATK for all allies (3 turns)▲＆increase Buff Success Rate (3 turns)▲＆increase HP Recovery Amount (3 turns)▲",
+      "kr": "아군 하나에게 근성 상태 부여(1회・3턴)▲＆버스터 카드 성능 UP(3턴▲) ＋ 아군 전체 공격력 UP(3턴)▲＆강화 성공률 UP(3턴)▲＆HP 회복량 UP(3턴)▲"
     },
     "味方単体にガッツ状態を付与(1回・3ターン)＆Busterカード性能をアップ(3ターン)＆NPを増やす▲＆スキルチャージを1進める▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为己方单体付与毅力状态(1次·3回合)＆力指令卡性能提升(3回合)＆宝具值增加▲＆技能冷却减少1回合▲",
+      "tw": "為我方單體賦予毅力狀態(1次．3回合)＆Buster指令卡性能提升(3回合)＆NP增加▲＆技能冷卻減少1回合▲",
+      "na": "Apply Guts to a single ally (1 time, 3 turns)＆increase Buster Card effectiveness (3 turns)＆Increase NP Gauge▲＆reduce skill cooldown by 1▲",
+      "kr": "아군 하나에게 근성 상태 부여(1회・3턴)＆버스터 카드 성능 UP(3턴)＆NP 증가▲＆스킬 차지 1 진행▲"
     },
     "味方単体にガッツ状態を付与(1回・3ターン)＆攻撃力をアップ(3ターン) ＋ 自身のNPを増やす": {
       "tw": "賦予我方單體毅力狀態(1次．3回合)＆攻擊力提升(3回合)＋自身的NP增加",
@@ -2352,22 +2352,22 @@
       "kr": "아군 한 명에게 근성 상태 부여(1회・3턴)&공격력 UP(3턴) + 자신의 NP 증가"
     },
     "味方単体にガッツ状態を付与(1回・3ターン)＆毎ターンHP回復状態を付与(3ターン)＆毎ターンNP獲得状態を付与(3ターン)＆被ダメージカット状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为己方单体付与毅力状态(1次·3回合)＆付与每回合回复生命值的状态(3回合)＆付与每回合获得宝具值的状态(3回合)＆付与被伤害减免状态(3回合)",
+      "tw": "為我方單體賦予毅力狀態(1次．3回合)＆賦予每回合恢復HP的狀態(3回合)＆賦予每回合獲得NP的狀態(3回合)＆賦予被傷害減免狀態(3回合)",
+      "na": "Apply Guts to a single ally (1 time, 3 turns)＆apply HP per turn (3 turns)＆apply NP Gauge per turn (3 turns)＆apply Damage Cut (3 turns)",
+      "kr": "아군 하나에게 근성 상태 부여(1회・3턴)＆매 턴 HP 회복 상태 부여(3턴)＆매 턴 NP 획득 상태 부여(3턴)＆받는 대미지 컷 상태 부여(3턴)"
     },
     "味方単体にガッツ状態を付与(1回・3ターン)＆被ダメージカット状態を付与(3回・3ターン)＆強化解除耐性をアップ(3ターン) ＋ 自身のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为己方单体付与毅力状态(1次·3回合)＆付与被伤害减免状态(3次·3回合)＆强化解除耐性提升(3回合) ＋ 自身技指令卡性能提升(3回合)＆力指令卡性能提升(3回合)",
+      "tw": "為我方單體賦予毅力狀態(1次．3回合)＆賦予被傷害減免狀態(3次．3回合)＆強化解除耐性提升(3回合) ＋ 自身Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)",
+      "na": "Apply Guts to a single ally (1 time, 3 turns)＆apply Damage Cut (3 times, 3 turns)＆increase Buff Removal Resist (3 turns) ＋ Increase Arts Card effectiveness (3 turns)＆Buster Card effectiveness (3 turns) for yourself",
+      "kr": "아군 하나에게 근성 상태 부여(1회・3턴)＆받는 대미지 컷 상태 부여(3회・3턴)＆강화 해제 내성 UP(3턴) ＋ 자신 아츠 카드 성능 UP(3턴)＆버스터 카드 성능 UP(3턴)"
     },
     "味方単体にガッツ状態を付与(3回・3ターン)＆強化解除耐性をアップ(3ターン)＆攻撃力をアップ(3ターン)＆宝具威力をアップ(3ターン)＆NPを増やす＆「3ターン後に自身が即死する状態<ガッツ無視>」を付与<解除不能>【デメリット】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为己方单体付与毅力状态(3次·3回合)＆强化解除耐性提升(3回合)＆攻击力提升(3回合)＆宝具威力提升(3回合)＆宝具值增加＆付与「3回合后自身即死的状态<无视毅力>」<无法解除>【负面效果】",
+      "tw": "為我方單體賦予毅力狀態(3次．3回合)＆強化解除耐性提升(3回合)＆攻擊力提升(3回合)＆寶具威力提升(3回合)＆NP增加＆賦予「3回合後自身即死的狀態<無視毅力>」<無法解除>【負面效果】",
+      "na": "Apply Guts to a single ally (3 times, 3 turns)＆increase Buff Removal Resist (3 turns)＆Increase ATK (3 turns)＆Increase NP Strength (3 turns)＆Increase NP Gauge＆apply a status of instant death for yourself after 3 turns ignoring Guts, unremovable [Demerit]",
+      "kr": "아군 하나에게 근성 상태 부여(3회・3턴)＆강화 해제 내성 UP(3턴)＆공격력 UP(3턴)＆보구 위력 UP(3턴)＆NP 증가＆3턴 후 자신이 즉사하는 상태<근성 무시> 부여<해제 불가>【단점】"
     },
     "味方単体に回避状態を付与(1ターン)＆毒・呪い・やけど状態を解除": {
       "cn": "赋予己方单体回避状态(1回合)＆解除毒·诅咒·灼伤状态",
@@ -2388,28 +2388,28 @@
       "kr": "아군 한 명에게 대숙정 방어 상태 부여(1턴)&NP 증가 + 대상 제외 아군 전체에게 무적 상태 부여(1턴)"
     },
     "味方単体のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆毎ターンNP獲得状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体技指令卡性能提升(3回合)＆力指令卡性能提升(3回合)＆付与每回合获得宝具值的状态(3回合)",
+      "tw": "我方單體Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆賦予每回合獲得NP的狀態(3回合)",
+      "na": "Increase Arts Card effectiveness (3 turns)＆Buster Card effectiveness (3 turns) for a single ally＆apply NP Gauge per turn (3 turns)",
+      "kr": "아군 하나의 아츠 카드 성능 UP(3턴)＆버스터 카드 성능 UP(3턴)＆매 턴 NP 획득 상태 부여(3턴)"
     },
     "味方単体のBusterカード性能をアップ(3ターン)＆NPを増やす＆スキルチャージを1進める ＋ 自身に呪い状態を付与(3ターン)【デメリット】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体力指令卡性能提升(3回合)＆宝具值增加＆技能冷却减少1回合 ＋ 为自身付与诅咒状态(3回合)【负面效果】",
+      "tw": "我方單體Buster指令卡性能提升(3回合)＆NP增加＆技能冷卻減少1回合 ＋ 為自身賦予詛咒狀態(3回合)【負面效果】",
+      "na": "Increase Buster Card effectiveness (3 turns)＆Increase NP Gauge＆reduce skill cooldown by 1 for a single ally ＋ apply Curse to yourself (3 turns) [Demerit]",
+      "kr": "아군 하나의 버스터 카드 성능 UP(3턴)＆NP 증가＆스킬 차지 1 진행 ＋ 자신에게 저주 상태 부여(3턴)【단점】"
     },
     "味方単体のBusterカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆スター集中度をアップ(3ターン) ＋ 自身のHPを1にする【デメリット】＆自焼状態<ターン終了時に自身のHPを1000減らす状態・この効果が敵を全滅させたターンで発動して残りHPが0になる場合HP1で耐えない>を付与(3ターン)【デメリット】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体力指令卡性能提升(3回合)＆暴击威力提升(3回合)＆暴击星集中度提升(3回合)＋自身生命值变为1【负面效果】＆付与自燃状态<回合结束时自身生命值减少1000的状态·若该效果在全灭敌人的回合发动导致剩余生命值归0,则不会以1点生命值存活>(3回合)【负面效果】",
+      "tw": "我方單體Buster指令卡性能提升(3回合)＆爆擊威力提升(3回合)＆爆擊星集中提升(3回合)＋自身HP變為1【負面效果】＆賦予自燃狀態<回合結束時自身HP減少1000的狀態・若該效果在全滅敵人的回合發動導致剩餘HP歸0，則不會以1點HP存活>(3回合)【負面效果】",
+      "na": "Increase Buster Card effectiveness (3 turns) & Critical Strength (3 turns) & C. Star Gather Rate (3 turns) for a single ally + Set your HP to 1 [Demerit] & apply a Self-Immolation state <reduces your HP by 1000 at the end of the turn; if this effect activates on the turn you defeat all enemies and your remaining HP becomes 0, you will not survive with 1 HP> (3 turns) [Demerit] for yourself",
+      "kr": "아군 하나의 버스터 카드 성능 UP(3턴)&크리티컬 위력 UP(3턴)&스타 집중도 UP(3턴) + 자신의 HP를 1로 만든다【단점】&자소 상태<턴 종료 시 자신의 HP를 1000 감소시키는 상태・이 효과가 적을 전멸시킨 턴에 발동하여 남은 HP가 0이 되는 경우 HP 1로 버티지 않는다> 부여(3턴)【단점】"
     },
     "味方単体のExtra Attackカードの性能をアップ(1ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体Extra Attack指令卡性能提升(1回合)",
+      "tw": "我方單體Extra Attack指令卡性能提升(1回合)",
+      "na": "Increase Extra Attack Card effectiveness for a single ally (1 turn)",
+      "kr": "아군 하나의 Extra Attack 카드 성능 UP(1턴)"
     },
     "味方単体のHPを回復 ＋ スターを獲得": {
       "tw": "我方單體HP恢復＋獲得爆擊星",
@@ -2417,10 +2417,10 @@
       "kr": "아군 한 명의 HP 회복 + 스타 획득"
     },
     "味方単体のHPを回復＆NPを増やす＆クリティカル威力をアップ(1ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "回复己方单体生命值＆宝具值增加＆暴击威力提升(1回合)",
+      "tw": "恢復我方單體HP＆NP增加＆爆擊威力提升(1回合)",
+      "na": "Recover HP＆Increase NP Gauge＆increase Critical Strength (1 turn) for a single ally",
+      "kr": "아군 하나의 HP 회복＆NP 증가＆크리티컬 위력 UP(1턴)"
     },
     "味方単体のNPを増やす▲ ＋ 味方全体の強化成功率をアップ(3ターン)▲ ＋ スターを獲得▲": {
       "na": "Increase NP Gauge ▲ for a single ally + Increase Buff Success Rate (3 turns) ▲ for all allies + Gain C. Stars ▲"
@@ -2437,10 +2437,10 @@
       "na": "Increase NP Gauge ▲ & increase NP Charge by 1 level when using NP (1 time, 3 turns) ▲ & C. Star Drop Rate (3 turns) for a single ally"
     },
     "味方単体のNPを増やす＆無敵状態を付与(2回・3ターン)＆強化解除耐性をアップ(1回・3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体宝具值增加＆付与无敌状态(2次·3回合)＆强化解除耐性提升(1次·3回合)",
+      "tw": "我方單體NP增加＆賦予無敵狀態(2次．3回合)＆強化解除耐性提升(1次．3回合)",
+      "na": "Increase NP Gauge for a single ally＆apply Invincible (2 times, 3 turns)＆increase Buff Removal Resist (1 time, 3 turns)",
+      "kr": "아군 하나의 NP 증가＆무적 상태 부여(2회・3턴)＆강화 해제 내성 UP(1회・3턴)"
     },
     "味方単体のクリティカル威力をアップ(3ターン)＆宝具威力をアップ(3ターン)▲＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)▲＆NPを増やす": {
       "tw": "我方單體的爆擊威力提升(3回合)＆寶具威力提升(3回合)▲＆賦予使用寶具時Charge階段上升2級的狀態(1次．3回合)▲＆NP增加",
@@ -2448,26 +2448,26 @@
       "kr": "아군 한 명의 크리티컬 위력 UP(3턴)&보구 위력 UP(3턴)▲&보구 사용 시 차지 단계가 2단계 증가하는 상태 부여(1회・3턴)▲&NP 증가"
     },
     "味方単体のスキルチャージを1進める＆NPを増やす＆Artsカード性能をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体技能冷却减少1回合＆宝具值增加＆技指令卡性能提升(3回合)",
+      "tw": "我方單體技能冷卻減少1回合＆NP增加＆Arts指令卡性能提升(3回合)",
+      "na": "Reduce skill cooldown by 1＆Increase NP Gauge＆increase Arts Card effectiveness (3 turns) for a single ally",
+      "kr": "아군 하나의 스킬 차지 1 진행＆NP 증가＆아츠 카드 성능 UP(3턴)"
     },
     "味方単体のスキルチャージを1進める＆NPを増やす＆Artsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体技能冷却减少1回合＆宝具值增加＆技指令卡性能提升(3回合)＆力指令卡性能提升(3回合)",
+      "tw": "我方單體技能冷卻減少1回合＆NP增加＆Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)",
+      "na": "Reduce skill cooldown by 1＆Increase NP Gauge＆increase Arts Card effectiveness (3 turns)＆Buster Card effectiveness (3 turns) for a single ally",
+      "kr": "아군 하나의 스킬 차지 1 진행＆NP 증가＆아츠 카드 성능 UP(3턴)＆버스터 카드 성능 UP(3턴)"
     },
     "味方単体のスキルチャージを1進める＆スター集中度をアップ(1ターン) ＋ 自身のNPを増やす": {
       "tw": "我方單體的技能冷卻減少1回合＆爆擊星集中提升(1回合)＋自身的NP增加",
       "na": "Reduce skill cooldown by 1 & increase C. Star Gather Rate (1 turn) for a single ally + Increase NP Gauge for yourself"
     },
     "味方単体のスター発生率をアップ(1ターン)＆弱体無効状態を付与(1ターン)＆宝具威力をアップ(3ターン)▲＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体暴击星掉落率提升(1回合)＆付与弱化无效状态(1回合)＆宝具威力提升(3回合)▲＆宝具值增加▲",
+      "tw": "我方單體爆擊星掉落率提升(1回合)＆賦予弱化無效狀態(1回合)＆寶具威力提升(3回合)▲＆NP增加▲",
+      "na": "Increase C. Star Drop Rate (1 turn)＆apply Debuff Immune (1 turn)＆Increase NP Strength (3 turns)▲＆Increase NP Gauge▲ for a single ally",
+      "kr": "아군 하나의 스타 발생률 UP(1턴)＆약화 무효 상태 부여(1턴)＆보구 위력 UP(3턴)▲＆NP 증가▲"
     },
     "味方単体の攻撃力をアップ(1ターン)＆NPを増やす": {
       "tw": "我方單體的攻擊力提升(1回合)＆NP增加",
@@ -2475,10 +2475,10 @@
       "kr": "아군 한 명의 공격력 UP(1턴)&NP 증가"
     },
     "味方単体の攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ スターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方单体攻击力提升(3回合)＆暴击威力提升(3回合) ＋ 获得暴击星",
+      "tw": "我方單體攻擊力提升(3回合)＆爆擊威力提升(3回合) ＋ 獲得爆擊星",
+      "na": "Increase ATK (3 turns)＆increase Critical Strength (3 turns) for a single ally ＋ Gain C. Stars",
+      "kr": "아군 하나의 공격력 UP(3턴)＆크리티컬 위력 UP(3턴) ＋ 스타 획득"
     },
     "味方単体の攻撃力をアップ(3ターン)＆スター集中度をアップ(3ターン) ＋ 自身に「Quick攻撃時に自身の呪い状態を1つ解除＆解除に成功した場合、自身の攻撃力を少しアップ(3ターン)＆NPを増やす▲状態」を付与(3ターン) ＋ 自身を除く敵味方全体から呪い状態を吸収する【デメリット】": {
       "na": "Increase ATK (3 turns) & C. Star Gather Rate (3 turns) for a single ally + Apply a state that \"removes 1 Curse when attacking with Quick Card & slightly increases ATK (3 turns) & increases NP Gauge ▲ for yourself when the removal succeeds\" (3 turns) for yourself + Absorb Curse from all allies and enemies excluding yourself [Demerit]"
@@ -2688,10 +2688,10 @@
       "na": "Legend of Komachi - Fatal Beauty"
     },
     "小野小町 (archer)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "小野小町(弓兵)",
+      "tw": "小野小町(Archer)",
+      "na": "Ono no Komachi (Archer)",
+      "kr": "오노노 코마치(아처)"
     },
     "山の幸のドロップ獲得数を1個増やす【『夏予習版:雀のお宿の活動日誌～閻魔亭繁盛記～』イベント期間限定】": {
       "tw": "山之幸的掉落獲得數增加1個【『夏預習版：雀之旅館的活動日誌～閻魔亭繁盛記～』活動限定】",
@@ -2929,10 +2929,10 @@
       "kr": "구세의 항해자 B"
     },
     "敵全体に〔死の渇き〕状態<ターン毎にカウントダウンしカウント0で高確率で即死効果＆カウント0による即死が失敗した時は防御力をダウン(1ターン)する状態>を付与(3ターン)＆恐怖状態を付与(3ターン)＆「毎ターン自身の防御力をダウン(3ターン)＆即死耐性をダウン(3ターン)する状態」を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与敌方全体〔死亡之渴〕状态<每回合倒计时,计数为0时高概率即死＆计数为0导致的即死失败时防御力降低(1回合)的状态>(3回合)＆付与恐惧状态(3回合)＆付与每回合自身的防御力降低(3回合)＆即死耐性降低(3回合)的状态(3回合)",
+      "tw": "賦予敵方全體〔死亡之渴〕狀態<每回合倒數，計數為0時高機率即死＆計數為0導致的即死失敗時防禦力下降(1回合)的狀態>(3回合)＆賦予恐懼狀態(3回合)＆賦予每回合自身的防禦力下降(3回合)＆即死耐性下降(3回合)的狀態(3回合)",
+      "na": "Apply a [Thirst of Death] state <counts down each turn, high chance to inflict Death when the count reaches 0 & if Death by count 0 fails, decrease DEF (1 turn)> (3 turns) & apply Terror (3 turns) & apply a state that decreases your DEF (3 turns) & Death Resist (3 turns) each turn (3 turns) to all enemies",
+      "kr": "적 전체에게 [죽음의 갈증] 상태<턴마다 카운트다운하여 카운트 0에 고확률로 즉사 효과&카운트 0에 의한 즉사가 실패했을 때는 방어력 DOWN(1턴)하는 상태> 부여(3턴)&공포 상태 부여(3턴)&매 턴 자신의 방어력 DOWN(3턴)&즉사 내성 DOWN(3턴)하는 상태 부여(3턴)"
     },
     "敵全体にスキル封印状態を付与(1ターン)＆クリティカル威力耐性をダウン(3ターン) ＋ 自身のNPを増やす＆攻撃力をアップ(3ターン)": {
       "tw": "賦予敵方全體技能封印狀態(1回合)＆爆擊威力耐性下降(3回合)＋自身的NP增加＆攻擊力提升(3回合)",
@@ -2948,38 +2948,38 @@
       "kr": "적 전체에게 중간 확률로 [매료] 상태 부여(1턴) + 자신의 NP 증가&보구 위력 UP(3턴)"
     },
     "敵全体に恐怖状態を付与(5ターン)＆呪い状態を付与(5ターン)▲＆防御力をダウン(5ターン)▲ ＋ 自身に〔呪い〕特攻状態を付与(3ターン)▲＆「攻撃時のダメージ前に対象に呪い状態(5ターン)を付与する状態」を付与(3ターン)▲＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为敌方全体付与恐惧状态(5回合)＆诅咒状态(5回合)▲＆防御力降低(5回合)▲ ＋ 为自身付与对〔诅咒〕的特攻状态(3回合)▲＆付与“攻击造成伤害前为对象付与诅咒状态(5回合)的状态”(3回合)▲＆宝具值增加▲",
+      "tw": "為敵方全體賦予恐懼狀態(5回合)＆詛咒狀態(5回合)▲＆防禦力下降(5回合)▲ ＋ 為自身賦予對〔詛咒〕的特攻狀態(3回合)▲＆賦予「攻擊造成傷害前為對象賦予詛咒狀態(5回合)的狀態」(3回合)▲＆NP增加▲",
+      "na": "Apply Terror to all enemies (5 turns)＆Curse (5 turns)▲＆decrease DEF (5 turns)▲ ＋ Apply Special Attack [Curse] to yourself (3 turns)▲＆apply a state that inflicts Curse (5 turns) on the target before damage when attacking (3 turns)▲＆Increase NP Gauge▲",
+      "kr": "적 전체에게 공포 상태 부여(5턴)＆저주 상태 부여(5턴)▲＆방어력 DOWN(5턴)▲ ＋ 자신에게 〔저주〕 특공 상태 부여(3턴)▲＆「공격 시 대미지 전에 대상에게 저주 상태(5턴)를 부여하는 상태」부여(3턴)▲＆NP 증가▲"
     },
     "敵全体に毒状態を付与(3ターン)＆Busterカード耐性をダウン(3ターン) ＋ 自身に〔毒〕特攻状態を付与(3ターン)▲＆「攻撃時のダメージ前に対象に毒状態(3ターン)を付与する状態」を付与(3ターン)▲": {
       "tw": "對敵方全體賦予毒狀態(3回合)＆Buster指令卡耐性下降(3回合) ＋ 對自身賦予〔毒〕特攻狀態(3回合)▲＆賦予「攻擊時於造成傷害前對對象賦予毒狀態(3回合)的狀態」(3回合)▲",
       "na": "Inflict Poison (3 turns) & decrease Buster Card resistance (3 turns) on all enemies + apply [Poison] Special Attack (3 turns) to yourself▲ & apply \"Inflict Poison (3 turns) on target before damage when attacking\" (3 turns)▲"
     },
     "敵全体に毒状態を付与(5ターン) ＋ 自身の攻撃力をアップ(3ターン)＆〔毒〕特攻状態を付与<対象の〔毒〕状態が多いほど対象に対して特攻威力アップ(最大10個)>(3ターン)＆「攻撃時のダメージ前に対象に毒状態(5ターン)を付与する状態」を付与(3ターン)＆「ターン開始時に敵全体に毒状態(5ターン)を付与する状態」を付与(2回)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为敌方全体付与中毒状态(5回合) ＋ 自身攻击力提升(3回合)＆付与对〔毒〕的特攻状态<对象身上的〔毒〕状态越多对其特攻威力越高(最多10个)>(3回合)＆付与攻击造成伤害前为对象付与中毒状态(5回合)的状态(3回合)＆付与回合开始时为敌方全体付与中毒状态(5回合)的状态(2次)",
+      "tw": "為敵方全體賦予中毒狀態(5回合) ＋ 自身攻擊力提升(3回合)＆賦予對〔毒〕的特攻狀態<對象身上的〔毒〕狀態越多對其特攻威力越高(最多10個)>(3回合)＆賦予攻擊造成傷害前為對象賦予中毒狀態(5回合)的狀態(3回合)＆賦予回合開始時為敵方全體賦予中毒狀態(5回合)的狀態(2次)",
+      "na": "Apply Poison to all enemies (5 turns) ＋ Increase ATK for yourself (3 turns)＆Apply Special Attack [Poison] (more Poison stacks on the target increase Special Attack power, max 10) (3 turns)＆apply a state that inflicts Poison (5 turns) on the target before damage when attacking (3 turns)＆apply a state that inflicts Poison (5 turns) on all enemies at the start of the turn (2 times)",
+      "kr": "적 전체에게 독 상태 부여(5턴) ＋ 자신 공격력 UP(3턴)＆〔독〕 특공 상태 부여<대상의 〔독〕 상태가 많을수록 대상에 대한 특공 위력 UP(최대 10개)>(3턴)＆공격 시 대미지 전에 대상에게 독 상태(5턴)를 부여하는 상태 부여(3턴)＆턴 개시 시 적 전체에게 독 상태(5턴)를 부여하는 상태 부여(2회)"
     },
     "敵全体に高確率で拘束状態を付与(1ターン)▲ ＋ 自身のスター集中度をアップ(1ターン)＆クリティカル威力をアップ(1ターン) ＋ フィールドにいる拘束状態の敵の数に応じて自身のNPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "高概率为敌方全体付与束缚状态(1回合)▲ ＋ 自身暴击星集中度提升(1回合)＆暴击威力提升(1回合) ＋ 根据场上处于束缚状态的敌人数量增加自身宝具值▲",
+      "tw": "高機率為敵方全體賦予束縛狀態(1回合)▲ ＋ 自身爆擊星集中提升(1回合)＆爆擊威力提升(1回合) ＋ 根據場上處於束縛狀態的敵人數量增加自身NP▲",
+      "na": "Apply Bind to all enemies with high chance (1 turn)▲ ＋ Increase C. Star Gather Rate (1 turn)＆increase Critical Strength (1 turn) for yourself ＋ Increase own NP Gauge based on the number of Bound enemies on the field▲",
+      "kr": "적 전체에게 고확률로 구속 상태 부여(1턴)▲ ＋ 자신 스타 집중도 UP(1턴)＆크리티컬 위력 UP(1턴) ＋ 필드에 있는 구속 상태 적 수에 따라 자신 NP 증가▲"
     },
     "敵全体に魅了状態を付与(1ターン) ＋ 味方全体の宝具威力をアップ(3ターン)＆NPを増やす＆スキルチャージを1進める ＋ 自身に「宝具発動後に自身に即死効果<ガッツ無視・即死耐性無視>を与える状態」を付与(1回・3ターン)【この効果を付与するか選択可能】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为敌方全体付与魅惑状态(1回合) ＋ 己方全体宝具威力提升(3回合)＆宝具值增加＆技能冷却减少1回合 ＋ 为自身付与宝具发动后对自身造成即死效果<无视毅力·无视即死耐性>的状态(1次·3回合)【可选择是否付与该效果】",
+      "tw": "為敵方全體賦予魅惑狀態(1回合) ＋ 我方全體寶具威力提升(3回合)＆NP增加＆技能冷卻減少1回合 ＋ 為自身賦予寶具發動後對自身造成即死效果<無視毅力·無視即死耐性>的狀態(1次．3回合)【可選擇是否賦予此效果】",
+      "na": "Apply Charm to all enemies (1 turn) ＋ Increase NP Strength (3 turns)＆Increase NP Gauge＆reduce skill cooldown by 1 for all allies ＋ apply a status that inflicts Instant Death on yourself after NP activation, ignoring Guts and Instant-Death Resist (1 time, 3 turns) [Can select whether to apply this effect]",
+      "kr": "적 전체에게 매료 상태 부여(1턴) ＋ 아군 전체 보구 위력 UP(3턴)＆NP 증가＆스킬 차지 1 진행 ＋ 자신에게 보구 발동 후 자신에게 즉사 효과<근성 무시・즉사 내성 무시>를 부여하는 상태 부여(1회・3턴)【이 효과를 부여할지 선택 가능】"
     },
     "敵全体のチャージを減らす ＋ 味方全体に毎ターンNP獲得状態を付与(3ターン)＆宝具威力をアップ(3ターン) ＋ 自身のNPを増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "减少敌方全体充能 ＋ 为己方全体付与每回合获得宝具值的状态(3回合)＆宝具威力提升(3回合) ＋ 自身宝具值增加",
+      "tw": "減少敵方全體Charge ＋ 為我方全體賦予每回合獲得NP的狀態(3回合)＆寶具威力提升(3回合) ＋ 自身NP增加",
+      "na": "Reduce charge of all enemies ＋ apply NP Gauge per turn (3 turns)＆Increase NP Strength (3 turns) to all allies ＋ Increase own NP Gauge",
+      "kr": "적 전체 차지 감소 ＋ 아군 전체에게 매 턴 NP 획득 상태 부여(3턴)＆보구 위력 UP(3턴) ＋ 자신 NP 증가"
     },
     "敵全体の強化状態を解除 ＋ 自身のNPを増やす ＋ 〔混沌〕特性の味方全体の宝具威力をアップ(3ターン)": {
       "tw": "解除敵方全體的強化狀態 ＋ 增加自身的NP ＋ 提升〔混沌〕特性我方全體的寶具威力(3回合)",
@@ -2997,10 +2997,10 @@
       "kr": "적 하나▲에게 확률로 매료 상태 부여(1턴) + 아군 전체의 퀵 카드 성능 UP(3턴)▲ & 아츠 카드 성능 UP(3턴)▲ & 버스터 카드 성능 UP(3턴)▲"
     },
     "敵単体に宝具封印状態を付与(1ターン)＆クリティカル発生率をダウン(3ターン) ＋ 自身の攻撃力をアップ(3ターン)▲＆〔鬼〕特攻状態を付与(3ターン)▲＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为敌方单体付与宝具封印状态(1回合)＆暴击率降低(3回合) ＋ 自身攻击力提升(3回合)▲＆付与对〔鬼〕的特攻状态(3回合)▲＆宝具值增加▲",
+      "tw": "為敵方單體賦予寶具封印狀態(1回合)＆爆擊率下降(3回合) ＋ 自身攻擊力提升(3回合)▲＆賦予對〔鬼〕的特攻狀態(3回合)▲＆NP增加▲",
+      "na": "Apply NP Seal to a single enemy (1 turn)＆decrease Critical Rate (3 turns) ＋ Increase ATK for yourself (3 turns)▲＆Apply Special Attack [Oni] (3 turns)▲＆Increase NP Gauge▲",
+      "kr": "적 하나에게 보구 봉인 상태 부여(1턴)＆크리티컬 발생률 DOWN(3턴) ＋ 자신 공격력 UP(3턴)▲＆〔오니〕 특공 상태 부여(3턴)▲＆NP 증가▲"
     },
     "敵単体に魅了状態を付与(1ターン)＆クリティカル威力耐性をダウン(3ターン) ＋ スターを大量獲得": {
       "tw": "對敵方單體賦予魅惑狀態(1回合)＆爆擊威力耐性下降(3回合) ＋ 獲得大量爆擊星",
@@ -3008,16 +3008,16 @@
       "kr": "적 하나에게 매료 상태 부여(1턴) & 크리티컬 위력 내성 DOWN(3턴) + 스타 대량 획득"
     },
     "敵単体のチャージを中確率で減らす ＋ 自身のNPを増やす▲＆Quickカード性能をアップ(3ターン)▲＆Busterカード性能をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "中概率减少敌方单体充能 ＋ 自身宝具值增加▲＆迅指令卡性能提升(3回合)▲＆力指令卡性能提升(3回合)▲",
+      "tw": "中機率減少敵方單體Charge ＋ 自身NP增加▲＆Quick指令卡性能提升(3回合)▲＆Buster指令卡性能提升(3回合)▲",
+      "na": "Reduce charge of a single enemy with mid chance ＋ Increase own NP Gauge▲＆increase Quick Card effectiveness (3 turns)▲＆Buster Card effectiveness (3 turns)▲",
+      "kr": "적 하나의 차지를 중확률로 감소 ＋ 자신 NP 증가▲＆퀵 카드 성능 UP(3턴)▲＆버스터 카드 성능 UP(3턴)▲"
     },
     "敵単体のチャージを高確率▲で減らす ＋ 自身のNPを増やす▲ ＋ 味方全体に〔呪い〕特攻状態を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "高概率减少敌方单体充能▲ ＋ 自身宝具值增加▲ ＋ 为己方全体付与对〔诅咒〕的特攻状态(3回合)▲",
+      "tw": "高機率減少敵方單體Charge▲ ＋ 自身NP增加▲ ＋ 為我方全體賦予對〔詛咒〕的特攻狀態(3回合)▲",
+      "na": "Reduce charge of a single enemy with high chance▲ ＋ Increase own NP Gauge▲ ＋ Apply Special Attack [Curse] to all allies (3 turns)▲",
+      "kr": "적 하나의 차지를 고확률▲로 감소 ＋ 자신 NP 증가▲ ＋ 아군 전체에게 〔저주〕 특공 상태 부여(3턴)▲"
     },
     "文化英雄 B": {
       "tw": "文化英雄 B",
@@ -3539,10 +3539,10 @@
       "kr": "약속된 미래로"
     },
     "紅閻魔 (berserker)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "红阎魔(狂战士)",
+      "tw": "紅閻魔(Berserker)",
+      "na": "Beni-Enma (Berserker)",
+      "kr": "베니엔마(버서커)"
     },
     "素敵な贈り物（サメ）": {
       "kr": "멋진 선물(상어)"
@@ -3603,10 +3603,10 @@
       "kr": "자신에게 ‘1턴 후 자신의 공격력 UP(1턴) + 자신을 제외한 아군 전체에게 커맨드 카드 선출 불가 상태 부여<1기인 경우는 무효>(1회・1턴)▲하는 상태’ 부여(1턴)&받는 강화 성공률 UP(2턴)▲"
     },
     "自身に「敵ターン終了後に敵全体の強化状態を1つ解除＆〔過去改竄〕状態(3ターン)を付与 ＋ 味方全体の弱体状態を1つ解除する状態」を付与(3ターン)＆毎ターンスター獲得状態を付与(3ターン) ＋ 味方全体に毎ターンNP獲得状態を付与(3ターン)＆毎ターンHP回復状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身敌方回合结束时解除敌方全体1个强化状态＆付与〔过去篡改〕状态(3回合)＋解除己方全体1个弱化状态的状态(3回合)＆付与每回合获得暴击星的状态(3回合)＋付与己方全体每回合获得宝具值的状态(3回合)＆每回合回复生命值的状态(3回合)",
+      "tw": "賦予自身敵方回合結束時解除敵方全體1個強化狀態＆賦予〔過去竄改〕狀態(3回合)＋解除我方全體1個弱化狀態的狀態(3回合)＆賦予每回合獲得爆擊星的狀態(3回合)＋賦予我方全體每回合獲得NP的狀態(3回合)＆每回合恢復HP的狀態(3回合)",
+      "na": "Apply a state that removes 1 Buff from all enemies & applies a [Past Falsification] state (3 turns) at the end of the enemy turn + removes 1 Debuff from all allies (3 turns) & gain C. Stars each turn (3 turns) for yourself + grant NP Gauge each turn (3 turns) & restore HP each turn (3 turns) to all allies",
+      "kr": "자신에게 적 턴 종료 후 적 전체의 강화 상태 1개 해제&[과거 개찬] 상태(3턴) 부여 + 아군 전체의 약화 상태 1개 해제하는 상태 부여(3턴)&매 턴 스타 획득 상태 부여(3턴) + 아군 전체에게 매 턴 NP 획득 상태 부여(3턴)&매 턴 HP 회복 상태 부여(3턴)"
     },
     "自身に「自身がフィールドにいる間、マスタースキルの一部の効果をアップする状態」を付与(3ターン)＆NP獲得量をアップ(3ターン)＆スター発生率を大アップ(3ターン)＆回避状態を付与(2回・3ターン)": {
       "na": "Apply status \"increase certain Master Skills' effects while you are on the field\" (3 turns) to yourself & Increase NP Gain (3 turns) & Greatly increase C. Star Drop Rate (3 turns) & Apply Evade (2 times, 3 turns)"
@@ -3740,16 +3740,16 @@
       "kr": "자신에게 [마성] 특공 상태 20% 부여&[악] 특공 상태 20% 부여&NP를 50% 차지한 상태로 배틀을 개시[최대해방]"
     },
     "自身にガッツ状態(1回・4ターン)を付与＆NPを増やす▲＆Busterカード性能をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与毅力状态(1次·4回合)＆宝具值增加▲＆力指令卡性能提升(3回合)▲",
+      "tw": "為自身賦予毅力狀態(1次．4回合)＆NP增加▲＆Buster指令卡性能提升(3回合)▲",
+      "na": "Apply Guts to yourself (1 time, 4 turns)＆Increase NP Gauge▲＆increase Buster Card effectiveness (3 turns)▲",
+      "kr": "자신에게 근성 상태(1회・4턴) 부여＆NP 증가▲＆버스터 카드 성능 UP(3턴)▲"
     },
     "自身にガッツ状態(1回・5ターン・他のガッツ状態と重複可能▲)を付与＆NPを増やす▲＆Busterカード性能をアップ(3ターン)▲＆〔秩序〕特攻状態を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与毅力状态(1次·5回合·可与其他毅力状态叠加▲)＆宝具值增加▲＆力指令卡性能提升(3回合)▲＆付与对〔秩序〕的特攻状态(3回合)▲",
+      "tw": "為自身賦予毅力狀態(1次．5回合．可與其他毅力狀態疊加▲)＆NP增加▲＆Buster指令卡性能提升(3回合)▲＆賦予對〔秩序〕的特攻狀態(3回合)▲",
+      "na": "Apply Guts to yourself (1 time, 5 turns, can stack with other Guts▲)＆Increase NP Gauge▲＆increase Buster Card effectiveness (3 turns)▲＆Apply Special Attack [Order] (3 turns)▲",
+      "kr": "자신에게 근성 상태(1회・5턴・다른 근성 상태와 중복 가능▲) 부여＆NP 증가▲＆버스터 카드 성능 UP(3턴)▲＆〔질서〕 특공 상태 부여(3턴)▲"
     },
     "自身にガッツ状態を付与(1回・3ターン)＆「ガッツ発動時に味方全体のNPを増やす状態」を付与(1回・3ターン)▲＆スター集中度をアップ(1ターン) ＋ スターを獲得": {
       "na": "Apply Guts (1 time, 3 turns) & apply a state that \"increases NP Gauge for all allies when Guts is activated\" (1 time, 3 turns) ▲ & increase C. Star Gather Rate (1 turn) for yourself + Gain C. Stars"
@@ -3764,26 +3764,26 @@
       "na": "Apply Guts (1 time, 5 turns) & increase Critical Strength (3 turns) & apply Special Attack [Immobilize] (3 turns) ▲ & increase NP Gauge ▲ for yourself"
     },
     "自身にガッツ状態を付与(1回・5ターン)＆毎ターンNP獲得状態を付与(5ターン) ＋ 味方全体の宝具威力をアップ(3回▲・5ターン)＆〔天の力を持つ敵〕特攻状態を付与(3ターン)▲＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与毅力状态(1次·5回合)＆付与每回合获得宝具值的状态(5回合) ＋ 己方全体宝具威力提升(3次▲·5回合)＆付与对〔拥有天之力的敌人〕的特攻状态(3回合)▲＆宝具值增加▲",
+      "tw": "為自身賦予毅力狀態(1次．5回合)＆賦予每回合獲得NP的狀態(5回合) ＋ 我方全體寶具威力提升(3次▲．5回合)＆賦予對〔擁有天之力的敵人〕的特攻狀態(3回合)▲＆NP增加▲",
+      "na": "Apply Guts to yourself (1 time, 5 turns)＆apply NP Gauge per turn (5 turns) ＋ Increase NP Strength for all allies (3 times▲, 5 turns)＆Apply Special Attack [Enemies with the Power of Heaven] (3 turns)▲＆Increase NP Gauge▲",
+      "kr": "자신에게 근성 상태 부여(1회・5턴)＆매 턴 NP 획득 상태 부여(5턴) ＋ 아군 전체 보구 위력 UP(3회▲・5턴)＆〔하늘의 힘을 가진 적〕 특공 상태 부여(3턴)▲＆NP 증가▲"
     },
     "自身にターゲット集中状態を付与(1ターン)＆NP獲得量を大アップ(1ターン)＆「被ダメージ時にスターを獲得する状態」を付与(3ターン)": {
       "na": "Apply Target Focus (1 turn) & greatly increase NP Gain (1 turn) & apply \"a state that gains C. Stars when damaged\" (3 turns) for yourself",
       "kr": "자신에게 타깃 집중 상태 부여(1턴)&NP 획득량 크게 UP(1턴)&‘대미지를 받을 때 스타를 획득하는 상태’ 부여(3턴)"
     },
     "自身にターゲット集中状態を付与(1ターン)＆NP獲得量アップ(3ターン) ＋ 味方全体の攻撃力をアップ(3ターン)▲＆HPが少ないほど攻撃力がアップする状態を付与(3ターン)▲＆クリティカル威力をアップ(3ターン)▲ ＋ スターを獲得▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与目标集中状态(1回合)＆宝具值获得量提升(3回合) ＋ 己方全体攻击力提升(3回合)▲＆付与HP越少攻击力越高状态(3回合)▲＆暴击威力提升(3回合)▲ ＋ 获得暴击星▲",
+      "tw": "為自身賦予目標集中狀態(1回合)＆NP獲得量提升(3回合) ＋ 我方全體攻擊力提升(3回合)▲＆賦予HP越少攻擊力越高狀態(3回合)▲＆爆擊威力提升(3回合)▲ ＋ 獲得爆擊星▲",
+      "na": "Apply Target Focus to yourself (1 turn)＆Increase NP Gain (3 turns) ＋ Increase ATK for all allies (3 turns)▲＆apply a status that increases ATK the lower your HP (3 turns)▲＆increase Critical Strength (3 turns)▲ ＋ Gain C. Stars▲",
+      "kr": "자신에게 타깃 집중 상태 부여(1턴)＆NP 획득량 UP(3턴) ＋ 아군 전체 공격력 UP(3턴)▲＆HP가 적을수록 공격력 UP 상태 부여(3턴)▲＆크리티컬 위력 UP(3턴)▲ ＋ 스타 획득▲"
     },
     "自身にターゲット集中状態を付与(1ターン)＆「被ダメージ時に自身のNPを増やす状態」を付与(1ターン)＆ガッツ状態を付与(1回・3ターン) ＋ スターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与目标集中状态(1回合)＆付与受击时自身宝具值增加的状态(1回合)＆付与毅力状态(1次·3回合) ＋ 获得暴击星",
+      "tw": "為自身賦予目標集中狀態(1回合)＆賦予受傷害時自身NP增加的狀態(1回合)＆賦予毅力狀態(1次．3回合) ＋ 獲得爆擊星",
+      "na": "Apply Target Focus to yourself (1 turn)＆apply a status that increases own NP Gauge when taking damage (1 turn)＆apply Guts (1 time, 3 turns) ＋ Gain C. Stars",
+      "kr": "자신에게 타깃 집중 상태 부여(1턴)＆피격 시 자신 NP 증가 상태 부여(1턴)＆근성 상태 부여(1회・3턴) ＋ 스타 획득"
     },
     "自身にターゲット集中状態を付与(3ターン) ＋ 味方全体のNP獲得量をアップ(3ターン)＆クリティカル威力をアップ(3ターン)": {
       "tw": "賦予自身目標集中狀態(3回合)＋我方全體的NP獲得量提升(3回合)＆爆擊威力提升(3回合)",
@@ -3819,34 +3819,34 @@
       "kr": "자신에게 회피 상태(3회) 부여&아츠 카드 성능 8% UP"
     },
     "自身に回避状態を付与(1ターン)＆Artsカードのスター集中度をアップ(1ターン)＆NP獲得量をアップ(1ターン)＆NPを増やす▲＆宝具威力をアップ(3ターン)▲ ＋ 〔水辺〕のあるフィールドにおいてのみ、自身の宝具威力をアップ(3ターン)▲ ＋ スターを獲得▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与回避状态(1回合)＆技指令卡暴击星集中度提升(1回合)＆宝具值获得量提升(1回合)＆宝具值增加▲＆宝具威力提升(3回合)▲ ＋ 仅在有〔水边〕的战场中，自身宝具威力提升(3回合)▲ ＋ 获得暴击星▲",
+      "tw": "為自身賦予迴避狀態(1回合)＆Arts指令卡爆擊星集中提升(1回合)＆NP獲得量提升(1回合)＆NP增加▲＆寶具威力提升(3回合)▲ ＋ 僅在有〔水邊〕的戰場中，自身寶具威力提升(3回合)▲ ＋ 獲得爆擊星▲",
+      "na": "Apply Evade to yourself (1 turn)＆Increase C. Star Gather Rate for Arts Cards (1 turn)＆Increase NP Gain (1 turn)＆Increase NP Gauge▲＆Increase NP Strength (3 turns)▲ ＋ Only on Waterside fields, Increase NP Strength for yourself (3 turns)▲ ＋ Gain C. Stars▲",
+      "kr": "자신에게 회피 상태 부여(1턴)＆아츠 카드 스타 집중도 UP(1턴)＆NP 획득량 UP(1턴)＆NP 증가▲＆보구 위력 UP(3턴)▲ ＋ 〔물가〕 필드에서만 자신 보구 위력 UP(3턴)▲ ＋ 스타 획득▲"
     },
     "自身に回避状態を付与(1ターン)＆NP獲得量をアップ(3ターン)＆NPを増やす▲＆攻撃力をアップ(3ターン)▲＆〔猛獣〕特攻状態を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与回避状态(1回合)＆宝具值获得量提升(3回合)＆宝具值增加▲＆攻击力提升(3回合)▲＆付与对〔猛兽〕的特攻状态(3回合)▲",
+      "tw": "為自身賦予迴避狀態(1回合)＆NP獲得量提升(3回合)＆NP增加▲＆攻擊力提升(3回合)▲＆賦予對〔猛獸〕的特攻狀態(3回合)▲",
+      "na": "Apply Evade to yourself (1 turn)＆Increase NP Gain (3 turns)＆Increase NP Gauge▲＆Increase ATK (3 turns)▲＆Apply Special Attack [Wild Beast] (3 turns)▲",
+      "kr": "자신에게 회피 상태 부여(1턴)＆NP 획득량 UP(3턴)＆NP 증가▲＆공격력 UP(3턴)▲＆〔맹수〕 특공 상태 부여(3턴)▲"
     },
     "自身に回避状態を付与(1ターン)＆スター集中度をアップ(1ターン)＆スターを大量獲得▲＆NPを増やす▲＆〔人の力を持つ敵〕特攻状態を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与回避状态(1回合)＆暴击星集中度提升(1回合)＆获得大量暴击星▲＆宝具值增加▲＆付与对〔拥有人之力的敌人〕的特攻状态(3回合)▲",
+      "tw": "為自身賦予迴避狀態(1回合)＆爆擊星集中提升(1回合)＆獲得大量爆擊星▲＆NP增加▲＆賦予對〔擁有人之力的敵人〕的特攻狀態(3回合)▲",
+      "na": "Apply Evade to yourself (1 turn)＆Increase C. Star Gather Rate (1 turn)＆Gain a large amount of C. Stars▲＆Increase NP Gauge▲＆Apply Special Attack [Enemies with the Power of Man] (3 turns)▲",
+      "kr": "자신에게 회피 상태 부여(1턴)＆스타 집중도 UP(1턴)＆스타 대량 획득▲＆NP 증가▲＆〔인간의 힘을 가진 적〕 특공 상태 부여(3턴)▲"
     },
     "自身に回避状態を付与(1回・1ターン)＆Quickカード性能をアップ(3ターン)▲＆「クリティカル攻撃時に、敵単体に〔急所判明〕状態(3ターン)を付与する状態」を付与(3ターン)▲ ＋ 敵単体のクリティカル発生率をダウン(1ターン)＆強化状態を解除＆解除に成功した場合、〔急所判明〕状態を付与(3ターン) ＋ スターを獲得▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身回避状态(1次·1回合)＆迅指令卡性能提升(3回合)▲＆付与暴击攻击时,付与敌方单体〔弱点确定〕状态(3回合)的状态(3回合)▲＋敌方单体的暴击率降低(1回合)＆解除强化状态＆当解除成功时,付与〔弱点确定〕状态(3回合)＋获得暴击星▲",
+      "tw": "賦予自身迴避狀態(1次．1回合)＆Quick指令卡性能提升(3回合)▲＆賦予爆擊攻擊時，賦予敵方單體〔弱點確定〕狀態(3回合)的狀態(3回合)▲＋敵方單體的爆擊率下降(1回合)＆解除強化狀態＆當解除成功時，賦予〔弱點確定〕狀態(3回合)＋獲得爆擊星▲",
+      "na": "Apply Evade (1 time, 1 turn) & increase Quick Card effectiveness (3 turns) ▲ & apply a state that applies a [Weakness Detected] state (3 turns) to a single enemy when attacking with a critical (3 turns) ▲ for yourself + Decrease Critical Rate (1 turn) & remove Buffs for a single enemy & if Buff removal succeeds, apply [Weakness Detected] (3 turns) + Gain C. Stars ▲",
+      "kr": "자신에게 회피 상태 부여(1회・1턴)&퀵 카드 성능 UP(3턴)▲&크리티컬 공격 시 적 하나에게 [급소판명] 상태(3턴)를 부여하는 상태 부여(3턴)▲ + 적 하나의 크리티컬 발생률 DOWN(1턴)&강화 상태 해제&해제에 성공한 경우 [급소판명] 상태 부여(3턴) + 스타 획득▲"
     },
     "自身に回避状態を付与(1回・3ターン)＆弱体無効状態を付与(1回・3ターン)＆被ダメージカット状態を付与(3回・3ターン)＆NPを増やす▲ ＋ 味方全体の〔ワルキューレ〕の攻撃力をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身回避状态(1次·3回合)＆弱化无效状态(1次·3回合)＆被伤害减免状态(3次·3回合)＆宝具值增加▲＋己方全体〔瓦尔基里〕的攻击力提升(3回合)▲",
+      "tw": "賦予自身迴避狀態(1次．3回合)＆弱化無效狀態(1次．3回合)＆被傷害減免狀態(3次．3回合)＆NP增加▲＋我方全體〔女武神〕的攻擊力提升(3回合)▲",
+      "na": "Apply Evade (1 time, 3 turns) & Debuff Immune (1 time, 3 turns) & Damage Cut (3 times, 3 turns) & increase NP Gauge ▲ for yourself + Increase ATK (3 turns) ▲ for all [Valkyrie] allies",
+      "kr": "자신에게 회피 상태 부여(1회・3턴)&약화 무효 상태 부여(1회・3턴)&받는 대미지 컷 상태 부여(3회・3턴)&NP 증가▲ + 아군 전체 [발키리]의 공격력 UP(3턴)▲"
     },
     "自身に回避状態を付与(2回・3ターン)＆攻撃力をアップ(3ターン)＆Quickカード性能をアップ(3ターン)▲ ＋ スターを獲得▲ ＋ 敵全体に呪い状態を付与(3ターン)": {
       "tw": "賦予自身迴避狀態(2次．3回合)＆攻擊力提升(3回合)＆Quick指令卡性能提升(3回合)▲＋獲得爆擊星▲＋賦予敵方全體詛咒狀態(3回合)",
@@ -3862,10 +3862,10 @@
       "na": "Apply Evade (2 times, 3 turns) & increase Critical Resistance (3 turns) & increase Critical Strength (3 turns) only when there are 10 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 20 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 30 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 40 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 50 C. Stars or more ▲ for yourself"
     },
     "自身に対粛正防御状態を付与(2回・3ターン)＆Busterカード性能をアップ(3ターン) ＋ 味方全体のスキルチャージを2進める ＋ 自身に「3ターン後に自身に〔湖水の夢〕状態<特殊な睡眠状態、耐性無効・解除不能・生贄選択不能・オーダーチェンジ不能>(6ターン、Lv.6で4ターン、Lv.10で2ターン)を付与する状態」を付与<耐性無効・解除不能>(3ターン)【デメリット】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身对肃正防御状态(2次·3回合)＆力指令卡性能提升(3回合)＋己方全体的技能冷却减少2回合＋付与自身3回合后付与自身〔湖水之梦〕状态<特殊的睡眠状态,无视耐性·无法解除·无法选择为祭品·无法替换队员>(6回合,Lv.6为4回合,Lv.10为2回合)的状态<无视耐性·无法解除>(3回合)【负面效果】",
+      "tw": "賦予自身對肅正防禦狀態(2次．3回合)＆Buster指令卡性能提升(3回合)＋我方全體的技能冷卻減少2回合＋賦予自身3回合後賦予自身〔湖水之夢〕狀態<特殊的睡眠狀態，無視耐性・無法解除・無法選擇為祭品・無法更換隊員>(6回合，Lv.6為4回合，Lv.10為2回合)的狀態<無視耐性・無法解除>(3回合)【負面效果】",
+      "na": "Apply Anti-Enforcement DEF (2 times, 3 turns) & increase Buster Card effectiveness (3 turns) for yourself + Reduce skill cooldown by 2 for all allies + Apply a state that applies a [Dream of the Lake] state <special Sleep state, ignores resist, cannot be removed, cannot be selected as tribute, cannot be Order Changed> (6 turns, 4 turns at Lv.6, 2 turns at Lv.10) to yourself after 3 turns <ignores resist, cannot be removed> (3 turns) [Demerit] for yourself",
+      "kr": "자신에게 대 숙정방어 상태 부여(2회・3턴)&버스터 카드 성능 UP(3턴) + 아군 전체의 스킬 쿨타임 2 감소 + 자신에게 3턴 후 자신에게 [호수의 꿈] 상태<특수한 수면 상태, 내성 무효・해제 불가・희생 선택 불가・오더 체인지 불가>(6턴, Lv.6에 4턴, Lv.10에 2턴)를 부여하는 상태 부여<내성 무효・해제 불가>(3턴)【단점】"
     },
     "自身に対粛正防御貫通状態<回避は貫通不能>を付与(3ターン)＆Artsカード性能をアップ(3ターン)＆即死付与成功率をアップ(3ターン) ＋ スターを獲得": {
       "tw": "賦予自身對肅正防御貫通狀態<無法貫通迴避>(3回合)＆Arts指令卡性能提升(3回合)＆即死賦予成功率提升(3回合)＋獲得爆擊星",
@@ -3883,25 +3883,25 @@
       "kr": "자신에게 약화 무효 상태(1회) 부여&매 턴 NP 4% 획득 상태 부여[최대해방]"
     },
     "自身に弱体無効状態を付与(3ターン)＆〔非超巨大〕特攻状態を付与(1ターン)＆「Buster攻撃時にスターを獲得する状態」を付与(3ターン) ＋ 自身を除く味方全体にコマンドカード選出不能状態を付与<1騎の場合は無効>(1回・1ターン) ＋ コマンドカードを配り直す": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身弱化无效状态(3回合)＆对〔非超巨大〕特攻状态(1回合)＆付与力攻击时获得暴击星的状态(3回合)＋付与除自身以外的己方全体无法抽取指令卡的状态<仅剩1骑的情况下无效>(1次·1回合)＋重新抽取指令卡",
+      "tw": "賦予自身弱化無效狀態(3回合)＆〔非超巨大〕特攻狀態(1回合)＆賦予Buster攻擊時獲得爆擊星的狀態(3回合)＋賦予除自身以外的我方全體無法選擇指令卡狀態<僅剩1騎時無效>(1次．1回合)＋重新抽取指令卡",
+      "na": "Apply Debuff Immune (3 turns) & Special Attack [Non-Super Giant] (1 turn) & a state that gains C. Stars when attacking with a Buster Card (3 turns) for yourself + Apply a state where Command Cards become unselectable for all allies excluding yourself <no effect when only 1 Servant on field> (1 time, 1 turn) + Redistribute Command Cards",
+      "kr": "자신에게 약화 무효 상태 부여(3턴)&[비초거대] 특공 상태 부여(1턴)&버스터 공격 시 스타를 획득하는 상태 부여(3턴) + 자신을 제외한 아군 전체에게 커맨드 카드 선출 불가 상태 부여<1기인 경우는 무효>(1회・1턴) + 커맨드 카드를 재분배"
     },
     "自身に弱体無効状態を付与(3ターン)＆毎ターンHP回復状態を付与(3ターン)＆毎ターンNP獲得状態を付与(3ターン) ＋ 味方全体に毎ターンスター獲得状態を付与(3ターン)▲": {
       "na": "Apply Debuff Immune (3 turns) & apply HP Recovery per turn (3 turns) & increase NP Gauge each turn (3 turns) for yourself + Gain C. Stars each turn (3 turns) ▲ for all allies"
     },
     "自身に弱体無効状態を付与(3ターン)＆無敵状態を付与(3回・3ターン)＆「Buster攻撃時のダメージ前に対象の防御力をダウン(3ターン)する状態」を付与(3ターン)＆毎ターンスター獲得状態を付与(3ターン) ＋ スターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身弱化无效状态(3回合)＆无敌状态(3次·3回合)＆付与力攻击造成伤害前降低对象防御力(3回合)的状态(3回合)＆付与每回合获得暴击星的状态(3回合)＋获得暴击星",
+      "tw": "賦予自身弱化無效狀態(3回合)＆無敵狀態(3次．3回合)＆賦予Buster攻擊造成傷害前降低對象防禦力(3回合)的狀態(3回合)＆賦予每回合獲得爆擊星的狀態(3回合)＋獲得爆擊星",
+      "na": "Apply Debuff Immune (3 turns) & Invincible (3 times, 3 turns) & a state that decreases the target's DEF (3 turns) before dealing damage when attacking with a Buster Card (3 turns) & gain C. Stars each turn (3 turns) for yourself + Gain C. Stars",
+      "kr": "자신에게 약화 무효 상태 부여(3턴)&무적 상태 부여(3회・3턴)&버스터 공격 시 대미지 전 대상의 방어력 DOWN(3턴)하는 상태 부여(3턴)&매 턴 스타 획득 상태 부여(3턴) + 스타 획득"
     },
     "自身に必中状態を付与(3ターン)＆Busterカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆「通常攻撃時に敵単体の強化状態を1つ解除＆〔ターゲット捕捉〕状態(3ターン)を付与する状態」を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身必中状态(3回合)＆力指令卡性能提升(3回合)＆暴击威力提升(3回合)＆付与通常攻击时解除敌方单体1个强化状态＆付与〔目标捕获〕状态(3回合)的状态(3回合)",
+      "tw": "賦予自身必中狀態(3回合)＆Buster指令卡性能提升(3回合)＆爆擊威力提升(3回合)＆賦予通常攻擊時解除敵方單體1個強化狀態＆賦予〔目標捕捉〕狀態(3回合)的狀態(3回合)",
+      "na": "Apply Sure Hit (3 turns) & increase Buster Card effectiveness (3 turns) & Critical Strength (3 turns) & a state that removes 1 Buff from a single enemy & applies a [Target Lock] state (3 turns) when attacking with a normal attack (3 turns) for yourself",
+      "kr": "자신에게 필중 상태 부여(3턴)&버스터 카드 성능 UP(3턴)&크리티컬 위력 UP(3턴)&일반 공격 시 적 하나의 강화 상태 1개 해제&[타깃 포착] 상태(3턴) 부여하는 상태 부여(3턴)"
     },
     "自身に必中状態を付与＆Quickカード性能を2%アップ＆Artsカード性能を2%アップ": {
       "tw": "賦予自身必中狀態＆Quick指令卡性能提升2%＆Arts指令卡性能提升2%",
@@ -3917,10 +3917,10 @@
       "na": "Apply a state that increases Max HP (3 turns) & increase NP Gauge for yourself + Gain C. Stars + Gain C. Stars only when on a [City] field"
     },
     "自身に最大HPがアップする状態を付与(3ターン)＆NPを増やす＆攻撃力をアップ(3ターン)＆〔悪〕特攻状態を付与(3ターン)＆〔善〕特攻状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与最大生命值提升状态(3回合)＆宝具值增加＆攻击力提升(3回合)＆付与对〔恶〕的特攻状态(3回合)＆付与对〔善〕的特攻状态(3回合)",
+      "tw": "為自身賦予最大HP上升狀態(3回合)＆NP增加＆攻擊力提升(3回合)＆賦予對〔惡〕的特攻狀態(3回合)＆賦予對〔善〕的特攻狀態(3回合)",
+      "na": "Apply Max HP Up to yourself (3 turns)＆Increase NP Gauge＆Increase ATK (3 turns)＆Apply Special Attack [Evil] (3 turns)＆Apply Special Attack [Good] (3 turns)",
+      "kr": "자신에게 최대 HP UP 상태 부여(3턴)＆NP 증가＆공격력 UP(3턴)＆〔악〕 특공 상태 부여(3턴)＆〔선〕 특공 상태 부여(3턴)"
     },
     "自身に毎ターンNP3%獲得状態を付与＆Busterカード性能を3%アップ＆クリティカル威力を10%アップ": {
       "na": "Increase NP Gauge by 3% each turn & increase Buster Card effectiveness by 3% & Critical Strength by 10% for yourself",
@@ -4043,10 +4043,10 @@
       "kr": "자신에게 매 턴 NP 5% 획득 상태 부여&약화 내성 15% UP[최대해방]"
     },
     "自身に毎ターンNP大獲得状態を付与(5ターン)＆弱体無効状態を付与(1回・5ターン)＆強化解除耐性をアップ(1回・5ターン)＆毎ターンHPが1000減少する状態を付与<強化扱い>(5ターン)【デメリット】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与每回合大量获得宝具值的状态(5回合)＆付与弱化无效状态(1次·5回合)＆强化解除耐性提升(1次·5回合)＆付与每回合生命值减少1000的状态<视为强化>(5回合)【负面效果】",
+      "tw": "為自身賦予每回合大量獲得NP的狀態(5回合)＆賦予弱化無效狀態(1次．5回合)＆強化解除耐性提升(1次．5回合)＆賦予每回合HP減少1000的狀態<視為強化>(5回合)【負面效果】",
+      "na": "Apply Large NP Gauge per turn to yourself (5 turns)＆apply Debuff Immune (1 time, 5 turns)＆Buff Removal Resist (1 time, 5 turns)＆apply a state that decreases HP by 1000 each turn, treated as a buff (5 turns) [Demerit]",
+      "kr": "자신에게 매 턴 NP 대량 획득 상태 부여(5턴)＆약화 무효 상태 부여(1회・5턴)＆강화 해제 내성 UP(1회・5턴)＆매 턴 HP가 1000 감소하는 상태 부여<강화 취급>(5턴)【단점】"
     },
     "自身に毎ターンスター1個獲得状態を付与＆Busterカード性能を2%アップ＆クリティカル威力を3%アップ": {
       "tw": "賦予自身每回合獲得1個爆擊星的狀態＆Buster指令卡性能提升2%＆爆擊威力提升3%",
@@ -4095,10 +4095,10 @@
       "kr": "자신에게 매 턴 스타 8개 획득 상태 부여&크리티컬 위력 20% UP[최대해방]"
     },
     "自身に毎ターンスター獲得状態を付与▲(3ターン)＆NPを増やす▲ ＋ 味方全体に〔魅了〕特攻状態を付与(3ターン)▲＆クリティカル威力をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与每回合获得暴击星的状态▲(3回合)＆宝具值增加▲ ＋ 为己方全体付与对〔魅惑〕的特攻状态(3回合)▲＆暴击威力提升(3回合)▲",
+      "tw": "為自身賦予每回合獲得爆擊星的狀態▲(3回合)＆NP增加▲ ＋ 向我方全體賦予對〔魅惑〕的特攻狀態(3回合)▲＆爆擊威力提升(3回合)▲",
+      "na": "Apply C. Stars each turn to yourself▲ (3 turns)＆Increase NP Gauge▲ ＋ Apply Special Attack [Charm] to all allies (3 turns)▲＆increase Critical Strength (3 turns)▲",
+      "kr": "자신에게 매 턴 스타 획득 상태 부여▲(3턴)＆NP 증가▲ ＋ 아군 전체에 〔매료〕 특공 상태 부여(3턴)▲＆크리티컬 위력 UP(3턴)▲"
     },
     "自身に毎ターン徐々にQuickカード性能がアップする効果を付与(5ターン)＆毎ターン徐々にArtsカード性能がアップする効果を付与(5ターン)▲＆NPを増やす▲＆自身にガッツ状態を付与(1回・6ターン・HP50%回復・他のガッツ状態と重複可能)またはガッツ状態を付与(1回・6ターン・HP1回復・他のガッツ状態と重複可能)またはガッツ状態を付与しない【効果を選択】▲▲＆5ターン後に戦闘不能【デメリット】": {
       "tw": "賦予自身每回合Quick指令卡性能逐漸提升效果(5回合)＆賦予自身每回合Arts指令卡性能逐漸提升效果(5回合)▲＆NP增加▲＆賦予自身毅力狀態(1次．6回合．HP恢復50%．可與其他毅力狀態重複)或賦予毅力狀態(1次．6回合．HP恢復1．可與其他毅力狀態重複)或不賦予毅力狀態【選擇效果】▲▲＆5回合後無法戰鬥【負面效果】",
@@ -4129,10 +4129,10 @@
       "kr": "자신에게 무적 상태 부여(1턴) + 아군 전체▲의 HP 회복&NP를 조금 증가▲&보구 위력 UP(3턴)▲"
     },
     "自身に無敵状態を付与(1ターン)＆NPを増やす ＋ 自身を除く〔悪〕特性の味方全体に無敵状態を付与(1回・1ターン) ＋ 敵全体に呪い状態を付与(3ターン)▲ ＋ 自身に〔呪い滲出〕状態<ターン開始時に敵全体に呪い状態(3ターン)を付与する状態>を付与(2回)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与无敌状态(1回合)＆宝具值增加 ＋ 为除自身以外的〔恶〕特性的己方全体付与无敌状态(1次·1回合) ＋ 为敌方全体付与诅咒状态(3回合)▲ ＋ 为自身付与〔诅咒渗出〕状态<在回合开始时为敌方全体付与诅咒状态(3回合)的状态>(2次)▲",
+      "tw": "為自身賦予無敵狀態(1回合)＆NP增加 ＋ 為除自身以外的〔惡〕特性的我方全體賦予無敵狀態(1次．1回合) ＋ 為敵方全體賦予詛咒狀態(3回合)▲ ＋ 為自身賦予〔詛咒滲出〕狀態<在回合開始時為敵方全體賦予詛咒狀態(3回合)的狀態>(2次)▲",
+      "na": "Apply Invincible to yourself (1 turn)＆Increase NP Gauge ＋ apply Invincible to all [Evil]-trait allies excluding yourself (1 time, 1 turn) ＋ inflict Curse on all enemies (3 turns)▲ ＋ apply [Curse Exudation] to yourself <a state that inflicts Curse on all enemies at the start of the turn (3 turns)> (2 times)▲",
+      "kr": "자신에게 무적 상태 부여(1턴)＆NP 증가 ＋ 자신을 제외한 〔악〕 특성의 아군 전체에게 무적 상태 부여(1회・1턴) ＋ 적 전체에 저주 상태 부여(3턴)▲ ＋ 자신에게 〔저주 삼출〕 상태<턴 시작 시 적 전체에 저주 상태(3턴)를 부여하는 상태> 부여(2회)▲"
     },
     "自身に無敵状態を付与(2回・3ターン)＆NPを増やす＆NP獲得量をアップ(3ターン)": {
       "na": "Apply Invincible (2 times, 3 turns) & increase NP Gauge & increase NP Gain (3 turns) for yourself"
@@ -4143,10 +4143,10 @@
       "kr": "자신에게 무적 상태 부여(2회・3턴)&NP 획득량 UP(3턴)&스타 발생률 UP(3턴) + 자신을 제외한 적과 아군 전체에게 [일리야] 특성 부여(3턴)"
     },
     "自身に無敵状態を付与(2回・3ターン)＆「Buster攻撃時に味方全体に宝具使用時のチャージ段階を1段階引き上げる状態(1回・3ターン)」を付与(3回・3ターン) ＋ フィールドにいる敵味方全体の〔エリザベート〕特性の対象と状態の数に応じて自身のNPを増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与无敌状态(2次·3回合)＆付与「Buster攻击时为己方全体付与使用宝具时充能阶段上升1级的状态(1次·3回合)」(3次·3回合) ＋ 根据在场的敌方与己方全体中拥有〔伊丽莎白〕特性的对象与状态数量,自身宝具值增加",
+      "tw": "為自身賦予無敵狀態(2次．3回合)＆賦予「Buster攻擊時為我方全體賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)」(3次．3回合) ＋ 根據在場的敵方與我方全體中擁有〔伊莉莎白〕特性的對象與狀態數量，自身NP增加",
+      "na": "Apply Invincible to yourself (2 times, 3 turns)＆apply \"Increase NP Charge by 1 level for all allies when using NP on Buster attack (1 time, 3 turns)\" status (3 times, 3 turns) ＋ Increase own NP Gauge based on the number of targets and statuses with the [Elizabeth] trait among all enemies and allies on the field",
+      "kr": "자신에게 무적 상태 부여(2회・3턴)＆「버스터 공격 시 아군 전체에 보구 사용 시 차지 단계가 1단계 증가하는 상태(1회・3턴)」 부여(3회・3턴) ＋ 필드에 있는 적과 아군 전체의 〔엘리자베스〕 특성 대상과 상태 수에 따라 자신 NP 증가"
     },
     "自身に無敵状態を付与(2回・3ターン)＆攻撃力をアップ(3ターン)＆Busterカード性能をアップ(3ターン)": {
       "tw": "賦予自身無敵狀態(2次．3回合)＆攻擊力提升(3回合)＆Buster指令卡性能提升(3回合)",
@@ -4154,16 +4154,16 @@
       "kr": "자신에게 무적 상태 부여(2회・3턴)&공격력 UP(3턴)&버스터 카드 성능 UP(3턴)"
     },
     "自身に無敵状態を付与(3回・3ターン)＆クリティカル威力をアップ(3ターン)＆毎ターンスター獲得状態を付与(3ターン)＆NPを増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与无敌状态(3次·3回合)＆暴击威力提升(3回合)＆付与每回合获得暴击星的状态(3回合)＆宝具值增加",
+      "tw": "為自身賦予無敵狀態(3次．3回合)＆爆擊威力提升(3回合)＆賦予每回合獲得爆擊星的狀態(3回合)＆NP增加",
+      "na": "Apply Invincible to yourself (3 times, 3 turns)＆increase Critical Strength (3 turns)＆apply C. Stars each turn (3 turns)＆Increase NP Gauge",
+      "kr": "자신에게 무적 상태 부여(3회・3턴)＆크리티컬 위력 UP(3턴)＆매 턴 스타 획득 상태 부여(3턴)＆NP 증가"
     },
     "自身に無敵貫通状態を付与(1ターン)＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)▲＆Busterカード性能をアップ(3回・3ターン▲)＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为自身付与无敌贯通状态(1回合)＆付与使用宝具时充能阶段上升2级的状态(1次·3回合)▲＆力指令卡性能提升(3次·3回合▲)＆宝具值增加▲",
+      "tw": "為自身賦予無敵貫通狀態(1回合)＆賦予使用寶具時Charge階段上升2級的狀態(1次．3回合)▲＆Buster指令卡性能提升(3次．3回合▲)＆NP增加▲",
+      "na": "Apply Ignore Invincible to yourself (1 turn)＆apply a state that increases NP Charge by 2 levels when using NP (1 time, 3 turns)▲＆Increase Buster Card effectiveness (3 times, 3 turns▲)＆Increase NP Gauge▲",
+      "kr": "자신에게 무적 관통 상태 부여(1턴)＆보구 사용 시 차지 단계가 2단계 증가하는 상태 부여(1회・3턴)▲＆버스터 카드 성능 UP(3회・3턴▲)＆NP 증가▲"
     },
     "自身に無敵貫通状態を付与(3ターン)＆攻撃力をアップ(3ターン)＆NPを増やす＆精神異常耐性をダウン(3ターン)【デメリット】": {
       "tw": "賦予自身無敵貫通狀態(3回合)＆攻擊力提升(3回合)＆NP增加＆精神異常耐性下降(3回合)【負面效果】",
@@ -4343,10 +4343,10 @@
       "kr": "자신의 아츠 카드 성능 UP(3턴)&버스터 카드 성능 UP(3턴)&NP 획득량 UP(3턴)&무적 상태 부여(2회・3턴)"
     },
     "自身のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆〔七騎士クラス〕特攻状態を付与(3ターン)＆〔七騎士クラス〕特防状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身技指令卡性能提升(3回合)＆力指令卡性能提升(3回合)＆付与对〔七骑士职阶〕的特攻状态(3回合)＆付与对〔七骑士职阶〕的特防状态(3回合)",
+      "tw": "自身Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆賦予對〔七騎士職階〕的特攻狀態(3回合)＆賦予對〔七騎士職階〕的特防狀態(3回合)",
+      "na": "Increase Arts Card effectiveness for yourself (3 turns)＆Increase Buster Card effectiveness (3 turns)＆Apply Special Attack [Seven Knights Classes] (3 turns)＆Apply Special Defense [Seven Knights Classes] (3 turns)",
+      "kr": "자신 아츠 카드 성능 UP(3턴)＆버스터 카드 성능 UP(3턴)＆〔7기사 클래스〕 특공 상태 부여(3턴)＆〔7기사 클래스〕 특방 상태 부여(3턴)"
     },
     "自身のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆〔人の力を持つ敵〕特攻状態を付与(3ターン)": {
       "tw": "自身Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆賦予〔擁有人的力之敵人〕特攻狀態(3回合)",
@@ -4354,10 +4354,10 @@
       "kr": "자신의 아츠 카드 성능 UP(3턴)&버스터 카드 성능 UP(3턴)&[인의 힘을 가진 적] 특공 상태 부여(3턴)"
     },
     "自身のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆回避状態を付与(3回・3ターン)＆まんぷくゲージを2減らす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身技指令卡性能提升(3回合)＆力指令卡性能提升(3回合)＆暴击威力提升(3回合)＆付与回避状态(3次·3回合)＆饱腹槽减少2",
+      "tw": "自身Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆爆擊威力提升(3回合)＆賦予迴避狀態(3次．3回合)＆飽腹槽減少2",
+      "na": "Increase Arts Card effectiveness for yourself (3 turns)＆Increase Buster Card effectiveness (3 turns)＆increase Critical Strength (3 turns)＆apply Evade (3 times, 3 turns)＆decrease Full Gauge by 2",
+      "kr": "자신 아츠 카드 성능 UP(3턴)＆버스터 카드 성능 UP(3턴)＆크리티컬 위력 UP(3턴)＆회피 상태 부여(3회・3턴)＆만복 게이지 2 감소"
     },
     "自身のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆回避状態を付与(2回・3ターン)": {
       "tw": "自身Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆賦予迴避狀態(2次．3回合)",
@@ -4399,22 +4399,22 @@
       "kr": "자신의 버스터 카드 성능 8% UP&크리티컬 위력 10% UP&보구 위력 10% UP&자신의 NP를 50% 충전한 상태로 배틀을 시작한다[최대해방]"
     },
     "自身のBusterカード性能をアップ(3ターン)＆「Buster攻撃時にスターを獲得する状態」を付与(3ターン) ＋ スターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身力指令卡性能提升(3回合)＆付与「Buster攻击时获得暴击星的状态」(3回合) ＋ 获得暴击星",
+      "tw": "自身Buster指令卡性能提升(3回合)＆賦予「Buster攻擊時獲得爆擊星的狀態」(3回合) ＋ 獲得爆擊星",
+      "na": "Increase Buster Card effectiveness for yourself (3 turns)＆apply \"Gain C. Stars on Buster attack\" status (3 turns) ＋ Gain C. Stars",
+      "kr": "자신 버스터 카드 성능 UP(3턴)＆「버스터 공격 시 스타 획득 상태」 부여(3턴) ＋ 스타 획득"
     },
     "自身のBusterカード性能をアップ(3ターン)＆〔巨人の庇護〕状態<自身以外の味方にも発動する特殊な無敵「ガーディアン・パリィ」が発動する状態>を付与(3回・3ターン)＆毎ターンスター獲得状態を付与(3ターン) ＋ スターを獲得 ＋ 敵全体のチャージを減らし、減らせた量に応じたNPを獲得する": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身力指令卡性能提升(3回合)＆付与〔巨人的庇护〕状态<会对自身以外的队友也发动的特殊无敌「守护者招架」发动的状态>(3次·3回合)＆付与每回合获得暴击星的状态(3回合) ＋ 获得暴击星 ＋ 减少敌方全体的充能,并按减少的量获得宝具值",
+      "tw": "自身Buster指令卡性能提升(3回合)＆賦予〔巨人的庇護〕狀態<會對自身以外的隊友也發動的特殊無敵「守護者招架」發動的狀態>(3次．3回合)＆賦予每回合獲得爆擊星的狀態(3回合) ＋ 獲得爆擊星 ＋ 減少敵方全體的Charge，並按減少的量獲得NP",
+      "na": "Increase Buster Card effectiveness for yourself (3 turns)＆apply [Giant's Protection] <a state that triggers the special Invincible \"Guardian Parry\" that also activates for allies other than yourself> (3 times, 3 turns)＆apply C. Stars each turn (3 turns) ＋ Gain C. Stars ＋ reduce charge for all enemies and gain NP based on the amount reduced",
+      "kr": "자신 버스터 카드 성능 UP(3턴)＆〔거인의 가호〕 상태<자신 이외의 아군에게도 발동하는 특수 무적 「가디언 패리」가 발동하는 상태> 부여(3회・3턴)＆매 턴 스타 획득 상태 부여(3턴) ＋ 스타 획득 ＋ 적 전체의 차지 감소, 감소시킨 양에 따른 NP 획득"
     },
     "自身のBusterカード性能をアップ(3ターン)＆〔魔性〕特攻状態を付与(3ターン)＆無敵状態を付与(1ターン) ＋ 味方全体のNPを増やす▲＆クリティカル威力をアップ(3ターン)▲ ＋ スターを大量獲得▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身力指令卡性能提升(3回合)＆付与对〔魔性〕的特攻状态(3回合)＆付与无敌状态(1回合) ＋ 己方全体宝具值增加▲＆暴击威力提升(3回合)▲ ＋ 获得大量暴击星▲",
+      "tw": "自身Buster指令卡性能提升(3回合)＆賦予對〔魔性〕的特攻狀態(3回合)＆賦予無敵狀態(1回合) ＋ 我方全體NP增加▲＆爆擊威力提升(3回合)▲ ＋ 獲得大量爆擊星▲",
+      "na": "Increase Buster Card effectiveness for yourself (3 turns)＆Apply Special Attack [Demonic] (3 turns)＆apply Invincible (1 turn) ＋ Increase NP Gauge for all allies▲＆increase Critical Strength (3 turns)▲ ＋ Gain a large amount of C. Stars▲",
+      "kr": "자신 버스터 카드 성능 UP(3턴)＆〔마성〕 특공 상태 부여(3턴)＆무적 상태 부여(1턴) ＋ 아군 전체 NP 증가▲＆크리티컬 위력 UP(3턴)▲ ＋ 스타 대량 획득▲"
     },
     "自身のBusterカード性能をアップ(3ターン)＆防御無視状態を付与(3ターン)＆「攻撃時に敵単体に確率でスタン状態(1ターン)を付与する状態」を付与(1回・3ターン)＆NPを増やす": {
       "tw": "自身Buster指令卡性能提升(3回合)＆賦予無視防禦狀態(3回合)＆賦予「攻擊時機率對敵方單體賦予眩暈狀態(1回合)的狀態」(1次．3回合)＆NP增加",
@@ -4473,10 +4473,10 @@
       "na": "Greatly increase your own NP Gauge + Increase NP Gauge for all allies except yourself + Decrease Critical Rate of all enemies (3 turns)"
     },
     "自身のNPをものすごく増やす ＋ 味方全体に毎ターンHP回復状態を付与(3ターン)＆毎ターンスター獲得状態を付与(3ターン)＆クリティカル威力をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值大幅增加 ＋ 为己方全体付与每回合回复生命值的状态(3回合)＆每回合获得暴击星的状态(3回合)＆暴击威力提升(3回合)",
+      "tw": "自身NP大幅增加 ＋ 為我方全體賦予每回合恢復HP的狀態(3回合)＆每回合獲得爆擊星的狀態(3回合)＆爆擊威力提升(3回合)",
+      "na": "Significantly increase own NP Gauge ＋ apply HP per turn (3 turns)＆C. Stars each turn (3 turns)＆increase Critical Strength (3 turns) to all allies",
+      "kr": "자신 NP를 아주 많이 증가 ＋ 아군 전체에 매 턴 HP 회복 상태 부여(3턴)＆매 턴 스타 획득 상태 부여(3턴)＆크리티컬 위력 UP(3턴)"
     },
     "自身のNPを増やす ＋ フィールドにいる自身を除く〔イリヤ〕特性の対象の数に応じて自身のNPを増やす ＋ 味方全体の宝具威力をアップ(3ターン)＆強化解除耐性をアップ(1回・3ターン)": {
       "tw": "自身NP增加 ＋ 根據場上除自身以外的〔伊莉雅〕特性對象數量，自身NP增加 ＋ 我方全體的寶具威力提升(3回合)＆強化解除耐性提升(1次．3回合)",
@@ -4484,16 +4484,16 @@
       "kr": "자신의 NP 증가 + 필드에 있는 자신을 제외한 [일리야] 특성 대상의 수에 따라 자신의 NP 증가 + 아군 전체의 보구 위력 UP(3턴)&강화 해제 내성 UP(1회・3턴)"
     },
     "自身のNPを増やす ＋ 味方全体に毎ターンNP獲得状態を付与(3ターン)＆毎ターンスター獲得状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加 ＋ 为己方全体付与每回合获得宝具值的状态(3回合)＆每回合获得暴击星的状态(3回合)",
+      "tw": "自身NP增加 ＋ 為我方全體賦予每回合獲得NP的狀態(3回合)＆每回合獲得爆擊星的狀態(3回合)",
+      "na": "Increase own NP Gauge ＋ apply NP Gauge per turn (3 turns)＆C. Stars each turn (3 turns) to all allies",
+      "kr": "자신 NP 증가 ＋ 아군 전체에 매 턴 NP 획득 상태 부여(3턴)＆매 턴 스타 획득 상태 부여(3턴)"
     },
     "自身のNPを増やす ＋ 味方全体のNPを増やす＆〔エリザベート〕特性を付与(3ターン) ＋ 自身を除く味方全体の精神異常耐性をダウン(3ターン)【デメリット】 ＋ スターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加 ＋ 己方全体宝具值增加＆付与〔伊丽莎白〕特性(3回合) ＋ 除自身以外的己方全体精神异常耐性降低(3回合)【负面效果】 ＋ 获得暴击星",
+      "tw": "自身NP增加 ＋ 我方全體NP增加＆賦予〔伊莉莎白〕特性(3回合) ＋ 除自身以外的我方全體精神異常耐性下降(3回合)【負面效果】 ＋ 獲得爆擊星",
+      "na": "Increase own NP Gauge ＋ Increase NP Gauge for all allies＆apply [Elizabeth] trait (3 turns) ＋ decrease Mental Debuff Resist for all allies excluding yourself (3 turns) [Demerit] ＋ Gain C. Stars",
+      "kr": "자신 NP 증가 ＋ 아군 전체 NP 증가＆〔엘리자베스〕 특성 부여(3턴) ＋ 자신을 제외한 아군 전체의 정신이상 내성 DOWN(3턴)【단점】 ＋ 스타 획득"
     },
     "自身のNPを増やす ＋ 味方全体のNPを増やす＆攻撃力をアップ(3ターン)＆呪い状態を付与(3ターン)【デメリット】": {
       "tw": "自身NP增加 ＋ 我方全體NP增加＆攻擊力提升(3回合)＆賦予詛咒狀態(3回合)【負面效果】",
@@ -4509,22 +4509,22 @@
       "kr": "자신의 NP 증가 + 자신을 제외한 아군 전체의 NP 증가 + 아군 전체 공격력 UP(3턴)&HP 회복"
     },
     "自身のNPを増やす▲＆Artsカード性能をアップ(3ターン)▲＆回避状態を付与(1ターン)＆クリティカル威力をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加▲＆技指令卡性能提升(3回合)▲＆付与回避状态(1回合)＆暴击威力提升(3回合)",
+      "tw": "自身NP增加▲＆Arts指令卡性能提升(3回合)▲＆賦予迴避狀態(1回合)＆爆擊威力提升(3回合)",
+      "na": "Increase own NP Gauge▲＆Increase Arts Card effectiveness (3 turns)▲＆apply Evade (1 turn)＆increase Critical Strength (3 turns)",
+      "kr": "자신 NP 증가▲＆아츠 카드 성능 UP(3턴)▲＆회피 상태 부여(1턴)＆크리티컬 위력 UP(3턴)"
     },
     "自身のNPを増やす▲＆Busterカード性能をアップ(3ターン)▲＆防御力を大アップ(1ターン)＆HPを回復": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加▲＆力指令卡性能提升(3回合)▲＆防御力大幅提升(1回合)＆生命值回复",
+      "tw": "自身NP增加▲＆Buster指令卡性能提升(3回合)▲＆防禦力大幅提升(1回合)＆HP恢復",
+      "na": "Increase own NP Gauge▲＆Increase Buster Card effectiveness (3 turns)▲＆Greatly increase DEF (1 turn)＆Recover HP",
+      "kr": "자신 NP 증가▲＆버스터 카드 성능 UP(3턴)▲＆방어력 대폭 UP(1턴)＆HP 회복"
     },
     "自身のNPを増やす▲＆NP獲得量をアップ(3ターン)＆スター発生率をアップ(3ターン)＆強化成功率をアップ(3ターン)▲＆クリティカル威力をアップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加▲＆宝具值获得量提升(3回合)＆暴击星掉落率提升(3回合)＆强化成功率提升(3回合)▲＆暴击威力提升(3回合)▲",
+      "tw": "自身NP增加▲＆NP獲得量提升(3回合)＆爆擊星掉落率提升(3回合)＆強化成功率提升(3回合)▲＆爆擊威力提升(3回合)▲",
+      "na": "Increase own NP Gauge▲＆Increase NP Gain (3 turns)＆Increase C. Star Drop Rate (3 turns)＆increase Buff Success Rate (3 turns)▲＆increase Critical Strength (3 turns)▲",
+      "kr": "자신 NP 증가▲＆NP 획득량 UP(3턴)＆스타 발생률 UP(3턴)＆강화 성공률 UP(3턴)▲＆크리티컬 위력 UP(3턴)▲"
     },
     "自身のNPを増やす▲＆NP獲得量アップ(3ターン) ＋ 味方全体のBusterカード性能をアップ(3ターン)▲＆〔秩序〕特攻状態を付与(3ターン)▲": {
       "tw": "自身NP增加▲＆NP獲得量提升(3回合) ＋ 我方全體Buster指令卡性能提升(3回合)▲＆〔秩序〕特攻狀態賦予(3回合)▲",
@@ -4537,10 +4537,10 @@
       "kr": "자신의 NP 증가▲&NP 획득량 UP(3턴)&아츠 카드 성능 UP(3턴)▲"
     },
     "自身のNPを増やす＆Busterカードのスター集中度をアップ(3ターン)＆Busterカードのクリティカル威力をアップ▲(3ターン)＆〔中庸〕特攻状態を付与(3ターン)▲ ＋ スターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆力指令卡的暴击星集中度提升(3回合)＆力指令卡的暴击威力提升▲(3回合)＆付与对〔中庸〕的特攻状态(3回合)▲ ＋ 获得暴击星",
+      "tw": "自身NP增加＆Buster指令卡的爆擊星集中提升(3回合)＆Buster指令卡的爆擊威力提升▲(3回合)＆賦予對〔中庸〕的特攻狀態(3回合)▲ ＋ 獲得爆擊星",
+      "na": "Increase own NP Gauge＆Increase C. Star Gather Rate for Buster Cards (3 turns)＆increase Critical Strength for Buster Cards▲ (3 turns)＆Apply Special Attack [Balanced] (3 turns)▲ ＋ Gain C. Stars",
+      "kr": "자신 NP 증가＆버스터 카드의 스타 집중도 UP(3턴)＆버스터 카드의 크리티컬 위력 UP▲(3턴)＆〔중용〕 특공 상태 부여(3턴)▲ ＋ 스타 획득"
     },
     "自身のNPを増やす＆「HP回復効果または最大HPアップ効果を受けた時<毎ターンHP回復効果、概念礼装・コマンドコードによる効果を除く>に自身のNPを少し増やす」状態を付与(1ターン)": {
       "tw": "自身NP增加＆賦予「受到HP回復效果或最大HP提升效果時<不含每回合HP回復效果、概念禮裝・指令紋章的效果>自身NP小幅增加」狀態(1回合)",
@@ -4548,10 +4548,10 @@
       "kr": "자신의 NP 증가&「HP 회복 효과 또는 최대 HP UP 효과를 받았을 때<매 턴 HP 회복 효과, 개념예장・커맨드 코드에 의한 효과 제외> 자신의 NP를 조금 증가한다」상태 부여(1턴)"
     },
     "自身のNPを増やす＆〔中立〕特攻状態を付与(3ターン) ＋ 自身を除く味方全体に〔中立〕特攻状態を付与(3ターン) ＋ 味方全体の攻撃力をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆付与对〔中立〕的特攻状态(3回合) ＋ 为除自身以外的己方全体付与对〔中立〕的特攻状态(3回合) ＋ 己方全体攻击力提升(3回合)",
+      "tw": "自身NP增加＆賦予對〔中立〕的特攻狀態(3回合) ＋ 為除自身以外的我方全體賦予對〔中立〕的特攻狀態(3回合) ＋ 我方全體攻擊力提升(3回合)",
+      "na": "Increase own NP Gauge＆Apply Special Attack [Neutral] (3 turns) ＋ Apply Special Attack [Neutral] to all allies excluding yourself (3 turns) ＋ Increase ATK for all allies (3 turns)",
+      "kr": "자신 NP 증가＆〔중립〕 특공 상태 부여(3턴) ＋ 자신을 제외한 아군 전체에 〔중립〕 특공 상태 부여(3턴) ＋ 아군 전체 공격력 UP(3턴)"
     },
     "自身のNPを増やす＆〔罪の刻印〕状態<特殊な弱体耐性ダウン状態・弱体解除で解除不能>を7つ付与(3ターン)【デメリット】＆「自身に〔罪の刻印〕状態が付与されている場合、攻撃時に対象の強化状態を1つ解除＆解除成功時、〔罪の刻印〕状態を1つ消費して自身の攻撃力をアップ(3ターン)する状態」を付与(3ターン)＆「ガッツ発動時、〔罪の刻印〕状態を1つ消費して自身の攻撃力をアップ(3ターン)する状態」を付与(3ターン)": {
       "tw": "自身NP增加＆賦予7個〔罪之刻印〕狀態<特殊弱化耐性下降狀態・無法以弱化解除解除>(3回合)【負面效果】＆賦予「自身被賦予〔罪之刻印〕狀態時，攻擊時解除對象的1個強化狀態＆解除成功時，消耗1個〔罪之刻印〕狀態並提升自身攻擊力(3回合)的狀態」(3回合)＆賦予「毅力發動時，消耗1個〔罪之刻印〕狀態並提升自身攻擊力(3回合)的狀態」(3回合)",
@@ -4563,40 +4563,40 @@
       "kr": "자신의 NP 증가&크리티컬 위력 UP(3턴)&크리티컬 위력 대폭 UP(1턴) + 스타 획득"
     },
     "自身のNPを増やす＆弱体状態を解除＆HPを回復＆Artsカード性能をアップ(3ターン)▲＆毎ターンスター獲得状態を付与(3ターン)▲＆無敵状態の間、防御力を大アップ(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆解除弱化状态＆生命值回复＆技指令卡性能提升(3回合)▲＆付与每回合获得暴击星的状态(3回合)▲＆在无敌状态期间,防御力大幅提升(3回合)▲",
+      "tw": "自身NP增加＆解除弱化狀態＆HP恢復＆Arts指令卡性能提升(3回合)▲＆賦予每回合獲得爆擊星的狀態(3回合)▲＆在無敵狀態期間，防禦力大幅提升(3回合)▲",
+      "na": "Increase own NP Gauge＆remove Debuffs＆Recover HP＆Increase Arts Card effectiveness (3 turns)▲＆apply C. Stars each turn (3 turns)▲＆Greatly increase DEF while Invincible (3 turns)▲",
+      "kr": "자신 NP 증가＆약화 상태 해제＆HP 회복＆아츠 카드 성능 UP(3턴)▲＆매 턴 스타 획득 상태 부여(3턴)▲＆무적 상태인 동안 방어력 대폭 UP(3턴)▲"
     },
     "自身のNPを増やす＆攻撃力をアップ(3ターン)＆〔中立〕特攻状態を付与(3ターン)＆「攻撃時のダメージ前に自身のクリティカル威力をアップ(3ターン)する状態」を付与(3ターン)＆呪い状態を付与(3ターン)【デメリット】": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆攻击力提升(3回合)＆付与对〔中立〕的特攻状态(3回合)＆付与「攻击造成伤害前自身暴击威力提升(3回合)的状态」(3回合)＆付与诅咒状态(3回合)【负面效果】",
+      "tw": "自身NP增加＆攻擊力提升(3回合)＆賦予對〔中立〕的特攻狀態(3回合)＆賦予「攻擊造成傷害前自身爆擊威力提升(3回合)的狀態」(3回合)＆賦予詛咒狀態(3回合)【負面效果】",
+      "na": "Increase own NP Gauge＆Increase ATK (3 turns)＆Apply Special Attack [Neutral] (3 turns)＆apply \"Increase own Critical Strength before dealing damage on attack (3 turns)\" status (3 turns)＆inflict Curse (3 turns) [Demerit]",
+      "kr": "자신 NP 증가＆공격력 UP(3턴)＆〔중립〕 특공 상태 부여(3턴)＆「공격 시 대미지 전에 자신의 크리티컬 위력을 UP(3턴)시키는 상태」 부여(3턴)＆저주 상태 부여(3턴)【단점】"
     },
     "自身のNPを増やす＆毎ターンNP獲得状態を付与(3ターン)＆強化解除耐性をアップ(1回・3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆付与每回合获得宝具值的状态(3回合)＆强化解除耐性提升(1次·3回合)",
+      "tw": "自身NP增加＆賦予每回合獲得NP的狀態(3回合)＆強化解除耐性提升(1次．3回合)",
+      "na": "Increase own NP Gauge＆apply NP Gauge per turn (3 turns)＆Buff Removal Resist (1 time, 3 turns)",
+      "kr": "자신 NP 증가＆매 턴 NP 획득 상태 부여(3턴)＆강화 해제 내성 UP(1회・3턴)"
     },
     "自身のNPを増やす＆毎ターンNP獲得状態を付与(3ターン)＆毎ターンHP回復状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆付与每回合获得宝具值的状态(3回合)＆付与每回合回复生命值的状态(3回合)",
+      "tw": "自身NP增加＆賦予每回合獲得NP的狀態(3回合)＆賦予每回合恢復HP的狀態(3回合)",
+      "na": "Increase own NP Gauge＆apply NP Gauge per turn (3 turns)＆apply HP per turn (3 turns)",
+      "kr": "자신 NP 증가＆매 턴 NP 획득 상태 부여(3턴)＆매 턴 HP 회복 상태 부여(3턴)"
     },
     "自身のNPを増やす＆毎ターンNP獲得状態を付与(3ターン)＆毎ターンスター獲得状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆付与每回合获得宝具值的状态(3回合)＆付与每回合获得暴击星的状态(3回合)",
+      "tw": "自身NP增加＆賦予每回合獲得NP的狀態(3回合)＆賦予每回合獲得爆擊星的狀態(3回合)",
+      "na": "Increase own NP Gauge＆apply NP Gauge per turn (3 turns)＆apply C. Stars each turn (3 turns)",
+      "kr": "자신 NP 증가＆매 턴 NP 획득 상태 부여(3턴)＆매 턴 스타 획득 상태 부여(3턴)"
     },
     "自身のNPを増やす＆毎ターンNP獲得状態を付与(5ターン)＆毎ターンスター獲得状態を付与(5ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值增加＆付与每回合获得宝具值的状态(5回合)＆付与每回合获得暴击星的状态(5回合)",
+      "tw": "自身NP增加＆賦予每回合獲得NP的狀態(5回合)＆賦予每回合獲得爆擊星的狀態(5回合)",
+      "na": "Increase own NP Gauge＆apply NP Gauge per turn (5 turns)＆apply C. Stars each turn (5 turns)",
+      "kr": "자신 NP 증가＆매 턴 NP 획득 상태 부여(5턴)＆매 턴 스타 획득 상태 부여(5턴)"
     },
     "自身のNPを増やす＆毎ターンスター獲得状態を付与(3ターン) ＋ 味方全体の弱体耐性をアップ(3ターン)＆被クリティカル発生耐性をアップ(3ターン)": {
       "tw": "自身NP增加＆賦予每回合獲得爆擊星狀態(3回合) ＋ 我方全體弱化耐性提升(3回合)＆被爆擊發生耐性提升(3回合)",
@@ -4642,16 +4642,16 @@
       "kr": "자신의 NP 획득량 25% UP&받는 대미지 200컷 상태 부여&NP를 50% 충전한 상태로 배틀을 시작한다[최대해방]"
     },
     "自身のNP獲得量をアップ(3ターン)＆NPを増やす▲＆「攻撃時のダメージ前に対象に電蝕状態<特殊なクリティカル威力耐性ダウン状態>(3ターン)を付与する状態」を付与(3ターン)▲＆〔電蝕〕特攻状態を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值获得量提升(3回合)＆宝具值增加▲＆付与「攻击造成伤害前对目标付与电蚀状态<特殊的暴击威力耐性降低状态>(3回合)的状态」(3回合)▲＆付与对〔电蚀〕的特攻状态(3回合)▲",
+      "tw": "自身NP獲得量提升(3回合)＆NP增加▲＆賦予「攻擊造成傷害前對目標賦予電蝕狀態<特殊的爆擊威力耐性下降狀態>(3回合)的狀態」(3回合)▲＆賦予對〔電蝕〕的特攻狀態(3回合)▲",
+      "na": "Increase NP Gain for yourself (3 turns)＆Increase NP Gauge▲＆apply \"Inflict Erosion <a special Critical Strength Resist DOWN status> (3 turns) on the target before dealing damage on attack\" status (3 turns)▲＆Apply Special Attack [Erosion] (3 turns)▲",
+      "kr": "자신 NP 획득량 UP(3턴)＆NP 증가▲＆「공격 시 대미지 전에 대상에게 전식 상태<특수한 크리티컬 위력 내성 DOWN 상태>(3턴)를 부여하는 상태」 부여(3턴)▲＆〔전식〕 특공 상태 부여(3턴)▲"
     },
     "自身のNP獲得量アップ▲(3ターン) ＋ 〔秩序〕特性の味方全体のNP獲得量をアップ(3ターン)▲ ＋ 〔善〕特性の味方全体のHP回復量をアップ(3ターン)▲ ＋ 味方フィールドに〔ジャンヌ系〕または〔星の力を持つ味方〕がいる時、自身のNPをものすごく増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具值获得量提升▲(3回合) ＋ 〔秩序〕特性的己方全体宝具值获得量提升(3回合)▲ ＋ 〔善〕特性的己方全体生命值回复量提升(3回合)▲ ＋ 当己方战场存在〔贞德系〕或〔拥有星之力的队友〕时,自身宝具值大幅增加▲",
+      "tw": "自身NP獲得量提升▲(3回合) ＋ 〔秩序〕特性的我方全體NP獲得量提升(3回合)▲ ＋ 〔善〕特性的我方全體HP恢復量提升(3回合)▲ ＋ 當我方戰場存在〔貞德系〕或〔擁有星之力的隊友〕時，自身NP大幅增加▲",
+      "na": "Increase NP Gain for yourself▲ (3 turns) ＋ Increase NP Gain for all [Order]-trait allies (3 turns)▲ ＋ increase HP Recovery for all [Good]-trait allies (3 turns)▲ ＋ Significantly increase own NP Gauge when there is a [Jeanne-type] or [Ally with the Power of the Stars] on your field▲",
+      "kr": "자신 NP 획득량 UP▲(3턴) ＋ 〔질서〕 특성의 아군 전체 NP 획득량 UP(3턴)▲ ＋ 〔선〕 특성의 아군 전체 HP 회복량 UP(3턴)▲ ＋ 아군 필드에 〔잔느 계열〕 또는 〔별의 힘을 가진 아군〕이 있을 때 자신 NP를 아주 많이 증가▲"
     },
     "自身のQuickカード性能を10%アップ＆Artsカード性能を10%アップ＆Busterカード性能を10%アップ＆宝具使用時にチャージ段階を2段階分上げる(1回)[最大解放]": {
       "tw": "自身Quick指令卡性能提升10%＆Arts指令卡性能提升10%＆Buster指令卡性能提升10%＆使用寶具時Charge階段上升2級(1次)[最大解放]",
@@ -4759,16 +4759,16 @@
       "kr": "자신의 퀵 카드 성능 8% UP&매 턴 스타 2개 획득 상태 부여&NP를 30% 충전한 상태로 배틀을 시작한다"
     },
     "自身のQuickカード性能をアップ(1回・3ターン)＆宝具威力をアップ(1回・3ターン)▲＆NPを増やす▲ ＋ スターを獲得▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身迅指令卡性能提升(1次·3回合)＆宝具威力提升(1次·3回合)▲＆宝具值增加▲ ＋ 获得暴击星▲",
+      "tw": "自身Quick指令卡性能提升(1次．3回合)＆寶具威力提升(1次．3回合)▲＆NP增加▲ ＋ 獲得爆擊星▲",
+      "na": "Increase Quick Card effectiveness for yourself (1 time, 3 turns)＆Increase NP Strength (1 time, 3 turns)▲＆Increase NP Gauge▲ ＋ Gain C. Stars▲",
+      "kr": "자신 퀵 카드 성능 UP(1회・3턴)＆보구 위력 UP(1회・3턴)▲＆NP 증가▲ ＋ 스타 획득▲"
     },
     "自身のQuickカード性能をアップ(3ターン)▲＆Busterカード性能をアップ(3ターン)▲＆防御力をアップ(3ターン)＆NP獲得量をアップ(3ターン)＆NPを増やす▲ ＋ 自身を除く味方全体の〔女性〕に無敵状態を付与(3回・3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身迅指令卡性能提升(3回合)▲＆力指令卡性能提升(3回合)▲＆防御力提升(3回合)＆宝具值获得量提升(3回合)＆宝具值增加▲ ＋ 为除自身以外的己方全体〔女性〕付与无敌状态(3次·3回合)▲",
+      "tw": "自身Quick指令卡性能提升(3回合)▲＆Buster指令卡性能提升(3回合)▲＆防禦力提升(3回合)＆NP獲得量提升(3回合)＆NP增加▲ ＋ 為除自身以外的我方全體〔女性〕賦予無敵狀態(3次．3回合)▲",
+      "na": "Increase Quick Card effectiveness for yourself (3 turns)▲＆Increase Buster Card effectiveness (3 turns)▲＆increase DEF (3 turns)＆Increase NP Gain (3 turns)＆Increase NP Gauge▲ ＋ apply Invincible to all [Female] allies excluding yourself (3 times, 3 turns)▲",
+      "kr": "자신 퀵 카드 성능 UP(3턴)▲＆버스터 카드 성능 UP(3턴)▲＆방어력 UP(3턴)＆NP 획득량 UP(3턴)＆NP 증가▲ ＋ 자신을 제외한 아군 전체 〔여성〕에게 무적 상태 부여(3회・3턴)▲"
     },
     "自身のQuickカード性能をアップ(3ターン)▲＆Busterカード性能をアップ(3ターン▲)＆宝具威力をアップ(3ターン▲)": {
       "tw": "自身Quick指令卡性能提升(3回合)▲＆Buster指令卡性能提升(3回合▲)＆寶具威力提升(3回合▲)",
@@ -4809,20 +4809,20 @@
       "na": "Increase your Quick Card effectiveness (3 turns) & increase Buster Card effectiveness (3 turns) & apply the state \"apply Poison (5 turns) to the target before damage is dealt by Quick attacks\" (3 turns) & apply the state \"gain C. Stars when attacking with Buster\" (3 turns)"
     },
     "自身のQuickカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆スターが10個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが20個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが30個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが40個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが50個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが60個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが70個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが80個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが90個以上ある場合、攻撃力を少しアップ(1ターン)＆スターが99個ある場合、攻撃力を少しアップ(1ターン)＆自身に付与されている〔最大HPアップ〕状態の数に応じて宝具威力をアップ(最大5個・1ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身迅指令卡性能提升(3回合)＆力指令卡性能提升(3回合)＆暴击星达10个以上时,攻击力小幅提升(1回合)＆暴击星达20个以上时,攻击力小幅提升(1回合)＆暴击星达30个以上时,攻击力小幅提升(1回合)＆暴击星达40个以上时,攻击力小幅提升(1回合)＆暴击星达50个以上时,攻击力小幅提升(1回合)＆暴击星达60个以上时,攻击力小幅提升(1回合)＆暴击星达70个以上时,攻击力小幅提升(1回合)＆暴击星达80个以上时,攻击力小幅提升(1回合)＆暴击星达90个以上时,攻击力小幅提升(1回合)＆暴击星达99个时,攻击力小幅提升(1回合)＆根据自身被付与的〔最大生命值提升〕状态数量,宝具威力提升(最多5个·1回合)",
+      "tw": "自身Quick指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆爆擊星達10個以上時，攻擊力小幅提升(1回合)＆爆擊星達20個以上時，攻擊力小幅提升(1回合)＆爆擊星達30個以上時，攻擊力小幅提升(1回合)＆爆擊星達40個以上時，攻擊力小幅提升(1回合)＆爆擊星達50個以上時，攻擊力小幅提升(1回合)＆爆擊星達60個以上時，攻擊力小幅提升(1回合)＆爆擊星達70個以上時，攻擊力小幅提升(1回合)＆爆擊星達80個以上時，攻擊力小幅提升(1回合)＆爆擊星達90個以上時，攻擊力小幅提升(1回合)＆爆擊星達99個時，攻擊力小幅提升(1回合)＆根據自身被賦予的〔最大HP上升〕狀態數量，寶具威力提升(最多5個．1回合)",
+      "na": "Increase Quick Card effectiveness for yourself (3 turns)＆Increase Buster Card effectiveness (3 turns)＆Slightly increase ATK when you have 10 or more C. Stars (1 turn)＆Slightly increase ATK when you have 20 or more C. Stars (1 turn)＆Slightly increase ATK when you have 30 or more C. Stars (1 turn)＆Slightly increase ATK when you have 40 or more C. Stars (1 turn)＆Slightly increase ATK when you have 50 or more C. Stars (1 turn)＆Slightly increase ATK when you have 60 or more C. Stars (1 turn)＆Slightly increase ATK when you have 70 or more C. Stars (1 turn)＆Slightly increase ATK when you have 80 or more C. Stars (1 turn)＆Slightly increase ATK when you have 90 or more C. Stars (1 turn)＆Slightly increase ATK when you have 99 C. Stars (1 turn)＆Increase NP Strength based on the number of [Max HP Up] statuses applied to yourself (max 5, 1 turn)",
+      "kr": "자신 퀵 카드 성능 UP(3턴)＆버스터 카드 성능 UP(3턴)＆스타가 10개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 20개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 30개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 40개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 50개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 60개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 70개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 80개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 90개 이상 있을 경우 공격력 소폭 UP(1턴)＆스타가 99개 있을 경우 공격력 소폭 UP(1턴)＆자신에게 부여된 〔최대 HP UP〕 상태 수에 따라 보구 위력 UP(최대 5개・1턴)"
     },
     "自身のQuickカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆回避状態を付与(2回・3ターン) ＋ 味方全体の宝具威力をアップ(3ターン)▲": {
       "tw": "自身Quick指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆賦予迴避狀態(2次．3回合) ＋ 我方全體寶具威力提升(3回合)▲",
       "kr": "자신의 퀵 카드 성능 UP(3턴)&버스터 카드 성능 UP(3턴)&회피 상태 부여(2회・3턴) + 아군 전체 보구 위력 UP(3턴)▲"
     },
     "自身のQuickカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆弱体無効状態を付与(2回・3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身迅指令卡性能提升(3回合)＆力指令卡性能提升(3回合)＆付与弱化无效状态(2次·3回合)",
+      "tw": "自身Quick指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆賦予弱化無效狀態(2次．3回合)",
+      "na": "Increase Quick Card effectiveness for yourself (3 turns)＆Increase Buster Card effectiveness (3 turns)＆apply Debuff Immune (2 times, 3 turns)",
+      "kr": "자신 퀵 카드 성능 UP(3턴)＆버스터 카드 성능 UP(3턴)＆약화 무효 상태 부여(2회・3턴)"
     },
     "自身のQuickカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆毎ターンスター獲得状態を付与(3ターン)": {
       "tw": "自身Quick指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆每回合賦予獲得爆擊星狀態(3回合)",
@@ -4892,10 +4892,10 @@
       "kr": "자신의 스타 집중도 UP(1턴)&크리티컬 위력 UP(1턴)&〔납도 태세〕상태 부여(1턴) + 스타 획득"
     },
     "自身のスター集中度をアップ(3ターン)＆クリティカル威力をアップ(3ターン)▲＆NPを増やす▲ ＋ 味方全体のスター発生率をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身暴击星集中度提升(3回合)＆暴击威力提升(3回合)▲＆宝具值增加▲ ＋ 己方全体暴击星掉落率提升(3回合)",
+      "tw": "自身爆擊星集中提升(3回合)＆爆擊威力提升(3回合)▲＆NP增加▲ ＋ 我方全體爆擊星掉落率提升(3回合)",
+      "na": "Increase C. Star Gather Rate for yourself (3 turns)＆increase Critical Strength (3 turns)▲＆Increase NP Gauge▲ ＋ Increase C. Star Drop Rate for all allies (3 turns)",
+      "kr": "자신 스타 집중도 UP(3턴)＆크리티컬 위력 UP(3턴)▲＆NP 증가▲ ＋ 아군 전체 스타 발생률 UP(3턴)"
     },
     "自身の即死付与成功率をアップ(3ターン)▲＆〔人間〕に対する即死付与成功率をアップ(3ターン)▲＆〔人間〕特攻状態を付与(3ターン)＆宝具威力をアップ(3ターン)▲＆NPを増やす▲": {
       "tw": "自身即死賦予成功率提升(3回合)▲＆對〔人類〕的即死賦予成功率提升(3回合)▲＆賦予〔人類〕特攻狀態(3回合)＆寶具威力提升(3回合)▲＆NP增加▲",
@@ -4943,16 +4943,16 @@
       "kr": "자신의 보구 위력 5% UP&강화 해제 내성 3% UP&NP를 10% 충전한 상태로 배틀을 시작한다"
     },
     "自身の宝具威力をアップ(3ターン)＆NPを増やす＆毎ターンスター獲得状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具威力提升(3回合)＆宝具值增加＆付与每回合获得暴击星的状态(3回合)",
+      "tw": "自身寶具威力提升(3回合)＆NP增加＆賦予每回合獲得爆擊星的狀態(3回合)",
+      "na": "Increase NP Strength for yourself (3 turns)＆Increase NP Gauge＆apply C. Stars each turn (3 turns)",
+      "kr": "자신 보구 위력 UP(3턴)＆NP 증가＆매 턴 스타 획득 상태 부여(3턴)"
     },
     "自身の宝具威力をアップ(3ターン)＆「宝具攻撃時に対象に高確率で即死を付与する状態」を付与(3ターン)＆NPを増やす ＋ 自身のまんぷくゲージが空腹の時、自身の宝具威力をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具威力提升(3回合)＆付与「宝具攻击时高概率对目标付与即死的状态」(3回合)＆宝具值增加 ＋ 当自身饱腹槽为空腹时,自身宝具威力提升(3回合)",
+      "tw": "自身寶具威力提升(3回合)＆賦予「寶具攻擊時對目標高機率賦予即死的狀態」(3回合)＆NP增加 ＋ 當自身飽腹槽為空腹時，自身寶具威力提升(3回合)",
+      "na": "Increase NP Strength for yourself (3 turns)＆apply \"Inflict Instant Death on the target with high probability on NP attack\" status (3 turns)＆Increase NP Gauge ＋ Increase NP Strength for yourself when your Full Gauge is Hungry (3 turns)",
+      "kr": "자신 보구 위력 UP(3턴)＆「보구 공격 시 대상에게 고확률로 즉사를 부여하는 상태」 부여(3턴)＆NP 증가 ＋ 자신의 만복 게이지가 공복 상태일 때 자신 보구 위력 UP(3턴)"
     },
     "自身の宝具威力をアップ(3ターン)＆〔死霊〕特攻状態を付与(3ターン)＆〔悪〕特攻状態を付与(3ターン)＆〔シャドウサーヴァント〕特攻状態を付与(3ターン)": {
       "tw": "自身寶具威力提升(3回合)＆賦予〔死靈〕特攻狀態(3回合)＆賦予〔惡〕特攻狀態(3回合)＆賦予〔影從者〕特攻狀態(3回合)",
@@ -4964,16 +4964,16 @@
       "kr": "자신의 보구 위력 UP(3턴)&공격력 UP(3턴)&NP 증가"
     },
     "自身の宝具威力をアップ(3ターン)＆攻撃力をアップ(3ターン)＆〔霊体(死霊またはサーヴァント)〕特攻状態を付与(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具威力提升(3回合)＆攻击力提升(3回合)＆付与对〔灵体(死灵或从者)〕的特攻状态(3回合)",
+      "tw": "自身寶具威力提升(3回合)＆攻擊力提升(3回合)＆賦予對〔靈體(死靈或從者)〕的特攻狀態(3回合)",
+      "na": "Increase NP Strength for yourself (3 turns)＆Increase ATK (3 turns)＆Apply Special Attack [Spirit (Wraith or Servant)] (3 turns)",
+      "kr": "자신 보구 위력 UP(3턴)＆공격력 UP(3턴)＆〔영체(망령 또는 서번트)〕 특공 상태 부여(3턴)"
     },
     "自身の宝具威力をアップ(3ターン)＆攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身宝具威力提升(3回合)＆攻击力提升(3回合)＆暴击威力提升(3回合)",
+      "tw": "自身寶具威力提升(3回合)＆攻擊力提升(3回合)＆爆擊威力提升(3回合)",
+      "na": "Increase NP Strength for yourself (3 turns)＆Increase ATK (3 turns)＆increase Critical Strength (3 turns)",
+      "kr": "자신 보구 위력 UP(3턴)＆공격력 UP(3턴)＆크리티컬 위력 UP(3턴)"
     },
     "自身の弱体付与成功率をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ 敵全体に毒状態を付与(5ターン)＆蝕毒状態(毒の効果量がアップする状態)を付与(5ターン)＆HP回復量をダウン(5ターン)": {
       "na": "Increase your Debuff Success Rate (3 turns) & increase Critical Strength (3 turns) + apply Poison (5 turns) to all enemies & apply Corroding Poison (increases the effect of Poison) (5 turns) & decrease HP Recovery amount (5 turns)"
@@ -5017,10 +5017,10 @@
       "kr": "자신의 공격력 UP(3턴)&크리티컬 위력 UP(3턴)&무적 관통 상태 부여(3턴)"
     },
     "自身の攻撃力をアップ(3ターン)＆弱体無効状態を付与(1回・3ターン)＆ガッツ状態を付与(1回・3ターン)＆回避状態を付与(2回・3ターン)＆NPをすごく増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身攻击力提升(3回合)＆付与弱化无效状态(1次·3回合)＆付与毅力状态(1次·3回合)＆付与回避状态(2次·3回合)＆宝具值大幅增加",
+      "tw": "自身攻擊力提升(3回合)＆賦予弱化無效狀態(1次．3回合)＆賦予毅力狀態(1次．3回合)＆賦予迴避狀態(2次．3回合)＆NP大幅增加",
+      "na": "Increase ATK for yourself (3 turns)＆apply Debuff Immune (1 time, 3 turns)＆apply Guts (1 time, 3 turns)＆apply Evade (2 times, 3 turns)＆significantly increase NP Gauge",
+      "kr": "자신 공격력 UP(3턴)＆약화 무효 상태 부여(1회・3턴)＆근성 상태 부여(1회・3턴)＆회피 상태 부여(2회・3턴)＆NP를 많이 증가"
     },
     "自身の攻撃力をアップ(3ターン▲)＆〔混沌〕特攻状態を付与(3ターン)▲＆クリティカル威力をアップ(3回・3ターン)＆NPを増やす▲": {
       "tw": "自身攻擊力提升(3回合▲)＆賦予〔混沌〕特攻狀態(3回合)▲＆爆擊威力提升(3次．3回合)＆NP增加▲",
@@ -5092,22 +5092,22 @@
       "kr": "자신의 받는 강화 성공률 5% UP&NP 획득량 3% UP"
     },
     "自身の防御力をアップ(3ターン)＆NPを増やす▲＆クリティカル威力をアップ(3ターン)▲＆スター集中度をアップ(1ターン) ＋ スターを獲得▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身防御力提升(3回合)＆宝具值增加▲＆暴击威力提升(3回合)▲＆暴击星集中度提升(1回合) ＋ 获得暴击星▲",
+      "tw": "自身防禦力提升(3回合)＆NP增加▲＆爆擊威力提升(3回合)▲＆爆擊星集中提升(1回合) ＋ 獲得爆擊星▲",
+      "na": "Increase DEF for yourself (3 turns)＆Increase NP Gauge▲＆increase Critical Strength (3 turns)▲＆Increase C. Star Gather Rate (1 turn) ＋ Gain C. Stars▲",
+      "kr": "자신 방어력 UP(3턴)＆NP 증가▲＆크리티컬 위력 UP(3턴)▲＆스타 집중도 UP(1턴) ＋ 스타 획득▲"
     },
     "自身の防御強化状態を解除【デメリット】＆宝具威力をアップ(3ターン▲)＆クリティカル威力をアップ(3ターン▲)＆「攻撃時のダメージ前に敵単体にやけど状態(3ターン)を付与する状態」を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "解除自身防御强化状态【负面效果】＆宝具威力提升(3回合▲)＆暴击威力提升(3回合▲)＆付与「攻击造成伤害前对敌方单体付与烧伤状态(3回合)的状态」(3回合)▲",
+      "tw": "解除自身防禦強化狀態【負面效果】＆寶具威力提升(3回合▲)＆爆擊威力提升(3回合▲)＆賦予「攻擊造成傷害前對敵方單體賦予燒傷狀態(3回合)的狀態」(3回合)▲",
+      "na": "Remove DEF buffs from yourself [Demerit]＆Increase NP Strength (3 turns▲)＆increase Critical Strength (3 turns▲)＆apply \"Inflict Burn on a single enemy before dealing damage on attack (3 turns)\" status (3 turns)▲",
+      "kr": "자신의 방어 강화 상태 해제【단점】＆보구 위력 UP(3턴▲)＆크리티컬 위력 UP(3턴▲)＆「공격 시 대미지 전에 적 하나에게 화상 상태(3턴)를 부여하는 상태」 부여(3턴)▲"
     },
     "自身を除く味方全体に無敵状態を付与(1ターン)＆スター発生率をアップ(3ターン)＆毎ターンNP獲得状態を付与(3ターン)▲＆Quickカード性能をアップ(3ターン)▲＆Artsカード性能をアップ(3ターン)▲＆Busterカード性能をアップ(3ターン)▲ ＋ 自身を除く味方全体の〔霊衣を持つ者〕の数に応じてスターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "为除自身以外的己方全体付与无敌状态(1回合)＆暴击星掉落率提升(3回合)＆付与每回合获得宝具值的状态(3回合)▲＆迅指令卡性能提升(3回合)▲＆技指令卡性能提升(3回合)▲＆力指令卡性能提升(3回合)▲ ＋ 根据除自身以外的己方全体中〔持有灵衣者〕的数量获得暴击星",
+      "tw": "為除自身以外的我方全體賦予無敵狀態(1回合)＆爆擊星掉落率提升(3回合)＆賦予每回合獲得NP的狀態(3回合)▲＆Quick指令卡性能提升(3回合)▲＆Arts指令卡性能提升(3回合)▲＆Buster指令卡性能提升(3回合)▲ ＋ 根據除自身以外的我方全體中〔持有靈衣者〕的數量獲得爆擊星",
+      "na": "Apply Invincible to all allies excluding yourself (1 turn)＆Increase C. Star Drop Rate (3 turns)＆apply NP Gauge per turn (3 turns)▲＆Increase Quick Card effectiveness (3 turns)▲＆Increase Arts Card effectiveness (3 turns)▲＆Increase Buster Card effectiveness (3 turns)▲ ＋ Gain C. Stars based on the number of [Spiritron Dress owners] among allies excluding yourself",
+      "kr": "자신을 제외한 아군 전체에게 무적 상태 부여(1턴)＆스타 발생률 UP(3턴)＆매 턴 NP 획득 상태 부여(3턴)▲＆퀵 카드 성능 UP(3턴)▲＆아츠 카드 성능 UP(3턴)▲＆버스터 카드 성능 UP(3턴)▲ ＋ 자신을 제외한 아군 전체의 〔영의를 가진 자〕 수에 따라 스타 획득"
     },
     "至誠 EX": {
       "tw": "至誠 EX",
@@ -6438,9 +6438,9 @@
       "kr": "뇌신의 춤"
     },
     "霊基を入れ替えるか選択してください": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "請選擇是否替換靈基",
+      "na": "Choose whether to swap Spirit Origins",
+      "kr": "영기를 교체할지 선택하십시오"
     },
     "霧夜の殺人 EX": {
       "kr": "안개 낀 밤의 살인 EX"
