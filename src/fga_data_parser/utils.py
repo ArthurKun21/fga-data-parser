@@ -71,5 +71,7 @@ def write_data(file_path: Path, data: Any) -> None:
 
 def write_bytes(file_path: Path, data: bytes) -> None:
     """Write raw bytes to file_path."""
+    if file_path.exists():
+        file_path.unlink(missing_ok=True)
     file_path.write_bytes(data)
     logger.debug("Wrote %s", file_path)
