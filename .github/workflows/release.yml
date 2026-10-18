@@ -44,6 +44,22 @@ jobs:
           test -n "$tag"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
+      - name: Compute cache window
+        id: cache-window
+        # 8-hour buckets (28800 s): runs in the same window share a cache key;
+        # a later window misses and re-downloads. A static key would never
+        # refresh since the parser reuses any existing file.
+        run: echo "period=$(( $(date -u +%s) / 28800 ))" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Atlas raw data
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: |
+            nice_servant*.json
+            nice_mystic_code*.json
+            nice_equip*.json
+          key: atlas-nice-v1-${{ steps.cache-window.outputs.period }}
+
       - name: Parse data
         run: uv run fga-data-parser
 
