@@ -49,43 +49,22 @@ jobs:
           test -n "$tag"
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
-      - name: Restore raw data
-        id: restore
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+      - name: Compute 8h bucket
+        id: bucket
+        run: echo "b=$(( $(date +%s) / 28800 ))" >> "$GITHUB_OUTPUT"
+
+      - name: Cache raw data
+        id: cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: ${{ env.DATA_FILES }}
-          key: data-nice-v1-${{ github.run_id }}
-          restore-keys: data-nice-v1-
-
-      - name: Check data age
-        id: age
-        run: |
-          fresh=false
-          while IFS= read -r pattern; do
-            [ -z "$pattern" ] && continue
-            if [ -n "$(find . -maxdepth 1 -name "$pattern" -mmin -480 -print -quit)" ]; then
-              fresh=true
-              break
-            fi
-          done <<< "$DATA_FILES"
-          echo "fresh=$fresh" >> "$GITHUB_OUTPUT"
-
-      - name: Drop stale data
-        if: steps.age.outputs.fresh != 'true'
-        run: rm -f $DATA_FILES
+          key: data-nice-v1-${{ steps.bucket.outputs.b }}
 
       - name: Parse data
         run: uv run fga-data-parser
 
       - name: Translate names
         run: uv run fgo-translate
-
-      - name: Save raw data
-        if: steps.age.outputs.fresh != 'true'
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
-        with:
-          path: ${{ env.DATA_FILES }}
-          key: data-nice-v1-${{ github.run_id }}
 
       - name: Upload readable json
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
