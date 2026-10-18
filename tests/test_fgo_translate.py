@@ -26,6 +26,13 @@ def write_chaldea_data(tmp_path, *, patch=None) -> None:
                     "KR": None,
                 },
                 "魔\ue000セイバー": {"JP": None, "NA": "Fou Saber"},
+                # The correct community translation the Aozaki-Aoko incident
+                # stole: the buggy pairing let Atlas claim every region first.
+                "フランチェスカ・プレラーティ": {
+                    "JP": None,
+                    "CN": "弗兰切斯卡·普勒拉蒂",
+                    "NA": "Francesca Prélat",
+                },
             }
         )
     )
@@ -267,6 +274,24 @@ def write_atlas_data(tmp_path) -> None:
                 "nps": [],
                 "append_passives": [],
             },
+            # The real shape of the Aozaki-Aoko incident: two JP servants
+            # share collection_no 0 and only Aoko exists in NA.
+            {
+                "id": 505700,
+                "collection_no": 0,
+                "name": "フランチェスカ・プレラーティ",
+                "skills": [],
+                "nps": [],
+                "append_passives": [],
+            },
+            {
+                "id": 2501500,
+                "collection_no": 0,
+                "name": "蒼崎青子",
+                "skills": [],
+                "nps": [],
+                "append_passives": [],
+            },
         ],
         ".na": [
             servant(
@@ -291,6 +316,14 @@ def write_atlas_data(tmp_path) -> None:
                 "id": 2,
                 "collection_no": 3,
                 "name": "Fou Saber",
+                "skills": [],
+                "nps": [],
+                "append_passives": [],
+            },
+            {
+                "id": 2501500,
+                "collection_no": 0,
+                "name": "Aozaki Aoko",
                 "skills": [],
                 "nps": [],
                 "append_passives": [],
@@ -424,11 +457,82 @@ def test_build_atlas_entries(tmp_path) -> None:
     assert entries["星の王冠"] == {"na": "Crown of the Star"}
     assert entries["旧星の王冠"] == {"na": "Old Star Crown"}
     assert entries["王冠の輝き"] == {"na": "Radiant Crown"}
+
+    # The collection-no-0 incident: JP Francesca has no NA counterpart, so the
+    # Atlas pass records nothing for her (Chaldea fills the name later), while
+    # JP Aoko pairs with NA Aoko by the shared id — never by the colliding
+    # collection number.
+    assert "フランチェスカ・プレラーティ" not in entries
+    assert entries["蒼崎青子"] == {"na": "Aozaki Aoko"}
+
     assert all("kr" not in regions for regions in entries.values())
 
 
 def test_build_atlas_entries_without_jp_data(tmp_path) -> None:
     assert build_atlas_entries(tmp_path / "missing") == {}
+
+
+def test_collection_number_fallback_for_id_drift(tmp_path) -> None:
+    """A region may host an entity under a different id; the shared non-zero
+    collection number still pairs it, while collection_no 0 never does."""
+    data_dir = tmp_path / "atlas-data"
+    data_dir.mkdir()
+
+    def servant(entity_id: int, collection_no: int, name: str) -> dict:
+        return {
+            "id": entity_id,
+            "collection_no": collection_no,
+            "name": name,
+            "skills": [],
+            "nps": [],
+            "append_passives": [],
+        }
+
+    (data_dir / "servant_data.json").write_bytes(
+        orjson.dumps(
+            [
+                # NA still hosts collection 7 under the older id 200.
+                servant(100, 7, "改名前"),
+                # The shared id pairs despite differing collection numbers.
+                servant(104, 9, "先着順"),
+                # Unnumbered servants must never pair on collection_no 0.
+                servant(102, 0, "無番号"),
+            ]
+        )
+    )
+    (data_dir / "servant_data.na.json").write_bytes(
+        orjson.dumps(
+            [
+                servant(200, 7, "Renamed"),
+                servant(104, 99, "Same Id Different Number"),
+                servant(103, 0, "Unnumbered NA"),
+            ]
+        )
+    )
+
+    entries = build_atlas_entries(data_dir)
+
+    assert entries["改名前"] == {"na": "Renamed"}
+    assert entries["先着順"] == {"na": "Same Id Different Number"}
+    assert "無番号" not in entries
+
+
+def test_collection_no_zero_servants_fill_from_chaldea(tmp_path) -> None:
+    write_atlas_data(tmp_path)
+    write_chaldea_data(tmp_path)
+
+    translations = build_translations(
+        tmp_path / "chaldea-data",
+        atlas_entries=build_atlas_entries(tmp_path / "atlas-data"),
+        used_texts=collect_used_texts(tmp_path / "atlas-data"),
+    )
+
+    # Francesca pairs with no region, so Chaldea's community translation
+    # survives instead of a wrong servant's official text.
+    francesca = translations["フランチェスカ・プレラーティ"]
+    assert francesca.na == "Francesca Prélat"
+    assert francesca.cn == "弗兰切斯卡·普勒拉蒂"
+    assert translations["蒼崎青子"].na == "Aozaki Aoko"
 
 
 def test_atlas_wins_chaldea_fills_patch_wins_last(tmp_path) -> None:
