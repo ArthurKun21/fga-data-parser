@@ -1,11 +1,11 @@
 """Cross-reference the parser's per-region outputs into translation entries.
 
 The parser writes parsed JSON per region (JP unsuffixed, others .{region});
-entities line up across regions by collection number or id and skills by id
-with a num/position fallback, so every text field the parser emits can be
-paired with its official per-region text. The keys are exactly the JP texts in
-the parser outputs — FGA-facing renames and dedupe suffixes included — so
-consumer lookups against the parser data hit the table directly.
+entities line up across regions by id with a collection-number fallback and
+skills by id with a num/position fallback, so every text field the parser
+emits can be paired with its official per-region text. The keys are exactly
+the JP texts in the parser outputs — FGA-facing renames and dedupe suffixes
+included — so consumer lookups against the parser data hit the table directly.
 """
 
 import logging
@@ -94,15 +94,40 @@ def _load_per_region(data_dir: Path, stem: str) -> dict[str, list[dict[str, Any]
     return per_region
 
 
-def _index_by(
-    per_region: dict[str, list[dict[str, Any]]], key: str
-) -> dict[str, dict[int, dict[str, Any]]]:
-    """Index each non-JP region's entities by collection number or id."""
-    return {
-        region: {entity[key]: entity for entity in entities}
-        for region, entities in per_region.items()
-        if region != "jp"
-    }
+def _pair_entities(
+    jp_items: list[dict[str, Any]], other_items: list[dict[str, Any]]
+) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+    """Pair entities across regions by id, falling back to collection number.
+
+    Atlas ids are shared across regions, so the id pass pairs exactly the same
+    entity everywhere it exists. The collection number only covers entities
+    the other region still hosts under a different id, and only numbered ones:
+    collection_no 0 means "unnumbered" and many distinct servants share it
+    (Francesca Prelati, Aozaki Aoko, ...), so it must never pair entities.
+    """
+    other_by_id = {item["id"]: item for item in other_items if item.get("id")}
+    matched_ids = set()
+    pairs: list[tuple[dict[str, Any], dict[str, Any]]] = []
+    unmatched: list[dict[str, Any]] = []
+    for jp_item in jp_items:
+        other = other_by_id.get(jp_item.get("id"))
+        if other is None:
+            unmatched.append(jp_item)
+            continue
+        matched_ids.add(other["id"])
+        pairs.append((jp_item, other))
+
+    remaining_by_collection: dict[int, list[dict[str, Any]]] = {}
+    for item in other_items:
+        collection_no = item.get("collection_no")
+        if collection_no and item.get("id") not in matched_ids:
+            remaining_by_collection.setdefault(collection_no, []).append(item)
+    for jp_item in unmatched:
+        collection_no = jp_item.get("collection_no")
+        queue = remaining_by_collection.get(collection_no) if collection_no else None
+        if queue:
+            pairs.append((jp_item, queue.pop(0)))
+    return pairs
 
 
 def _align(
@@ -163,21 +188,19 @@ def _collect_servants(
     jp_servants = per_region.get("jp")
     if not jp_servants:
         return
-    others = _index_by(per_region, "collection_no")
-    for servant in jp_servants:
-        for region, index in others.items():
-            other = index.get(servant["collection_no"])
-            if other is None:
-                continue
-            _record(flat, servant["name"], region, other["name"])
-            for jp_skill, other_skill in _align(servant["skills"], other["skills"]):
+    for region, entities in per_region.items():
+        if region == "jp":
+            continue
+        for jp_servant, other in _pair_entities(jp_servants, entities):
+            _record(flat, jp_servant["name"], region, other["name"])
+            for jp_skill, other_skill in _align(jp_servant["skills"], other["skills"]):
                 _record(flat, jp_skill["name"], region, other_skill["name"])
                 _record(flat, jp_skill["detail"], region, other_skill["detail"])
                 _collect_script_payloads(flat, jp_skill, other_skill, region)
-            for jp_np, other_np in _align(servant["nps"], other["nps"]):
+            for jp_np, other_np in _align(jp_servant["nps"], other["nps"]):
                 _record(flat, jp_np["name"], region, other_np["name"])
             for jp_skill, other_skill in _align(
-                [entry["skill"] for entry in servant["append_passives"]],
+                [entry["skill"] for entry in jp_servant["append_passives"]],
                 [entry["skill"] for entry in other["append_passives"]],
             ):
                 _record_texts(
@@ -210,14 +233,12 @@ def _collect_craft_essences(
     jp_craft_essences = per_region.get("jp")
     if not jp_craft_essences:
         return
-    others = _index_by(per_region, "collection_no")
-    for craft_essence in jp_craft_essences:
-        for region, index in others.items():
-            other = index.get(craft_essence["collection_no"])
-            if other is None:
-                continue
-            _record_texts(flat, craft_essence, other, region, ("name", "original_name"))
-            for jp_skill, other_skill in _align(craft_essence["skills"], other["skills"]):
+    for region, entities in per_region.items():
+        if region == "jp":
+            continue
+        for jp_craft_essence, other in _pair_entities(jp_craft_essences, entities):
+            _record_texts(flat, jp_craft_essence, other, region, ("name", "original_name"))
+            for jp_skill, other_skill in _align(jp_craft_essence["skills"], other["skills"]):
                 _record_texts(
                     flat, jp_skill, other_skill, region, ("name", "original_name", "detail")
                 )
@@ -229,12 +250,11 @@ def _collect_mystic_codes(
     jp_mystic_codes = per_region.get("jp")
     if not jp_mystic_codes:
         return
-    others = _index_by(per_region, "id")
-    for mystic_code in jp_mystic_codes:
-        for region, index in others.items():
-            other = index.get(mystic_code["id"])
-            if other is None:
-                continue
-            _record(flat, mystic_code["name"], region, other["name"])
-            for jp_skill, other_skill in _align(mystic_code["skills"], other["skills"]):
+    for region, entities in per_region.items():
+        if region == "jp":
+            continue
+        # Mystic codes carry no collection number, so pairing is id-only.
+        for jp_mystic_code, other in _pair_entities(jp_mystic_codes, entities):
+            _record(flat, jp_mystic_code["name"], region, other["name"])
+            for jp_skill, other_skill in _align(jp_mystic_code["skills"], other["skills"]):
                 _record_texts(flat, jp_skill, other_skill, region, ("name", "detail"))
