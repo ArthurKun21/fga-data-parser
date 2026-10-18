@@ -38,7 +38,17 @@ TABLE_NAMES = (
     "td_detail",
     "buff_names",
     "buff_detail",
+    # funcPopupText strings the parser copies into script-function payloads
+    # (NP type updates, ...); skills a region does not share yet rely on it.
+    "func_popuptext",
 )
+
+# Sections of mappings/misc.json folded into the flat map. Only these are
+# keyed by the skill popup JP text the parser emits (choice dialog titles and
+# button names, NP type select); the rest are identifier-keyed ($default,
+# Function, SkillScript, condBranchSkillInfo) or unrelated UI text, and
+# flattening them would seed the table with keys that are not game text.
+MISC_SECTIONS = ("SelectAddInfo", "selectTreasureDeviceInfo")
 
 # Private-use characters the app normalizes in every downloaded file.
 _PUA_REPLACEMENTS = {
@@ -69,6 +79,7 @@ def build_translations(
     chaldea_dir: Path,
     atlas_entries: dict[str, dict[str, str]] | None = None,
     used_texts: set[str] | None = None,
+    required_texts: set[str] | None = None,
 ) -> dict[str, Translation]:
     """Build the flat JP-text -> Translation map.
 
@@ -77,7 +88,10 @@ def build_translations(
     wins where present, the Chaldea tables only fill gaps, and the mapping
     patch still wins last like the app's deep merge. used_texts prunes the
     final table to the JP texts the parser outputs contain (see
-    atlas.collect_used_texts); None keeps every key.
+    atlas.collect_used_texts); None keeps every key. required_texts are the
+    translatable parser texts (see atlas.collect_translatable_texts): ones no
+    source covered are added as translation-less entries so the key exists for
+    consumers and the overwrite queue; None adds nothing.
     """
     flat: dict[str, dict[str, str]] = {}
     if atlas_entries:
@@ -93,11 +107,17 @@ def build_translations(
         for jp_text, regions in raw.items():
             _merge_regions(flat.setdefault(normalize_text(jp_text), {}), regions, fill_only=True)
 
+    misc_path = chaldea_dir / "mappings" / "misc.json"
+    for jp_text, regions in _flatten_misc(read_data(misc_path)).items():
+        _merge_regions(flat.setdefault(normalize_text(jp_text), {}), regions, fill_only=True)
+
     patch_path = chaldea_dir / "dist" / "mappingPatch.json"
     if patch_path.exists():
         patch = read_data(patch_path)
         for table_name, entries in patch.items():
-            if table_name not in TABLE_NAMES:
+            if table_name == "misc":
+                entries = _flatten_misc(entries)
+            elif table_name not in TABLE_NAMES:
                 continue
             for jp_text, regions in entries.items():
                 # Patch values win, like the app's deep merge.
@@ -111,6 +131,16 @@ def build_translations(
         pruned = {key: regions for key, regions in flat.items() if key in used_texts}
         logger.info("Pruned %d keys unused by the parser outputs", len(flat) - len(pruned))
         flat = pruned
+
+    if required_texts:
+        added = sorted(required_texts - flat.keys())
+        for key in added:
+            # No source covers this parser text, but the key still belongs in
+            # the table: consumers fall back to jp, and the overwrite queue
+            # records it for manual / machine translation.
+            flat[key] = {}
+        if added:
+            logger.info("Added %d sourceless keys from the parser outputs", len(added))
 
     translations = {key: _translation(key, regions) for key, regions in flat.items()}
     _log_coverage(translations)
@@ -222,6 +252,19 @@ def _merge_regions(entry: dict[str, str], regions: dict[str, Any], *, fill_only:
         if fill_only and normalized in entry:
             continue
         entry[normalized] = name
+
+
+def _flatten_misc(payload: dict[str, Any]) -> dict[str, dict[str, str]]:
+    """Flatten the selected sections of a misc payload into one JP-keyed map.
+
+    Used for mappings/misc.json and the identical misc section of the mapping
+    patch; the first section claiming a JP key wins, like the tables.
+    """
+    flattened: dict[str, dict[str, str]] = {}
+    for section in MISC_SECTIONS:
+        for jp_text, regions in payload.get(section, {}).items():
+            flattened.setdefault(jp_text, regions)
+    return flattened
 
 
 # The parser keeps Atlas' halfwidth katakana middle dot (魔術礼装･カルデア)

@@ -7,7 +7,7 @@ from pathlib import Path
 from fga_data_parser.cli import setup_logging
 from fga_data_parser.utils import write_bytes, write_data
 
-from .atlas import build_atlas_entries, collect_used_texts
+from .atlas import build_atlas_entries, collect_translatable_texts, collect_used_texts
 from .pb import translations_to_bytes
 from .pipeline import (
     apply_overwrite_translations,
@@ -75,6 +75,7 @@ def main(argv: list[str] | None = None) -> int:
         args.chaldea_data,
         atlas_entries=atlas_entries,
         used_texts=collect_used_texts(args.atlas_data),
+        required_texts=collect_translatable_texts(args.atlas_data),
     )
 
     overwrite = load_overwrite_translations(args.overwrite_translations)

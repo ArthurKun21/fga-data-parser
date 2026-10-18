@@ -73,6 +73,77 @@ def _collect_strings(node: Any, used: set[str]) -> None:
             _collect_strings(value, used)
 
 
+def collect_translatable_texts(data_dir: Path) -> set[str] | None:
+    """Normalized JP texts the parser outputs emit as translatable fields.
+
+    Unlike collect_used_texts (every string leaf), this walks exactly the
+    fields the cross-reference records — keep the field lists in sync with the
+    _collect_* recorders — so the caller can add texts no translation source
+    covered back into the table as jp-only keys. Returns None when no parsed
+    outputs exist so the caller can skip the additions.
+    """
+    texts: set[str] = set()
+    found = False
+
+    servants = _read_jp(data_dir, "servant_data")
+    if servants is not None:
+        found = True
+        for servant in servants:
+            _add_text(servant.get("name"), texts)
+            for skill in servant.get("skills", []):
+                _collect_skill_texts(skill, texts)
+            for np in servant.get("nps", []):
+                _add_text(np.get("name"), texts)
+            for entry in servant.get("append_passives", []):
+                skill = entry.get("skill", {})
+                for field in ("name", "original_name", "detail"):
+                    _add_text(skill.get(field), texts)
+
+    craft_essences = _read_jp(data_dir, "craft_essence_data")
+    if craft_essences is not None:
+        found = True
+        for craft_essence in craft_essences:
+            for field in ("name", "original_name"):
+                _add_text(craft_essence.get(field), texts)
+            # CE skills carry no script functions.
+            for skill in craft_essence.get("skills", []):
+                for field in ("name", "original_name", "detail"):
+                    _add_text(skill.get(field), texts)
+
+    mystic_codes = _read_jp(data_dir, "mystic_code_data")
+    if mystic_codes is not None:
+        found = True
+        for mystic_code in mystic_codes:
+            _add_text(mystic_code.get("name"), texts)
+            for skill in mystic_code.get("skills", []):
+                _collect_skill_texts(skill, texts)
+
+    return texts if found else None
+
+
+def _read_jp(data_dir: Path, stem: str) -> list[dict[str, Any]] | None:
+    path = data_dir / f"{stem}.json"
+    if not path.exists():
+        return None
+    return read_data(path)
+
+
+def _add_text(value: Any, texts: set[str]) -> None:
+    if isinstance(value, str) and value:
+        texts.add(normalize_text(value))
+
+
+def _collect_skill_texts(skill: dict[str, Any], texts: set[str]) -> None:
+    _add_text(skill.get("name"), texts)
+    _add_text(skill.get("detail"), texts)
+    for function in skill.get("functions", []):
+        for key, fields in _PAYLOAD_FIELDS.items():
+            payload = function.get(key)
+            if payload is not None:
+                for field in fields:
+                    _add_text(payload.get(field), texts)
+
+
 def _load_per_region(data_dir: Path, stem: str) -> dict[str, list[dict[str, Any]]]:
     """Load the parser outputs per region; JP is the translation-key source.
 
