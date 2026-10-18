@@ -111,8 +111,37 @@ pairs those outputs up:
 - The tool needs a **chaldea-data checkout** (`--chaldea-data`) and, for the
   Atlas-derived source, the **parser's per-region outputs** (`--atlas-data`,
   default: current directory). Missing parsed outputs degrade gracefully to a
-  Chaldea-only table. `chaldea-data/` is gitignored and must never be
-  committed.
+  Chaldea-only table. It also reads and updates the manual overwrite table
+  (`--overwrite-translations`, see below). `chaldea-data/` is gitignored and
+  must never be committed.
+
+## Overwrite translations (manual gap-filler)
+
+The table is rebuilt from scratch every run, so gaps stay gaps until an
+upstream source covers them. `overwrite_translations.json` (repo root,
+`--overwrite-translations`) is a committed work-queue file in the exact
+`fgo_translate.json` shape (no `.pb`) that closes that loop:
+
+- **Record**: after the build, every key missing at least one region is written
+  into the file with its known values (jp + present regions), giving whoever
+  (or whatever machine translation) fills it the full context. Keys completed
+  by a fill stay in the file too — the next run rebuilds the table from
+  Chaldea and would otherwise lose the value again.
+- **Fill**: on the next run, region values from the file are applied to
+  regions that are still missing. Existing values are never replaced;
+  corrections to translations Chaldea/Atlas already provide are out of scope.
+- **Prune**: a key leaves the file when the table entry is fully translated
+  without any fill (the value became redundant) or when the key is no longer
+  in the table at all (e.g. pruned as unused) — such an entry can never fill
+  anything.
+
+The file is hand-edited, so structural mistakes (unknown region key,
+non-string or empty value, missing `translations` wrapper) fail the run
+loudly. Output keys are sorted and stable, so an unchanged run produces no
+diff; the release workflow commits the file back after `fgo-translate`,
+skipping the commit when nothing changed. Known limitation: middle-dot alias
+keys are separate rows, so both spellings of an incomplete entry are recorded
+and filled independently.
 
 ## Consumer recipe
 
