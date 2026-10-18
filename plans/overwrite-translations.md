@@ -83,3 +83,62 @@ the next run.
   `chaldea-data/`: file created with recorded missing entries; second run
   idempotent (no diff); a hand-added value fills its gap in
   `fgo_translate.json`; `git status` shows the file as trackable.
+
+---
+
+# Follow-up: nulls-only overwrite entries
+
+## Problem
+
+The recorded entries duplicated the main table (jp + every already-present
+region value). That bloats the file, and the duplication is never used: fills
+only ever target missing regions. The file only needs to say *which* regions
+are still missing — and hold the manually provided values once given.
+
+## Design decisions
+
+- **Entry = only the regions missing from the freshly built table**, as
+  `null` while unfilled and as the applied value once the overwrite file
+  provided one; regions the build already covers are left out entirely. The
+  jp text stays the dict key, so the translator still has the source text:
+
+  ```json
+  {
+      "translations": {
+          "key": {
+              "kr": null,
+              "na": null
+          }
+      }
+  }
+  ```
+
+- **"Missing" is judged against the build before fills, not after.** A key
+  completed by a fill keeps its applied values instead of collapsing to an
+  empty entry — the table is rebuilt from Chaldea every run, so the values
+  must survive in the file or the next run loses them. Only keys the build
+  itself fully translated (or no longer contains) are pruned.
+- **Loading tolerates the previous format** (jp echo + known values) so the
+  first run after this change rewrites the file in place with no manual
+  migration; the jp echo is ignored because the key is the jp text. Unknown
+  region keys, non-string values, and empty strings still fail loudly.
+- Write path, CLI flag, and the release-workflow commit are unchanged.
+
+## Implementation
+
+1. `src/fgo_translate/pipeline.py`: `load_overwrite_translations` accepts
+   `null` region values and ignores a legacy `jp` echo;
+   `apply_overwrite_translations` tracks the natively-missing regions per key
+   and persists them as value-or-null (no more post-fill `to_json()` of known
+   values); `overwrite_translations_to_json` only gains the `str | None`
+   value type.
+2. `tests/test_fgo_translate.py`: updated to the nulls-only expectations plus
+   a legacy-format loading test.
+3. `docs/fgo_translate.md`: overwrite section reflects the nulls-only shape.
+
+## Verification (follow-up)
+
+- `uv run pytest`, `uv run ruff check .`, `uv run ruff format .`
+- Local run against the existing outputs: the old-format file is rewritten to
+  nulls-only entries with zero fills, the second run is byte-identical, and a
+  hand-filled null lands in `fgo_translate.json` while persisting in the file.
