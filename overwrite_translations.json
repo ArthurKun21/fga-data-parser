@@ -174,9 +174,9 @@
       "kr": "[servantName 405900](라이더) 장착 시 자신의 보구 위력 30% UP&[매료] 상태에 대한 크리티컬 위력 30% UP&[혼란] 상태에 대한 크리티컬 위력 30% UP"
     },
     "[servantName 406000](ライダー)装備時のみ、自身がフィールドにいる間、味方全体の宝具威力を10%アップ＆〔魅了〕状態特攻状態を20%付与": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "[servantName 406000](Rider)裝備，且自身在場時，我方全體的寶具威力提升10%＆賦予對〔魅惑〕狀態20%的特攻狀態",
+      "na": "Increase NP Strength by 10% & apply 20% Special Attack against [Charm] state for all allies only if [servantName 406000] (Rider) is equipped with this Craft Essence and on the field",
+      "kr": "[servantName 406000](라이더) 장착 시 자신이 필드에 있는 동안 아군 전체의 보구 위력 10% UP＆[매료] 상태에 대한 특공 상태 20% 부여"
     },
     "[servantName 505900](キャスター)装備時のみ、自身がフィールドにいる間、味方全体のNP獲得量を10%アップ＆〔悪〕特攻状態を15%付与": {
       "tw": "[servantName 505900](Caster)裝備，且自身在場時，我方全體的NP獲得量提升10%＆賦予對〔惡〕15%的特攻狀態",
@@ -524,9 +524,9 @@
       "kr": "바다를 끓게 하는 사자의 위용"
     },
     "おかえりキャット A": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "迎歸貓咪 A",
+      "na": "Welcome Home, Cat A",
+      "kr": "맞이하는 고양이 A"
     },
     "おしごとウォレットのドロップ獲得数を1個増やす【『春の終わりに君を待つ』イベント期間限定】": {
       "cn": "工作钱包的掉落获得数增加1个【『于春日的尾声等待你』活动限定】",
@@ -1309,9 +1309,9 @@
       "kr": "타이런트・베이비 A"
     },
     "タマモアリア": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "玉藻艾莉亞",
+      "na": "Tamamo Aria",
+      "kr": "타마모 아리아"
     },
     "ダブル・スイート": {
       "tw": "雙重甜蜜",
@@ -2076,9 +2076,9 @@
       "kr": "흡정공녀 B"
     },
     "呪層・狂奔歌 B": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "咒層．狂奔歌 B",
+      "na": "Malediction, Raging Song B",
+      "kr": "주층・광분가 B"
     },
     "味方全体▲のNPを増やす＆スター発生率をアップ(3ターン)＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)▲": {
       "tw": "我方全體▲的NP增加＆爆擊星掉落率提升(3回合)＆賦予使用寶具時Charge階段上升2級的狀態(1次．3回合)▲",
@@ -2125,10 +2125,10 @@
       "kr": "아군 전체에 보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)＆보구 위력 UP(3턴) ＋ 자신에게 무적 상태 부여(2회・3턴)＆「퀵 공격 시 아군 전체에 보구 사용 시 차지 단계가 1단계 증가하는 상태(1회・5턴)를 부여하는 상태」 부여(5회・5턴)＆「아츠 공격 시 아군 전체의 공격력 UP(3턴)하는 상태」 부여(5회・5턴)＆「버스터 공격 시 아군 전체의 크리티컬 위력 UP(3턴)하는 상태」 부여(5회・5턴)"
     },
     "味方全体に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)＆宝具威力をアップ(3ターン)＆HPを回復 ＋ 自身のNPを増やす ＋ 〔都市〕のフィールドにおいてのみ、自身のNPを増やす": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与己方全体宝具使用时充能阶段上升1级的状态(1次·3回合)＆宝具威力提升(3回合)＆生命值回复 ＋ 自身的宝具值增加 ＋ 仅在〔都市〕场地上时,自身的宝具值增加",
+      "tw": "賦予我方全體寶具使用時Charge階段上升1級的狀態(1次．3回合)＆寶具威力提升(3回合)＆HP恢復 ＋ 自身的NP增加 ＋ 僅在〔都市〕場地上時，自身的NP增加",
+      "na": "Apply a state that increases NP Charge by 1 level when using NP (1 time, 3 turns) & increase NP Strength (3 turns) & restore HP for all allies ＋ increase NP Gauge for yourself ＋ increase NP Gauge for yourself only when on a [City] field",
+      "kr": "아군 전체에게 보구 사용 시 차지 단계가 1단계 증가하는 상태 부여(1회・3턴)＆보구 위력 UP(3턴)＆HP 회복 ＋ 자신의 NP 증가 ＋ [도시]인 필드에서만 자신의 NP 증가"
     },
     "味方全体に宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)＆宝具威力をアップ(3ターン)＆弱体耐性をアップ(3ターン) ＋ 自身に「自身を除く〔キャスター〕クラスの味方が宝具を使用した時、NP消費量に応じて自身のNPを増やす状態」<重複不可>を付与(3ターン)": {
       "cn": "向己方全体付与使用宝具时充能阶段上升1级的状态(1次·3回合)＆宝具威力提升(3回合)＆弱化耐性提升(3回合) ＋ 向自身付与「除自身以外的〔Caster〕职阶己方从者使用宝具时，根据NP消耗量增加自身宝具值的状态」<不可重复>(3回合)",
@@ -2243,10 +2243,10 @@
       "kr": "아군 전체의 퀵 카드 성능 UP(1턴)&버스터 카드 성능 UP(1턴)"
     },
     "味方全体のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン) ＋ 自身に〔魅了〕特攻状態を付与(3ターン)＆無敵状態を付与(2回・3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "己方全体的迅指令卡性能提升(3回合)＆技指令卡性能提升(3回合) ＋ 付与自身对〔魅惑〕的特攻状态(3回合)＆付与无敌状态(2次·3回合)",
+      "tw": "我方全體的Quick指令卡性能提升(3回合)＆Arts指令卡性能提升(3回合) ＋ 賦予自身對〔魅惑〕的特攻狀態(3回合)＆賦予無敵狀態(2次．3回合)",
+      "na": "Increase Quick Card effectiveness (3 turns) & Arts Card effectiveness (3 turns) for all allies ＋ apply [Charm] Special Attack (3 turns) & apply Invincible (2 times, 3 turns) for yourself",
+      "kr": "아군 전체의 퀵 카드 성능 UP(3턴)＆아츠 카드 성능 UP(3턴) ＋ 자신에게 [매료] 특공 상태 부여(3턴)＆무적 상태 부여(2회・3턴)"
     },
     "味方全体のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)＆NPを増やす": {
       "cn": "己方全体迅指令卡性能提升(3回合)＆技指令卡性能提升(3回合)＆宝具值增加",
@@ -2582,9 +2582,9 @@
       "kr": "탄식의 어머니 A+"
     },
     "回眸一笑・空呑海麒": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "回眸一笑．空吞海麒",
+      "na": "A Glance That Charms: Sky-Swallowing Sea Qilin",
+      "kr": "회모일소・공탄해기"
     },
     "因習村の巫女 A+": {
       "kr": "인습촌의 무녀 A+"
@@ -2892,9 +2892,9 @@
       "kr": "괴이한 민사 획득 개수 UP"
     },
     "恋乙女の変幻無垢 A": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "懷戀少女的變幻無垢 A",
+      "na": "The Yearning Maiden's Immaculate Transformation A",
+      "kr": "그리운 소녀의 변환무구 A"
     },
     "恐るべき教団マニュアル": {
       "tw": "令人畏懼的教團手冊",
@@ -3084,10 +3084,10 @@
       "kr": "적 전체에게 매료 상태 부여(1턴) ＋ 아군 전체 보구 위력 UP(3턴)＆NP 증가＆스킬 차지 1 진행 ＋ 자신에게 보구 발동 후 자신에게 즉사 효과<근성 무시・즉사 내성 무시>를 부여하는 상태 부여(1회・3턴)【이 효과를 부여할지 선택 가능】"
     },
     "敵全体に魅了状態を付与(1ターン)＆〔混乱〕状態「毎ターン低確率でスキル封印を付与する状態」を付与(3ターン) ＋ 味方全体の攻撃力をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ スターを大量獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与敌方全体魅惑状态(1回合)＆付与〔混乱〕状态「每回合低概率付与技能封印的状态」(3回合) ＋ 己方全体的攻击力提升(3回合)＆暴击威力提升(3回合) ＋ 获得大量暴击星",
+      "tw": "賦予敵方全體魅惑狀態(1回合)＆賦予〔混亂〕狀態「每回合低機率賦予技能封印的狀態」(3回合) ＋ 我方全體的攻擊力提升(3回合)＆爆擊威力提升(3回合) ＋ 獲得大量爆擊星",
+      "na": "Inflict Charm (1 turn) & apply [Confusion] \"low chance to inflict Skill Seal each turn\" (3 turns) for all enemies ＋ increase ATK (3 turns) & Critical Strength (3 turns) for all allies ＋ gain a large amount of C. Stars",
+      "kr": "적 전체에게 매료 상태 부여(1턴)＆[혼란] 상태 ‘매 턴 낮은 확률로 스킬 봉인을 부여하는 상태’ 부여(3턴) ＋ 아군 전체의 공격력 UP(3턴)＆크리티컬 위력 UP(3턴) ＋ 스타 대량 획득"
     },
     "敵全体のQuick攻撃耐性をダウン(1ターン)＆Arts攻撃耐性をダウン(1ターン)＆Buster攻撃耐性をダウン(1ターン)＆強力な〔人・星の力を持つ敵〕特攻攻撃<オーバーチャージで特攻威力アップ> ＋ 味方全体の攻撃力を少しアップ(3ターン)＆NPを少し増やす＆〔人・星の力を持つ者または今を生きる人類〕のNPを少し増やす": {
       "tw": "降低敵方全體Quick攻擊耐性(1回合)＆降低Arts攻擊耐性(1回合)＆降低Buster攻擊耐性(1回合)＆發動強大的〔擁有人・星之力的敵人〕特攻攻擊<Over Charge時特攻威力提升> ＋ 我方全體的攻擊力小幅提升(3回合)＆NP小幅增加＆〔擁有人・星之力者或活在當下的人類〕的NP小幅增加",
@@ -3095,10 +3095,10 @@
       "kr": "적 전체의 퀵 공격 내성 DOWN(1턴)＆아츠 공격 내성 DOWN(1턴)＆버스터 공격 내성 DOWN(1턴)＆강력한 〔인・성의 힘을 가진 적〕 특공 공격<오버차지로 특공 위력 UP> ＋ 아군 전체의 공격력 조금 UP(3턴)＆NP 조금 증가＆〔인・성의 힘을 가진 자 또는 지금을 살아가는 인류〕의 NP 조금 증가"
     },
     "敵全体の〔王〕を除く対象に〔反抗禁止〕状態「攻撃時にダメージを受ける状態<精神異常扱い>」を付与(3ターン) ＋ 敵全体の攻撃強化状態を解除＆強力な〔精神異常〕特攻攻撃<オーバーチャージで特攻威力アップ>＆Arts攻撃耐性をダウン(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与敌方全体中除〔王〕以外的对象〔反抗禁止〕状态「攻击时受到伤害的状态<视为精神异常>」(3回合) ＋ 解除敌方全体的攻击强化状态＆发动强大的〔精神异常〕特攻攻击<过量充能时特攻威力提升>＆技攻击耐性降低(3回合)",
+      "tw": "賦予敵方全體中除〔王〕以外的對象〔反抗禁止〕狀態「攻擊時受到傷害的狀態<視為精神異常>」(3回合) ＋ 解除敵方全體的攻擊強化狀態＆發動強大的〔精神異常〕特攻攻擊<Over Charge時特攻威力提升>＆Arts攻擊耐性下降(3回合)",
+      "na": "Apply [Rebellion Forbidden] \"takes damage when attacking\" (treated as a Mental Debuff) (3 turns) to all enemies except [King] ＋ remove ATK buffs & deal heavy Special Attack [Mental Debuff] damage <Special Attack damage increases with Overcharge> & decrease Arts ATK resist (3 turns) for all enemies",
+      "kr": "적 전체 중 [왕]을 제외한 대상에게 [반항 금지] 상태 ‘공격 시 피해를 받는 상태<정신이상 취급>’ 부여(3턴) ＋ 적 전체의 공격 강화 상태 해제＆강력한 [정신이상] 특공 공격<오버차지로 특공 위력 UP>＆아츠 공격 내성 DOWN(3턴)"
     },
     "敵全体のチャージを減らす ＋ 味方全体に毎ターンNP獲得状態を付与(3ターン)＆宝具威力をアップ(3ターン) ＋ 自身のNPを増やす": {
       "cn": "减少敌方全体充能 ＋ 为己方全体付与每回合获得宝具值的状态(3回合)＆宝具威力提升(3回合) ＋ 自身宝具值增加",
@@ -3151,10 +3151,10 @@
       "na": "Deal super effective [Evil] damage <Special Attack effectiveness increases with Overcharge> & inflict NP Seal (1 turn) to a single enemy ＋ Recharge your NP Gauge <effect increases with Overcharge> & increase Extra Attack Card effectiveness (1 turn) for yourself ＋ Increase NP Gauge <effect increases with Overcharge> for all allies with [Modern Humans (some Pseudo-Servants, Demi-Servants, etc.)] excluding yourself"
     },
     "敵単体に超強力な〔男性〕特攻攻撃▲<オーバーチャージで特攻威力アップ> ＋ 自身のスキルチャージを1進める▲ ＋ 味方全体のNPを少し増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "对敌方单体发动超强大的〔男性〕特攻攻击▲<过量充能时特攻威力提升> ＋ 自身的技能冷却减少1回合▲ ＋ 己方全体的宝具值小幅增加▲",
+      "tw": "對敵方單體發動超強大的〔男性〕特攻攻擊▲<Over Charge時特攻威力提升> ＋ 自身的技能冷卻減少1回合▲ ＋ 我方全體的NP小幅增加▲",
+      "na": "Deal significant Special Attack damage to a single [Male] enemy▲ <Special Attack damage increases with Overcharge> ＋ reduce your skill cooldown by 1▲ ＋ slightly increase NP Gauge for all allies▲",
+      "kr": "적 하나에게 초강력한 [남성] 특공 공격▲<오버차지로 특공 위력 UP> ＋ 자신의 스킬 쿨타임 1 감소▲ ＋ 아군 전체의 NP 조금 증가▲"
     },
     "敵単体に超強力な〔秩序〕特攻攻撃<オーバーチャージで特攻威力アップ>＆弱体耐性を少しダウン(3ターン)＆攻撃力を少しダウン(3ターン)＆防御力を少しダウン(3ターン)＆Quick攻撃耐性を少しダウン(3ターン)＆Arts攻撃耐性を少しダウン(3ターン)＆Buster攻撃耐性を少しダウン(3ターン)＆クリティカル威力を少しダウン(3ターン)＆クリティカル発生率を少しダウン(3ターン)＆毒状態を付与(3ターン)＆呪い状態を付与(3ターン)＆やけど状態を付与(3ターン) ＋ スターを少し獲得": {
       "tw": "對敵方單體發動超強大的〔秩序〕特攻攻擊<Over Charge時特攻威力提升>＆弱化耐性小幅下降(3回合)＆攻擊力小幅下降(3回合)＆防禦力小幅下降(3回合)＆Quick攻擊耐性小幅下降(3回合)＆Arts攻擊耐性小幅下降(3回合)＆Buster攻擊耐性小幅下降(3回合)＆爆擊威力小幅下降(3回合)＆爆擊率小幅下降(3回合)＆賦予毒狀態(3回合)＆詛咒狀態(3回合)＆灼傷狀態(3回合) ＋ 獲得少量爆擊星",
@@ -3362,9 +3362,9 @@
       "kr": "유록화홍 B"
     },
     "桃狐半月国傾剣": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "桃狐半月傾國劍",
+      "na": "Peach Fox Half-Moon: Kingdom-Toppling Sword",
+      "kr": "도호반월경국검"
     },
     "桜色の風景": {
       "tw": "櫻色的風景",
@@ -5417,10 +5417,10 @@
       "kr": "자신의 공격력 UP(3턴▲)&〔혼돈〕 특공 상태 부여(3턴)▲&크리티컬 위력 UP(3회・3턴)&NP 증가▲"
     },
     "自身の攻撃力をアップ(3ターン▲)＆クリティカル威力をアップ(3ターン)▲＆「攻撃時にスターを獲得する状態」を付与(3ターン)▲＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身的攻击力提升(3回合▲)＆暴击威力提升(3回合)▲＆付与「攻击时获得暴击星的状态」(3回合)▲＆宝具值增加▲",
+      "tw": "自身的攻擊力提升(3回合▲)＆爆擊威力提升(3回合)▲＆賦予「攻擊時獲得爆擊星的狀態」(3回合)▲＆NP增加▲",
+      "na": "Increase ATK (3 turns▲) & Critical Strength (3 turns)▲ & apply \"Gain C. Stars on attack\" status (3 turns)▲ & increase NP Gauge▲ for yourself",
+      "kr": "자신의 공격력 UP(3턴▲)＆크리티컬 위력 UP(3턴)▲＆「공격 시 스타 획득 상태」 부여(3턴)▲＆NP 증가▲"
     },
     "自身の攻撃力をアップ(3ターン▲)＆クリティカル威力をアップ(3ターン)▲＆〔行動不能〕特攻状態を付与(3ターン)▲": {
       "na": "Increase your ATK (3 turns▲) & increase Critical Strength (3 turns)▲ & apply Special Attack [Immobilize] (3 turns)▲"
@@ -5499,10 +5499,10 @@
       "kr": "자신 방어력 UP(3턴)＆NP 증가▲＆크리티컬 위력 UP(3턴)▲＆스타 집중도 UP(1턴) ＋ 스타 획득▲"
     },
     "自身の防御力を大アップ▲(1ターン)＆防御力をアップ(3ターン) ＋ 味方全体の強化解除耐性をアップ(1回・3ターン)▲＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身的防御力大幅提升▲(1回合)＆防御力提升(3回合) ＋ 己方全体的强化解除耐性提升(1次·3回合)▲＆宝具值增加▲",
+      "tw": "自身的防禦力大幅提升▲(1回合)＆防禦力提升(3回合) ＋ 我方全體的強化解除耐性提升(1次．3回合)▲＆NP增加▲",
+      "na": "Greatly increase DEF▲ (1 turn) & increase DEF (3 turns) for yourself ＋ increase Buff Removal Resist (1 time, 3 turns)▲ & increase NP Gauge▲ for all allies",
+      "kr": "자신의 방어력 크게 UP▲(1턴)＆방어력 UP(3턴) ＋ 아군 전체의 강화 해제 내성 UP(1회・3턴)▲＆NP 증가▲"
     },
     "自身の防御強化状態を解除【デメリット】＆宝具威力をアップ(3ターン▲)＆クリティカル威力をアップ(3ターン▲)＆「攻撃時のダメージ前に敵単体にやけど状態(3ターン)を付与する状態」を付与(3ターン)▲": {
       "tw": "解除自身防禦強化狀態【負面效果】＆寶具威力提升(3回合▲)＆爆擊威力提升(3回合▲)＆賦予「攻擊造成傷害前對敵方單體賦予燒傷狀態(3回合)的狀態」(3回合)▲",
@@ -6813,14 +6813,14 @@
       "kr": "선택받은 자"
     },
     "那須野に謡う EX": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "吟謠那須野 EX",
+      "na": "Singing on the Nasu Plain EX",
+      "kr": "나스노에서 노래하다 EX"
     },
     "都市抱擁・無限恋 EX": {
-      "tw": null,
-      "na": null,
-      "kr": null
+      "tw": "都市擁抱．無限戀 EX",
+      "na": "City Embrace: Infinite Love EX",
+      "kr": "도시포옹・무한연 EX"
     },
     "醜い恋のように C+": {
       "kr": "추한 사랑처럼 C+"
