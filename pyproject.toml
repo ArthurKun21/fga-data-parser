@@ -5,7 +5,7 @@ description = "Converts raw Fate/Grand Order data from the Atlas Academy API int
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
-requires-python = ">=3.12"
+requires-python = ">=3.15"
 dependencies = [
     "httpx>=0.28.1",
     "orjson>=3.10.15",
