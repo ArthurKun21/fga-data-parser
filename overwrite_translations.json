@@ -4101,9 +4101,6 @@
       "na": "Apply Debuff Immune (3 turns) & Invincible (3 times, 3 turns) & a state that decreases the target's DEF (3 turns) before dealing damage when attacking with a Buster Card (3 turns) & gain C. Stars each turn (3 turns) for yourself + Gain C. Stars",
       "kr": "자신에게 약화 무효 상태 부여(3턴)&무적 상태 부여(3회・3턴)&버스터 공격 시 대미지 전 대상의 방어력 DOWN(3턴)하는 상태 부여(3턴)&매 턴 스타 획득 상태 부여(3턴) + 스타 획득"
     },
-    "自身に必中状態を付与(1ターン) ＋ 敵単体に呪い状態を付与(5ターン)▲＆呪厄状態(呪いの効果量がアップする状態)を付与(5ターン)<オーバーチャージで効果アップ>▲＆超強力な〔呪い〕特攻攻撃<対象の〔呪い〕状態が多いほど対象に対して特攻威力アップ(最大10個)>▲": {
-      "na": "Apply Sure Hit (1 turn) to yourself ＋ Inflict Curse (5 turns)▲ & inflict Disastrous Curse (increase Curse damage) (5 turns) <effect increases with Overcharge>▲ & deal super effective [Curse] damage <the more [Curse] on the target, the higher the Special Attack effectiveness (max 10)>▲ to a single enemy"
-    },
     "自身に必中状態を付与(1ターン)＆防御無視状態を付与(1ターン) ＋ 敵単体に超強力な〔蛇・竜〕特攻攻撃<オーバーチャージで特攻威力アップ>＆Arts攻撃耐性をダウン(3ターン)": {
       "na": "Apply Sure Hit (1 turn) & apply Ignores DEF (1 turn) to yourself ＋ Deal super effective [Snake, Dragon] damage <Special Attack effectiveness increases with Overcharge> & decrease Arts attack Resist (3 turns) to a single enemy"
     },
