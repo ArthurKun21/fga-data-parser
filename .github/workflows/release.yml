@@ -82,6 +82,7 @@ jobs:
         uses: actions/upload-artifact@v7.0.2
         with:
           name: readable-json
+          retention-days: 1
           path: |
             servant_data.json
             mystic_code_data.json
@@ -92,6 +93,7 @@ jobs:
         uses: actions/upload-artifact@v7.0.2
         with:
           name: release-protobuf
+          retention-days: 1
           path: |
             servant_data.pb
             mystic_code_data.pb
