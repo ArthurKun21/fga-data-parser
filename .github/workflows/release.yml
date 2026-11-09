@@ -145,7 +145,7 @@ jobs:
 
       - name: Create release
         if: env.CHANGED == 'true'
-        uses: softprops/action-gh-release@v3.0.3
+        uses: softprops/action-gh-release@v3.0.4
         with:
           tag_name: ${{ needs.release.outputs.tag }}
           token: ${{ secrets.UPLOAD_TOKEN }}
