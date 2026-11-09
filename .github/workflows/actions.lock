@@ -9,7 +9,7 @@ workflows:
         - 'actions/download-artifact@v8.0.2'
         - 'actions/upload-artifact@v7.0.2'
         - 'astral-sh/setup-uv@v10.3.3'
-        - 'softprops/action-gh-release@v3.0.3'
+        - 'softprops/action-gh-release@v3.0.4'
     '.github/workflows/test.yml':
         - 'actions/checkout@v7.0.1'
         - 'astral-sh/setup-uv@v10.3.3'
@@ -41,8 +41,8 @@ dependencies:
         commit: 'sha1-68559e99cc807c1eb7e9238fd43a15bba460eec2'
         owner_id: 115962839
         repo_id: 846733598
-    'softprops/action-gh-release@v3.0.3':
-        ref: 'v3.0.3'
-        commit: 'sha1-efb35369e0ad2afab669f228072c1b0d510eae64'
+    'softprops/action-gh-release@v3.0.4':
+        ref: 'v3.0.4'
+        commit: 'sha1-8a0cd651e5b2365bd640854a3fa5dfc70e4875f3'
         owner_id: 2242
         repo_id: 204253808
