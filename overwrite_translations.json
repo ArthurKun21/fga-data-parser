@@ -18,6 +18,42 @@
       "na": "FGO THE DRAMALOGUE",
       "kr": "FGO THE DRAMALOGUE"
     },
+    "MISOおでんのドロップ獲得数を1個増やす【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "MISOおでんのドロップ獲得数を2個増やす[最大解放]【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "MISOおでんのドロップ獲得数アップ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "SHIMONITAネギのドロップ獲得数を1個増やす【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "SHIMONITAネギのドロップ獲得数を2個増やす[最大解放]【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "SHIMONITAネギのドロップ獲得数アップ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "Servant Art Chronicle": {
       "cn": "从者美术编年史",
       "tw": "從者美術編年史",
@@ -29,6 +65,24 @@
       "tw": "法律事務所 G",
       "na": "Studio Legale G",
       "kr": "법률 사무소 G"
+    },
+    "YAKIまんじゅうのドロップ獲得数を1個増やす【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "YAKIまんじゅうのドロップ獲得数を2個増やす[最大解放]【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "YAKIまんじゅうのドロップ獲得数アップ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "[servantName 1001900](アルターエゴ)装備時のみ、自身がフィールドにいる間、味方全体のArtsカード性能を10%アップ＆〔精神異常〕特攻状態を10%付与": {
       "na": "Increase all allies' Arts Card effectiveness by 10% & apply 10% Special Attack [Mental Debuff] only if [servantName 1001900] (Alter Ego) is equipped with this Craft Essence when she is on the field",
@@ -125,6 +179,12 @@
       "na": "Increase your NP Strength by 30% + Gain 20 C. Stars when you enter the battle (1 time) only if [servantName 2801300] (Pretender) is equipped with this Craft Essence",
       "kr": "[servantName 2801300](프리텐더) 장착 시 자신의 보구 위력 30% UP + 자신의 등장 시 스타를 20개 획득(1회)"
     },
+    "[servantName 2801400](プリテンダー)装備時のみ、自身がフィールドにいる間、味方全体のArtsカード性能を8%アップ＆Busterカード性能を8%アップ＆クリティカル威力を10%アップ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "[servantName 305800](ランサー)装備時のみ、自身がフィールドにいる間、味方全体に〔悪〕特攻状態を15%付与＆〔魔性〕特攻状態を15%付与": {
       "na": "Apply 15% Special Attack [Evil] & 15% Special Attack [Demonic] to all allies only if [servantName 305800] (Lancer) is equipped with this Craft Essence when he is on the field",
       "kr": "[servantName 305800](랜서) 장착 시 자신이 필드에 있는 동안 아군 전체에게 [악] 특공 상태 15% 부여&[마성] 특공 상태 15% 부여"
@@ -184,6 +244,12 @@
       "na": "Increase NP Strength by 10% & apply 20% Special Attack against [Charm] state for all allies only if [servantName 406000] (Rider) is equipped with this Craft Essence and on the field",
       "kr": "[servantName 406000](라이더) 장착 시 자신이 필드에 있는 동안 아군 전체의 보구 위력 10% UP＆[매료] 상태에 대한 특공 상태 20% 부여"
     },
+    "[servantName 406100](ライダー)装備時のみ、自身がフィールドにいる間、味方全体のQuickカード性能を10%アップ＆〔天の力を持つ敵〕特攻状態を10%付与": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "[servantName 505900](キャスター)装備時のみ、自身がフィールドにいる間、味方全体のNP獲得量を10%アップ＆〔悪〕特攻状態を15%付与": {
       "tw": "[servantName 505900](Caster)裝備，且自身在場時，我方全體的NP獲得量提升10%＆賦予對〔惡〕15%的特攻狀態",
       "na": "Increase all allies' NP Gain by 10% & apply 15% Special Attack [Evil] only if [servantName 505900] (Caster) is equipped with this Craft Essence when he is on the field",
@@ -227,6 +293,12 @@
       "na": "Increase all allies' Arts & Buster Card effectiveness by 8% & NP Strength by 10% only if [servantName 705400] (Berserker) is equipped with this Craft Essence when he is on the field",
       "kr": "[servantName 705400](버서커) 장착 시 자신이 필드에 있는 동안 아군 전체의 아츠 카드 성능 8% UP&버스터 카드 성능 8% UP&보구 위력 10% UP"
     },
+    "[servantName 705500](バーサーカー)装備時のみ、自身の宝具威力を30%アップ ＋ 自身がやられた時にスターを20個獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "[servantName 800100](シールダー、シールダー・パラディーン)装備時のみ、自身がフィールドにいる間、味方全体の攻撃力を10%アップ ＋ 味方全体の〔今を生きる人類〕の攻撃力を15%アップ": {
       "tw": "[servantName 800100](Shielder、Shielder Paladin)裝備，且自身在場時，我方全體的攻擊力提升10% ＋ 我方全體〔活在當下的人類〕的攻擊力提升15%",
       "na": "Increase all allies' ATK by 10% + Increase ATK by 15% for all [Modern Human] allies only if [servantName 800100] (Shielder, Shielder Paladin) is equipped with this Craft Essence when she is on the field",
@@ -259,6 +331,18 @@
       "tw": "在『Fate/strange Fake聯動活動』中，自身的攻擊威力提升200%[最大解放]【『Fate/strange Fake聯動活動』活動限定】",
       "na": "Increase ATK Strength by 200% [MAX] for yourself in \"Fate/strange Fake Collaboration Event\" [Event Only]",
       "kr": "“Fate/strange Fake 콜라보 이벤트” 에서 자신의 공격 위력 200% UP[최대해방][“Fate/strange Fake 콜라보 이벤트” 이벤트 기간한정]"
+    },
+    "『ぐだぐだぷにぷにウォーズ！』において、自身の攻撃の威力を100%アップ ＋ GUNMA温泉ポイントのドロップ獲得量を30%増やす【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "『ぐだぐだぷにぷにウォーズ！』において、自身の攻撃の威力を200%アップ ＋ GUNMA温泉ポイントのドロップ獲得量を60%増やす[最大解放]【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "『ぐだぐだ新選組・ジ・エンド』において、自身の攻撃の威力を100%アップ【『ぐだぐだ新選組・ジ・エンド』イベント期間限定】": {
       "tw": "在『嘮嘮叨叨新選組 THE END』中，自身的攻擊威力提升100%【『嘮嘮叨叨新選組 THE END』活動限定】",
@@ -362,6 +446,12 @@
       "tw": "【僅限NP在100%以上時能使用】\n【第一、第二再臨時】\n消耗自身的所有NP＆賦予〔七騎士職階〕特攻狀態(1回合)＆Buster指令卡性能提升(3回合) ＋ 為我方全體Buster指令卡性能提升(3回合)＆Extra Attack指令卡性能提升(3回合)＆爆擊威力提升(3回合)＆NP獲得量提升(3回合)＆賦予無敵貫通狀態(3回合)\n【第三再臨時】\n消耗自身的所有NP＆賦予〔Extra職階〕特攻狀態(1回合) ＋ 為我方全體Buster指令卡性能提升(3回合)＆Extra Attack指令卡性能提升(3回合)＆爆擊威力提升(3回合)＆NP獲得量提升(3回合)＆賦予無敵狀態(1次．3回合)＆賦予弱體無效狀態(3回合)",
       "na": "[Usable only when NP Gauge is 100% or higher]\n[1st and 2nd Ascension Form]\nExpend all of your NP & apply Special Attack [Seven Knights Class] (1 turn) & increase Buster Card effectiveness (3 turns) for yourself + Increase Buster Card effectiveness (3 turns) & Extra Attack Card effectiveness (3 turns) & Critical Strength (3 turns) & NP Gain (3 turns) & apply Ignore Invincible (3 turns) for all allies\n[3rd Ascension Form]\nExpend all of your NP & apply Special Attack [Extra Class] (1 turn) for yourself + Increase Buster Card effectiveness (3 turns) & Extra Attack Card effectiveness (3 turns) & Critical Strength (3 turns) & NP Gain (3 turns) & apply Invincible (1 time, 3 turns) & apply Debuff Immune (3 turns) for all allies",
       "kr": "【NP가 100% 이상인 경우 사용 가능】\n【제1・제2재림일 때】\n자신의 NP를 전부 소비&〔칠기사 클래스〕 특공 상태 부여(1턴)&버스터 카드 성능 UP(3턴) + 아군 전체의 버스터 카드 성능 UP(3턴)&엑스트라 공격 카드 성능 UP(3턴)&크리티컬 위력 UP(3턴)&NP 획득량 UP(3턴)&무적 관통 상태 부여(3턴)\n【제3재림일 때】\n자신의 NP를 전부 소비&〔엑스트라 클래스〕 특공 상태 부여(1턴) + 아군 전체의 버스터 카드 성능 UP(3턴)&엑스트라 공격 카드 성능 UP(3턴)&크리티컬 위력 UP(3턴)&NP 획득량 UP(3턴)&무적 상태 부여(1회・3턴)&약화 무효 상태 부여(3턴)"
+    },
+    "【サイコロを振り、出目によって効果が変化】\n自身のNPを増やす\n ＋ 出目が19の時、自身のNPをものすごく増やす＆宝具威力をアップ(1回・3ターン)\n ＋ 出目が15の時、味方全体の攻撃力をアップ(3ターン)\n ＋ 出目が12の時、味方全体に宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)\n ＋ 出目が9の時、味方全体の宝具威力をアップ(3ターン)\n ＋ 出目が7の時、味方全体のクリティカル威力をアップ(3ターン)\n ＋ 出目が4の時、味方全体に弱体無効状態を付与(1回・3ターン)\n ＋ 出目が1の時、敵全体の攻撃力をアップ(3ターン)【デメリット】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "【ジキル時】\n自身の攻撃力をアップ(3ターン) ＋ 味方全体のクリティカル威力をアップ(3ターン)▲＆スター発生率を大アップ(3ターン)▲＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)▲\n\n【ハイド時】\n自身の攻撃力をアップ(3ターン)＆さらに攻撃力をアップ(3ターン)＆〔人の力を持つ敵〕特攻状態を付与(3ターン)▲＆ガッツ状態を付与(1回・3ターン)▲＆強化解除耐性をアップ(3回・3ターン)▲": {
       "cn": "【杰基尔时】\n自身攻击力提升(3回合) ＋ 己方全体暴击威力提升(3回合)▲＆暴击星掉落率大幅提升(3回合)▲＆付与使用宝具时充能阶段上升1级的状态(1次·3回合)▲\n\n【海德时】\n自身攻击力提升(3回合)＆攻击力进一步提升(3回合)＆付与对〔拥有人之力的敌人〕的特攻状态(3回合)▲＆付与毅力状态(1次·3回合)▲＆强化解除耐性提升(3次·3回合)▲",
@@ -491,6 +581,12 @@
     },
     "あれ？　もしかして": {
       "kr": "어라?　혹시"
+    },
+    "いざ、尋常に川中島！？": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "いただき貴き十字の峰": {
       "kr": "받들어 모신 고귀한 십자의 봉우리"
@@ -761,6 +857,12 @@
     },
     "ひとり遊び B": {
       "kr": "혼자 놀기 B"
+    },
+    "ぴょんぴょんライド B": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "もてなしの流儀": {
       "tw": "款待的流派",
@@ -1326,6 +1428,12 @@
       "na": "Chocolate Garden",
       "kr": "초콜릿 화원"
     },
+    "ツイン・ヤタガラス": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "テイスト・オブ・ウィッシュ": {
       "kr": "테이스트・오브・위시"
     },
@@ -1567,6 +1675,12 @@
       "na": "Bishone (Caster)",
       "kr": "비쇼네 (캐스터)"
     },
+    "ビッグバン・DAN・ジョー！": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "ビヨンド・ザ・フラッド": {
       "kr": "비욘드 더 플러드"
     },
@@ -1752,6 +1866,12 @@
     "ヤナムン返し A": {
       "tw": "邪魔驅返 A",
       "kr": "야나문 가에시 A"
+    },
+    "ヤマタイコンビネーション B": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "ライト・オブ・ナイト": {
       "tw": "夜騎之燈",
@@ -1975,6 +2095,12 @@
       "tw": "先兆的凶鳥 A",
       "kr": "전조의 흉조 A"
     },
+    "光の力 A": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "光の園の思い出": {
       "tw": "光之園的回憶",
       "na": "Memories of the Garden of Light",
@@ -2022,6 +2148,12 @@
       "tw": "十王滿腹・葛籠宴海",
       "na": "Ten Kings' Full Stomachs, Banquet Sea of Wicker Baskets",
       "kr": "십왕만복・갈롱의 잔치바다"
+    },
+    "卑弥呼＆壱与": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "南海の大決戦 EX": {
       "tw": "南海大決戰 EX",
@@ -2167,6 +2299,12 @@
       "na": "Increase Arts Card effectiveness (3 turns) & Buster Card effectiveness (3 turns) & NP Strength (3 turns) for all allies",
       "kr": "아군 전체의 아츠 카드 성능 UP(3턴)&버스터 카드 성능 UP(3턴)&보구 위력 UP(3턴)"
     },
+    "味方全体のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆攻撃力をアップ(3ターン) ＋ 自身を除く味方全体にコマンドカード選出不能状態を付与<1騎の場合は無効>(1回・1ターン) ＋ コマンドカードを配り直す": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "味方全体のArtsカード性能をアップ(3ターン)＆NPを増やす ＋ 敵全体のチャージを減らす": {
       "cn": "己方全体技指令卡性能提升(3回合)＆宝具值增加 ＋ 敌方全体减少充能",
       "tw": "我方全體Arts指令卡性能提升(3回合)＆NP增加 ＋ 減少敵方全體Charge",
@@ -2195,6 +2333,12 @@
       "tw": "我方全體Arts指令卡性能提升(3次．3回合▲)＆NP增加▲＆弱化賦予成功率提升(3回合)▲",
       "na": "Increase Arts Card effectiveness for all allies (3 times, 3 turns)▲ & Increase NP Gauge▲ & Increase Debuff Application Success Rate (3 turns)▲",
       "kr": "아군 전체의 아츠 카드 성능 UP(3회・3턴▲)＆NP 증가▲＆약화 부여 성공률 UP(3턴)▲"
+    },
+    "味方全体のExtra Attackカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆毎ターンスター獲得状態を付与(3ターン) ＋ スターを大量獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "味方全体のHPを回復 ＋ スターを獲得": {
       "tw": "我方全體的HP恢復＋獲得爆擊星",
@@ -2300,6 +2444,12 @@
       "tw": "我方全體的寶具威力提升(3回合)▲＆攻擊力提升(3回合)▲＆僅在〔水邊〕或〔虛數空間〕場地上時，攻擊力提升(3回合)＆強化解除耐性提升(1次．3回合)▲",
       "na": "Increase NP Strength (3 turns) ▲ & ATK (3 turns) ▲ & ATK (3 turns) only when on a [Near Water] or [Void Space] field & increase Buff Removal Resist (1 time, 3 turns) ▲ for all allies",
       "kr": "아군 전체의 보구 위력 UP(3턴)▲&공격력 UP(3턴)▲&[물가] 또는 [허수공간]인 필드에서 공격력 UP(3턴)&강화 해제 내성 UP(1회・3턴)▲"
+    },
+    "味方全体の宝具威力をアップ(3ターン)＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)＆NPを増やす ＋ 自身のNPを増やす ＋ 対象を除く味方全体にコマンドカード選出不能状態を付与<1騎の場合は無効>(1回・1ターン) ＋ コマンドカードを配り直す": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "味方全体の宝具威力をアップ(3ターン)＆攻撃力をアップ(3ターン)＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン) ＋ 自身を除く味方全体の動物<猛獣・魔獣型のサーヴァント・ケモノ科のサーヴァント>(一部を除く)の攻撃力をアップ(3ターン)＆弱体状態を解除＆毎ターンHP回復状態を付与(3ターン)": {
       "tw": "我方全體的寶具威力提升(3回合)＆攻擊力提升(3回合)＆賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)＋除自身以外我方全體的動物<猛獸・魔獸型從者・獸科從者>(部分除外)的攻擊力提升(3回合)＆解除弱化狀態＆賦予每回合HP回復的狀態(3回合)",
@@ -2646,6 +2796,12 @@
     "夜のカフェテラス": {
       "na": "Night Café Terrace"
     },
+    "大悪党 C": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "大降臨連環馬猛襲撃": {
       "na": "Grand Advent: Chain Cavalry Onslaught",
       "kr": "대강림 연환마 맹습격"
@@ -2828,6 +2984,18 @@
       "tw": "無歸的石榴 A",
       "kr": "돌아오지 않는 석류 A"
     },
+    "帰路への旗印": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "平蜘蛛くん": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "幸せな花嫁へ": {
       "kr": "행복한 신부에게"
     },
@@ -2994,6 +3162,18 @@
       "tw": "拔刀無二 A",
       "kr": "발도무이 A"
     },
+    "攻撃の威力アップ＆GUNMA温泉ポイント獲得量アップ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "放課後邪馬台国": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "救世の航海者 B": {
       "kr": "구세의 항해자 B"
     },
@@ -3007,6 +3187,12 @@
       "tw": "賦予敵方全體技能封印狀態(1回合)＆爆擊威力耐性下降(3回合)＋自身的NP增加＆攻擊力提升(3回合)",
       "na": "Inflict Skill Seal (1 turn) & decrease Critical Strength Resist (3 turns) for all enemies + Increase NP Gauge & increase ATK (3 turns) for yourself",
       "kr": "적 전체에게 스킬 봉인 상태 부여(1턴)&크리티컬 위력 내성 DOWN(3턴) + 자신의 NP 증가&공격력 UP(3턴)"
+    },
+    "敵全体にスキル封印状態を付与(1ターン)＆強化無効状態を付与(1回・3ターン)＆防御力をダウン(3ターン) ＋ 味方全体のNPを増やす": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "敵全体にスタン状態を付与(1ターン)＆防御強化状態を解除＆毒状態を付与(5ターン)＆呪い状態を付与(5ターン)＆HP回復量をダウン(5ターン)": {
       "na": "Inflict Stun (1 turn) & Remove DEF Buffs & inflict Poison (5 turns) & inflict Curse (5 turns) & decrease HP Recovery amount (5 turns) for all enemies"
@@ -3041,6 +3227,12 @@
       "tw": "對敵方全體發動強大的〔精神異常〕特攻攻擊<Over Charge時特攻威力提升>＆寶具威力耐性下降(3回合) ＋ 解除我方全體的弱體狀態＆賦予弱體無效狀態(1次・3回合)＆強化解除耐性提升(1次・3回合)",
       "na": "Deal effective [Mental Debuff] damage to all enemies <Special Attack effectiveness increases with Overcharge> & decrease NP Strength Resist (3 turns) ＋ Remove Debuffs & apply Debuff Immune (1 time, 3 turns) & increase Buff Removal Resist (1 time, 3 turns) for all allies",
       "kr": "적 전체에게 강력한 〔정신이상〕 특공 공격<오버차지로 특공 위력 UP>＆보구 위력 내성 DOWN(3턴) ＋ 아군 전체의 약화 상태 해제＆약화 무효 상태 부여(1회・3턴)＆강화 해제 내성 UP(1회・3턴)"
+    },
+    "敵全体に強力な〔魔性〕特攻攻撃<オーバーチャージで特攻威力アップ>＆Arts攻撃耐性をダウン(3ターン)＆Buster攻撃耐性をダウン(3ターン) ＋ 味方全体のNPを少し増やす＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)＆Extra Attackカード性能をアップ(3ターン)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "敵全体に強力な防御力無視攻撃▲＆呪い状態を付与(3ターン)<オーバーチャージで効果アップ>＆〔ハッピーハロウィン〕状態<特殊なクリティカル発生率ダウン状態>を付与(3ターン)▲ ＋ 自身にフィールドを〔ハロウィン〕特性にする状態を付与(3ターン)▲ ＋ 味方全体のクリティカル威力をアップ(3ターン)<オーバーチャージで効果アップ>▲": {
       "tw": "對敵方全體發動強大的無視防禦攻擊▲＆賦予詛咒狀態(3回合)<Over Charge時效果提升>＆賦予〔歡樂萬聖節〕狀態<特殊的爆擊率下降狀態>(3回合)▲ ＋ 賦予自身將場地變為〔萬聖節〕特性的狀態(3回合)▲ ＋ 我方全體的爆擊威力提升(3回合)<Over Charge時效果提升>▲",
@@ -3341,6 +3533,12 @@
       "na": "Increase the number of East Dried Persimmon drops by 2 [MAX] [Revival: Waxing Moon Sword Wind Record Event Only]",
       "kr": "동건시의 획득 개수 2개 증가[최대해방]【『복각판:영월검풍첩』 이벤트 기간한정】"
     },
+    "松永久秀": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "枯れ木に花を咲かせましょう": {
       "tw": "讓枯木綻放花朵吧",
       "na": "Let Flowers Bloom on the Withered Tree",
@@ -3377,6 +3575,12 @@
       "tw": "概念禮裝EXP卡：我的小馬",
       "kr": "개념예장 EXP 카드: 나의 작은 말"
     },
+    "概念礼装EXPカード：ヤマタイガールズ！": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "概念礼装EXPカード：ロックにキメてこうぜ！": {
       "tw": "概念禮裝EXP卡：來場像樣的搖滾吧！",
       "kr": "개념예장 EXP 카드: 제대로 록하게 가자!"
@@ -3384,6 +3588,12 @@
     "概念礼装EXPカード：死に損ねの赤狼": {
       "tw": "概念禮裝經驗卡：死未遂的赤狼",
       "kr": "개념예장 EXP 카드: 죽지 못한 붉은 늑대"
+    },
+    "概念礼装EXPカード：爆・DAN・ジョー！": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "槍兵の頂に立つもの": {
       "kr": "창병의 정점에 서는 자"
@@ -3481,6 +3691,12 @@
       "na": "Dharma Ashoka, Chakravartin",
       "kr": "법아육・전륜성왕"
     },
+    "泡沫の遭逢": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "波影の潜航者 A": {
       "kr": "물결 그림자의 잠항자 A"
     },
@@ -3525,6 +3741,12 @@
     "熱血のアンコール A": {
       "tw": "熱血的安可 A",
       "kr": "열혈의 앙코르 A"
+    },
+    "爆・DAN・ジョー！ B": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "犀竜の湖 B": {
       "tw": "犀龍湖 B",
@@ -3602,6 +3824,12 @@
       "tw": "盛夏少女漫畫展 A",
       "kr": "한여름 소녀만화 페어 A"
     },
+    "真瓦津日 C": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "眠れる森の戦士": {
       "kr": "잠자는 숲의 전사"
     },
@@ -3650,6 +3878,12 @@
     },
     "私の思春期ディスタンス C": {
       "kr": "나의 사춘기 디스턴스 C"
+    },
+    "秘湯の来訪者": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "空の砕片のドロップ獲得数を1個増やす【『インドラの大試練』イベント期間限定】": {
       "kr": "하늘의 파편의 획득 개수 1개 증가[“인드라의 대시련” 이벤트 기간한정]"
@@ -4029,6 +4263,12 @@
     "自身に回避状態を付与(2回・3ターン)＆攻撃力をアップ(3ターン)＆Quickカード性能をアップ(3ターン)▲ ＋ スターを獲得▲ ＋ 敵全体に呪い状態を付与(3ターン)": {
       "na": "Apply Evade (2 times, 3 turns) & increase ATK (3 turns) & increase Quick Card effectiveness (3 turns) ▲ for yourself + Gain C. Stars ▲ + Inflict Curse (3 turns) to all enemies"
     },
+    "自身に回避状態を付与(2回・3ターン)＆毎ターンスター獲得状態を付与(3ターン) ＋ 味方全体のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "自身に回避状態を付与(2回・3ターン)＆毎ターンスター獲得状態を付与(3ターン)＆宝具威力をアップ(3ターン) ＋ 自身を除く味方全体の〔蛇・竜〕の宝具威力をアップ(3ターン)": {
       "na": "Apply Evade (2 times, 3 turns) & Gain C. Stars each turn (3 turns) & increase NP Strength (3 turns) for yourself + Increase NP Strength for all [Serpent/Dragon] allies excluding yourself (3 turns)"
     },
@@ -4070,6 +4310,12 @@
       "tw": "賦予自身弱化無效狀態(3回合)＆無敵狀態(3次．3回合)＆賦予Buster攻擊造成傷害前降低對象防禦力(3回合)的狀態(3回合)＆賦予每回合獲得爆擊星的狀態(3回合)＋獲得爆擊星",
       "na": "Apply Debuff Immune (3 turns) & Invincible (3 times, 3 turns) & a state that decreases the target's DEF (3 turns) before dealing damage when attacking with a Buster Card (3 turns) & gain C. Stars each turn (3 turns) for yourself + Gain C. Stars",
       "kr": "자신에게 약화 무효 상태 부여(3턴)&무적 상태 부여(3회・3턴)&버스터 공격 시 대미지 전 대상의 방어력 DOWN(3턴)하는 상태 부여(3턴)&매 턴 스타 획득 상태 부여(3턴) + 스타 획득"
+    },
+    "自身に必中状態を付与(1ターン)＆Quickカード性能をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な〔天の力を持つ敵〕特攻攻撃 ＋ 味方全体のクリティカル威力をアップ(3ターン)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身に必中状態を付与(1ターン)＆防御無視状態を付与(1ターン) ＋ 敵単体に超強力な〔蛇・竜〕特攻攻撃<オーバーチャージで特攻威力アップ>＆Arts攻撃耐性をダウン(3ターン)": {
       "na": "Apply Sure Hit (1 turn) & apply Ignores DEF (1 turn) to yourself ＋ Deal super effective [Snake, Dragon] damage <Special Attack effectiveness increases with Overcharge> & decrease Arts attack Resist (3 turns) to a single enemy"
@@ -4406,6 +4652,18 @@
       "na": "Apply Ignore Invincible to yourself & apply Special Attack [Neutral] 40% [MAX]",
       "kr": "자신에게 무적 관통 상태 부여&[중용] 특공 상태 40% 부여[최대해방]"
     },
+    "自身に無敵貫通状態を付与＆〔人の力を持つ敵〕特攻状態を25%付与": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "自身に無敵貫通状態を付与＆〔人の力を持つ敵〕特攻状態を30%付与[最大解放]": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "自身に無敵貫通状態を付与＆〔神性〕特攻状態を35%付与": {
       "tw": "自身賦予無敵貫通狀態＆賦予〔神性〕特攻狀態35%",
       "na": "Apply Ignore Invincible to yourself & apply Special Attack [Divine] 35%",
@@ -4454,6 +4712,12 @@
     "自身に高確率で必中状態を付与(1ターン)＆高確率でArtsカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆高確率でBusterカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆中確率で宝具威力をアップ(1ターン)＆中確率で宝具威力をアップ(1ターン) ＋ 敵単体に超強力な〔王〕特攻攻撃▲ ＋ スターを獲得▲": {
       "na": "High chance to apply Sure Hit (1 turn) & high chance to increase Arts Card effectiveness (1 turn) <effect increases with Overcharge> & high chance to increase Buster Card effectiveness (1 turn) <effect increases with Overcharge> & medium chance to increase NP Strength (1 turn) & medium chance to increase NP Strength (1 turn) to yourself ＋ Deal super effective [King] damage▲ to a single enemy ＋ Gain C. Stars▲"
     },
+    "自身のArtsカード性能を10%アップ＆Busterカード性能を10%アップ＆Extra Attackカード性能を50%アップ＆NPを50%チャージした状態でバトルを開始する[最大解放]": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "自身のArtsカード性能を10%アップ＆Busterカード性能を10%アップ＆スター発生率を10%アップ＆NPを50%チャージした状態でバトルを開始する[最大解放]": {
       "na": "Increase your Arts Card effectiveness by 10% & increase Buster Card effectiveness by 10% & increase C. Star Drop Rate by 10% & Start battle with 50% NP Gauge charged [MAX]",
       "kr": "자신의 아츠 카드 성능 10% UP&버스터 카드 성능 10% UP&스타 발생률 10% UP&자신의 NP를 50% 충전한 상태로 배틀을 시작한다[최대해방]"
@@ -4496,6 +4760,12 @@
       "na": "Increase your Arts Card effectiveness by 3% & increase Buster Card effectiveness by 3% & increase NP Strength by 3%",
       "kr": "자신의 아츠 카드 성능 3% UP&버스터 카드 성능 3% UP&보구 위력 3% UP"
     },
+    "自身のArtsカード性能を3%アップ＆Busterカード性能を3%アップ＆宝具威力を3%アップ＆宝具使用時にチャージ段階を1段階分上げる(1回)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "自身のArtsカード性能を3%アップ＆Busterカード性能を3%アップ＆毎ターンNP2%獲得状態を付与[最大解放]": {
       "tw": "自身Arts指令卡性能提升3%＆Buster指令卡性能提升3%＆賦予每回合NP獲得2%狀態[最大解放]",
       "na": "Increase your Arts Card effectiveness by 3% & increase Buster Card effectiveness by 3% & Gain 2% NP each turn [MAX]",
@@ -4514,6 +4784,18 @@
     "自身のArtsカード性能を5%アップ＆Busterカード性能を5%アップ＆宝具威力を5%アップ[最大解放]": {
       "na": "Increase your Arts Card effectiveness by 5% & increase Buster Card effectiveness by 5% & increase NP Strength by 5% [MAX]",
       "kr": "자신의 아츠 카드 성능 5% UP&버스터 카드 성능 5% UP&보구 위력 5% UP[최대해방]"
+    },
+    "自身のArtsカード性能を5%アップ＆Busterカード性能を5%アップ＆宝具威力を5%アップ＆宝具使用時にチャージ段階を1段階分上げる(1回)[最大解放]": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "自身のArtsカード性能を8%アップ＆Busterカード性能を8%アップ＆Extra Attackカード性能を30%アップ＆NPを30%チャージした状態でバトルを開始する": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身のArtsカード性能を8%アップ＆Busterカード性能を8%アップ＆スター発生率を5%アップ＆NPを30%チャージした状態でバトルを開始する": {
       "na": "Increase your Arts Card effectiveness by 8% & increase Buster Card effectiveness by 8% & increase C. Star Drop Rate by 5% & Start battle with 30% NP Gauge charged",
@@ -4581,6 +4863,12 @@
       "tw": "自身Arts指令卡性能提升(3回合)＆Buster指令卡性能提升(3回合)＆賦予迴避狀態(2次．3回合)",
       "na": "Increase your Arts Card effectiveness (3 turns) & increase Buster Card effectiveness (3 turns) & Apply Evade (2 times, 3 turns)",
       "kr": "자신의 아츠 카드 성능 UP(3턴)&버스터 카드 성능 UP(3턴)&회피 상태 부여(2회・3턴)"
+    },
+    "自身のArtsカード性能をアップ(3ターン)＆Busterカード性能をアップ(3ターン)＆宝具威力をアップ(3ターン) ＋ スターを獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身のArtsカード性能をアップ(3ターン)＆「Arts攻撃時にスターを獲得する状態」を付与(3ターン)＆無敵状態を付与(2回・3ターン)＆フィールドに動物<猛獣・魔獣型のサーヴァント・ケモノ科のサーヴァント>(一部を除く)がいる間、Artsカード性能がアップする状態を付与(3ターン)＆フィールドにいる動物<猛獣・魔獣型のサーヴァント・ケモノ科のサーヴァント>(一部を除く)の対象の数に応じて威力が上がるクリティカル威力アップ状態を付与(3ターン)": {
       "tw": "自身Arts指令卡性能提升(3回合)＆賦予「Arts攻擊時獲得爆擊星的狀態」(3回合)＆賦予無敵狀態(2次．3回合)＆場上有動物<猛獸・魔獸型從者・獸科從者>(部分除外)存在期間，賦予Arts指令卡性能提升的狀態(3回合)＆根據場上動物<猛獸・魔獸型從者・獸科從者>(部分除外)的對象數量提升威力，賦予爆擊威力提升狀態(3回合)",
@@ -4935,6 +5223,12 @@
       "na": "Increase your own Quick Card effectiveness by 3% & increase NP Gain by 5% & Increase NP Charge by 1 level when using NP (1 time)",
       "kr": "자신의 퀵 카드 성능 3% UP&NP 획득량 5% UP&보구 사용 시 차지 단계를 1단계 올린다(1회)"
     },
+    "自身のQuickカード性能を3%アップ＆クリティカル威力を3%アップ＆NP獲得量を3%アップ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "自身のQuickカード性能を5%アップ＆Artsカード性能を5%アップ＆Busterカード性能を5%アップ＆宝具使用時にチャージ段階を1段階分上げる(1回)[最大解放]": {
       "na": "Increase your own Quick Card effectiveness by 5% & increase Arts Card effectiveness by 5% & increase Buster Card effectiveness by 5% & Increase NP Charge by 1 level when using NP (1 time) [MAX]"
     },
@@ -4951,6 +5245,12 @@
       "tw": "自身Quick指令卡性能提升5%＆NP獲得量提升10%＆使用寶具時Charge階段上升1級(1次)[最大解放]",
       "na": "Increase your own Quick Card effectiveness by 5% & increase NP Gain by 10% & Increase NP Charge by 1 level when using NP (1 time) [MAX]",
       "kr": "자신의 퀵 카드 성능 5% UP&NP 획득량 10% UP&보구 사용 시 차지 단계를 1단계 올린다(1회)[최대해방]"
+    },
+    "自身のQuickカード性能を5%アップ＆クリティカル威力を5%アップ＆NP獲得量を5%アップ[最大解放]": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身のQuickカード性能を6%アップ＆Artsカード性能を6%アップ＆Busterカード性能を6%アップ＆宝具威力を6%アップ＆宝具使用時にチャージ段階を2段階分上げる(1回)": {
       "tw": "自身Quick指令卡性能提升6%＆Arts指令卡性能提升6%＆Buster指令卡性能提升6%＆寶具威力提升6%＆使用寶具時Charge階段上升2級(1次)",
@@ -5034,6 +5334,12 @@
       "tw": "自身Quick指令卡性能提升(3回合)＆Arts指令卡性能提升(3回合)＆NP增加▲ ＋ 除自身以外的我方全體寶具威力提升(3回合)▲＆NP增加▲",
       "na": "increase your own Quick Card effectiveness (3 turns) & increase Arts Card effectiveness (3 turns) & Increase your own NP Gauge▲ + increase NP Strength for all allies except yourself (3 turns)▲ & Increase NP Gauge▲",
       "kr": "자신의 퀵 카드 성능 UP(3턴)&아츠 카드 성능 UP(3턴)&NP 증가▲ + 자신을 제외한 아군 전체의 보구 위력 UP(3턴)▲&NP 증가▲"
+    },
+    "自身のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ スターを獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身のQuickカード性能をアップ(3ターン)＆Artsカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ 自身を除く味方全体の〔蛇・竜〕のクリティカル威力をアップ(3ターン)": {
       "na": "Increase your Quick Card effectiveness (3 turns) & increase Arts Card effectiveness (3 turns) & increase Critical Strength (3 turns) + increase Critical Strength of all allies except yourself with the [Serpent, Dragon] trait (3 turns)"
@@ -5260,6 +5566,12 @@
       "na": "Increase NP Strength (3 turns) <effect increases with Overcharge> for yourself ＋ Deal heavy damage & decrease DEF (3 turns) for all enemies ＋ Remove Debuffs & restore HP for all allies",
       "kr": "자신의 보구 위력 UP(3턴)<오버차지로 효과 UP> ＋ 적 전체에게 강력한 공격＆방어력 DOWN(3턴) ＋ 아군 전체의 약화 상태 해제＆HP 회복"
     },
+    "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体の防御強化状態を解除＆強力な〔秩序〕特攻攻撃 ＋ 自身に即死効果【デメリット】": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵単体に超強力な〔死の渇き〕状態特攻攻撃＆高確率で即死効果 ＋ 即死成功時、自身のNPをリチャージする": {
       "cn": "自身宝具威力提升(3回合)<过量充能时效果提升> ＋ 对敌方单体发动超强大的〔死的渴望〕状态特攻攻击＆高概率即死效果 ＋ 即死成功时，自身的宝具值回充",
       "tw": "自身寶具威力提升(3回合)<Over Charge時效果提升> ＋ 對敵方單體發動超強大的〔死亡之渴〕狀態特攻攻擊＆高機率即死效果 ＋ 即死成功時，自身的NP回充",
@@ -5294,6 +5606,12 @@
     "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ>＆防御力を大アップ(1ターン)＆NP獲得量をアップ(1ターン)▲ ＋ 敵全体に強力な攻撃▲＆チャージを減らす▲": {
       "tw": "自身寶具威力提升(3回合)<Over Charge時效果提升>＆防禦力大幅提升(1回合)＆NP獲得量提升(1回合)▲ ＋ 對敵方全體發動強大的攻擊▲＆減少Charge▲",
       "na": "Increase NP Strength (3 turns) <effect increases with Overcharge> & greatly increase DEF (1 turn) & increase NP Gain (1 turn)▲ for yourself ＋ Deal heavy damage▲ & reduce charge▲ for all enemies"
+    },
+    "自身の宝具威力をアップ(3ターン)＆NPを増やす ＋ 味方全体のクリティカル威力をアップ(3ターン) ＋ スターを獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身の宝具威力をアップ(3ターン)＆NPを増やす＆毎ターンスター獲得状態を付与(3ターン)": {
       "cn": "自身宝具威力提升(3回合)＆宝具值增加＆付与每回合获得暴击星的状态(3回合)",
@@ -6735,6 +7053,12 @@
       "na": "A Prayer for You",
       "kr": "당신에게 바치는 기도"
     },
+    "超古代巨神・埴輪ノッブ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "踊る翼のように A": {
       "kr": "춤추는 날개처럼 A"
     },
@@ -6793,10 +7117,22 @@
     "醜い恋のように C+": {
       "kr": "추한 사랑처럼 C+"
     },
+    "銃神・ヤタガラスMG-01": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "鍛冶神のるつぼ C": {
       "tw": "鍛造神的坩堝 C",
       "na": "The Smith God's Crucible C",
       "kr": "대장장이 신의 도가니 C"
+    },
+    "闇の力 B": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "闇の園の思い出": {
       "tw": "暗之園的回憶",
@@ -6820,6 +7156,18 @@
     "雀の行水 EX": {
       "tw": "雀之淨身 EX",
       "kr": "참새의 목욕 EX"
+    },
+    "雑賀マリンコンバット B": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "雑賀孫一 (rider)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "雷神の舞": {
       "kr": "뇌신의 춤"
@@ -6979,6 +7327,12 @@
     },
     "２０３号室の演奏会": {
       "kr": "203호실의 연주회"
+    },
+    "Ｆ・Ｓ・Ａ C": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     }
   }
 }
