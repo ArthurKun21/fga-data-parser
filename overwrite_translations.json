@@ -1,8 +1,5 @@
 {
   "translations": {
-    "<スターが10個以上ある場合のみ使用可能>スターを10個減らす【デメリット】 ＋ 味方全体のQuickカード性能をアップ(3ターン)またはArtsカード性能をアップ(3ターン)またはBusterカード性能をアップ(3ターン)【効果を選択】 ＋ 味方全体のNP獲得量をアップ(3ターン)": {
-      "na": "[Usable only when there are 10 C. Stars or more] Decrease C. Stars by 10 [Demerit] + Increase Quick Card effectiveness (3 turns) or Arts Card effectiveness (3 turns) or Buster Card effectiveness (3 turns) [Select Effect] + Increase NP Gain (3 turns) for all allies"
-    },
     "Breaching": {
       "cn": "突破",
       "tw": "突破",
@@ -353,12 +350,6 @@
       "tw": "在『嘮嘮叨叨新選組 THE END』中，自身的攻擊威力提升200%[最大解放]【『嘮嘮叨叨新選組 THE END』活動限定】",
       "na": "Increase ATK Strength by 200% [MAX] for yourself in \"GUDAGUDA Shinsengumi: The End\" [Event Only]",
       "kr": "“구다구다 신선조・디 엔드” 에서 자신의 공격 위력 200% UP[최대해방][“구다구다 신선조・디 엔드” 이벤트 기간한정]"
-    },
-    "『ぶち壊せ！ ミステリーハウス・クラフターズ』において、自身の攻撃の威力を100%アップ【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase ATK Strength by 100% for yourself in \"Break Through! Mystery House Crafters\" [Event Only]"
-    },
-    "『ぶち壊せ！ ミステリーハウス・クラフターズ』において、自身の攻撃の威力を200%アップ[最大解放]【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase ATK Strength by 200% [MAX] for yourself in \"Break Through! Mystery House Crafters\" [Event Only]"
     },
     "『カルデア・Ｕ－サマーアイランド』において、レアエネミーの出現率を15%アップ【『カルデア・Ｕ－サマーアイランド』イベント期間限定】": {
       "na": "Increase appearance rate of Rare enemies by 15% in \"Chaldea U-Summer Island\" [Event Only]",
@@ -1061,12 +1052,6 @@
       "tw": "瓜星的繼承者 EX",
       "kr": "카성의 계승자 EX"
     },
-    "ガイドロープのドロップ獲得数を1個増やす【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase Guide Rope amount per drop by 1 [Event Only]"
-    },
-    "ガイドロープのドロップ獲得数を2個増やす[最大解放]【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase Guide Rope amount per drop by 2 [MAX] [Event Only]"
-    },
     "ガッツ1回復": {
       "na": "Guts (restore 1)",
       "kr": "근성 1 회복"
@@ -1202,12 +1187,6 @@
     },
     "クラウディバルーンのドロップ獲得数アップ": {
       "kr": "클라우디 벌룬의 획득 개수 UP"
-    },
-    "クラフトウッド、クラフトストーン、クラフトメタルのドロップ獲得数を1個増やす【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase amounts of Craft Wood, Craft Stone, and Craft Metal per drop by 1 [Event Only]"
-    },
-    "クラフトウッド、クラフトストーン、クラフトメタルのドロップ獲得数を2個増やす[最大解放]【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase amounts of Craft Wood, Craft Stone, and Craft Metal per drop by 2 [MAX] [Event Only]"
     },
     "クラン・カラティン": {
       "tw": "二十八怪物",
@@ -1457,18 +1436,6 @@
       "tw": "歌姬點數獲得量提升",
       "na": "Increase amount of Diva Points per drop",
       "kr": "디바 포인트 획득량 UP"
-    },
-    "デコペンキのドロップ獲得数を1個増やす【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase Deco Paint amount per drop by 1 [Event Only]"
-    },
-    "デコペンキのドロップ獲得数を2個増やす[最大解放]【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase Deco Paint amount per drop by 2 [MAX] [Event Only]"
-    },
-    "デザインノートのドロップ獲得数を1個増やす【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase Design Note amount per drop by 1 [Event Only]"
-    },
-    "デザインノートのドロップ獲得数を2個増やす[最大解放]【『ぶち壊せ！ ミステリーハウス・クラフターズ』イベント期間限定】": {
-      "na": "Increase Design Note amount per drop by 2 [MAX] [Event Only]"
     },
     "デスピックのドロップ獲得数を1個増やす【『ファイナル・ハロウィン2025』イベント期間限定】": {
       "tw": "死亡撥片的掉落獲得數增加1個【『最終・萬聖節2025』活動限定】",
@@ -2351,9 +2318,6 @@
       "na": "Increase NP Gauge for all allies & Increase NP Strength (3 turns) + Apply NP Seal to all enemies (1 turn) & Apply Poison (3 turns)",
       "kr": "아군 전체의 NP 증가＆보구 위력 UP(3턴) ＋ 적 전체에 보구 봉인 상태 부여(1턴)＆독 상태 부여(3턴)"
     },
-    "味方全体のNPを増やす＆宝具威力をアップ(3ターン) ＋ 自身に「ガッツ発動時にスターを大量獲得する状態」を付与(3ターン)＆「自身の死亡時にスターを大量獲得する状態」を付与(3ターン)": {
-      "na": "Increase NP Gauge & NP Strength (3 turns) for all allies + Apply a state that \"gains a large amount of C. Stars when Guts activates\" (3 turns) & a state that \"gains a large amount of C. Stars when you are defeated\" (3 turns) for yourself"
-    },
     "味方全体のNPを増やす＆宝具威力をアップ(3ターン)＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)": {
       "na": "Increase NP Gauge & NP Strength (3 turns) & increase NP Charge by 1 level when using NP (1 time, 3 turns) for all allies"
     },
@@ -2786,9 +2750,6 @@
     },
     "夏の承認欲求 B": {
       "kr": "여름의 인정욕구 B"
-    },
-    "夜のカフェテラス": {
-      "na": "Night Café Terrace"
     },
     "大悪党 C": {
       "tw": "大惡黨 C",
@@ -3374,6 +3335,12 @@
       "tw": "新選飯糰",
       "na": "Shinsen Onigiri",
       "kr": "신센 오니기리"
+    },
+    "日月 A+": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "日輪が穿つ星河の朔月": {
       "na": "New Moon of the Galaxy Pierced by the Sun",
@@ -4156,9 +4123,6 @@
     "自身にガッツ状態を付与(1回・3ターン)＆「ガッツ発動時に味方全体のNPを増やす状態」を付与(1回・3ターン)▲＆スター集中度をアップ(1ターン) ＋ スターを獲得": {
       "na": "Apply Guts (1 time, 3 turns) & apply a state that \"increases NP Gauge for all allies when Guts is activated\" (1 time, 3 turns) ▲ & increase C. Star Gather Rate (1 turn) for yourself + Gain C. Stars"
     },
-    "自身にガッツ状態を付与(1回・3ターン)＆弱体無効状態を付与(3ターン)＆NPを増やす": {
-      "na": "Apply Guts (1 time, 3 turns) & apply Debuff Immune (3 turns) & increase NP Gauge for yourself"
-    },
     "自身にガッツ状態を付与(1回・3ターン・他のガッツ状態と重複可能)＆高確率で発動するガッツ状態を付与(3ターン・他の確率発動でないガッツ状態と重複可能▲)＆「ガッツ発動時に味方全体▲の宝具威力をアップ(5ターン)する状態」を付与(3ターン)＆「被ダメージ時に自身のクリティカル威力をアップ(5ターン)する状態」を付与(3ターン)▲＆ターゲット集中状態を付与(3ターン)": {
       "na": "Apply Guts (1 time, 3 turns, stackable with other Guts) & apply Guts (3 turns, stackable with other Guts that don't activate by chance) ▲ with a high activation chance & apply a state that \"increases NP Strength (5 turns) for all allies ▲ when Guts is triggered\" (3 turns) & apply \"a state that increases your Critical Strength (5 turns) when damaged\" (3 turns) ▲ & apply Target Focus (3 turns) for yourself"
     },
@@ -4262,9 +4226,6 @@
     "自身に回避状態を付与(2回・3ターン)＆毎ターンスター獲得状態を付与(3ターン)＆宝具威力をアップ(3ターン) ＋ 自身を除く味方全体の〔蛇・竜〕の宝具威力をアップ(3ターン)": {
       "na": "Apply Evade (2 times, 3 turns) & Gain C. Stars each turn (3 turns) & increase NP Strength (3 turns) for yourself + Increase NP Strength for all [Serpent/Dragon] allies excluding yourself (3 turns)"
     },
-    "自身に回避状態を付与(2回・3ターン)＆被クリティカル発生耐性をアップ(3ターン)": {
-      "na": "Apply Evade (2 times, 3 turns) & increase Critical Resistance (3 turns) for yourself"
-    },
     "自身に回避状態を付与(2回・3ターン)＆被クリティカル発生耐性をアップ(3ターン)＆スターが10個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが20個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが30個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが40個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが50個以上ある場合、クリティカル威力をアップ(3ターン)▲": {
       "na": "Apply Evade (2 times, 3 turns) & increase Critical Resistance (3 turns) & increase Critical Strength (3 turns) only when there are 10 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 20 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 30 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 40 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 50 C. Stars or more ▲ for yourself"
     },
@@ -4325,9 +4286,6 @@
       "tw": "賦予自身必中狀態＆Quick指令卡性能提升3%＆Arts指令卡性能提升3%[最大解放]",
       "na": "Apply Sure Hit & increase Quick Card & Arts Card effectiveness by 3% for yourself [MAX]",
       "kr": "자신에게 필중 상태 부여&퀵 카드 성능 3% UP&아츠 카드 성능 3% UP[최대해방]"
-    },
-    "自身に最大HPがアップする状態を付与(3ターン)＆NPを増やす ＋ スターを獲得 ＋ 〔都市〕のフィールドにおいてのみ、スターを獲得": {
-      "na": "Apply a state that increases Max HP (3 turns) & increase NP Gauge for yourself + Gain C. Stars + Gain C. Stars only when on a [City] field"
     },
     "自身に最大HPがアップする状態を付与(3ターン)＆NPを増やす＆攻撃力をアップ(3ターン)＆〔悪〕特攻状態を付与(3ターン)＆〔善〕特攻状態を付与(3ターン)": {
       "cn": "为自身付与最大生命值提升状态(3回合)＆宝具值增加＆攻击力提升(3回合)＆付与对〔恶〕的特攻状态(3回合)＆付与对〔善〕的特攻状态(3回合)",
@@ -4553,6 +4511,12 @@
       "tw": "賦予自身無敵狀態(2次．3回合)＆NP獲得量提升(3回合)＆爆擊星掉落率提升(3回合)＋賦予除自身以外的敵我雙方全體〔伊莉雅〕特性(3回合)",
       "na": "Apply Invincible (2 times, 3 turns) & increase NP Gain (3 turns) & increase C. Star Drop Rate (3 turns) for yourself + Apply [Illya] trait to all allies and enemies excluding yourself (3 turns)",
       "kr": "자신에게 무적 상태 부여(2회・3턴)&NP 획득량 UP(3턴)&스타 발생률 UP(3턴) + 자신을 제외한 적과 아군 전체에게 [일리야] 특성 부여(3턴)"
+    },
+    "自身に無敵状態を付与(2回・3ターン)＆NP獲得量をアップ(3ターン)＆弱体無効状態を付与(3回・3ターン)▲ ＋ 味方全体に〔天の力を持つ敵〕特攻状態を付与(3ターン)▲": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身に無敵状態を付与(2回・3ターン)＆「Buster攻撃時に味方全体に宝具使用時のチャージ段階を1段階引き上げる状態(1回・3ターン)」を付与(3回・3ターン) ＋ フィールドにいる敵味方全体の〔エリザベート〕特性の対象と状態の数に応じて自身のNPを増やす": {
       "tw": "為自身賦予無敵狀態(2次．3回合)＆賦予「Buster攻擊時為我方全體賦予使用寶具時Charge階段上升1級的狀態(1次．3回合)」(3次．3回合) ＋ 根據在場的敵方與我方全體中擁有〔伊莉莎白〕特性的對象與狀態數量，自身NP增加",
@@ -4864,9 +4828,6 @@
       "tw": "自身Arts指令卡性能提升(3回合)＆賦予「Arts攻擊時獲得爆擊星的狀態」(3回合)＆賦予無敵狀態(2次．3回合)＆場上有動物<猛獸・魔獸型從者・獸科從者>(部分除外)存在期間，賦予Arts指令卡性能提升的狀態(3回合)＆根據場上動物<猛獸・魔獸型從者・獸科從者>(部分除外)的對象數量提升威力，賦予爆擊威力提升狀態(3回合)",
       "na": "Increase your Arts Card effectiveness (3 turns) & Apply \"Gain C. Stars when attacking with Arts\" (3 turns) & Apply Invincible (2 times, 3 turns) & Apply a state where Arts Card effectiveness is increased while an animal <Wild Beast, Demonic Beast-type Servants, Beast-type Servants> (some excluded) is on the field (3 turns) & Apply a Critical Strength increase state whose effectiveness rises according to the number of animal <Wild Beast, Demonic Beast-type Servants, Beast-type Servants> (some excluded) targets on the field (3 turns)",
       "kr": "자신의 아츠 카드 성능 UP(3턴)&‘아츠 공격 시 스타를 획득하는 상태’ 부여(3턴)&무적 상태 부여(2회・3턴)&필드에 동물<맹수・마수형 서번트・케모노과 서번트>(일부 제외)가 있는 동안, 아츠 카드 성능이 UP하는 상태 부여(3턴)&필드에 있는 동물<맹수・마수형 서번트・케모노과 서번트>(일부 제외)의 대상 수에 따라 위력이 오르는 크리티컬 위력 UP 상태 부여(3턴)"
-    },
-    "自身のArtsカード性能をアップ(3ターン)＆「攻撃時に敵単体に呪い状態(5ターン)を付与する状態」を付与(3ターン)＆NPを増やす": {
-      "na": "Increase your Arts Card effectiveness (3 turns) & Apply \"Inflict Curse (5 turns) to a single enemy when attacking\" (3 turns) & increase NP Gauge"
     },
     "自身のArtsカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)＆毎ターンスター獲得状態を付与(3ターン)": {
       "na": "Increase your Arts Card effectiveness (3 turns) & Increase Critical Strength (3 turns) & Apply a state where you gain C. Stars each turn (3 turns)"
@@ -5486,9 +5447,6 @@
       "na": "Increase NP Strength (1 turn) <effect increases with Overcharge> for yourself ＋ When the field has [Forest] trait, decrease Quick attack Resist (3 turns) for all enemies ＋ When the field has [Near Water] trait, decrease Arts attack Resist (3 turns) for all enemies ＋ When the field has [Sunshine] trait, decrease Buster attack Resist (3 turns) for all enemies ＋ When the field has [Blaze] trait, decrease Critical Rate (3 turns) for all enemies ＋ Deal effective [Lawful] damage▲ to all enemies ＋ Increase Critical Strength (3 turns)▲ for all allies",
       "kr": "자신의 보구 위력 UP(1턴)<오버차지로 효과 UP> ＋ 필드가 〔숲〕 특성일 때, 적 전체의 퀵 공격 내성 DOWN(3턴) ＋ 필드가 〔물가〕 특성일 때, 적 전체의 아츠 공격 내성 DOWN(3턴) ＋ 필드가 〔햇빛〕 특성일 때, 적 전체의 버스터 공격 내성 DOWN(3턴) ＋ 필드가 〔화염〕 특성일 때, 적 전체의 크리티컬 발생률 DOWN(3턴) ＋ 적 전체에게 강력한 〔질서〕 특공 공격▲ ＋ 아군 전체의 크리티컬 위력 UP(3턴)▲"
     },
-    "自身の宝具威力をアップ(1ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な〔秩序〕特攻攻撃＆低確率でスタン状態を付与(1ターン) ＋ フィールドを〔都市〕状態にする(5ターン)": {
-      "na": "Increase NP Strength (1 turn) <effect increases with Overcharge> for yourself ＋ Deal effective [Lawful] damage & Low chance to inflict Stun (1 turn) for all enemies ＋ Change field to [City] status (5 turns)"
-    },
     "自身の宝具威力をアップ(1ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃＆呪い状態を付与(5ターン)＆HP回復量をダウン(5ターン)＆「ターン終了時に強化状態が1つ解除される状態」を付与(5ターン)＆中確率で即死効果": {
       "na": "Increase NP Strength (1 turn) <effect increases with Overcharge> for yourself ＋ Deal heavy damage & inflict Curse (5 turns) & decrease HP Recovery amount (5 turns) & apply a state that removes 1 Buff at turn end (5 turns) & Medium chance to inflict Instant Death for all enemies"
     },
@@ -5518,9 +5476,6 @@
       "tw": "自身寶具威力提升(1回合)<Over Charge時效果提升> ＋ 對敵方單體發動超強大的〔龍〕特攻攻擊＆減少Charge＆賦予詛咒狀態(5回合) ＋ 〔伊莉莎白〕特性的我方全體的NP小幅增加 ＋ 獲得大量爆擊星",
       "na": "Increase NP Strength (1 turn) for yourself <effect increases with Overcharge> ＋ Deal super effective [Dragon] damage & reduce charge & inflict Curse (5 turns) to a single enemy ＋ Slightly increase NP Gauge for all allies with [Elisabeth] trait ＋ Gain a large amount of C. Stars",
       "kr": "자신의 보구 위력 UP(1턴)<오버차지로 효과 UP> ＋ 적 하나에게 초강력한 〔용〕 특공 공격＆차지 감소＆저주 상태 부여(5턴) ＋ 〔엘리자베트〕 특성의 아군 전체의 NP 조금 증가 ＋ 스타 대량 획득"
-    },
-    "自身の宝具威力をアップ(1ターン)<オーバーチャージで効果アップ> ＋ 敵単体に超強力な〔魔性〕特攻攻撃＆呪い状態を付与(5ターン)＆呪厄状態(呪いの効果量がアップする状態)を付与(5ターン)＆高確率で即死効果 ＋ 自身に即死効果【デメリット】": {
-      "na": "Increase NP Strength (1 turn) for yourself <effect increases with Overcharge> ＋ Deal super effective [Demonic] damage & inflict Curse (5 turns) & inflict Disastrous Curse (increase Curse damage) (5 turns) & High chance to inflict Instant Death to a single enemy ＋ Instant Death for yourself [Demerit]"
     },
     "自身の宝具威力をアップ(1ターン)<オーバーチャージで効果アップ>＆「攻撃時のダメージ前に対象にやけど状態(3ターン)を付与する状態」を付与(3ターン)＆やけど状態を付与(3ターン)【デメリット】 ＋ 敵全体に強力な〔やけど〕特攻攻撃<対象の〔やけど〕状態が多いほど対象に対して特攻威力アップ(最大10個)>": {
       "cn": "自身宝具威力提升(1回合)<过量充能时效果提升>＆赋予「攻击时在造成伤害前对目标赋予灼伤状态(3回合)的状态」(3回合)＆赋予灼伤状态(3回合)【负面效果】 ＋ 对敌方全体发动强大的〔灼伤〕特攻攻击<目标的〔灼伤〕状态越多，对目标的特攻威力提升(最多10个)>",
