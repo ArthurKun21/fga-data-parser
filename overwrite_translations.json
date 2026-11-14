@@ -291,7 +291,6 @@
       "kr": "[servantName 705400](버서커) 장착 시 자신이 필드에 있는 동안 아군 전체의 아츠 카드 성능 8% UP&버스터 카드 성능 8% UP&보구 위력 10% UP"
     },
     "[servantName 705500](バーサーカー)装備時のみ、自身の宝具威力を30%アップ ＋ 自身がやられた時にスターを20個獲得": {
-      "cn": "[servantName 705500](狂战士)装备时,自身的宝具威力提升30%＋自身战败退场时获得20个暴击星",
       "tw": "[servantName 705500](Berserker)裝備時，自身的寶具威力提升30%＋自身戰敗退場時獲得20個爆擊星",
       "na": "Increase your NP Strength by 30% + Gain 20 C. Stars when you are defeated only if [servantName 705500] (Berserker) is equipped with this Craft Essence",
       "kr": "[servantName 705500](버서커) 장착 시 자신의 보구 위력 30% UP + 자신이 쓰러졌을 때 스타 20개 획득"
@@ -574,7 +573,6 @@
       "kr": "어라?　혹시"
     },
     "いざ、尋常に川中島！？": {
-      "cn": "来吧,堂堂正正地决战川中岛！？",
       "tw": "來吧，堂堂正正地決戰川中島！？",
       "na": "Now, a Fair and Square Showdown at Kawanakajima!?",
       "kr": "자, 정정당당하게 가와나카지마에서!?"
@@ -2939,7 +2937,6 @@
       "kr": "돌아오지 않는 석류 A"
     },
     "帰路への旗印": {
-      "cn": "归途的旗印",
       "tw": "歸途的旗印",
       "na": "Banner for the Road Home",
       "kr": "귀로의 깃발"
@@ -3534,7 +3531,6 @@
       "kr": "개념예장 EXP 카드: 나의 작은 말"
     },
     "概念礼装EXPカード：ヤマタイガールズ！": {
-      "cn": "概念礼装经验卡：邪马台女孩们！",
       "tw": "概念禮裝EXP卡：邪馬臺女孩們！",
       "na": "CE EXP Card: Yamatai Girls!",
       "kr": "개념예장 EXP 카드: 야마타이 걸즈!"
@@ -3548,7 +3544,6 @@
       "kr": "개념예장 EXP 카드: 죽지 못한 붉은 늑대"
     },
     "概念礼装EXPカード：爆・DAN・ジョー！": {
-      "cn": "概念礼装经验卡：爆·DAN·JOE！",
       "tw": "概念禮裝EXP卡：爆．DAN．JOE！",
       "na": "CE EXP Card: Bomb DAN Joe!",
       "kr": "개념예장 EXP 카드: 폭・DAN・조!"
@@ -3650,7 +3645,6 @@
       "kr": "법아육・전륜성왕"
     },
     "泡沫の遭逢": {
-      "cn": "泡沫的邂逅",
       "tw": "泡沫的邂逅",
       "na": "Fleeting Encounter",
       "kr": "포말의 조우"
@@ -3837,7 +3831,6 @@
       "kr": "나의 사춘기 디스턴스 C"
     },
     "秘湯の来訪者": {
-      "cn": "秘汤的来客",
       "tw": "秘湯的來客",
       "na": "Visitor of the Secret Hot Spring",
       "kr": "비탕의 방문자"
