@@ -4533,9 +4533,6 @@
       "na": "Apply Pierce Invincible (1 turn) & Special Attack [Confusion] (1 turn) to yourself ＋ Deal effective [Charm] damage <Special Attack effectiveness increases with Overcharge> & decrease DEF (3 turns) for all enemies",
       "kr": "자신에게 무적 관통 상태 부여(1턴)＆〔혼란〕 특공 상태 부여(1턴) ＋ 적 전체에게 강력한 〔매료〕 상태 특공 공격<오버차지로 특공 위력 UP>＆방어력 DOWN(3턴)"
     },
-    "自身に無敵貫通状態を付与(1ターン)＆〔騎乗スキル〕特攻状態を付与(1ターン) ＋ 敵全体のQuick攻撃耐性をダウン(3ターン)<オーバーチャージで効果アップ>▲＆Buster攻撃耐性をダウン(3ターン)<オーバーチャージで効果アップ>▲＆強力な〔ライダー〕特攻攻撃▲<オーバーチャージで特攻威力アップ>": {
-      "na": "Apply Pierce Invincible (1 turn) & Special Attack [Riding Skill] (1 turn) to yourself ＋ Decrease Quick attack Resist (3 turns) <effect increases with Overcharge>▲ & decrease Buster attack Resist (3 turns) <effect increases with Overcharge>▲ & deal effective [Rider] damage▲ <Special Attack effectiveness increases with Overcharge> for all enemies"
-    },
     "自身に無敵貫通状態を付与(1ターン)＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)▲＆Busterカード性能をアップ(3回・3ターン▲)＆NPを増やす▲": {
       "cn": "为自身付与无敌贯通状态(1回合)＆付与使用宝具时充能阶段上升2级的状态(1次·3回合)▲＆力指令卡性能提升(3次·3回合▲)＆宝具值增加▲",
       "tw": "為自身賦予無敵貫通狀態(1回合)＆賦予使用寶具時Charge階段上升2級的狀態(1次．3回合)▲＆Buster指令卡性能提升(3次．3回合▲)＆NP增加▲",
