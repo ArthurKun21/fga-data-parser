@@ -33,6 +33,12 @@
       "na": "Increase amount of MISO Oden per drop",
       "kr": "MISO 오뎅의 획득 개수 UP"
     },
+    "Re/Q B": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "SHIMONITAネギのドロップ獲得数を1個増やす【『ぐだぐだぷにぷにウォーズ！』イベント期間限定】": {
       "cn": "SHIMONITA葱的掉落获得数增加1个【『唠唠叨叨软绵绵大作战！』活动限定】",
       "tw": "SHIMONITA蔥的掉落獲得數增加1個【『嘮嘮叨叨軟綿綿大作戰！』活動限定】",
@@ -161,6 +167,12 @@
       "tw": "[servantName 2301200](MoonCancer)裝備時，自身的寶具威力提升30%＆對〔惡〕爆擊威力提升30%＆對〔善〕爆擊威力提升30%",
       "na": "Increase NP Strength by 30% & Critical Strength against [Evil] by 30% & Critical Strength against [Good] by 30% for yourself only if [servantName 2301200] (Moon Cancer) is equipped with this Craft Essence",
       "kr": "[servantName 2301200](문캔서) 장착 시 자신의 보구 위력 30% UP&[악]에 대한 크리티컬 위력 30% UP&[선]에 대한 크리티컬 위력 30% UP"
+    },
+    "[servantName 2501700](フォーリナー)装備時のみ、自身がフィールドにいる間、味方全体のBusterカード性能を10%アップ＆〔人の力を持つ敵〕特攻状態を10%付与": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "[servantName 2801100](プリテンダー)装備時のみ、自身の宝具威力を30%アップ＆「通常攻撃時のダメージ前にクリティカル威力を10%アップ(3ターン)＆呪い状態を付与(200ダメージ・3ターン)【デメリット】する状態」を付与": {
       "na": "Increase NP Strength by 30% & apply a state that \"increases Critical Strength by 10% (3 turns) & inflicts Curse (200 damage, 3 turns) [Demerit] before dealing damage with a normal attack\" for yourself only if [servantName 2801100] (Pretender) is equipped with this Craft Essence",
@@ -1373,6 +1385,12 @@
     "スーパー麦わら帽のドロップ獲得数アップ": {
       "kr": "슈퍼 밀짚모자의 획득 개수 UP"
     },
+    "セクシー＆ビューティ EX": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "ソロモンの指輪 E": {
       "tw": "所羅門的戒指 E",
       "kr": "솔로몬의 반지 E"
@@ -1388,6 +1406,12 @@
       "tw": "玉藻艾莉亞",
       "na": "Tamamo Aria",
       "kr": "타마모 아리아"
+    },
+    "ダイナマイト利休": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "ダブル・スイート": {
       "tw": "雙重甜蜜",
@@ -2097,6 +2121,12 @@
     "冥航の助言 A+": {
       "kr": "명항의 조언 A+"
     },
+    "利休＆駒姫ストラップ": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "刻の終わり": {
       "tw": "時間的終點",
       "kr": "시간의 끝"
@@ -2619,6 +2649,12 @@
       "na": "Increase Critical Strength (3 turns) & NP Strength (3 turns) ▲ & increase NP Charge by 2 levels when using NP (1 time, 3 turns) ▲ & increase NP Gauge for a single ally",
       "kr": "아군 한 명의 크리티컬 위력 UP(3턴)&보구 위력 UP(3턴)▲&보구 사용 시 차지 단계가 2단계 증가하는 상태 부여(1회・3턴)▲&NP 증가"
     },
+    "味方単体のスキルチャージを1進める＆Busterカードのスター集中度をアップ(3ターン)＆クリティカル威力をアップ(3ターン) ＋ スターを獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "味方単体のスキルチャージを1進める＆NPを増やす＆Artsカード性能をアップ(3ターン)": {
       "cn": "己方单体技能冷却减少1回合＆宝具值增加＆技指令卡性能提升(3回合)",
       "tw": "我方單體技能冷卻減少1回合＆NP增加＆Arts指令卡性能提升(3回合)",
@@ -3031,6 +3067,12 @@
     "悠久のトロイア": {
       "kr": "유구한 트로이아"
     },
+    "悠遠なる黒 A": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "悪業所感・琰魔法王": {
       "tw": "惡業所感・琰魔法王",
       "na": "Impressions of Evil Karma - Dharma King Enma",
@@ -3238,6 +3280,12 @@
       "na": "Reduce charge of all enemies ＋ apply NP Gauge per turn (3 turns)＆Increase NP Strength (3 turns) to all allies ＋ Increase own NP Gauge",
       "kr": "적 전체 차지 감소 ＋ 아군 전체에게 매 턴 NP 획득 상태 부여(3턴)＆보구 위력 UP(3턴) ＋ 자신 NP 증가"
     },
+    "敵全体のチャージを減らす ＋ 味方全体のNPを増やす ＋ 自身のNPを増やす＆「Buster攻撃時のダメージ前に対象に呪い状態を付与(3ターン)する状態」を付与(3ターン)＆〔呪い〕特攻状態を付与<対象の〔呪い〕状態が多いほど対象に対して特攻威力アップ(最大10個)>(3ターン)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "敵全体の弱体耐性をダウン(3ターン)＆〔混乱〕状態「毎ターン低確率でスキル封印を付与する状態」を付与(3ターン)＆呪い状態を付与(3ターン)＆被強化成功率をダウン(3ターン)＆宝具威力耐性をダウン(3ターン)＆Arts攻撃耐性をダウン(3ターン)<オーバーチャージで効果アップ>": {
       "cn": "敌方全体的弱化耐性下降(3回合)＆赋予〔混乱〕状态「每回合低概率赋予技能封印的状态」(3回合)＆诅咒状态(3回合)＆被强化成功率下降(3回合)＆宝具威力耐性下降(3回合)＆技攻击耐性下降(3回合)<过量充能时效果提升>",
       "tw": "降低敵方全體的弱化耐性(3回合)＆賦予〔混亂〕狀態「每回合低機率賦予技能封印的狀態」(3回合)＆詛咒狀態(3回合)＆被強化成功率下降(3回合)＆寶具威力耐性下降(3回合)＆Arts攻擊耐性下降(3回合)<Over Charge時效果提升>",
@@ -3317,6 +3365,12 @@
       "tw": "高機率減少敵方單體Charge▲ ＋ 自身NP增加▲ ＋ 為我方全體賦予對〔詛咒〕的特攻狀態(3回合)▲",
       "na": "Reduce charge of a single enemy with high chance▲ ＋ Increase own NP Gauge▲ ＋ Apply Special Attack [Curse] to all allies (3 turns)▲",
       "kr": "적 하나의 차지를 고확률▲로 감소 ＋ 자신 NP 증가▲ ＋ 아군 전체에게 〔저주〕 특공 상태 부여(3턴)▲"
+    },
+    "敵単体の防御強化状態を解除＆超強力な〔人の力を持つ敵〕特攻攻撃<オーバーチャージで特攻威力アップ>＆Buster攻撃耐性をダウン(3ターン) ＋ スターを獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "文化英雄 B": {
       "tw": "文化英雄 B",
@@ -3678,6 +3732,12 @@
     },
     "渚と青春の幻影": {
       "kr": "물가와 청춘의 환영"
+    },
+    "渾然一体": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "無常の果実": {
       "kr": "무상의 과실"
@@ -4877,6 +4937,12 @@
       "tw": "自身Buster指令卡性能提升(3回合)＆賦予對〔魔性〕的特攻狀態(3回合)＆賦予無敵狀態(1回合) ＋ 我方全體NP增加▲＆爆擊威力提升(3回合)▲ ＋ 獲得大量爆擊星▲",
       "na": "Increase Buster Card effectiveness for yourself (3 turns)＆Apply Special Attack [Demonic] (3 turns)＆apply Invincible (1 turn) ＋ Increase NP Gauge for all allies▲＆increase Critical Strength (3 turns)▲ ＋ Gain a large amount of C. Stars▲",
       "kr": "자신 버스터 카드 성능 UP(3턴)＆〔마성〕 특공 상태 부여(3턴)＆무적 상태 부여(1턴) ＋ 아군 전체 NP 증가▲＆크리티컬 위력 UP(3턴)▲ ＋ 스타 대량 획득▲"
+    },
+    "自身のBusterカード性能をアップ(3ターン)＆攻撃力をアップ(3ターン)＆無敵状態を付与(2回・3ターン)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身のBusterカード性能をアップ(3ターン)＆防御無視状態を付与(3ターン)＆「攻撃時に敵単体に確率でスタン状態(1ターン)を付与する状態」を付与(1回・3ターン)＆NPを増やす": {
       "tw": "自身Buster指令卡性能提升(3回合)＆賦予無視防禦狀態(3回合)＆賦予「攻擊時機率對敵方單體賦予眩暈狀態(1回合)的狀態」(1次．3回合)＆NP增加",
