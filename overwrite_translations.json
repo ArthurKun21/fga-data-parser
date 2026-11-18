@@ -2989,10 +2989,10 @@
       "kr": "유세의 사자"
     },
     "幽玄たる黒 A+": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "幽玄之黑 A+",
+      "tw": "幽玄之黑 A+",
+      "na": "Profound Black A+",
+      "kr": "유현한 흑색 A+"
     },
     "弓兵の頂に立つもの": {
       "tw": "立於弓兵之巔者",
@@ -5403,10 +5403,10 @@
       "kr": "자신의 〔캐스터〕 클래스에 대한 크리티컬 위력 30% UP[최대해방]"
     },
     "自身のクリティカル威力をアップ(3ターン)＆Quickカードのクリティカル威力をアップ(3ターン)＆「Quick攻撃時のダメージ前に対象の防御力をダウン(3ターン)＆呪い状態を付与(3ターン)▲する状態」を付与(3ターン) ＋ 味方全体に〔呪い〕特攻状態を付与(3ターン)▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "自身的暴击威力提升(3回合)＆迅指令卡的暴击威力提升(3回合)＆付与「迅攻击造成伤害前令对象的防御力降低(3回合)＆付与诅咒状态(3回合)▲的状态」(3回合)＋付与己方全体对〔诅咒〕的特攻状态(3回合)▲",
+      "tw": "自身的爆擊威力提升(3回合)＆Quick指令卡的爆擊威力提升(3回合)＆賦予「Quick攻擊造成傷害前令對象的防禦力下降(3回合)＆賦予詛咒狀態(3回合)▲的狀態」(3回合)＋賦予我方全體對〔詛咒〕的特攻狀態(3回合)▲",
+      "na": "Increase your Critical Strength (3 turns) & increase Quick Card Critical Strength (3 turns) & apply a state that \"decreases target's DEF (3 turns) & inflicts Curse (3 turns) ▲ before dealing damage with Quick attacks\" (3 turns) + apply Special Attack [Curse] (3 turns) ▲ to all allies",
+      "kr": "자신의 크리티컬 위력 UP(3턴)＆퀵 카드의 크리티컬 위력 UP(3턴)＆‘퀵 공격 시 대미지 전에 대상의 방어력 DOWN(3턴)＆저주 상태 부여(3턴)▲하는 상태’ 부여(3턴) + 아군 전체에게 [저주] 특공 상태 부여(3턴)▲"
     },
     "自身のスター集中度を100%アップ＆NP獲得量を10%アップ＆NPを50%チャージした状態でバトルを開始する": {
       "na": "Increase your C. Star Gather Rate by 100% & increase NP Gain by 10% & start battle with 50% NP Gauge charged",
