@@ -2988,6 +2988,12 @@
       "na": "Emissary of the Netherworld",
       "kr": "유세의 사자"
     },
+    "幽玄たる黒 A+": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "弓兵の頂に立つもの": {
       "tw": "立於弓兵之巔者",
       "kr": "궁병의 정점에 서는 자"
@@ -4271,9 +4277,6 @@
     "自身に回避状態を付与(2回・3ターン)＆毎ターンスター獲得状態を付与(3ターン)＆宝具威力をアップ(3ターン) ＋ 自身を除く味方全体の〔蛇・竜〕の宝具威力をアップ(3ターン)": {
       "na": "Apply Evade (2 times, 3 turns) & Gain C. Stars each turn (3 turns) & increase NP Strength (3 turns) for yourself + Increase NP Strength for all [Serpent/Dragon] allies excluding yourself (3 turns)"
     },
-    "自身に回避状態を付与(2回・3ターン)＆被クリティカル発生耐性をアップ(3ターン)＆スターが10個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが20個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが30個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが40個以上ある場合、クリティカル威力をアップ(3ターン)▲＆スターが50個以上ある場合、クリティカル威力をアップ(3ターン)▲": {
-      "na": "Apply Evade (2 times, 3 turns) & increase Critical Resistance (3 turns) & increase Critical Strength (3 turns) only when there are 10 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 20 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 30 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 40 C. Stars or more ▲ & increase Critical Strength (3 turns) only when there are 50 C. Stars or more ▲ for yourself"
-    },
     "自身に対粛正防御状態を付与(2回・3ターン)＆Busterカード性能をアップ(3ターン) ＋ 味方全体のスキルチャージを2進める ＋ 自身に「3ターン後に自身に〔湖水の夢〕状態<特殊な睡眠状態、耐性無効・解除不能・生贄選択不能・オーダーチェンジ不能>(6ターン、Lv.6で4ターン、Lv.10で2ターン)を付与する状態」を付与<耐性無効・解除不能>(3ターン)【デメリット】": {
       "cn": "付与自身对肃正防御状态(2次·3回合)＆力指令卡性能提升(3回合)＋己方全体的技能冷却减少2回合＋付与自身3回合后付与自身〔湖水之梦〕状态<特殊的睡眠状态,无视耐性·无法解除·无法选择为祭品·无法替换队员>(6回合,Lv.6为4回合,Lv.10为2回合)的状态<无视耐性·无法解除>(3回合)【负面效果】",
       "tw": "賦予自身對肅正防禦狀態(2次．3回合)＆Buster指令卡性能提升(3回合)＋我方全體的技能冷卻減少2回合＋賦予自身3回合後賦予自身〔湖水之夢〕狀態<特殊的睡眠狀態，無視耐性・無法解除・無法選擇為祭品・無法更換隊員>(6回合，Lv.6為4回合，Lv.10為2回合)的狀態<無視耐性・無法解除>(3回合)【負面效果】",
@@ -5398,6 +5401,12 @@
       "tw": "自身對〔Caster〕職階的爆擊威力提升30%[最大解放]",
       "na": "Increase your Critical Strength against [Caster] class by 30% [MAX]",
       "kr": "자신의 〔캐스터〕 클래스에 대한 크리티컬 위력 30% UP[최대해방]"
+    },
+    "自身のクリティカル威力をアップ(3ターン)＆Quickカードのクリティカル威力をアップ(3ターン)＆「Quick攻撃時のダメージ前に対象の防御力をダウン(3ターン)＆呪い状態を付与(3ターン)▲する状態」を付与(3ターン) ＋ 味方全体に〔呪い〕特攻状態を付与(3ターン)▲": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身のスター集中度を100%アップ＆NP獲得量を10%アップ＆NPを50%チャージした状態でバトルを開始する": {
       "na": "Increase your C. Star Gather Rate by 100% & increase NP Gain by 10% & start battle with 50% NP Gauge charged",
