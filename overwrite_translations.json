@@ -4134,6 +4134,18 @@
       "na": "Apply 20% Special Attack [Charm] & increase NP Gain by 20% & increase NP Charge by 2 levels when using NP (1 time) for yourself [MAX]",
       "kr": "자신에게 [매료] 특공 상태 20% 부여&NP 획득량 20% UP&보구 사용 시 차지 단계를 2단계 증가(1회)[최대해방]"
     },
+    "自身に〔魔弾〕状態を10個付与▲<〔魔弾〕状態は最大20個まで付与可能、Quick、Arts、Buster通常攻撃時に〔魔弾〕状態を1つ消費して攻撃力をアップ(1回)＆Extra攻撃時に〔魔弾〕状態をすべて消費して個数分攻撃力をアップ(1回)>＆無敵状態を付与(1ターン)＆Artsカード性能をアップ(3ターン)＆NPを増やす▲": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "自身に〔魔弾〕状態を5個付与▲<〔魔弾〕状態は最大20個まで付与可能、Quick、Arts、Buster通常攻撃時に〔魔弾〕状態を1つ消費して攻撃力をアップ(1回)＆Extra攻撃時に〔魔弾〕状態をすべて消費して個数分攻撃力をアップ(1回)>＆NPを増やす▲ ＋ スターを獲得": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
     "自身に〔魔性〕特攻状態を15%付与": {
       "na": "Apply 15% Special Attack [Demonic] for yourself",
       "kr": "자신에게 [마성] 특공 상태 15% 부여"
@@ -4167,9 +4179,6 @@
       "tw": "賦予自身毅力狀態(1次・1回合)＆寶具威力提升(1回合)<Over Charge時效果提升> ＋ 對敵方單體發動超強大的攻擊＆降低防禦力(3回合)＆爆擊率下降(3回合)",
       "na": "Apply Guts (1 time, 1 turn) & increase NP Strength (1 turn) <effect increases with Overcharge> to yourself ＋ Deal super powerful damage & decrease DEF (3 turns) & decrease Critical Rate (3 turns) to a single enemy",
       "kr": "자신에게 근성 상태 부여(1회・1턴)＆보구 위력 UP(1턴)<오버차지로 효과 UP> ＋ 적 하나에게 초강력한 공격＆방어력 DOWN(3턴)＆크리티컬 발생률 DOWN(3턴)"
-    },
-    "自身にガッツ状態を付与(1回・3ターン)＆「ガッツ発動時に味方全体のNPを増やす状態」を付与(1回・3ターン)▲＆スター集中度をアップ(1ターン) ＋ スターを獲得": {
-      "na": "Apply Guts (1 time, 3 turns) & apply a state that \"increases NP Gauge for all allies when Guts is activated\" (1 time, 3 turns) ▲ & increase C. Star Gather Rate (1 turn) for yourself + Gain C. Stars"
     },
     "自身にガッツ状態を付与(1回・3ターン・他のガッツ状態と重複可能)＆高確率で発動するガッツ状態を付与(3ターン・他の確率発動でないガッツ状態と重複可能▲)＆「ガッツ発動時に味方全体▲の宝具威力をアップ(5ターン)する状態」を付与(3ターン)＆「被ダメージ時に自身のクリティカル威力をアップ(5ターン)する状態」を付与(3ターン)▲＆ターゲット集中状態を付与(3ターン)": {
       "na": "Apply Guts (1 time, 3 turns, stackable with other Guts) & apply Guts (3 turns, stackable with other Guts that don't activate by chance) ▲ with a high activation chance & apply a state that \"increases NP Strength (5 turns) for all allies ▲ when Guts is triggered\" (3 turns) & apply \"a state that increases your Critical Strength (5 turns) when damaged\" (3 turns) ▲ & apply Target Focus (3 turns) for yourself"
@@ -4312,6 +4321,12 @@
       "tw": "賦予自身必中狀態(1回合)＆Quick指令卡性能提升(3回合)<Over Charge時效果提升>＋對敵方全體發動強大的〔擁有天之力的敵人〕特攻攻擊＋我方全體的爆擊威力提升(3回合)",
       "na": "Apply Sure Hit (1 turn) & increase Quick Card effectiveness (3 turns) <effect increases with Overcharge> for yourself + Deal heavy Special Attack damage to all enemies with [Heaven Attribute] + Increase Critical Strength (3 turns) for all allies",
       "kr": "자신에게 필중 상태 부여(1턴)&퀵 카드 성능 UP(3턴)<오버차지로 효과 UP> + 적 전체에게 강력한 [천의 힘을 가진 적] 특공 공격 + 아군 전체의 크리티컬 위력 UP(3턴)"
+    },
+    "自身に必中状態を付与(1ターン)＆〔人間〕特攻状態を付与(1ターン)＆〔秩序〕特攻状態を付与(1ターン)▲＆クリティカル威力をアップ(3ターン)▲ ＋ 敵全体に強力な〔人の力を持つ敵〕特攻攻撃▲<オーバーチャージで特攻威力アップ>＆恐怖状態を付与(3ターン)＆クリティカル発生率をダウン(3ターン)": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "自身に必中状態を付与(1ターン)＆防御無視状態を付与(1ターン) ＋ 敵単体に超強力な〔蛇・竜〕特攻攻撃<オーバーチャージで特攻威力アップ>＆Arts攻撃耐性をダウン(3ターン)": {
       "na": "Apply Sure Hit (1 turn) & apply Ignores DEF (1 turn) to yourself ＋ Deal super effective [Snake, Dragon] damage <Special Attack effectiveness increases with Overcharge> & decrease Arts attack Resist (3 turns) to a single enemy"
@@ -4703,9 +4718,6 @@
       "na": "Apply Ignore DEF to yourself & increase Quick Card effectiveness by 8% & increase Buster Card effectiveness by 8% & increase NP Gain by 10% [MAX]",
       "kr": "자신에게 방어 무시 상태 부여&퀵 카드 성능 8% UP&버스터 카드 성능 8% UP&NP 획득량 10% UP[최대해방]"
     },
-    "自身に高確率で必中状態を付与(1ターン)＆高確率でArtsカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆高確率でBusterカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆中確率で宝具威力をアップ(1ターン)＆中確率で宝具威力をアップ(1ターン) ＋ 敵単体に超強力な〔王〕特攻攻撃▲ ＋ スターを獲得▲": {
-      "na": "High chance to apply Sure Hit (1 turn) & high chance to increase Arts Card effectiveness (1 turn) <effect increases with Overcharge> & high chance to increase Buster Card effectiveness (1 turn) <effect increases with Overcharge> & medium chance to increase NP Strength (1 turn) & medium chance to increase NP Strength (1 turn) to yourself ＋ Deal super effective [King] damage▲ to a single enemy ＋ Gain C. Stars▲"
-    },
     "自身のArtsカード性能を10%アップ＆Busterカード性能を10%アップ＆Extra Attackカード性能を50%アップ＆NPを50%チャージした状態でバトルを開始する[最大解放]": {
       "cn": "自身的技指令卡性能提升10%＆力指令卡性能提升10%＆额外攻击指令卡性能提升50%＆自身以宝具值已达50%的状态开始战斗[最大解放]",
       "tw": "自身的Arts指令卡性能提升10%＆Buster指令卡性能提升10%＆Extra Attack指令卡性能提升50%＆自身以NP已達50%的狀態開始戰鬥[最大解放]",
@@ -5013,9 +5025,6 @@
       "tw": "自身NP增加 ＋ 我方全體NP增加＆攻擊力提升(3回合)＆賦予詛咒狀態(3回合)【負面效果】",
       "na": "Increase your own NP Gauge + Increase NP Gauge for all allies & increase ATK (3 turns) & inflict Curse (3 turns) [Demerit]",
       "kr": "자신의 NP 증가 + 아군 전체의 NP 증가&공격력 UP(3턴)&저주 상태 부여(3턴)【단점】"
-    },
-    "自身のNPを増やす ＋ 味方全体のNP獲得量をアップ(3ターン)＆被クリティカル発生耐性をアップ(3ターン)＆強化解除耐性をアップ(1回・3ターン)▲＆宝具使用時のチャージ段階を1段階引き上げる状態を付与(1回・3ターン)▲": {
-      "na": "Increase your own NP Gauge + Increase NP Gain for all allies (3 turns) & increase Critical Resistance (3 turns) & increase Buff Removal Resist (1 time, 3 turns)▲ & Increase NP Charge by 1 level when using NP (1 time, 3 turns)▲"
     },
     "自身のNPを増やす ＋ 自身を除く味方全体のNPを増やす ＋ 味方全体の攻撃力をアップ(3ターン)＆HPを回復": {
       "tw": "自身NP增加 ＋ 除自身以外的我方全體NP增加 ＋ 我方全體攻擊力提升(3回合)＆HP回復",
@@ -7083,9 +7092,6 @@
     "連環馬（憑依） A": {
       "kr": "연환마(빙의) A"
     },
-    "過分なる神秘の心臓": {
-      "na": "Heart of Excessive Mystery"
-    },
     "遠い星の私へ": {
       "tw": "致遙遠星球上的我",
       "kr": "먼 별에 있는 나에게"
@@ -7255,6 +7261,18 @@
     "魔尼の宝珠 A": {
       "tw": "摩尼寶珠 A",
       "kr": "마니의 보주 A"
+    },
+    "魔弾装填 B+": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
+    },
+    "魔法使いの夜": {
+      "cn": null,
+      "tw": null,
+      "na": null,
+      "kr": null
     },
     "魔生木のドロップ獲得数を1個増やす【『復刻:水怪クライシス 無垢なる者たちの浮島 ライト版』イベント期間限定】": {
       "tw": "魔生木的掉落獲得數增加1個【『復刻：水怪危機 純潔之人的浮島 輕量版』活動限定】",
