@@ -2986,7 +2986,6 @@
       "kr": "유세의 사자"
     },
     "幽玄たる黒 A+": {
-      "cn": "幽玄之黑 A+",
       "tw": "幽玄之黑 A+",
       "na": "Profound Black A+",
       "kr": "유현한 흑색 A+"
@@ -3336,9 +3335,6 @@
       "tw": "對敵方單體發動超強大的〔秩序〕特攻攻擊<Over Charge時特攻威力提升>＆弱化耐性小幅下降(3回合)＆攻擊力小幅下降(3回合)＆防禦力小幅下降(3回合)＆Quick攻擊耐性小幅下降(3回合)＆Arts攻擊耐性小幅下降(3回合)＆Buster攻擊耐性小幅下降(3回合)＆爆擊威力小幅下降(3回合)＆爆擊率小幅下降(3回合)＆賦予毒狀態(3回合)＆詛咒狀態(3回合)＆灼傷狀態(3回合) ＋ 獲得少量爆擊星",
       "na": "Deal super effective [Lawful] damage <Special Attack effectiveness increases with Overcharge> & slightly decrease Debuff Resist (3 turns) & ATK (3 turns) & DEF (3 turns) & Quick attack Resist (3 turns) & Arts attack Resist (3 turns) & Buster attack Resist (3 turns) & Critical Strength (3 turns) & Critical Rate (3 turns) & inflict Poison (3 turns) & inflict Curse (3 turns) & inflict Burn (3 turns) to a single enemy ＋ Gain a small amount of C. Stars",
       "kr": "적 하나에게 초강력한 〔질서〕 특공 공격<오버차지로 특공 위력 UP>＆약화 내성 조금 DOWN(3턴)＆공격력 조금 DOWN(3턴)＆방어력 조금 DOWN(3턴)＆퀵 공격 내성 조금 DOWN(3턴)＆아츠 공격 내성 조금 DOWN(3턴)＆버스터 공격 내성 조금 DOWN(3턴)＆크리티컬 위력 조금 DOWN(3턴)＆크리티컬 발생률 조금 DOWN(3턴)＆독 상태 부여(3턴)＆저주 상태 부여(3턴)＆화상 상태 부여(3턴) ＋ 스타 조금 획득"
-    },
-    "敵単体に超強力な攻撃▲<自身に付与されている〔いいね！〕状態の数に応じて威力がアップ(最大10個)>＆防御力をダウン(3ターン)<オーバーチャージで効果アップ> ＋ スターを獲得▲": {
-      "na": "Deal super powerful damage▲ <power increases based on the number of [Like!] on yourself (max 10)> & decrease DEF (3 turns) <effect increases with Overcharge> to a single enemy ＋ Gain C. Stars▲"
     },
     "敵単体に超強力な防御力無視攻撃▲＆防御力を大ダウン(3ターン)<オーバーチャージで効果アップ>＆Quick攻撃耐性をダウン(3ターン)<オーバーチャージで効果アップ>▲＆クリティカル威力耐性をダウン(3ターン)<オーバーチャージで効果アップ>▲": {
       "tw": "對敵方單體發動超強大的無視防禦攻擊▲＆防禦力大幅下降(3回合)<Over Charge時效果提升>＆Quick攻擊耐性下降(3回合)<Over Charge時效果提升>▲＆爆擊威力耐性下降(3回合)<Over Charge時效果提升>▲",
@@ -7263,13 +7259,11 @@
       "kr": "마니의 보주 A"
     },
     "魔弾装填 B+": {
-      "cn": "魔弹装填 B+",
       "tw": "魔彈裝填 B+",
       "na": "Load Magic Bullet B+",
       "kr": "마탄 장전 B+"
     },
     "魔法使いの夜": {
-      "cn": "魔法使之夜",
       "tw": "魔法使之夜",
       "na": "Witch on the Holy Night",
       "kr": "마법사의 밤"
