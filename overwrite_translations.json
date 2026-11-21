@@ -4135,16 +4135,16 @@
       "kr": "자신에게 [매료] 특공 상태 20% 부여&NP 획득량 20% UP&보구 사용 시 차지 단계를 2단계 증가(1회)[최대해방]"
     },
     "自身に〔魔弾〕状態を10個付与▲<〔魔弾〕状態は最大20個まで付与可能、Quick、Arts、Buster通常攻撃時に〔魔弾〕状態を1つ消費して攻撃力をアップ(1回)＆Extra攻撃時に〔魔弾〕状態をすべて消費して個数分攻撃力をアップ(1回)>＆無敵状態を付与(1ターン)＆Artsカード性能をアップ(3ターン)＆NPを増やす▲": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身10个〔魔弹〕状态▲<〔魔弹〕状态最多可付与20个,迅、技、力普通攻击时消耗1个〔魔弹〕状态提升攻击力(1次)＆额外攻击时消耗所有〔魔弹〕状态,并根据消耗个数相应提升攻击力(1次)>＆付与无敌状态(1回合)＆技指令卡性能提升(3回合)＆宝具值增加▲",
+      "tw": "賦予自身10個〔魔彈〕狀態▲<〔魔彈〕狀態最多可賦予20個，Quick、Arts、Buster普通攻擊時消耗1個〔魔彈〕狀態提升攻擊力(1次)＆Extra Attack時消耗所有〔魔彈〕狀態，並根據消耗個數提升攻擊力(1次)>＆賦予無敵狀態(1回合)＆Arts指令卡性能提升(3回合)＆NP增加▲",
+      "na": "Apply 10 [Magic Bullets] ▲ <Up to 20 [Magic Bullets] can be applied. 1 [Magic Bullet] is expended during every normal Quick, Arts, or Buster attack to increase ATK (1 time). All [Magic Bullets] are expended during Extra attacks to increase ATK based on the number expended (1 time)> & apply Invincible (1 turn) & increase Arts Card effectiveness (3 turns) & increase NP Gauge ▲ for yourself",
+      "kr": "자신에게 [마탄] 상태를 10개 부여▲<[마탄] 상태는 최대 20개까지 부여 가능, 퀵, 아츠, 버스터 통상 공격 시 [마탄] 상태를 1개 소비해서 공격력 UP(1회)&엑스트라 공격 시 [마탄] 상태를 모두 소비해서 소비 개수만큼 공격력 UP(1회)>&무적 상태 부여(1턴)&아츠 카드 성능 UP(3턴)&NP 증가▲"
     },
     "自身に〔魔弾〕状態を5個付与▲<〔魔弾〕状態は最大20個まで付与可能、Quick、Arts、Buster通常攻撃時に〔魔弾〕状態を1つ消費して攻撃力をアップ(1回)＆Extra攻撃時に〔魔弾〕状態をすべて消費して個数分攻撃力をアップ(1回)>＆NPを増やす▲ ＋ スターを獲得": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身5个〔魔弹〕状态▲<〔魔弹〕状态最多可付与20个,迅、技、力普通攻击时消耗1个〔魔弹〕状态提升攻击力(1次)＆额外攻击时消耗所有〔魔弹〕状态,并根据消耗个数相应提升攻击力(1次)>＆宝具值增加▲＋获得暴击星",
+      "tw": "賦予自身5個〔魔彈〕狀態▲<〔魔彈〕狀態最多可賦予20個，Quick、Arts、Buster普通攻擊時消耗1個〔魔彈〕狀態提升攻擊力(1次)＆Extra Attack時消耗所有〔魔彈〕狀態，並根據消耗個數提升攻擊力(1次)>＆NP增加▲＋獲得爆擊星",
+      "na": "Apply 5 [Magic Bullets] ▲ <Up to 20 [Magic Bullets] can be applied. 1 [Magic Bullet] is expended during every normal Quick, Arts, or Buster attack to increase ATK (1 time). All [Magic Bullets] are expended during Extra attacks to increase ATK based on the number expended (1 time)> & increase NP Gauge ▲ for yourself + Gain C. Stars",
+      "kr": "자신에게 [마탄] 상태를 5개 부여▲<[마탄] 상태는 최대 20개까지 부여 가능, 퀵, 아츠, 버스터 통상 공격 시 [마탄] 상태를 1개 소비해서 공격력 UP(1회)&엑스트라 공격 시 [마탄] 상태를 모두 소비해서 소비 개수만큼 공격력 UP(1회)>&NP 증가▲ + 스타 획득"
     },
     "自身に〔魔性〕特攻状態を15%付与": {
       "na": "Apply 15% Special Attack [Demonic] for yourself",
@@ -4323,10 +4323,10 @@
       "kr": "자신에게 필중 상태 부여(1턴)&퀵 카드 성능 UP(3턴)<오버차지로 효과 UP> + 적 전체에게 강력한 [천의 힘을 가진 적] 특공 공격 + 아군 전체의 크리티컬 위력 UP(3턴)"
     },
     "自身に必中状態を付与(1ターン)＆〔人間〕特攻状態を付与(1ターン)＆〔秩序〕特攻状態を付与(1ターン)▲＆クリティカル威力をアップ(3ターン)▲ ＋ 敵全体に強力な〔人の力を持つ敵〕特攻攻撃▲<オーバーチャージで特攻威力アップ>＆恐怖状態を付与(3ターン)＆クリティカル発生率をダウン(3ターン)": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "付与自身必中状态(1回合)＆付与对〔人类〕的特攻状态(1回合)＆付与对〔秩序〕的特攻状态(1回合)▲＆暴击威力提升(3回合)▲＋对敌方全体发动强大的〔拥有人之力的敌人〕特攻攻击▲<过量充能时特攻威力提升>＆付与恐惧状态(3回合)＆暴击率降低(3回合)",
+      "tw": "賦予自身必中狀態(1回合)＆賦予對〔人類〕的特攻狀態(1回合)＆賦予對〔秩序〕的特攻狀態(1回合)▲＆爆擊威力提升(3回合)▲＋對敵方全體發動強大的〔擁有人之力的敵人〕特攻攻擊▲<Over Charge時特攻威力提升>＆賦予恐懼狀態(3回合)＆爆擊率下降(3回合)",
+      "na": "Apply Sure Hit (1 turn) & apply Special Attack [Human] (1 turn) & apply Special Attack [Lawful] (1 turn) ▲ & increase Critical Strength (3 turns) ▲ for yourself + Deal heavy Special Attack damage to all enemies with [Human Attribute] ▲ <Special Attack damage increases with Overcharge> & Apply Terror (3 turns) & Decrease Critical Rate (3 turns)",
+      "kr": "자신에게 필중 상태 부여(1턴)＆[인간] 특공 상태 부여(1턴)＆[질서] 특공 상태 부여(1턴)▲＆크리티컬 위력 UP(3턴)▲ + 적 전체에게 강력한 [인의 힘을 가진 적] 특공 공격▲<오버차지로 특공 위력 UP>＆공포 상태 부여(3턴)＆크리티컬 발생률 DOWN(3턴)"
     },
     "自身に必中状態を付与(1ターン)＆防御無視状態を付与(1ターン) ＋ 敵単体に超強力な〔蛇・竜〕特攻攻撃<オーバーチャージで特攻威力アップ>＆Arts攻撃耐性をダウン(3ターン)": {
       "na": "Apply Sure Hit (1 turn) & apply Ignores DEF (1 turn) to yourself ＋ Deal super effective [Snake, Dragon] damage <Special Attack effectiveness increases with Overcharge> & decrease Arts attack Resist (3 turns) to a single enemy"
@@ -7263,16 +7263,16 @@
       "kr": "마니의 보주 A"
     },
     "魔弾装填 B+": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "魔弹装填 B+",
+      "tw": "魔彈裝填 B+",
+      "na": "Load Magic Bullet B+",
+      "kr": "마탄 장전 B+"
     },
     "魔法使いの夜": {
-      "cn": null,
-      "tw": null,
-      "na": null,
-      "kr": null
+      "cn": "魔法使之夜",
+      "tw": "魔法使之夜",
+      "na": "Witch on the Holy Night",
+      "kr": "마법사의 밤"
     },
     "魔生木のドロップ獲得数を1個増やす【『復刻:水怪クライシス 無垢なる者たちの浮島 ライト版』イベント期間限定】": {
       "tw": "魔生木的掉落獲得數增加1個【『復刻：水怪危機 純潔之人的浮島 輕量版』活動限定】",
