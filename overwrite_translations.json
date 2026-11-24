@@ -2681,9 +2681,6 @@
       "na": "Increase ATK (3 turns)＆increase Critical Strength (3 turns) for a single ally ＋ Gain C. Stars",
       "kr": "아군 하나의 공격력 UP(3턴)＆크리티컬 위력 UP(3턴) ＋ 스타 획득"
     },
-    "味方単体の攻撃力をアップ(3ターン)＆スター集中度をアップ(3ターン) ＋ 自身に「Quick攻撃時に自身の呪い状態を1つ解除＆解除に成功した場合、自身の攻撃力を少しアップ(3ターン)＆NPを増やす▲状態」を付与(3ターン) ＋ 自身を除く敵味方全体から呪い状態を吸収する【デメリット】": {
-      "na": "Increase ATK (3 turns) & C. Star Gather Rate (3 turns) for a single ally + Apply a state that \"removes 1 Curse when attacking with Quick Card & slightly increases ATK (3 turns) & increases NP Gauge ▲ for yourself when the removal succeeds\" (3 turns) for yourself + Absorb Curse from all allies and enemies excluding yourself [Demerit]"
-    },
     "味方単体の攻撃弱体状態を解除＆NPを増やす": {
       "cn": "解除己方单体的攻击弱化状态＆宝具值增加",
       "tw": "解除我方單體的攻擊弱化狀態＆NP增加",
